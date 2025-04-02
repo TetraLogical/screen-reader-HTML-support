@@ -777,7 +777,7 @@ this feature is supposed to convey to the user.</li>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dialog.html">dialog test</a> </td>
     <td>The dialog element represents a transitory part of an application, in the form of a small window ("dialog box")</td>
     <td>dialog, accessible name if provided, accessible description if provided.</td>
-    <td>When the <code>dialog</code> opens focus is moved to first focusable element. <code>dialog</code> can be closed with the <kbd>ESC</kbd> key. 
+    <td>When the <code>dialog</code> opens focus is moved to first focusable element. The <code>dialog</code> can be closed with the <kbd>ESC</kbd> key. 
         Upon closing focus moves back to the trigger control. While displayed focus is contained within the <code>dialog</code>.</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes">
@@ -817,85 +817,249 @@ this feature is supposed to convey to the user.</li>
     <td>No semantics conveyed</td>
 </tr>
 <tr>
-<td><code>&lt;dl&gt;</code></td>
-<td>Definition list</td>
-<td></td>
-<td>Announces "list with X items"</td>
-<td>Accessible via <code>L</code></td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Recognizes start/end of the list.</td>
+    <th scope="row"><a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dl-element"><code>dl</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dl-dt-dd.html"><code>dl</code> test</a> </td>
+    <td>Association list consisting of zero or more name-value groups</td>
+    <td>
+        Announced as "List with [n] items" followed by the first list item. The number of elements is the total <code>&lt;dt&gt;</code> 
+        and <code>&lt;dd&gt;</code> elements combined.
+    </td>
+    <td>
+        <ul>
+            <li>Next List <kbd>L</kbd></li>
+            <li>Previous List <kbd>SHIFT+I</kbd></li>
+            <li> Next item in a List <kbd>I</kbd></li>
+            <li>Previous item in a List <kbd>SHIFT+I</kbd></li>
+        </ul>
+    </td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>
+        Navigating using <kbd>I</kbd> and <kbd>Shift+I</kbd> in a description list moves between the <code>&lt;dt&gt;</code> elements. 
+        Arrow keys are required to read the content in the <code>&lt;dd&gt;</code> element.
+    </td>
 </tr>
 <tr>
-<td><code>&lt;dt&gt;</code></td>
-<td>Definition term</td>
-<td></td>
-<td>Reads element content</td>
-<td>Part of definition list navigation</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Properly included in the <code>dl</code> context.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dt-element"><code>dt</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dl-dt-dd.html"><code>dt</code> test</a> </td>
+    <td> 
+        Legend for corresponding <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dd-element">dd</a> element(s) 
+    </td>
+    <td><em>Element content</em></td>
+    <td>
+        <ul>
+            <li>Next Item in a List <kbd>I</kbd></li>
+            <li>Previous Item in a List <kbd>SHIFT+I</kbd></li>
+        </ul>
+    </td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>Identified as a list item</td>
 </tr>
 <tr>
-<td><code>&lt;em&gt;</code></td>
-<td>Emphasis</td>
-<td></td>
-<td>Reads with emphasis</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Uses a different voice inflection.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-em-element"><code>em</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/em.html"><code>em</code> test</a> </td>
+    <td>Stress emphasis</td>
+    <td><em>Element content</em></td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected">
+            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
+            48 48 48h352c26.5 0 48-21.5
+            48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
+            0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
+            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
+        </svg>
+    </td>
+    <td>
+        No semantics conveyed. Refer to: <a href="https://www.tpgi.com/screen-readers-support-for-text-level-html-semantics/">Screen 
+        Readers support for text level HTML semantics</a>
+    </td>
 </tr>
 <tr>
-<td><code>&lt;embed&gt;</code></td>
-<td>Embedded content</td>
-<td></td>
-<td>Announces "embedded object"</td>
-<td>Focusable via <code>TAB</code></td>
-<td><svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img"><path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"></path></svg></td>
-<td>Support varies depending on content type.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.htm#the-embed-element"><code>embed</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/embed.html"><code>embed</code> test</a> </td>
+    <td> <a href="https://html.spec.whatwg.org/multipage/infrastructure.html#plugins">Plugins</a></td>
+    <td>
+        If recognised as a frame, announced as "Frame" followed by the accessible name if provided using the <code>title</code> 
+        attribute. No indication of the element if not recognised as a frame.
+    </td>
+    <td>
+        If recognised as a frame:
+        <ul>
+            <li>Next Frame <kbd>M</kbd></li>
+            <li>Previous Frame <kbd>SHIFT+M</kbd></li>
+        </ul>
+    </td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
+                256C8 119.083 119.043 8 256 8s248 111.083 248
+                248zM262.655 90c-54.497 0-89.255 22.957-116.549
+                63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
+                26.31c5.205 3.947 12.621 3.008 16.665-2.122
+                17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
+                45.698 13.148 45.698 32.958 0 14.976-12.363
+                22.667-32.534 33.976C247.128 238.528 216 254.941 216
+                296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+                12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+                0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+                20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+                46-46c0-25.365-20.635-46-46-46z">
+            </path>
+        </svg>    
+    </td>
+    <td>
+        Firefox exposes the <code>&lt;embed&gt;</code> element as a frame. Chrome sometimes exposes the <code>&lt;embed&gt;</code> 
+        element as a frame, depending on the content. Depending on the content type, embedding content using <code>&lt;img&gt;</code>, 
+        <code>&lt;video&gt;</code>, <code>&lt;audio&gt;</code>, or <code>&lt;iframe&gt;</code> elements is preferable over the 
+        <code>&lt;embed&gt;</code> element.
+    </td>
 </tr>
 <tr>
-<td><code>&lt;fieldset&gt;</code></td>
-<td>Group of form controls</td>
-<td></td>
-<td>Announces "group start/end"</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Announces the legend as a label if present.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-fieldset-element"><code>fieldset</code></a> </th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/fieldset-legend.html"><code>fieldset</code> test</a> </td>
+    <td>Group of form controls</td>
+    <td>
+        "Grouping" followed by legend content when using arrow keys to navigate to the element. Legend content followed by "grouping" 
+        when navigating into a form control in the fieldset.
+    </td>
+    <td>
+        No special commands, fieldset presence and accessible name announced when first control child is navigated to using virtual 
+        keys navigation keys for the child control.
+    </td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>Only when <code>fieldset</code> has an accessible name via <code>legend</code> or other method.</td>
 </tr>
 <tr>
-<td><code>&lt;figcaption&gt;</code></td>
-<td>Figure caption</td>
-<td></td>
-<td>Reads element content</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Announces when navigating to a figure.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figcaption-element"><code>figcaption</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/figure-figcaption.html"><code>figcaption</code> test</a> </td>
+    <td> Caption for <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element">figure</a></td>
+    <td>Announced as, "Figure caption" <em>Element content</em></td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>&nbsp;</td>
 </tr>
 <tr>
-<td><code>&lt;figure&gt;</code></td>
-<td>Figure with optional caption</td>
-<td></td>
-<td>Announces "figure start/end"</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Includes caption if present.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element"><code>figure</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/figure.html"><code>figure</code> test</a> </td>
+    <td>Figure with optional caption</td>
+    <td> Announced as "Figure" if the element has an accessible name or contains a <code>&lt;figcaption&gt;</code> element.</td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>"Figure" is not announced if the element does not have an accessible name or contain a <code>&lt;figcaption&gt;</code> element.</td>
 </tr>
 <tr>
-<td><code>&lt;footer&gt;</code></td>
-<td>Footer for page or section</td>
-<td></td>
-<td>Announces "content info"</td>
-<td><code>R</code> to navigate regions</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Recognized as a landmark region.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/sections.html#the-footer-element"><code>footer</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/footer.html"><code>footer</code> test</a> </td>
+    <td>Footer for a page or section</td>
+    <td>"Content info landmark" <em>element content</em></td>
+    <td>
+        <ul>
+            <li>Move to Next Region <kbd>D</kbd></li>
+            <li>Move to Previous Region <kbd>SHIFT+D</kbd></li>
+        </ul>
+    </td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>The <code>&lt;footer&gt;</code> element is not exposed if used in an <code>&lt;article&gt;</code> element.</td>
 </tr>
 <tr>
-<td><code>&lt;form&gt;</code></td>
-<td>Form</td>
-<td></td>
-<td>Announces "form start/end" if labeled</td>
-<td><code>F</code> to move to next form</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Recognizes the form if it has an accessible name.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-form-element"><code>form</code></a> </th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/form.html"><code>form</code> test</a> </td>
+    <td>User-submittable form</td>
+    <td>With accessible name announced as <i>accessible name</i>, form, element content. <i>accessible name</i></td>
+    <td>
+        <p>Without accessible name: ignored.</p>
+        <p>With accessible name:</p>
+        <ul>
+            <li>Move to Next Region&nbsp; <kbd>D</kbd></li>
+            <li>Move to Previous Region <kbd>SHIFT+D</kbd> </li>
+        </ul>
+    </td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>No semantics conveyed unless <code>form</code> has an accessible name, then exposed as a landmark.</td>
 </tr>
 <tr>
 <td><code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code></td>
