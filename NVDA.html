@@ -21,7 +21,7 @@ fill: red;
 <h1>NVDA HTML Support</h1>
 <p> A Work <em>in progress</em>: Last updated 21 March 2025. </p>
 <p><strong>Editors:</strong> Steve Faulkner, Gez Lemon </p>
-<p><strong>Github Repo:</strong> <a href="https://github.com/TetraLogical/screen-reader-HTML-support">screen-reader-HTML-support</a>
+<p><strong>GitHub Repo:</strong> <a href="https://github.com/TetraLogical/screen-reader-HTML-support">screen-reader-HTML-support</a>
 </p>
 <p>Found a bug? Please <a href="https://github.com/TetraLogical/screen-reader-HTML-support/issues">report it</a>. </p>
 </header>
@@ -110,93 +110,93 @@ this feature is supposed to convey to the user.</li>
 <caption> NVDA (2024 ) HTML Support - Chrome Version 129.0.6668.90 (Official Build) (64-bit) </caption>
 <thead>
 <tr>
-<th>Element</th>
-<th>Test Case</th>
-<th>Represents</th>
-<th>Aural UI</th>
-<th>Interaction</th>
-<th>Supported</th>
-<th>Notes</th>
+    <th>Element</th>
+    <th>Test Case</th>
+    <th>Represents</th>
+    <th>Aural UI</th>
+    <th>Interaction</th>
+    <th>Supported</th>
+    <th>Notes</th>
 </tr>
 </thead>
 <tbody>
-<tr id="toc-a">
-<th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element"><code>a</code></a></th>
-<td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/a-href.html"><code>a</code> with <code>href</code> test</a></td>
-<td>A hyperlink</td>
-<td><em>Element content</em> + "link"</td>
-<td>
-    <ul>
-        <li>List Links <kbd>INSERT+F7</kbd></li>
-        <li>Next Link <code><kbd>K</kbd></code></li>
-        <li>Prior Link <kbd>SHIFT+K</kbd></li>
-        <li>Next Visited <kbd>V</kbd></li>
-        <li>Prior Visited Link <kbd>SHIFT+V</kbd></li>
-        <li>Next Unvisited Link<kbd>U</kbd></li>
-        <li>Prior Unvisited Link<kbd>SHIFT+U</kbd></li>
-        <li>Open Link <kbd>ENTER</kbd></li>
-        <li>Open Link in New Window <kbd>SHIFT+ENTER</kbd></li>
-    </ul>
-</td>
-<td>
-    <svg viewBox="0 0 448 512" width="20" aria-label="yes">
-    <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-    21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-    26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248
-    6.248-16.379
-    0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-    0L184
-    302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-    0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104
-    104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg>
-</td>
-<td>
-    <p>Link role announced before link text when cursored to, after via tab. </p>
-    <p>NVDA announces the type of link as follows:</p>
-    <ul>
-        <li><strong>Link:</strong> This indicates a link that has not been visited.</li>
-        <li><strong>Visited Link:</strong> This indicates a link that has been visited. This is determined by your browser history, not by which links have been selected
-        on the current Web page.</li>
-    </ul>
-</td>
+<tr id="toc-a" tabindex="-1">
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element"><code>a</code></a></th>
+    <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/a-href.html"><code>a</code> with <code>href</code> test</a></td>
+    <td>A hyperlink</td>
+    <td><em>Element content</em> + "link"</td>
+    <td>
+        <ul>
+            <li>List Links <kbd>INSERT+F7</kbd></li>
+            <li>Next Link <code><kbd>K</kbd></code></li>
+            <li>Prior Link <kbd>SHIFT+K</kbd></li>
+            <li>Next Visited <kbd>V</kbd></li>
+            <li>Prior Visited Link <kbd>SHIFT+V</kbd></li>
+            <li>Next Unvisited Link<kbd>U</kbd></li>
+            <li>Prior Unvisited Link<kbd>SHIFT+U</kbd></li>
+            <li>Open Link <kbd>ENTER</kbd></li>
+            <li>Open Link in New Window <kbd>SHIFT+ENTER</kbd></li>
+        </ul>
+    </td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+        <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+        21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+        26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248
+        6.248-16.379
+        0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+        0L184
+        302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+        0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104
+        104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg>
+    </td>
+    <td>
+        <p>Link role announced before link text when cursored to, after via tab. </p>
+        <p>NVDA announces the type of link as follows:</p>
+        <ul>
+            <li><strong>Link:</strong> This indicates a link that has not been visited.</li>
+            <li><strong>Visited Link:</strong> This indicates a link that has been visited. This is determined by your browser history, not by which links have been selected
+            on the current Web page.</li>
+        </ul>
+    </td>
 </tr>
 <tr>
-<th scope="row"><a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element"><code>a</code></a> without <code>href</code></th>
-<td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/a-no-href.html"><code>a</code> with no <code>href</code> test</a></td>
-<td>An anchor</td>
-<td>Announces as plain text</td>
-<td>No special commands</td>
-<td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> </svg></td>
-<td>Treated as regular text without any link functionality.</td>
+    <th scope="row"><a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element"><code>a</code></a> without <code>href</code></th>
+    <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/a-no-href.html"><code>a</code> with no <code>href</code> test</a></td>
+    <td>An anchor</td>
+    <td>Announces as plain text</td>
+    <td>No special commands</td>
+    <td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> </svg></td>
+    <td>Treated as regular text without any link functionality.</td>
 </tr>
 <tr>
-    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element"><code>abbr</code></a>
-    </th>
-    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/abbr.html"><code>abbr</code>
-    test</a> </td>
-    <td>An abbreviation</td>
-    <td><em>Element content</em></td>
-    <td>
-    <p>No special commands</p>
-    </td>
-    <td>
-        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><path d="M464 32H48C21.5 32 0
-            53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
-            12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
-            313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
-            0l-40.5-40.5c-4.8-4.8-4.8-12.6
-            0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-            0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-            66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8
-            12.6 0 17.4L313.3 256l67.1 66.5z"></path></svg>
-    </td>
-    <td>
-    <p>No semantics conveyed by default</p>
-    <p>Note that expansions are not announced by NVDA and that expansions provided using the <code>title</code> attribute are not available to keyboard only users.
-    Refer to <a href="https://www.paciellogroup.com/blog/2013/01/using-the-html-title-attribute-updated/">Using the HTML title attribute</a>.</p>
-    </td>
-</tr>
+        <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element"><code>abbr</code></a>
+        </th>
+        <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/abbr.html"><code>abbr</code>
+        test</a> </td>
+        <td>An abbreviation</td>
+        <td><em>Element content</em></td>
+        <td>
+        <p>No special commands</p>
+        </td>
+        <td>
+            <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><path d="M464 32H48C21.5 32 0
+                53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
+                48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
+                12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
+                313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
+                0l-40.5-40.5c-4.8-4.8-4.8-12.6
+                0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
+                0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
+                66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8
+                12.6 0 17.4L313.3 256l67.1 66.5z"></path></svg>
+        </td>
+        <td>
+        <p>No semantics conveyed by default</p>
+        <p>Note that expansions are not announced by NVDA and that expansions provided using the <code>title</code> attribute are not available to keyboard only users.
+        Refer to <a href="https://www.paciellogroup.com/blog/2013/01/using-the-html-title-attribute-updated/">Using the HTML title attribute</a>.</p>
+        </td>
+    </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-address-element"><code>address</code></a>
     </th>
@@ -325,9 +325,9 @@ this feature is supposed to convey to the user.</li>
     <td> "Complimentary information" <em>element content</em> "complimentary information end" </td>
     <td>
         <ul>
-            <li>Move to Next Region&nbsp; <kbd>D</kbd></li>
+            <li>Move to Next Region <kbd>D</kbd></li>
             <li>Move to Prior Region <kbd>SHIFT+D</kbd></li>
-            <li>List landmark regions <kbd>INSERT+F7</kbd></li>
+            <li>List Landmark Regions <kbd>INSERT+F7</kbd></li>
         </ul>
     </td>
     <td>
@@ -366,7 +366,7 @@ this feature is supposed to convey to the user.</li>
     </td>
     <td>Buttons in the audio player are accessible.</td>
 </tr>
-<tr>
+<tr id="toc-b" tabindex="-1">
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-b-element"><code>b</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/b.html"><code>b</code> test</a> </td>
     <td>Keywords</td>
@@ -524,7 +524,7 @@ this feature is supposed to convey to the user.</li>
     </td>
     <td>Semantics conveyed via navigation and element name announcement</td>
 </tr>
-<tr>
+<tr id="toc-c" tabindex="-1">
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/canvas.html#the-canvas-element"><code>canvas</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/canvas.html"><code>canvas</code> test</a> </td>
     <td>Scriptable bitmap canvas</td>
@@ -642,7 +642,7 @@ this feature is supposed to convey to the user.</li>
     </td>
     <td>&nbsp;</td>
 </tr>
-<tr>
+<tr id="toc-d" tabindex="-1">
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-data-element"><code>data</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/data.html"><code>data</code> test</a> </td>
     <td>Machine-readable equivalent</td>
@@ -730,7 +730,7 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>Refer to: <a href="https://www.tpgi.com/screen-readers-support-for-text-level-html-semantics/">Scree Readers support for text level HTML semantics</a></td>
+    <td>Refer to: <a href="https://www.tpgi.com/screen-readers-support-for-text-level-html-semantics/">Screen Readers support for text level HTML semantics</a></td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-details-element"><code>details</code></a></th>
@@ -881,7 +881,7 @@ this feature is supposed to convey to the user.</li>
     </td>
     <td>Identified as a list item</td>
 </tr>
-<tr>
+<tr id="toc-e" tabindex="-1">
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-em-element"><code>em</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/em.html"><code>em</code> test</a> </td>
     <td>Stress emphasis</td>
@@ -941,7 +941,7 @@ this feature is supposed to convey to the user.</li>
         <code>&lt;embed&gt;</code> element.
     </td>
 </tr>
-<tr>
+<tr id="toc-f" tabindex="-1">
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-fieldset-element"><code>fieldset</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/fieldset-legend.html"><code>fieldset</code> test</a> </td>
     <td>Group of form controls</td>
@@ -1019,7 +1019,7 @@ this feature is supposed to convey to the user.</li>
         <ul>
             <li>Move to Next Region <kbd>D</kbd></li>
             <li>Move to Prior Region <kbd>SHIFT+D</kbd></li>
-            <li>List landmark regions <kbd>INSERT+F7</kbd></li>
+            <li>List Landmark Regions <kbd>INSERT+F7</kbd></li>
         </ul>
     </td>
     <td>
@@ -1046,9 +1046,9 @@ this feature is supposed to convey to the user.</li>
         <p>Without accessible name: ignored.</p>
         <p>With accessible name:</p>
         <ul>
-            <li>Move to Next Region&nbsp; <kbd>D</kbd></li>
+            <li>Move to Next Region <kbd>D</kbd></li>
             <li>Move to Prior Region <kbd>SHIFT+D</kbd> </li>
-            <li>List landmark regions <kbd>INSERT+F7</kbd></li>
+            <li>List Landmark Regions <kbd>INSERT+F7</kbd></li>
         </ul>
     </td>
     <td>
@@ -1066,7 +1066,7 @@ this feature is supposed to convey to the user.</li>
     </td>
     <td>No semantics conveyed unless <code>form</code> has an accessible name, then exposed as a landmark.</td>
 </tr>
-<tr id="toc-h">
+<tr id="toc-h" tabindex="-1">
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/sections.html#the-h1-h2-h3-h4-h5-and-h6-elements"><code>h1 - h6</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/h1-h6.html"><code>h1 - h6</code> test</a> </td>
     <td>Section heading</td>
@@ -1121,7 +1121,7 @@ this feature is supposed to convey to the user.</li>
         <ul>
             <li>Move to Next Region <kbd>D</kbd></li>
             <li>Move to Prior Region <kbd>SHIFT+D</kbd></li>
-            <li>List landmark regions <kbd>INSERT+F7</kbd></li>
+            <li>List Landmark Regions <kbd>INSERT+F7</kbd></li>
         </ul>
     </td>
     <td>
@@ -1177,7 +1177,7 @@ this feature is supposed to convey to the user.</li>
     </td>
     <td>No semantics expected.</td>
 </tr>
-<tr>
+<tr id="toc-i" tabindex="-1">
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-i-element"><code>i</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/i.html"><code>i</code> test</a> </td>
     <td>Alternate voice</td>
@@ -1230,8 +1230,10 @@ this feature is supposed to convey to the user.</li>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/img-alt.html"><code>img</code> test</a> </td>
     <td>Image</td>
     <td>
-        <li>If navigated to using graphic shortcut key, announced as <em>alt attribute content</em> "graphic"</li>
-        <li>If navigated to using arrow key, announced as "graphic" <em>alt attribute content</em></li>
+        <ul>
+            <li>If navigated to using graphic shortcut key, announced as <em>alt attribute content</em> "graphic"</li>
+            <li>If navigated to using arrow key, announced as "graphic" <em>alt attribute content</em></li>
+        </ul>
     </td>
     <td>
         <ul>
@@ -1473,7 +1475,8 @@ this feature is supposed to convey to the user.</li>
     </td>
     <td>&nbsp;</td>
 </tr>
-<th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#number-state-typenumber"><code>input [number]</code></a> </th>
+<tr>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#number-state-typenumber"><code>input [number]</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-number.html"><code>input [number]</code> test</a> </td>
     <td>Spin box control</td>
     <td><em>Label content</em> "Edit, spin button"</td>
@@ -1555,8 +1558,8 @@ this feature is supposed to convey to the user.</li>
     </td>
     <td>
         <p>
-            <strong>Note:</strong> The slider cannot be adjusted using the <kbd>HOME</kbd>, <kbd>END</kbd>, <kd>PAGE UP</kd>, and
-            <kdb>PAGE DOWN</kdb> keys when NVDA is running.
+            <strong>Note:</strong> The slider cannot be adjusted using the <kbd>HOME</kbd>, <kbd>END</kbd>, <kbd>PAGE UP</kbd>, and
+            <kbd>PAGE DOWN</kbd> keys when NVDA is running.
         </p>
         <p>Slider value announced as it changes.</p>
     </td>
@@ -1681,238 +1684,859 @@ this feature is supposed to convey to the user.</li>
     <td>&nbsp;</td>
 </tr>
 <tr>
-<td><code>&lt;input type="text"&gt;</code></td>
-<td>Text input</td>
-<td></td>
-<td>Announces "edit" + label</td>
-<td>Focusable via <code>TAB</code></td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Reads input content.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#telephone-state-typetel"><code>input [tel]</code></a> </th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-tel.html"><code>input [tel]</code> test</a> </td>
+    <td>text box control for inputting a phone number</td>
+    <td><em>label content</em> "edit"</td>
+    <td>
+        <ul>
+            <li>List Form Controls <kbd>INSERT+F7</kbd></li>
+            <li>Move To Next Edit Box <kbd>E </kbd></li>
+            <li>Move to Prior Edit Box <kbd>SHIFT+E</kbd></li>
+        </ul>
+    </td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+            </svg>
+    </td>
+    <td>&nbsp;</td>
 </tr>
 <tr>
-<td><code>&lt;label&gt;</code></td>
-<td>Label for input</td>
-<td></td>
-<td>Announces associated label</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Reads associated control label.</td>
+    <th scope="row"> 
+        <a href="https://html.spec.whatwg.org/multipage/form-elements.html#text-typetext-state-and-search-state-typesearch">
+            <code>input [text]</code>
+        </a> 
+    </th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-text.html"><code>input [text]</code> test</a> </td>
+    <td>text box control</td>
+    <td><em>label content</em> "edit"</td>
+    <td>
+        <ul>
+            <li>List Form Controls <kbd>INSERT+F7</kbd></li>
+            <li>Move To Next Edit Box <kbd>E </kbd></li>
+            <li>Move to Prior Edit Box <kbd>SHIFT+E</kbd></li>
+        </ul>
+    </td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>&nbsp;</td>
 </tr>
 <tr>
-<td><code>&lt;legend&gt;</code></td>
-<td>Label for <code>&lt;fieldset&gt;</code></td>
-<td></td>
-<td>Announces label when fieldset is focused</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Acts as a label for grouped controls.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#time-state-typetime"><code>input [time]</code></a> </th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-time.html"><code>input [time]</code> test</a> </td>
+    <td>Control for setting a specific time.</td>
+    <td><em>label content</em> "grouping" followed by <em>label content</em> "hour spin button" <em>current value</em></td>
+    <td>
+        Navigable using NVDA button keystrokes in Chrome:
+        <ul>
+            <li>List Buttons <kbd>INSERT+F7</kbd></li>
+            <li>Move To Next Button <kbd>B </kbd></li>
+            <li>Move to Prior Button <kbd>SHIFT+B</kbd></li>
+        </ul>
+        Navigable using NVDA button keystrokes in Firefox:
+        <ul>
+            <li>List Form Controls <kbd>INSERT+F7</kbd></li>
+            <li>Move To Next Edit Box <kbd>E </kbd></li>
+            <li>Move to Prior Edit Box <kbd>SHIFT+E</kbd></li>
+        </ul>
+    </td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>Navigable using NVDA button keystrokes in Chrome and navigable using NVDA button keystrokes in Firefox</td>
 </tr>
 <tr>
-<td><code>&lt;li&gt;</code></td>
-<td>List item</td>
-<td></td>
-<td>Reads item content</td>
-<td>Part of list navigation</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Announces position in the list.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#url-state-typeurl"><code>input [url]</code></a> </th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-url.html"><code>input [url]</code> test</a> </td>
+    <td>Text control for inputting a URL</td>
+    <td><em>label content</em> "edit"</td>
+    <td>
+        <ul>
+            <li>List Form Controls <kbd>INSERT+F7</kbd></li>
+            <li>Move To Next Edit Box <kbd>E </kbd></li>
+            <li>Move to Prior Edit Box <kbd>SHIFT+E</kbd></li>
+        </ul>
+    </td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>&nbsp;</td>
 </tr>
 <tr>
-<td><code>&lt;link&gt;</code></td>
-<td>Link to external resources</td>
-<td></td>
-<td>No aural indication</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> </svg></td>
-<td>Not announced unless used as part of a web component.</td>
+    <th scope="row"><a href="https://html.spec.whatwg.org/multipage/edits.html#the-ins-element"><code>ins</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/del-ins.html"><code>ins</code> test</a> </td>
+    <td>An addition to the document</td>
+    <td>"Inserted" <em>Element content</em></td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627
+            22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>
+        Refer to: <a href="https://www.tpgi.com/screen-readers-support-for-text-level-html-semantics/">Screen Readers support 
+        for text level HTML semantics</a>
+    </td>
 </tr>
-<tbody>
-<tr>
-<td><code>&lt;main&gt;</code></td>
-<td>Main content</td>
-<td></td>
-<td>Announces "main landmark"</td>
-<td><code>D</code> to move to landmarks</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Recognized as a landmark region.</td>
+<tr id="toc-k" tabindex="-1">
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-kbd-element"><code>kbd</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/keyboard.html"><code>kbd</code> test</a> </td>
+    <td>Represents user input</td>
+    <td><em>Element content</em></td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
+            <path d="M464 32H48C21.5 32 0
+            53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
+            48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
+            12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
+            313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
+            0l-40.5-40.5c-4.8-4.8-4.8-12.6
+            0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
+            0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
+            66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
+            4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path>
+        </svg>
+    </td>
+    <td>No semantics conveyed</td>
 </tr>
-<tr>
-<td><code>&lt;mark&gt;</code></td>
-<td>Highlighted text</td>
-<td></td>
-<td>Reads element content</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> </svg></td>
-<td>No special emphasis conveyed.</td>
-</tr>
-<tr>
-<td><code>&lt;meter&gt;</code></td>
-<td>Scalar measurement</td>
-<td></td>
-<td>Announces "meter" + value</td>
-<td>Focusable via <code>TAB</code></td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Reads current value and range.</td>
-</tr>
-<tr>
-<td><code>&lt;nav&gt;</code></td>
-<td>Navigation links</td>
-<td></td>
-<td>Announces "navigation landmark"</td>
-<td><code>D</code> to move to landmarks</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Recognized as a landmark region.</td>
-</tr>
-<tr>
-<td><code>&lt;noscript&gt;</code></td>
-<td>Content for non-script browsers</td>
-<td></td>
-<td>Reads content if scripts are disabled</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> </svg></td>
-<td>Ignored when JavaScript is enabled.</td>
-</tr>
-<tr>
-<td><code>&lt;object&gt;</code></td>
-<td>Embedded object</td>
-<td></td>
-<td>Announces "object"</td>
-<td>Focusable via <code>TAB</code></td>
-<td><svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img"><path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"></path></svg></td>
-<td>Support varies depending on object type.</td>
-</tr>
-<tr>
-<td><code>&lt;ol&gt;</code></td>
-<td>Ordered list</td>
-<td></td>
-<td>Announces "list with X items"</td>
-<td><code>L</code> to navigate lists</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Announces each list item with position.</td>
+<tr id="toc-l" tabindex="-1">
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-label-element"><code>label</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/label.html"><code>label</code> test</a> </td>
+    <td>Caption for a form control</td>
+    <td><em>Label content</em> announced when the corresponding form control has focus</td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>&nbsp;</td>
 </tr>
 <tr>
-<td><code>&lt;optgroup&gt;</code></td>
-<td>Group of options</td>
-<td></td>
-<td>Announces "group" label</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Recognized within select elements.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-legend-element"><code>legend</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/fieldset-legend.html"><code>legend</code> test</a> </td>
+    <td> 
+        Caption for <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-fieldset-element"><code>fieldset</code></a>
+    </td>
+    <td><em>Legend content</em> is announced as the group label for a group of related controls when one of the controls is first focused in the group.</td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>Serves as the group label for a group of form controls. Refer to the <a href="#toc-f">fieldset</a> element</td>
 </tr>
 <tr>
-<td><code>&lt;option&gt;</code></td>
-<td>Option in a select</td>
-<td></td>
-<td>Announces "option" + label</td>
-<td>Navigable with <code>UP</code>/<code>DOWN</code> arrows</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Recognized within combo boxes and selects.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element"><code>li</code></a></th>
+    <td> 
+        <ul>
+            <li><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/ul-li.html"><code>ul &gt; li</code> test</a></li>
+            <li><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/ol-li.html"><code>ol &gt; li</code> test</a></li>
+        </ul>
+    </td>
+    <td>List item</td>
+    <td>&nbsp;</td>
+    <td>
+        <ul>
+            <li> Next Item in a List <kbd>I</kbd></li>
+            <li> Prior Item in a List <kbd>SHIFT+I</kbd></li>
+        </ul>
+    </td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>&nbsp;</td>
 </tr>
 <tr>
-<td><code>&lt;output&gt;</code></td>
-<td>Result of a calculation</td>
-<td></td>
-<td>Reads output value</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Announces updates if value changes.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/semantics.htmlthe-link-element"><code>link</code></a></th>
+    <td> No test </td>
+    <td>Link metadata</td>
+    <td><em>None expected</em></td>
+    <td>No special commands</td>
+    <td>&nbsp;</td>
+    <td>No UI</td>
+</tr>
+<tr id="toc-m" tabindex="-1">
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-main-element"><code>main</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/main.html"><code>main</code> test</a> </td>
+    <td>Main content of a document</td>
+    <td>&nbsp;</td>
+    <td>
+        <ul>
+            <li>Move to Next Region <kbd>D</kbd></li>
+            <li>Move to Prior Region<kbd>SHIFT+D</kbd></li>
+            <li>List Landmark Regions <kbd>INSERT+F7</kbd></li>
+        </ul>
+    </td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>&nbsp;</td>
 </tr>
 <tr>
-<td><code>&lt;p&gt;</code></td>
-<td>Paragraph</td>
-<td></td>
-<td>Reads element content</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Reads text as part of document flow.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-map-element"><code>map</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/imagemap.html"><code>map</code> test</a> </td>
+    <td> <a href="https://html.spec.whatwg.org/multipage/image-maps.html#image-map">Image map</a> </td>
+    <td><em>None expected</em></td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected">
+            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 
+            48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 
+            296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 
+            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
+        </svg>
+    </td>
+    <td>No UI</td>
 </tr>
 <tr>
-<td><code>&lt;picture&gt;</code></td>
-<td>Responsive image container</td>
-<td></td>
-<td>Announces selected image</td>
-<td>Focusable via <code>TAB</code></td><td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Reads selected <code>img</code> alternative.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-mark-element"><code>mark</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/mark.html"><code>mark</code> test</a> </td>
+    <td>Highlight</td>
+    <td>"Highlighted" <em>Element content</em> "out of highlighted"</td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>&nbsp;</td>
 </tr>
 <tr>
-<td><code>&lt;pre&gt;</code></td>
-<td>Preformatted text</td>
-<td></td>
-<td>Reads element content</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Maintains spacing and line breaks.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/semantics.htmlthe-meta-element"><code>meta</code></a></th>
+    <td> No test </td>
+    <td>Text metadata</td>
+    <td><em>None expected</em></td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected">
+            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 
+            48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 
+            296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 
+            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
+        </svg>
+    </td>
+    <td>No UI</td>
 </tr>
 <tr>
-<td><code>&lt;progress&gt;</code></td>
-<td>Progress indicator</td>
-<td></td>
-<td>Announces "progress bar" + value</td>
-<td>Focusable via <code>TAB</code></td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Reads progress percentage.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-meter-element"><code>meter</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/meter.html"><code>meter</code> test</a> </td>
+    <td>Gauge</td>
+    <td><em>Accessible name</em> "progress bar" followed by the value</td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
+            256C8 119.083 119.043 8 256 8s248 111.083 248
+            248zM262.655 90c-54.497 0-89.255 22.957-116.549
+            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
+            26.31c5.205 3.947 12.621 3.008 16.665-2.122
+            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
+            45.698 13.148 45.698 32.958 0 14.976-12.363
+            22.667-32.534 33.976C247.128 238.528 216 254.941 216
+            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+            46-46c0-25.365-20.635-46-46-46z"></path>
+        </svg>
+    </td>
+    <td>
+        <ul>
+            <li>
+                If fallback content is used in the <code>&lt;meta&gt;</code> element, the fallback content is announced 
+                instead of the value by NVDA in Firefox. The fallback content is not announced using NVDA in Chrome.
+            </li>
+            <li>
+                If the <code>&lt;meta&gt;</code> element is labelled using the <code>aria-labelledby</code> attribute, 
+                the value is not announced by NVDA in Chrome and Firefox.
+            </li>
+        </ul>
+    </td>
+</tr>
+<tr id="toc-n" tabindex="-1">
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/sections.html#the-nav-element"><code>nav</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/nav.html"><code>nav</code> test</a> </td>
+    <td>Section with navigational links</td>
+    <td><em>Accessible name</em> "landmark region"</td>
+    <td>
+        <ul>
+            <li>Move to Next Region <kbd>D</kbd></li>
+            <li>Move to Prior Region <kbd>SHIFT+D</kbd></li>
+            <li>List Landmark Regions <kbd>INSERT+F7</kbd></li>
+        </ul>
+    </td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>&nbsp;</td>
 </tr>
 <tr>
-<td><code>&lt;q&gt;</code></td>
-<td>Inline quotation</td>
-<td></td>
-<td>Announces quotation marks</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Recognizes start and end of quote.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#"><code>noscript</code></a></th>
+    <td> No test </td>
+    <td>Fallback content for script</td>
+    <td>Content of <code>&lt;noscript&gt;</code> element read if JavaScript is not available/enabled</td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected">
+            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 
+            48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 
+            296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 
+            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
+        </svg>
+    </td>
+    <td>Ignored when JavaScript is enabled.</td>
+</tr>
+<tr id="toc-o" tabindex="-1">
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-object-element"><code>object</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/object.html"><code>object</code> test</a> </td>
+    <td> Image, nested browsing context, or plugin </td>
+    <td>Depends on embedded content</td>
+    <td>
+        <ul>
+            <li>Next Object <kbd>O</kbd></li>
+            <li>Prior Object <kbd>SHIFT+O</kbd></li>
+        </ul>
+    </td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
+            256C8 119.083 119.043 8 256 8s248 111.083 248
+            248zM262.655 90c-54.497 0-89.255 22.957-116.549
+            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
+            26.31c5.205 3.947 12.621 3.008 16.665-2.122
+            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
+            45.698 13.148 45.698 32.958 0 14.976-12.363
+            22.667-32.534 33.976C247.128 238.528 216 254.941 216
+            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+            46-46c0-25.365-20.635-46-46-46z"></path>
+        </svg>
+    </td>
+    <td>Support varies depending on object type.</td>
 </tr>
 <tr>
-<td><code>&lt;rp&gt;</code></td>
-<td>Ruby fallback text</td>
-<td></td>
-<td>Reads element content</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> </svg></td>
-<td>No special handling expected.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ol-element"><code>ol</code></a> </th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/ol-li.html"><code>ol</code> test</a> </td>
+    <td>Ordered list</td>
+    <td>"List with [n] items" followed by the first list item</td>
+    <td>
+        <ul>
+            <li>Next List <kbd>L</kbd></li>
+            <li>Previous List <kbd>SHIFT+I</kbd></li>
+            <li>Next Item in a List <kbd>I</kbd></li>
+            <li>Previous item in a List <kbd>SHIFT+I</kbd></li>
+        </ul>
+    </td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>Announces the numerical or alphabetical value for each list item.</td>
 </tr>
 <tr>
-<td><code>&lt;rt&gt;</code></td>
-<td>Ruby text annotation</td>
-<td></td>
-<td>Reads element content</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Ruby text is read inline with base text.</td>
-</tr>
-<tr>   
-<td><code>&lt;ruby&gt;</code></td>
-<td>Ruby annotation container</td>
-<td></td>
-<td>Reads base and ruby text</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Properly reads ruby annotations.</td>
-</tr>
-<tr>
-<td><code>&lt;s&gt;</code></td>
-<td>Strikethrough text</td>
-<td></td>
-<td>Reads element content</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> </svg></td>
-<td>No specific indication for strikethrough.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-optgroup-element"><code>optgroup</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/select-option.html"><code>optgroup</code> test</a> </td>
+    <td>Group of options in a list box</td>
+    <td><em>Label content</em> "grouping"</td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>
+        The list needs to be expanded in order for the grouping information to be announced. Use <kbd>ALT</kbd> followed 
+        by <kbd>DOWN ARROW</kbd> key to expand the list.
+    </td>
 </tr>
 <tr>
-<td><code>&lt;samp&gt;</code></td>
-<td>Sample output</td>
-<td></td>
-<td>Reads element content</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> </svg></td>
-<td>No special semantics conveyed.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-option-element"><code>option</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/select-option.html"><code>option</code> test</a> </td>
+    <td>Option in a list box or combo box control</td>
+    <td><em>Option content</em> x of y; where x = position in list, y = number of items in the list</td>
+    <td>Navigable using <kbd>UP</kbd>/<kbd>DOWN</kbd> arrow keys</td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>Use <kbd>ALT</kbd> followed by <kbd>DOWN ARROW</kbd> key to expand the list.</td>
 </tr>
 <tr>
-<td><code>&lt;script&gt;</code></td>
-<td>Embedded script</td>
-<td></td>
-<td>No aural indication</td>
-<td>No interaction</td>
-<td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> </svg></td>
-<td>Ignored by screen readers.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-output-element"><code>output</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/output.html"><code>output</code> test</a> </td>
+    <td>Calculated output value</td>
+    <td>Reads output value</td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
+            256C8 119.083 119.043 8 256 8s248 111.083 248
+            248zM262.655 90c-54.497 0-89.255 22.957-116.549
+            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
+            26.31c5.205 3.947 12.621 3.008 16.665-2.122
+            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
+            45.698 13.148 45.698 32.958 0 14.976-12.363
+            22.667-32.534 33.976C247.128 238.528 216 254.941 216
+            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+            46-46c0-25.365-20.635-46-46-46z"></path>
+        </svg>
+    </td>
+    <td>No semantics conveyed</td>
+</tr>
+<tr id="toc-p" tabindex="-1">
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-p-element"><code>p</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/p.html"><code>p</code> test</a> </td>
+    <td>Paragraph</td>
+    <td><em>Element content</em></td>
+    <td>
+        <ul>
+            <li>Next Paragraph <kbd>P</kbd></li>
+            <li>Prior Paragraph <kbd>SHIFT+P</kbd></li>
+        </ul>
+    </td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>No aural semantics.</td>
+</tr>
+<tr>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/obsolete.html#the-param-element"><code>param</code> (obsolete)</a> </th>
+    <td> No test </td>
+    <td> Parameter for <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-object-element">object</a></td>
+    <td><em>None expected</em></td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected">
+            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 
+            48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 
+            296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 
+            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
+        </svg>
+    </td>
+    <td>No UI</td>
+</tr>
+<tr>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-picture-element"><code>picture</code></a></th>
+    <td> No test </td>
+    <td>Container to offer alternative versions of an image for different scenarios.</td>
+    <td><em>None expected</em></td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected">
+            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 
+            48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 
+            296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 
+            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
+        </svg>
+    </td>
+    <td>No UI</td>
+</tr>
+<tr>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-pre-element"><code>pre</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/pre.html"><code>pre</code> test</a> </td>
+    <td>Block of preformatted text</td>
+    <td><em>Element content</em></td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>No semantics conveyed</td>
+</tr>
+<tr>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-progress-element"><code>progress</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/progress.html"><code>progress</code> test</a> </td>
+    <td>Progress bar</td>
+    <td>
+        <ul>
+            <li>NVDA beeps as the value of the progress bar is updated with an ever increasing pitch as the value increases</lI>
+            <li><em>Accessible name</em>, "progress bar", value (if using arrow keys)</li>
+        </ul>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>
+        Progress bars are not inherently focusable. But if a progress bar has <code>tabindex="0"</code>, then the accessible 
+        name of the progress bar will be announced on focus.
+    </td>
+</tr>
+<tr id="toc-q" tabindex="-1">
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-q-element"><code>q</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/q.html"><code>q</code> test</a> </td>
+    <td>Quotation</td>
+    <td><em>Element content</em></td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
+            256C8 119.083 119.043 8 256 8s248 111.083 248
+            248zM262.655 90c-54.497 0-89.255 22.957-116.549
+            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
+            26.31c5.205 3.947 12.621 3.008 16.665-2.122
+            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
+            45.698 13.148 45.698 32.958 0 14.976-12.363
+            22.667-32.534 33.976C247.128 238.528 216 254.941 216
+            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+            46-46c0-25.365-20.635-46-46-46z"></path>
+        </svg>
+    </td>
+    <td>&nbsp;</td>
+</tr>
+<tr id="toc-r" tabindex="-1">
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rb-element"><code>rb</code></a></th>
+    <td> No test </td>
+    <td>Ruby base element</td>
+    <td><em>Element content</em></td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img"><path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
+            256C8 119.083 119.043 8 256 8s248 111.083 248
+            248zM262.655 90c-54.497 0-89.255 22.957-116.549
+            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
+            26.31c5.205 3.947 12.621 3.008 16.665-2.122
+            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
+            45.698 13.148 45.698 32.958 0 14.976-12.363
+            22.667-32.534 33.976C247.128 238.528 216 254.941 216
+            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+            46-46c0-25.365-20.635-46-46-46z"></path>
+        </svg>
+    </td>
+    <td>No semantics conveyed</td>
+</tr>
+<tr>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element"><code>rp</code></a></th>
+    <td> No test </td>
+    <td>Fallback parenthesis for browsers that don't support Ruby</td>
+    <td><em>Element content</em></td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
+            256C8 119.083 119.043 8 256 8s248 111.083 248
+            248zM262.655 90c-54.497 0-89.255 22.957-116.549
+            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
+            26.31c5.205 3.947 12.621 3.008 16.665-2.122
+            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
+            45.698 13.148 45.698 32.958 0 14.976-12.363
+            22.667-32.534 33.976C247.128 238.528 216 254.941 216
+            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+            46-46c0-25.365-20.635-46-46-46z"></path>
+        </svg>
+    </td>
+    <td>No semantics conveyed</td>
+</tr>
+<tr>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rt-element"><code>rt</code></a></th>
+    <td> No test </td>
+    <td>Represents an annotation</td>
+    <td><em>Element content</em></td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
+            256C8 119.083 119.043 8 256 8s248 111.083 248
+            248zM262.655 90c-54.497 0-89.255 22.957-116.549
+            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
+            26.31c5.205 3.947 12.621 3.008 16.665-2.122
+            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
+            45.698 13.148 45.698 32.958 0 14.976-12.363
+            22.667-32.534 33.976C247.128 238.528 216 254.941 216
+            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+            46-46c0-25.365-20.635-46-46-46z"></path>
+        </svg>
+    </td>
+    <td>No semantics conveyed</td>
+</tr>
+<tr>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rtc-element"><code>rtc</code></a></th>
+    <td> No test </td>
+    <td>Ruby text container</td>
+    <td><em>Element content</em></td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
+            256C8 119.083 119.043 8 256 8s248 111.083 248
+            248zM262.655 90c-54.497 0-89.255 22.957-116.549
+            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
+            26.31c5.205 3.947 12.621 3.008 16.665-2.122
+            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
+            45.698 13.148 45.698 32.958 0 14.976-12.363
+            22.667-32.534 33.976C247.128 238.528 216 254.941 216
+            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+            46-46c0-25.365-20.635-46-46-46z"></path>
+        </svg>
+    </td>
+    <td>No semantics conveyed</td>
+</tr>
+<tr>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-ruby-element"><code>ruby</code></a></th>
+    <td> No test </td>
+    <td>Shows pronunciation</td>
+    <td><em>Element content</em></td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
+            256C8 119.083 119.043 8 256 8s248 111.083 248
+            248zM262.655 90c-54.497 0-89.255 22.957-116.549
+            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
+            26.31c5.205 3.947 12.621 3.008 16.665-2.122
+            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
+            45.698 13.148 45.698 32.958 0 14.976-12.363
+            22.667-32.534 33.976C247.128 238.528 216 254.941 216
+            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+            46-46c0-25.365-20.635-46-46-46z"></path>
+        </svg>
+    </td>
+    <td>&nbsp;</td>
+</tr>
+<tr id="toc-s" tabindex="-1">
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-s-element"><code>s</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/s.html"><code>s</code> test</a> </td>
+    <td>Inaccurate text</td>
+    <td>"Deleted" <em>Element content</em></td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-samp-element"><code>samp</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/samp.html"><code>samp</code> test</a> </td>
+    <td>Computer output</td>
+    <td><em>Element content</em></td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
+            256C8 119.083 119.043 8 256 8s248 111.083 248
+            248zM262.655 90c-54.497 0-89.255 22.957-116.549
+            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
+            26.31c5.205 3.947 12.621 3.008 16.665-2.122
+            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
+            45.698 13.148 45.698 32.958 0 14.976-12.363
+            22.667-32.534 33.976C247.128 238.528 216 254.941 216
+            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+            46-46c0-25.365-20.635-46-46-46z"></path>
+        </svg>
+    </td>
+    <td>No semantics conveyed</td>
+</tr>
+<tr>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-script-element"><code>script</code></a></th>
+    <td> No test </td>
+    <td>Embedded script</td>
+    <td><em>None expected</em></td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected">
+            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 
+            48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 
+            296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 
+            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
+        </svg>
+    </td>
+    <td>No UI</td>
 </tr>
 <tr>
 <td><code>&lt;section&gt;</code></td>
