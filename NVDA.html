@@ -19,7 +19,7 @@ fill: red;
 <body>
 <header> <img src="assets/images/HTML5_Logo.png" alt="HTML5 logo" id="logo">
 <h1>NVDA HTML Support</h1>
-<p> A Work <em>in progress</em>: Last updated 21 March 2025. </p>
+<p> A Work <em>in progress</em>: Last updated 07 April 2025. </p>
 <p><strong>Editors:</strong> Steve Faulkner, Gez Lemon </p>
 <p><strong>GitHub Repo:</strong> <a href="https://github.com/TetraLogical/screen-reader-HTML-support">screen-reader-HTML-support</a>
 </p>
@@ -32,7 +32,7 @@ fill: red;
 <path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z" />
 </svg></h1>
 
-<p><strong>Note:</strong> 02 October 2024: The information for NVDA may be incorrect, incomplete and/or contradictory. Until noted otherwise, <strong>do not rely</strong> upon it!</p>
+<p><strong>Note:</strong> 07 April 2025: The information for NVDA may be incorrect, incomplete and/or contradictory. Until noted otherwise, <strong>do not rely</strong> upon it!</p>
 <h2>How HTML elements are supported by screen readers</h2>
 <p> Typical support patterns of HTML elements by screen readers: </p>
 <ul>
@@ -2539,256 +2539,667 @@ this feature is supposed to convey to the user.</li>
     <td>No UI</td>
 </tr>
 <tr>
-<td><code>&lt;section&gt;</code></td>
-<td>Thematic grouping of content</td>
-<td></td>
-<td>Announces "region" if labeled</td>
-<td><code>R</code> to navigate regions</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Acts as a landmark if labeled.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element"><code>section</code></a>
+    </th>
+    <td>
+        <ul>
+            <li><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/section.html"><code>section</code> test</a> </li>
+            <li><a href="https://s.codepen.io/stevef/debug/JyvZLN">region examples</a></li>
+        </ul>
+    </td>
+    <td>Generic document or application section</td>
+    <td>Announces "region" if labelled</td>
+    <td>
+        If labelled, treated as a landmark:
+        <ul>
+            <li>Move to Next Region <kbd>D</kbd></li>
+            <li>Move to Prior Region <kbd>SHIFT+D</kbd></li>
+            <li>List Landmark Regions <kbd>INSERT+F7</kbd></li>
+        </ul>
+    </td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+            </svg>
+    </td>
+    <td>No semantics conveyed unless the section has an accessible name.</td>
 </tr>
 <tr>
-<td><code>&lt;select&gt;</code></td>
-<td>Combo box</td>
-<td></td>
-<td>Announces "combo box"</td>
-<td>Focusable via <code>TAB</code></td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Provides list of options, recognizes <code>optgroup</code>.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element"><code>select</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/select-option.html"><code>select</code> test</a> </td>
+    <td>Combo box</td>
+    <td><em>Accessible name</em> "combo box"</td>
+    <td>
+        <ul>
+            <li>Move To Next Combo Box <kbd>C</kbd></li>
+            <li>Move to Prior Combo Box <kbd>SHIFT+C </kbd></li>
+            <li>List of Form Controls <kbd>INSERT+F7</kbd></li>
+        </ul>
+    </td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>Provides list of options, recognizes <code>optgroup</code>.</td>
 </tr>
 <tr>
-<td><code>&lt;small&gt;</code></td>
-<td>Fine print</td>
-<td></td>
-<td>Reads element content</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> </svg></td>
-<td>No specific emphasis.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-small-element"><code>small</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/small.html"><code>small</code> test</a> </td>
+    <td>Side comment</td>
+    <td><em>Element content</em></td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
+                256C8 119.083 119.043 8 256 8s248 111.083 248
+                248zM262.655 90c-54.497 0-89.255 22.957-116.549
+                63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
+                26.31c5.205 3.947 12.621 3.008 16.665-2.122
+                17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
+                45.698 13.148 45.698 32.958 0 14.976-12.363
+                22.667-32.534 33.976C247.128 238.528 216 254.941 216
+                296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+                12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+                0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+                20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+                46-46c0-25.365-20.635-46-46-46z"></path>
+        </svg>
+    </td>
+    <td>No semantics conveyed</td>
 </tr>
 <tr>
-<td><code>&lt;source&gt;</code></td>
-<td>Media source</td>
-<td></td>
-<td>No aural indication</td>
-<td>No interaction</td>
-<td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> </svg></td>
-<td>Ignored unless selected by a media element.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-source-element"><code>source</code></a></th>
+    <td> No test </td>
+    <td> 
+        Media source for <a href="https://html.spec.whatwg.org/multipage/media.html#the-video-element">video</a> or 
+        <a href="https://html.spec.whatwg.org/multipage/media.html#the-audio-element">audio</a>
+    </td>
+    <td><em>None expected</em></td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>No UI</td>
 </tr>
 <tr>
-<td><code>&lt;span&gt;</code></td>
-<td>Generic inline container</td>
-<td></td>
-<td>Reads element content</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> </svg></td>
-<td>No semantics conveyed unless ARIA roles are added.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-span-element"><code>span</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/span.html"><code>span</code> test</a> </td>
+    <td>Generic phrasing container</td>
+    <td><em>Element content</em></td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected">
+            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 
+            48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 
+            5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
+        </svg>
+    </td>
+    <td>No semantics conveyed</td>
 </tr>
 <tr>
-<td><code>&lt;strong&gt;</code></td>
-<td>Strong importance</td>
-<td></td>
-<td>Reads with emphasis</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Uses a different voice inflection.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-strong-element"><code>strong</code></a> </th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/strong.html"><code>strong</code> test</a> </td>
+    <td>Importance</td>
+    <td><em>Element content</em></td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
+            256C8 119.083 119.043 8 256 8s248 111.083 248
+            248zM262.655 90c-54.497 0-89.255 22.957-116.549
+            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
+            26.31c5.205 3.947 12.621 3.008 16.665-2.122
+            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
+            45.698 13.148 45.698 32.958 0 14.976-12.363
+            22.667-32.534 33.976C247.128 238.528 216 254.941 216
+            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+            46-46c0-25.365-20.635-46-46-46z"></path>
+        </svg>
+    </td>
+    <td>No semantics conveyed</td>
 </tr>
 <tr>
-<td><code>&lt;style&gt;</code></td>
-<td>Embedded stylesheet</td>
-<td></td>
-<td>No aural indication</td>
-<td>No interaction</td>
-<td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> </svg></td>
-<td>Ignored by screen readers.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/semantics.htmlthe-style-element"><code>style</code></a></th>
+    <td> No test </td>
+    <td>Embedded styling information</td>
+    <td><em>None expected</em></td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected">
+            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 
+            48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 
+            5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
+        </svg>
+    </td>
+    <td>No UI</td>
 </tr>
 <tr>
-<td><code>&lt;sub&gt;</code></td>
-<td>Subscript text</td>
-<td></td>
-<td>Reads element content</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Recognizes subscript placement.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-sub-and-sup-elements"><code>sub</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/sub-sup.html"><code>sub</code> test</a> </td>
+    <td>Subscript</td>
+    <td><em>Element content</em></td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
+            256C8 119.083 119.043 8 256 8s248 111.083 248
+            248zM262.655 90c-54.497 0-89.255 22.957-116.549
+            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
+            26.31c5.205 3.947 12.621 3.008 16.665-2.122
+            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
+            45.698 13.148 45.698 32.958 0 14.976-12.363
+            22.667-32.534 33.976C247.128 238.528 216 254.941 216
+            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+            46-46c0-25.365-20.635-46-46-46z"></path>
+        </svg>
+    </td>
+    <td>No semantics conveyed</td>
 </tr>
 <tr>
-<td><code>&lt;summary&gt;</code></td>
-<td>Summary for <code>&lt;details&gt;</code></td>
-<td></td>
-<td>Announces "summary"</td>
-<td>Focusable via <code>TAB</code></td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Acts as a trigger for expanding/collapsing <code>&lt;details&gt;</code>.</td>
+    <th scope="row" id="el-summary"> 
+        <a href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-summary-element"> <code>summary</code> </a> 
+    </th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/details-summary.html"><code>summary</code> test</a> </td>
+    <td>disclosure widget control/label</td>
+    <td><em>Label text</em> "button" expanded/collapsed</td>
+    <td>
+        <ul>
+            <li>List Buttons <kbd>INSERT+F7</kbd></li>
+            <li>Next Button <kbd>B</kbd></li>
+            <li>Prior button <kbd>B</kbd></li>
+        </ul>
+    </td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+        <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+        21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+        26.51-21.49 48-48
+        48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+        0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+        0L184
+        302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+        0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+        22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>Serves as a trigger for expanding/collapsing <code>&lt;details&gt;</code> section.</td>
 </tr>
 <tr>
-<td><code>&lt;sup&gt;</code></td>
-<td>Superscript text</td>
-<td></td>
-<td>Reads element content</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Recognizes superscript placement.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-sub-and-sup-elements"><code>sup</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/sub-sup.html"><code>sup</code> test</a> </td>
+    <td>Superscript</td>
+    <td><em>Element content</em></td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
+            256C8 119.083 119.043 8 256 8s248 111.083 248
+            248zM262.655 90c-54.497 0-89.255 22.957-116.549
+            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
+            26.31c5.205 3.947 12.621 3.008 16.665-2.122
+            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
+            45.698 13.148 45.698 32.958 0 14.976-12.363
+            22.667-32.534 33.976C247.128 238.528 216 254.941 216
+            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+            46-46c0-25.365-20.635-46-46-46z"></path>
+        </svg>
+    </td>
+    <td>No semantics conveyed</td>
 </tr>
 <tr>
-<td><code>&lt;svg&gt;</code></td>
-<td>Scalable vector graphic</td>
-<td></td>
-<td>Announces "graphic" if labeled</td>
-<td>Focusable via <code>TAB</code></td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Recognizes alternative content if present.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/embedded-content-other.html#svg-0"><code>svg</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/svg.html"><code>svg</code> test</a> </td>
+    <td>Scalable Vector Graphics</td>
+    <td><em>Accessible name</em> "Graphic" if labelled</td>
+    <td>
+        In Chrome or Firefox with <code>role="img"</code>:
+        <ul>
+            <li>Next Graphic <kbd>G</kbd></li>
+            <li>Previous Graphic <kbd>SHIFT+G</kbd></li>
+        </ul>
+    </td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
+            256C8 119.083 119.043 8 256 8s248 111.083 248
+            248zM262.655 90c-54.497 0-89.255 22.957-116.549
+            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
+            26.31c5.205 3.947 12.621 3.008 16.665-2.122
+            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
+            45.698 13.148 45.698 32.958 0 14.976-12.363
+            22.667-32.534 33.976C247.128 238.528 216 254.941 216
+            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+            46-46c0-25.365-20.635-46-46-46z"></path>
+        </svg>
+    </td>
+    <td>The <code>&lt;svg&gt;</code> element is ignored in Firefox, unless it has <code>role="img"</code> and labelled.</td>
+</tr>
+<tr id="toc-t">
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/tables.html#the-table-element"> <code>table</code> </a> </th>
+    <td>
+        <ul> 
+            <li><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/table-caption-thead-tbody-tfoot-tr-th-td.html"><code>table</code>
+    test</a> </li>
+            <li> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/tables-complex.html">complex <code>table</code> test</a> </li>
+        </ul>
+    </td>
+    <td>Data table</td>
+    <td>Announced as, "table with X rows and Y columns"</td>
+    <td>
+        <ul>
+            <li>Next Table <kbd>T </kbd></li>
+            <li>Prior Table <kbd>SHIFT+T</kbd></li>
+        </ul>
+    </td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>&nbsp;</td>
 </tr>
 <tr>
-<td><code>&lt;table&gt;</code></td>
-<td>Data table</td>
-<td></td>
-<td>Announces "table with X rows and Y columns"</td>
-<td><code>T</code> to navigate to tables</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Reads headers and cell content.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/tables.html#the-tbody-element"><code>tbody</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/table-caption-thead-tbody-tfoot-tr-th-td.html"><code>tbody</code> test</a> </td>
+    <td>Group of rows in a data table</td>
+    <td><em>Element content</em></td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected">
+            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 
+            48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 
+            5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
+        </svg>
+    </td>
+    <td>No semantics conveyed</td>
 </tr>
 <tr>
-<td><code>&lt;tbody&gt;</code></td>
-<td>Table body</td>
-<td></td>
-<td>Reads cell content</td>
-<td>Part of table navigation</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Recognized as part of table structure.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/tables.html#the-td-element"><code>td</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/table-caption-thead-tbody-tfoot-tr-th-td.html"><code>td</code> test</a> </td>
+    <td>Data cell in a data table</td>
+    <td>Announces <em>Cell content</em></td>
+    <td>
+        <ul>
+            <li>Move to and Read Next Cell <kbd>CTRL+ALT+RIGHT ARROW</kbd></li>
+            <li>Move to and Read Prior Cell <kbd>CTRL+ALT+LEFT ARROW</kbd></li>
+            <li>Move to and Read Cell Above <kbd>CTRL+ALT+UP ARROW</kbd></li>
+            <li>Move to and Read Cell Below <kbd>CTRL+ALT+DOWN ARROW</kbd></li>
+        </ul>
+    </td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>Announces corresponding header if programmatically associated.</td>
 </tr>
 <tr>
-<td><code>&lt;td&gt;</code></td>
-<td>Table cell</td>
-<td></td>
-<td>Reads cell content</td>
-<td>Part of table navigation</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Announces header association if present.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-template-element"><code>template</code></a></th>
+    <td> No test </td>
+    <td>Template</td>
+    <td><em>None expected</em></td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected">
+            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 
+            48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 
+            5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
+        </svg>
+    </td>
+    <td>No UI</td>
 </tr>
 <tr>
-<td><code>&lt;template&gt;</code></td>
-<td>Client-side template</td>
-<td></td>
-<td>No aural indication</td>
-<td>No interaction</td>
-<td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> </svg></td>
-<td>Ignored by screen readers.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/rendering.html#the-textarea-element-2"><code>textarea</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/textarea.html"><code>textarea</code> test</a> </td>
+    <td>Multiline text field</td>
+    <td><em>Accessible name</em> "edit", followed by the value if there is any text in the edit field</td>
+    <td>
+        <ul>
+            <li>List Form Controls <kbd>INSERT+F7</kbd></li>
+            <li>Move To Next Edit Box <kbd>E</kbd></li>
+            <li>Move to Prior Edit Box <kbd>SHIFT+E</kbd></li>
+        </ul>
+    </td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>&nbsp;</td>
 </tr>
 <tr>
-<td><code>&lt;textarea&gt;</code></td>
-<td>Multiline text input</td>
-<td></td>
-<td>Announces "edit" + label</td>
-<td>Focusable via <code>TAB</code></td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Reads entered text and updates.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/tables.html#the-tfoot-element"><code>tfoot</code></a></th>
+    <td> 
+        <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/table-caption-thead-tbody-tfoot-tr-th-td.html"><code>tfoot</code>
+    test</a> 
+    </td>
+    <td>Group of footer rows in a data table</td>
+    <td>&nbsp;</td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
+            256C8 119.083 119.043 8 256 8s248 111.083 248
+            248zM262.655 90c-54.497 0-89.255 22.957-116.549
+            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
+            26.31c5.205 3.947 12.621 3.008 16.665-2.122
+            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
+            45.698 13.148 45.698 32.958 0 14.976-12.363
+            22.667-32.534 33.976C247.128 238.528 216 254.941 216
+            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+            46-46c0-25.365-20.635-46-46-46z"></path>
+        </svg>
+    </td>
+    <td>No semantics conveyed</td>
 </tr>
 <tr>
-<td><code>&lt;tfoot&gt;</code></td>
-<td>Table footer</td>
-<td></td>
-<td>Reads cell content</td>
-<td>Part of table navigation</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Included in table reading order.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/tables.html#the-th-element"><code>th</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/table-caption-thead-tbody-tfoot-tr-th-td.html"><code>th</code> test</a> </td>
+    <td>Header cell in a data table</td>
+    <td><em>Element content</em></td>
+    <td>No special command. Reachable using standard table cell reading keystrokes.</td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>&nbsp;</td>
 </tr>
 <tr>
-<td><code>&lt;th&gt;</code></td>
-<td>Table header cell</td>
-<td></td>
-<td>Announces "column/row header"</td>
-<td>Part of table navigation</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Recognized as a header.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/tables.html#the-thead-element"><code>thead</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/table-caption-thead-tbody-tfoot-tr-th-td.html"><code>thead</code> test</a> </td>
+    <td>Group of header rows in a data table</td>
+    <td><em>Element content</em></td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
+            <path d="M464 32H48C21.5 32 0
+            53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
+            48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
+            12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
+            313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
+            0l-40.5-40.5c-4.8-4.8-4.8-12.6
+            0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
+            0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
+            66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
+            4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path>
+        </svg>
+    </td>
+    <td>No semantics conveyed</td>
 </tr>
 <tr>
-<td><code>&lt;thead&gt;</code></td>
-<td>Table header</td>
-<td></td>
-<td>Reads cell content</td>
-<td>Part of table navigation</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Included in table reading order.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-time-element"><code>time</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/time.html"><code>time</code> test</a> </td>
+    <td>Machine-readable equivalent of date- or time-related data</td>
+    <td><em>Element content</em></td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
+            <path d="M464 32H48C21.5 32 0
+            53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
+            48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
+            12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
+            313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
+            0l-40.5-40.5c-4.8-4.8-4.8-12.6
+            0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
+            0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
+            66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
+            4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path>
+        </svg>
+    </td>
+    <td>No semantics conveyed</td>
 </tr>
 <tr>
-<td><code>&lt;time&gt;</code></td>
-<td>Date or time</td>
-<td></td>
-<td>Reads element content</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Recognizes time if formatted correctly.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/semantics.htmlthe-title-element"><code>title</code></a></th>
+    <td> No test </td>
+    <td>Document title</td>
+    <td><em>Element content</em></td>
+    <td>Read Window Title <kbd>INSERT+T</kbd></td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>Semantics conveyed via navigation and announcement key stroke.</td>
 </tr>
 <tr>
-<td><code>&lt;title&gt;</code></td>
-<td>Document title</td>
-<td></td>
-<td>Announces when the page loads</td>
-<td>No interaction</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Read when the document loads or <code>ALT+TAB</code> switching.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/tables.html#the-tr-element"><code>tr</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/table-caption-thead-tbody-tfoot-tr-th-td.html"><code>tr</code> test</a> </td>
+    <td>Data table row</td>
+    <td>&nbsp;</td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>&nbsp;</td>
 </tr>
 <tr>
-<td><code>&lt;tr&gt;</code></td>
-<td>Table row</td>
-<td></td>
-<td>Reads row content</td>
-<td>Part of table navigation</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Recognized as part of the table structure.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/media.html#the-track-element"><code>track</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/video.html"><code>track</code> test</a> </td>
+    <td>Timed text track</td>
+    <td><em>Caption display control</em></td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
+            256C8 119.083 119.043 8 256 8s248 111.083 248
+            248zM262.655 90c-54.497 0-89.255 22.957-116.549
+            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
+            26.31c5.205 3.947 12.621 3.008 16.665-2.122
+            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
+            45.698 13.148 45.698 32.958 0 14.976-12.363
+            22.667-32.534 33.976C247.128 238.528 216 254.941 216
+            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+            46-46c0-25.365-20.635-46-46-46z"></path>
+        </svg>
+    </td>
+    <td>&nbsp;</td>
+</tr>
+<tr id="toc-u">
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-u-element"><code>u</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/u.html"><code>u</code> test</a> </td>
+    <td>Underlined text</td>
+    <td><em>Element content</em></td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
+            <path d="M464 32H48C21.5 32 0
+            53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
+            48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
+            12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
+            313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
+            0l-40.5-40.5c-4.8-4.8-4.8-12.6
+            0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
+            0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
+            66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
+            4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path>
+        </svg>
+    </td>
+    <td>No semantics conveyed</td>
 </tr>
 <tr>
-<td><code>&lt;track&gt;</code></td>
-<td>Text track for media</td>
-<td></td>
-<td>No aural indication</td>
-<td>No interaction</td>
-<td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> </svg></td>
-<td>Ignored unless used for captions/subtitles.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ul-element"><code>ul</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/ul-li.html"><code>ul</code> test</a> </td>
+    <td>Unordered List</td>
+    <td>List with <em>n</em> items</td>
+    <td>
+        <ul>
+            <li>Next List <kbd>L</kbd></li>
+            <li>Prior List <kbd>SHIFT+L</kbd></li>
+        </ul>
+    </td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>&nbsp;</td>
+</tr>
+<tr id="toc-v">
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-var-element"><code>var</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/var.html"><code>var</code> test</a> </td>
+    <td>Represents a variable</td>
+    <td><em>Element content</em></td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
+            <path d="M464 32H48C21.5 32 0
+                53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
+                48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
+                12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
+                313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
+                0l-40.5-40.5c-4.8-4.8-4.8-12.6
+                0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
+                0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
+                66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
+                4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path>
+        </svg>
+    </td>
+    <td>No semantics conveyed</td>
 </tr>
 <tr>
-<td><code>&lt;u&gt;</code></td>
-<td>Underlined text</td>
-<td></td>
-<td>Reads element content</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> </svg></td>
-<td>No specific indication for underline.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/media.html#the-video-element"><code>video</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/video.html"><code>video</code> test</a> </td>
+    <td>Video Player</td>
+    <td>Announces individual controls</td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
+            256C8 119.083 119.043 8 256 8s248 111.083 248
+            248zM262.655 90c-54.497 0-89.255 22.957-116.549
+            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
+            26.31c5.205 3.947 12.621 3.008 16.665-2.122
+            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
+            45.698 13.148 45.698 32.958 0 14.976-12.363
+            22.667-32.534 33.976C247.128 238.528 216 254.941 216
+            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+            46-46c0-25.365-20.635-46-46-46z"></path>
+        </svg>
+    </td>
+    <td>&nbsp;</td>
 </tr>
-<tr>
-<td><code>&lt;ul&gt;</code></td>
-<td>Unordered list</td>
-<td></td>
-<td>Announces "list with X items"</td>
-<td>Accessible via <code>L</code></td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Recognizes list structure.</td>
-</tr>
-<tr>
-<td><code>&lt;var&gt;</code></td>
-<td>Variable</td>
-<td></td>
-<td>Reads element content</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> </svg></td>
-<td>No specific semantics.</td>
-</tr>
-<tr>    
-<td><code>&lt;video&gt;</code></td>
-<td>Video player</td>
-<td></td>
-<td>Announces "video" if controls are present</td>
-<td>Focusable via <code>TAB</code></td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Recognizes controls and captions...</td>
-</tr>
-<tr>
-<td><code>&lt;wbr&gt;</code></td>
-<td>Word break opportunity</td>
-<td></td>
-<td>Reads content uninterrupted</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> </svg></td>
-<td>Ignored by screen readers.</td>
+<tr id="toc-w">
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-wbr-element"><code>wbr</code></a></th>
+    <td> No test </td>
+    <td>Line breaking opportunity</td>
+    <td><em>None expected</em></td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected">
+            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 
+            48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 
+            296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 
+            5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path>
+        </svg>
+    </td>
+    <td>No UI</td>
 </tr>
 </tbody>
 </table>
