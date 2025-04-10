@@ -19,8 +19,8 @@ svg.unknown {
 fill: red;
 }
 
-
-
+caption {text-align: left;caption-side:top;font-weight:bold}
+th[scope="row"],td {vertical-align: top;}	
 body {background-color:white}
 </style>
 </head>
@@ -42,7 +42,7 @@ body {background-color:white}
   </div>
 </header><div class="region wrapper prose flow">
 <h1>NVDA HTML Support</h1>
-<p> A Work <em>in progress</em>: Last updated 07 April 2025. </p>
+<p> A Work <em>in progress</em>: Last updated 10 April 2025. </p>
 <p><strong>Editors:</strong> Steve Faulkner, Gez Lemon </p>
 <p><strong>GitHub Repo:</strong> <a href="https://github.com/TetraLogical/screen-reader-HTML-support">screen-reader-HTML-support</a>
 </p>
@@ -254,7 +254,7 @@ this feature is supposed to convey to the user.</li>
     as a <code>group</code> - accessible name grouping, followed by the content.</td>
 </tr>
 <tr>
-    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element"><code>area</code></a>
+    <th height="184" scope="row"> <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element"><code>area</code></a>
     </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/area.html"><code>area</code>
     test</a> </td>
@@ -293,7 +293,7 @@ this feature is supposed to convey to the user.</li>
 </tr>
 <tr>
     <th scope="row"> <a href="https://www.w3.org/TR/wai-aria/#aria-level"><code>aria-level</code></a> </th>
-    <td> No test</td>
+    <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/h7-h10.html">h7-h10 (role="heading"+aria-level=7-10)</a></td>
     <td>Hierarchical level of an element in a structure</td>
     <td>Announced as "level" followed by the level number specified</td>
     <td>No special interaction</td>
@@ -703,7 +703,7 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td> &nbsp; </td>
+    <td>&nbsp;  </td>
 </tr>    
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dd-element"><code>dd</code></a></th>
