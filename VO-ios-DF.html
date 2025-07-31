@@ -706,7 +706,7 @@ When rotor set to Tables, single finger swipe up or down, moves to next/previous
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-dialog-element"><code>dialog</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dialog.html">dialog test</a> </td>
     <td>Modal dialog</td>
-    <td>On button that invokes a dialog: announces button text, pop up button, popup dialog
+    <td>On button that invokes a dialog: announces button text, pop up button, dialog popup
 
 On dialog: anounces "web dialog", accessible name reads auto focused control on dialog</td>
     <td>Focus moves to dialog on open</td>
@@ -740,7 +740,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
         </svg>
     </td>
-    <td></td>
+    <td>No semantics conveyed</td>
 </tr>
 <tr>
     <th scope="row"><a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dl-element"><code>dl</code></a></th>
@@ -796,7 +796,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-em-element"><code>em</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/em.html"><code>em</code> test</a> </td>
     <td>Stress emphasis</td>
-    <td><em>Element content</em></td>
+    <td>Element content</td>
     <td>No special commands</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
@@ -817,15 +817,10 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/embed.html"><code>embed</code> test</a> </td>
     <td> <a href="https://html.spec.whatwg.org/multipage/infrastructure.html#plugins">Plugins</a></td>
     <td>
-        If recognised as a frame, announced as "Frame" followed by the accessible name if provided using the <code>title</code> 
-        attribute. No indication of the element if not recognised as a frame.
+        Element content
     </td>
     <td>
-        If recognised as a frame:
-        <ul>
-            <li>Next Frame <kbd>M</kbd></li>
-            <li>Prior Frame <kbd>SHIFT+M</kbd></li>
-        </ul>
+       No special interactions
     </td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
@@ -846,10 +841,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
         </svg>    
     </td>
     <td>
-        Firefox exposes the <code>&lt;embed&gt;</code> element as a frame. Chrome sometimes exposes the <code>&lt;embed&gt;</code> 
-        element as a frame, depending on the content. Depending on the content type, embedding content using <code>&lt;img&gt;</code>, 
-        <code>&lt;video&gt;</code>, <code>&lt;audio&gt;</code>, or <code>&lt;iframe&gt;</code> elements is preferable over the 
-        <code>&lt;embed&gt;</code> element.
+        
     </td>
 </tr>
 <tr id="toc-f" tabindex="-1">
@@ -883,7 +875,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figcaption-element"><code>figcaption</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/figure-figcaption.html"><code>figcaption</code> test</a> </td>
     <td> Caption for <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element">figure</a></td>
-    <td>Announced as, "Figure caption" <em>Element content</em></td>
+    <td>Element content</td>
     <td>No special commands</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -904,7 +896,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element"><code>figure</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/figure.html"><code>figure</code> test</a> </td>
     <td>Figure with optional caption</td>
-    <td> Announced as "Figure" if the element has an accessible name or contains a <code>&lt;figcaption&gt;</code> element.</td>
+    <td>VoiceOver announces the content of the <figure> element based on what's inside it. For example, if the <code>figure</code> element wraps around an image, VoiceOver will read the image along with its accessible name, typically provided via the alt attribute.</td>
     <td>No special commands</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -925,13 +917,9 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/sections.html#the-footer-element"><code>footer</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/footer.html"><code>footer</code> test</a> </td>
     <td>Footer for a page or section</td>
-    <td>"Content info landmark" <em>element content</em></td>
+    <td>"Content info landmark" element content</td>
     <td>
-        <ul>
-            <li>Move to Next Region <kbd>D</kbd></li>
-            <li>Move to Prior Region <kbd>SHIFT+D</kbd></li>
-            <li>List Landmark Regions <kbd>INSERT+F7</kbd></li>
-        </ul>
+        No special interactions
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -952,15 +940,9 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-form-element"><code>form</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/form.html"><code>form</code> test</a> </td>
     <td>User-submittable form</td>
-    <td>With accessible name announced as <em>accessible name</em>, form, element content</td>
+    <td><code>form</code> is not announced, only the first field and element content</td>
     <td>
-        <p>Without accessible name: ignored.</p>
-        <p>With accessible name:</p>
-        <ul>
-            <li>Move to Next Region <kbd>D</kbd></li>
-            <li>Move to Prior Region <kbd>SHIFT+D</kbd> </li>
-            <li>List Landmark Regions <kbd>INSERT+F7</kbd></li>
-        </ul>
+        No special instructions
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -975,7 +957,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>No semantics conveyed unless <code>form</code> has an accessible name, then exposed as a landmark.</td>
+    <td>No semantics conveyed</td>
 </tr>
 <tr id="toc-h" tabindex="-1">
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/sections.html#the-h1-h2-h3-h4-h5-and-h6-elements"><code>h1 - h6</code></a></th>
@@ -983,13 +965,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td>Section heading</td>
     <td>Announced as, <em>heading content</em> "heading, level" 1 to 6</td>
     <td>
-        <ul>
-            <li>List all headings <kbd>INSERT+F7</kbd></li>
-            <li>Next Heading <kbd>H</kbd></li>
-            <li>Prior Heading <kbd>SHIFT+H</kbd></li>
-            <li>Next Heading at Level - number keys <kbd>1</kbd> through <kbd>6</kbd></li>
-            <li>Prior Heading at Level <kbd>SHIFT+1</kbd> through <kbd>6</kbd></li>
-        </ul>
+       No special commands
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1027,13 +1003,9 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/sections.html#the-header-element"><code>header</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/header.html"><code>header</code> test</a> </td>
     <td>Introductory or navigational aids for a page or section</td>
-    <td>"Banner landmark" <em>element content</em></td>
+    <td>Announced as element content, "Banner landmark"</td>
     <td>
-        <ul>
-            <li>Move to Next Region <kbd>D</kbd></li>
-            <li>Move to Prior Region <kbd>SHIFT+D</kbd></li>
-            <li>List Landmark Regions <kbd>INSERT+F7</kbd></li>
-        </ul>
+        No special instruction
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1054,7 +1026,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-hr-element"><code>hr</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/hr.html"><code>hr</code> test</a> </td>
     <td>Thematic break</td>
-    <td>Announced as, "Separator"</td>
+    <td>Announced as, "Separator, dimmed"</td>
     <td>No special command</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1069,7 +1041,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>Provides a clear aural indication.</td>
+    <td>If an accessible name is provided, the element is announced as "Seperator, accessible name, dimmer"</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-html-element"><code>html</code></a></th>
