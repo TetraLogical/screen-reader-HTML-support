@@ -125,7 +125,7 @@ this feature is supposed to convey to the user.</li>
 </ul>
 <div class="table-wrapper" role="region" aria-label="Table" tabindex="0">
 <table>
-<caption> NVDA (2024 ) HTML Support - Chrome Version 129.0.6668.90 (Official Build) (64-bit) </caption>
+<caption> VoiceOver on iOS (2024) HTML Support - <del>Chrome Version 129.0.6668.90 (Official Build) (64-bit)</del> </caption>
 <thead>
 <tr>
     <th>Element</th>
@@ -141,19 +141,13 @@ this feature is supposed to convey to the user.</li>
 <tr id="toc-a" tabindex="-1">
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element"><code>a</code></a></th>
     <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/a-href.html"><code>a</code> with <code>href</code> test</a></td>
-    <td>A hyperlink</td>
-    <td><em>Element content</em> + "link"</td>
+    <td>Link with an href</td>
+    <td>Announces "link" + link text</td>
     <td>
         <ul>
-            <li>List Links <kbd>INSERT+F7</kbd></li>
-            <li>Next Link <code><kbd>K</kbd></code></li>
-            <li>Prior Link <kbd>SHIFT+K</kbd></li>
-            <li>Next Visited <kbd>V</kbd></li>
-            <li>Prior Visited Link <kbd>SHIFT+V</kbd></li>
-            <li>Next Unvisited Link<kbd>U</kbd></li>
-            <li>Prior Unvisited Link<kbd>SHIFT+U</kbd></li>
-            <li>Open Link <kbd>ENTER</kbd></li>
-            <li>Open Link in New Window <kbd>SHIFT+ENTER</kbd></li>
+            <li>Swipe left/right, double-tap to activate</li>
+            <li>Rotor navigation to links, announces number of links</li>
+            <li>single finger swipe up/down to navigate when selected in rotor</li>
         </ul>
     </td>
     <td>
@@ -169,23 +163,10 @@ this feature is supposed to convey to the user.</li>
         104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg>
     </td>
     <td>
-        <p>Link role announced before link text when cursored to, after via tab. </p>
-        <p>NVDA announces the type of link as follows:</p>
-        <ul>
-            <li><strong>Link:</strong> This indicates a link that has not been visited.</li>
-            <li><strong>Visited Link:</strong> This indicates a link that has been visited. This is determined by your browser history, not by which links have been selected
-            on the current Web page.</li>
-        </ul>
+<p>Recognizes visited/unvisited state of links.</p>
+
+<p>Link number announced by rotor is incorrect as VO announces parts of a link text as seperate links. On the link <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/a-href.html">test page</a> there are 3 links, but VO reports as 9 links.</p>
     </td>
-</tr>
-<tr>
-    <th scope="row"><a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element"><code>a</code></a> without <code>href</code></th>
-    <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/a-no-href.html"><code>a</code> with no <code>href</code> test</a></td>
-    <td>An anchor</td>
-    <td>Announces as plain text</td>
-    <td>No special commands</td>
-    <td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> </svg></td>
-    <td>Treated as regular text without any link functionality.</td>
 </tr>
 <tr>
         <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element"><code>abbr</code></a>
@@ -193,9 +174,9 @@ this feature is supposed to convey to the user.</li>
         <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/abbr.html"><code>abbr</code>
         test</a> </td>
         <td>An abbreviation</td>
-        <td><em>Element content</em></td>
+        <td>Reads text only, not title</td>
         <td>
-        <p>No special commands</p>
+        <p>No special interaction</p>
         </td>
         <td>
             <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><path d="M464 32H48C21.5 32 0
@@ -210,9 +191,7 @@ this feature is supposed to convey to the user.</li>
                 12.6 0 17.4L313.3 256l67.1 66.5z"></path></svg>
         </td>
         <td>
-        <p>No semantics conveyed by default</p>
-        <p>Note that expansions are not announced by NVDA and that expansions provided using the <code>title</code> attribute are not available to keyboard only users.
-        Refer to <a href="https://www.paciellogroup.com/blog/2013/01/using-the-html-title-attribute-updated/">Using the HTML title attribute</a>.</p>
+        <p>No additional semantics conveyed if title is present.</p>
         </td>
     </tr>
 <tr>
@@ -220,13 +199,10 @@ this feature is supposed to convey to the user.</li>
     </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/address.html"><code>address</code>
     test</a> </td>
-    <td>Contact information for a page or <a href="https://html.spec.whatwg.org/multipage/sections.html#the-article-element">article</a>
-    element</td>
-    <td><em>Element content</em> when no accessible name
-    present. </td>
-    <td>No special commands</td>
+    <td>Contact information</td>
+    <td>Reads text only</td>
+    <td>No special interaction</td>
     <td>
-    <p>no accessible name
     <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><path d="M464 32H48C21.5 32
     0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0
     48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6
@@ -236,47 +212,22 @@ this feature is supposed to convey to the user.</li>
     0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
     0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
     66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
-    4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path></svg></p>
-    <p>With accessible name
-    <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-    <path d="M400 480H48c-26.51
-    0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51
-    0 48 21.49 48 48v352c0 26.51-21.49 48-48
-    48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-    0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-    
-    
-    0L184
-    302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-    0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-    22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg></p>
+    4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path></svg>
+
     </td>
-    <td>With accessible name <code>address</code> is announced
-    as a <code>group</code> - accessible name grouping, followed by the content.</td>
+    <td>No additional semantics conveyed</td>
 </tr>
 <tr>
     <th height="184" scope="row"> <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element"><code>area</code></a>
     </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/area.html"><code>area</code>
     test</a> </td>
-    <td>Hyperlink or dead area on an image map</td>
+    <td>Interactive area within an image map</td>
     <td>
-    <p><em>alt content</em>, "graphic link" (when navigated using the <kbd>arrow</kbd> keys).</p>
-    <p><em>alt content</em>, "graphic" (when navigated using the <kbd>TAB</kbd> key  or the link navigation keys).</p>
+        Announces alt text + "link"
     </td>
     <td>
-        <ul>
-            <li>List Links <kbd>INSERT+F7</kbd></li>
-            <li>Next Link <code><kbd>K</kbd></code></li>
-            <li>Prior Link <kbd>SHIFT+K</kbd></li>
-            <li>Next Visited <kbd>V</kbd></li>
-            <li>Prior Visited Link <kbd>SHIFT+V</kbd></li>
-            <li>Next Unvisited Link<kbd>U</kbd></li>
-            <li>Prior Unvisited Link<kbd>SHIFT+U</kbd></li>
-            <li>Open Link <kbd>ENTER</kbd></li>
-            <li>Open Link in New Window <kbd>SHIFT+ENTER</kbd></li>
-        </ul>
+        Swipe left/right to navigate
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -291,28 +242,7 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>Although area elements are links, they are not conveyed as links aurally when navigated to using the <kbd>TAB</kbd> key.</td>
-</tr>
-<tr>
-    <th scope="row"> <a href="https://www.w3.org/TR/wai-aria/#aria-level"><code>aria-level</code></a> </th>
-    <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/h7-h10.html">h7-h10 (role="heading"+aria-level=7-10)</a></td>
-    <td>Hierarchical level of an element in a structure</td>
-    <td>Announced as "level" followed by the level number specified</td>
-    <td>No special interaction</td>
-    <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
-    </td>
-    <td>Recognized as a hierarchical level</td>
+    <td>Requires alt for accessibility.</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/sections.html#the-article-element"><code>article</code></a>
@@ -320,33 +250,30 @@ this feature is supposed to convey to the user.</li>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/article.html"><code>article</code>
     test</a> </td>
     <td>Self-contained syndicatable or reusable composition</td>
-    <td><em>Element content</em></td>
-    <td>No special interaction</td>
+    <td>Reads text only, does not announce article</td>
+    <td>Rotor to 'articles' Swipe down with one finger to navigate by article</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><path d="M464 32H48C21.5 32 0
-            53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
-            12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
-            313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
-            0l-40.5-40.5c-4.8-4.8-4.8-12.6
-            0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-            0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-            66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8
-            12.6 0 17.4L313.3 256l67.1 66.5z"></path></svg>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
     </td>
-    <td>No semantics conveyed</td>
+    <td>No additional semantics conveyed. Documentation states that swipe one finger up should naviagte back through articles, but does not appear to work. article does support aria-describedby and announces "Description..." after visible text.</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element"><code>aside</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/aside.html"><code>aside</code> test</a> </td>
     <td>Sidebar for tangentially related content</td>
-    <td> "Complimentary information" <em>element content</em> "complimentary information end" </td>
+    <td> Announces "complementary" </td>
     <td>
-        <ul>
-            <li>Move to Next Region <kbd>D</kbd></li>
-            <li>Move to Prior Region <kbd>SHIFT+D</kbd></li>
-            <li>List Landmark Regions <kbd>INSERT+F7</kbd></li>
-        </ul>
+        Rotor to 'landmarks' announces number of landmarks.
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -361,14 +288,14 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>Recognized as a landmark region</td>
+    <td>Recognized as complementary region.</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/media.html#the-audio-element"><code>audio</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/audio.html"><code>audio</code> test</a> </td>
-    <td>Audio player</td>
-    <td>The accessible name is announced if provided. Does not announce audio.</td>
-    <td> If the audio element has a <code>controls</code> attribute the buttons in the UI are navigable using <a href="#button-commands">button</a> commands.</td>
+    <td>Audio content with controls</td>
+    <td>Announces "audio"</td>
+    <td>Double-tap to play/pause. Swipe up down with one finger to operate the time scrubber.</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
@@ -382,14 +309,14 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>Buttons in the audio player are accessible.</td>
+    <td>Accessible buttons available in the player. The time scrubber operation is flaky when VoiceOver is enabled.</td>
 </tr>
 <tr id="toc-b" tabindex="-1">
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-b-element"><code>b</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/b.html"><code>b</code> test</a> </td>
-    <td>Keywords</td>
-    <td><em>Element content</em></td>
-    <td>No special commands</td>
+    <td>Text bolded for utilitarian purposes</td>
+    <td>Reads content as normal text</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
             <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
@@ -399,17 +326,15 @@ this feature is supposed to convey to the user.</li>
             12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
         </svg>
     </td>
-    <td>Refer to: <a href="https://www.tpgi.com/screen-readers-support-for-text-level-html-semantics/">Screen Readers support for text level HTML semantics</a></td>
+    <td>No specific emphasis expected.</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/semantics.htmlthe-base-element"><code>base</code></a></th>
     <td> No test </td>
-    <td> Base URL and default target <a href="https://html.spec.whatwg.org/multipage/document-sequences.html#browsing-context">browsing context</a> for 
-        <a data-anolis-xref="attr-hyperlink-target" href="https://html.spec.whatwg.org/multipage/links.html#hyperlink">hyperlinks</a> and 
-        <a data-anolis-xref="attr-fs-target" href="https://html.spec.whatwg.org/multipage/form-elements.html#forms-form-submission">forms</a>
+    <td> Base URL for relative links
     </td>
-    <td><em>None expected</em></td>
-    <td>No special commands</td>
+    <td>No aural feedback</td>
+    <td>Not interactive</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
             <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
@@ -419,14 +344,14 @@ this feature is supposed to convey to the user.</li>
             12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
         </svg>
     </td>
-    <td><strong>No UI</strong></td>
+    <td>Typically ignored by VoiceOver.</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element"><code>bdi</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/bdi.html"><code>bdi</code> test</a> </td>
-    <td>Text directionality isolation</td>
-    <td><em>Element content</em></td>
-    <td>No special commands</td>
+    <td>Isolates a span of text</td>
+    <td>Reads content as normal text</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
             <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
@@ -436,14 +361,14 @@ this feature is supposed to convey to the user.</li>
             12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
         </svg>
     </td>
-    <td>No semantics conveyed</td>
+    <td>No aural impact; structure-only element.</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdo-element"><code>bdo</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/bdo.html"><code>bdo</code> test</a> </td>
-    <td>Text directionality formatting</td>
-    <td><em>Element content</em></td>
-    <td>No special commands</td>
+    <td>Overrides the current text direction</td>
+    <td>Reads content as normal text</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
             <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
@@ -453,18 +378,14 @@ this feature is supposed to convey to the user.</li>
             12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
         </svg>
     </td>
-    <td>No semantics conveyed</td>
+    <td>No special semantics conveyed. Reads text correctly regardless of direction.</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-blockquote-element"><code>blockquote</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/blockquote-cite.html"><code>blockquote</code> test</a> </td>
-    <td>A section quoted from another source</td>
-    <td>"Blockquote" <em>element content</em></td>
-    <td>
-        <ul>
-            <li>Next blockquote <kbd>Q</kbd></li>
-            <li>Prior blockquote <kbd>SHIFT+Q</kbd></li>
-        </ul>
+    <td>Quoted block content</td>
+    <td>Reads content as normal text</td>
+    <td>No special interaction
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -479,14 +400,14 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>Semantics conveyed via navigation and element name announcement.</td>
+    <td>No additional semantics conveyed.</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/sections.html#the-body-element"><code>body</code></a></th>
     <td> <a href="https://www.w3.org/html/wg/drafts/html/master/sections.html#the-body-element"><code>body</code> test</a> </td>
     <td>Document body</td>
-    <td><em>Element content</em></td>
-    <td>No special commands</td>
+    <td>Reads content</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
             <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
@@ -496,14 +417,14 @@ this feature is supposed to convey to the user.</li>
             12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
         </svg>
     </td>
-    <td>No special semantics conveyed.</td>
+    <td>No unique aural feedback; body is implicit.</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-br-element"><code>br</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/br.html"><code>br</code> test</a> </td>
     <td>Line break, e.g. in poem or postal address</td>
-    <td>&nbsp;</td>
-    <td>No special commands</td>
+    <td>Announces nothing</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
             <path d="M400 32H48C21.5 32 0
@@ -513,19 +434,19 @@ this feature is supposed to convey to the user.</li>
     12 12v56c0 6.6-5.4 12-12 12H92z"></path>
         </svg>
     </td>
-    <td><em>Line break</em></td>
+    <td>No additional semantics conveyed.Treated as one new line, regardless of number of line break elements</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-button-element"><code>button</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/button.html"><code>button</code> test</a> </td>
     <td>Button control</td>
-    <td><em>text label</em> "button"</td>
+    <td> Announces "button" + label</td>
     <td>
-        <ul id="button-commands" tabindex="-1">
-            <li>List buttons <kbd>INSERT+F7</kbd></li>
-            <li>Next Button <kbd>B</kbd></li>
-            <li>Prior button <kbd>B</kbd></li>
-        </ul>
+	    <ul>
+		    <li>Double-tap to activate</li>
+		    <li>Rotor navigation to buttons or form controls, announces number of buttons/controls</li>
+		    <li>Single finger swipe up/down to navigate when selected in rotor</li>
+	    </ul>
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -540,39 +461,36 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>Semantics conveyed via navigation and element name announcement</td>
+    <td>Announced as "toggle button" label and state (pressed/unpressed) when button has aria-pressed.</td>
 </tr>
 <tr id="toc-c" tabindex="-1">
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/canvas.html#the-canvas-element"><code>canvas</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/canvas.html"><code>canvas</code> test</a> </td>
     <td>Scriptable bitmap canvas</td>
-    <td><em>"graphic" element content</em></td>
-    <td>No special commands</td>
+    <td>Announces "graphic" if aria-label and Role="img" is provided, Other wise ignores canvas</td>
+    <td>Focusable via swipe gestures if role="img" present or sub DOM contains content.</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
+            <path d="M400 32H48C21.5 32 0
+    53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5
+    48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
+    0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
+    12 12v56c0 6.6-5.4 12-12 12H92z"></path>
         </svg>
     </td>
     <td> 
-        The canvas is 'transparent' for screen reader users. HTML content included in the <a href="https://www.tpgi.com/html5-canvas-sub-dom/">HTML5 canvas sub DOM</a>
-        is announced and navigable by screen reader users and is navigable by keyboard users. <b>Note:</b> advised to add <code>role=presentation</code> to 
-        <code>&lt;canvas&gt;</code> to avoid unnecessary repetition of graphic role information.
+        <ul>
+		<li>Sub DOM content announced if available</li>
+		<li>Canvas not idenified without explicit role</li>
+	</ul>
     </td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/tables.html#the-caption-element"><code>caption</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/table-caption-thead-tbody-tfoot-tr-th-td.html"><code>caption</code> test</a> </td>
-    <td>Table caption</td>
-    <td><em>Element content</em></td>
-    <td>No special commands</td>
+    <td>Title for a table</td>
+    <td>Announces as part of the table. Role not announced</td>
+    <td>Rotor navigation to tables, announces number of tables</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
@@ -586,14 +504,16 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td> Announced when a table is navigated to.</td>
+    <td> Properly linked to the table it describes.
+
+When rotor set to Tables, single finger swipe up or down, moves to next/previous table,table caption is announced, the "start of table" the row and column number.</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-cite-element"><code>cite</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/blockquote-cite.html"><code>cite</code> test</a> </td>
     <td>Reference to a creative work</td>
-    <td><em>Element content</em></td>
-    <td>No special commands</td>
+    <td>Reads content as normal text</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
             <path d="M400 32H48C21.5 32 0
@@ -604,15 +524,15 @@ this feature is supposed to convey to the user.</li>
         </svg>
     </td>
     <td>
-    <p>No semantics conveyed or expected as <code>&lt;cite&gt;</code> has a <code>role="generic"</code></p>
+    <p>No specific aural emphasis.</p>
     </td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-code-element"><code>code</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/code.html"><code>code</code> test</a> </td>
-    <td>Computer code</td>
-    <td><em>Element content</em></td>
-    <td>No special commands</td>
+    <td>Inline code or programming syntax</td>
+    <td>Reads element content</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
             <path d="M400 32H48C21.5 32 0
@@ -623,15 +543,15 @@ this feature is supposed to convey to the user.</li>
         </svg>
     </td>
     <td>
-    <p>No semantics conveyed or expected as <code>&lt;code&gt;</code> currently has a <code>role="generic"</code></p>
+  No unique treatment; read as normal text.
     </td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/tables.html#the-col-element"><code>col</code></a></th>
     <td> No test </td>
-    <td>Table column</td>
-    <td><em>None expected</em></td>
-    <td>No special commands</td>
+    <td>Defines column properties</td>
+    <td>No aural indication</td>
+    <td>Not directly interactive</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
             <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
@@ -641,14 +561,14 @@ this feature is supposed to convey to the user.</li>
             12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
         </svg>
     </td>
-    <td>No semantics conveyed</td>
+    <td>Impact conveyed through table structure only.</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/tables.html#the-colgroup-element"><code>colgroup</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/tables-complex.html"><code>colgroup</code> test</a> </td>
-    <td>Group of columns in a table</td>
-    <td><em>None expected</em></td>
-    <td>No special commands</td>
+    <td>Groups multiple columns in a table</td>
+    <td>No aural indication</td>
+    <td>Not directly interactive</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
             <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
@@ -658,7 +578,7 @@ this feature is supposed to convey to the user.</li>
             12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
         </svg>
     </td>
-    <td>&nbsp;</td>
+    <td>Structure-enhancing, with no direct aural output.</td>
 </tr>
 <tr id="toc-d" tabindex="-1">
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-data-element"><code>data</code></a></th>
