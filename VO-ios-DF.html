@@ -1456,13 +1456,9 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-search.html"><code>input [search]</code> test</a> </td>
     <td>Text control for inputting search terms</td>
-    <td><em>label content</em> "edit"</td>
+    <td>Label content + "Search field"</td>
     <td>
-        <ul>
-            <li>List Edit Boxes <kbd>INSERT+F7</kbd></li>
-            <li>Move To Next Edit Box <kbd>E </kbd></li>
-            <li>Move to Prior Edit Box <kbd>SHIFT+E</kbd></li>
-        </ul>
+       Double tap to enter
     </td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
@@ -1481,19 +1477,15 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             46-46c0-25.365-20.635-46-46-46z"></path>
         </svg>
     </td>
-    <td>Treated as a regular text input.</td>
+    <td></td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#submit-button-state-typesubmit"><code>input [submit]</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-submit.html"><code>input [submit]</code> test</a> </td>
     <td>Button control for submitting a form</td>
-    <td><em>label content</em> "button"</td>
+    <td>label content + "button"</td>
     <td>
-        <ul>
-            <li>List Buttons <kbd>INSERT+F7</kbd></li>
-            <li>Next Button <kbd>B</kbd></li>
-            <li>Previous button <kbd>B</kbd></li>
-        </ul>
+
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1514,26 +1506,23 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#telephone-state-typetel"><code>input [tel]</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-tel.html"><code>input [tel]</code> test</a> </td>
     <td>text box control for inputting a phone number</td>
-    <td><em>label content</em> "edit"</td>
+    <td>label content + "text field"</td>
     <td>
-        <ul>
-            <li>List Form Controls <kbd>INSERT+F7</kbd></li>
-            <li>Move To Next Edit Box <kbd>E </kbd></li>
-            <li>Move to Prior Edit Box <kbd>SHIFT+E</kbd></li>
-        </ul>
+        Double tap to edit
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-            </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
+            <path d="M464 32H48C21.5 32 0
+            53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
+            48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
+            12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
+            313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
+            0l-40.5-40.5c-4.8-4.8-4.8-12.6
+            0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
+            0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
+            66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8
+            12.6 0 17.4L313.3 256l67.1 66.5z"></path>
+        </svg>
     </td>
     <td>&nbsp;</td>
 </tr>
@@ -1545,13 +1534,9 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-text.html"><code>input [text]</code> test</a> </td>
     <td>text box control</td>
-    <td><em>label content</em> "edit"</td>
+    <td>label content + "text field"</td>
     <td>
-        <ul>
-            <li>List Form Controls <kbd>INSERT+F7</kbd></li>
-            <li>Move To Next Edit Box <kbd>E </kbd></li>
-            <li>Move to Prior Edit Box <kbd>SHIFT+E</kbd></li>
-        </ul>
+        Double tap to edit
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1572,47 +1557,32 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#time-state-typetime"><code>input [time]</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-time.html"><code>input [time]</code> test</a> </td>
     <td>Control for setting a specific time.</td>
-    <td><em>label content</em> "grouping" followed by <em>label content</em> "hour spin button" <em>current value</em></td>
+    <td>When the input does not contain a value, there is no VO announcement. When the input contains a value, it is announced as its value</td>
+
+      
     <td>
-        Navigable using NVDA button keystrokes in Chrome:
-        <ul>
-            <li>List Buttons <kbd>INSERT+F7</kbd></li>
-            <li>Move To Next Button <kbd>B </kbd></li>
-            <li>Move to Prior Button <kbd>SHIFT+B</kbd></li>
-        </ul>
-        Navigable using NVDA button keystrokes in Firefox:
-        <ul>
-            <li>List Form Controls <kbd>INSERT+F7</kbd></li>
-            <li>Move To Next Edit Box <kbd>E </kbd></li>
-            <li>Move to Prior Edit Box <kbd>SHIFT+E</kbd></li>
-        </ul>
-    </td>
-    <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
+            <path d="M464 32H48C21.5 32 0
+            53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
+            48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
+            12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
+            313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
+            0l-40.5-40.5c-4.8-4.8-4.8-12.6
+            0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
+            0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
+            66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8
+            12.6 0 17.4L313.3 256l67.1 66.5z"></path>
         </svg>
     </td>
-    <td>Navigable using NVDA button keystrokes in Chrome and navigable using NVDA button keystrokes in Firefox</td>
+    <td>  No instructions are provided until the time picker dialog is expanded, then the following instructions are added "Swipe up or down with one finger to adjust the value"</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#url-state-typeurl"><code>input [url]</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-url.html"><code>input [url]</code> test</a> </td>
     <td>Text control for inputting a URL</td>
-    <td><em>label content</em> "edit"</td>
+    <td>label content + "text field"</td>
     <td>
-        <ul>
-            <li>List Form Controls <kbd>INSERT+F7</kbd></li>
-            <li>Move To Next Edit Box <kbd>E </kbd></li>
-            <li>Move to Prior Edit Box <kbd>SHIFT+E</kbd></li>
-        </ul>
+        Double tap to edit
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1633,7 +1603,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <th scope="row"><a href="https://html.spec.whatwg.org/multipage/edits.html#the-ins-element"><code>ins</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/del-ins.html"><code>ins</code> test</a> </td>
     <td>An addition to the document</td>
-    <td>"Inserted" <em>Element content</em></td>
+    <td>"Insertion" + Element content</td>
     <td>No special commands</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1650,8 +1620,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
         </svg>
     </td>
     <td>
-        Refer to: <a href="https://www.tpgi.com/screen-readers-support-for-text-level-html-semantics/">Screen Readers support 
-        for text level HTML semantics</a>
+        
     </td>
 </tr>
 <tr id="toc-k" tabindex="-1">
@@ -1680,7 +1649,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-label-element"><code>label</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/label.html"><code>label</code> test</a> </td>
     <td>Caption for a form control</td>
-    <td><em>Label content</em> announced when the corresponding form control has focus</td>
+    <td>Label content announced when the corresponding form control has focus</td>
     <td>No special commands</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1703,7 +1672,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td> 
         Caption for <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-fieldset-element"><code>fieldset</code></a>
     </td>
-    <td><em>Legend content</em> is announced as the group label for a group of related controls when one of the controls is first focused in the group.</td>
+    <td>Legend content is announced as the group label for a group of related controls when one of the controls is first focused in the group.</td>
     <td>No special commands</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1729,12 +1698,10 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
         </ul>
     </td>
     <td>List item</td>
-    <td>&nbsp;</td>
+    <td>List elements part of an unordered list announce "Bullet, list start"
+    List elements part of an ordered list announce "X, list start", X = the list number</td>
     <td>
-        <ul>
-            <li> Next Item in a List <kbd>I</kbd></li>
-            <li> Prior Item in a List <kbd>SHIFT+I</kbd></li>
-        </ul>
+       
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1764,28 +1731,28 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-main-element"><code>main</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/main.html"><code>main</code> test</a> </td>
     <td>Main content of a document</td>
-    <td>&nbsp;</td>
+    <td></td>
     <td>
-        <ul>
-            <li>Move to Next Region <kbd>D</kbd></li>
-            <li>Move to Prior Region<kbd>SHIFT+D</kbd></li>
-            <li>List Landmark Regions <kbd>INSERT+F7</kbd></li>
-        </ul>
+        No speical commands
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
+            256C8 119.083 119.043 8 256 8s248 111.083 248
+            248zM262.655 90c-54.497 0-89.255 22.957-116.549
+            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
+            26.31c5.205 3.947 12.621 3.008 16.665-2.122
+            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
+            45.698 13.148 45.698 32.958 0 14.976-12.363
+            22.667-32.534 33.976C247.128 238.528 216 254.941 216
+            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+            46-46c0-25.365-20.635-46-46-46z"></path>
         </svg>
     </td>
-    <td>&nbsp;</td>
+    <td>No semantic feedback</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-map-element"><code>map</code></a></th>
