@@ -1304,13 +1304,9 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#image-button-state-typeimage"><code>input [image]</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-image.html"><code>input [image]</code> test</a> </td>
     <td>Button control</td>
-    <td>Announced as <em>Label content</em> "button"</td>
+    <td>Announced as "Submit button", unless there is alt text. In which case, it is announced as alt text content + "button"</td>
     <td>
-        <ul>
-            <li>List Buttons <kbd>INSERT+F7</kbd></li>
-            <li>Next Button <kbd>B</kbd></li>
-            <li>Previous button <kbd>B</kbd></li>
-        </ul>
+        No special commands
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1331,42 +1327,36 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#number-state-typenumber"><code>input [number]</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-number.html"><code>input [number]</code> test</a> </td>
     <td>Spin box control</td>
-    <td><em>Label content</em> "Edit, spin button"</td>
+    <td>Announced as label, then "text field"</td>
     <td>
-        <ul>
-            <li>List Form Controls <kbd>INSERT+F7</kbd></li>
-            <li>Move To Next Edit Box <kbd>E</kbd></li>
-            <li>Move to Prior Edit Box <kbd>SHIFT+E</kbd></li>
-            <li>Increase value <kbd>UP ARROW</kbd></li>
-            <li>Decrease value <kbd>DOWN ARROW</kbd></li>
-        </ul>
+        No special commands
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
+            256C8 119.083 119.043 8 256 8s248 111.083 248
+            248zM262.655 90c-54.497 0-89.255 22.957-116.549
+            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
+            26.31c5.205 3.947 12.621 3.008 16.665-2.122
+            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
+            45.698 13.148 45.698 32.958 0 14.976-12.363
+            22.667-32.534 33.976C247.128 238.528 216 254.941 216
+            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+            46-46c0-25.365-20.635-46-46-46z"></path>
         </svg>
     </td>
-    <td><strong>Note:</strong> value in edit box announced as changed increase/decreased using arrow keys.</td>
+    <td></td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#password-state-typepassword"><code>input [password]</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-password.html"><code>input [password]</code> test</a> </td>
     <td>Text control for inputting a password</td>
-    <td> <em>Label content</em> "edit protected" </td>
+    <td> Label content, "Secure text field" </td>
     <td>
-        <ul>
-            <li>List Form Controls <kbd>INSERT+F7</kbd></li>
-            <li>Move To Next Edit Box <kbd>E </kbd></li>
-            <li>Move to Prior Edit Box <kbd>SHIFT+E</kbd></li>
-        </ul>
+        Double tap to edit
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1381,38 +1371,31 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td><strong>Note:</strong> keyboard character input announced as "star".</td>
+    <td><strong>Note:</strong> keyboard character input announced as characters</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#range-state-typerange"><code>input [range]</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-range.html"><code>input [range]</code> test</a> </td>
     <td>slider control</td>
-    <td> <em>Label content</em> "slider" <em>current value</em> </td>
+    <td> Label content + step/value content (for example, "10") + current value (for example, "55%"</td>
     <td>
-        No special commands to reach the range sliders.
-        <ul>
-            <li><kbd>RIGHT ARROW</kbd> and <kbd>UP ARROW</kbd> increase the value of the slider</li>
-            <li><kbd>LEFT ARROW</kbd> and <kbd>DOWN ARROW</kbd> decrease the value of the slider</li>
-        </ul>
+        Instruction announced as "Swipe up or down with one finger to adjust the value"
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
+            <path d="M464 32H48C21.5 32 0
+            53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
+            48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
+            12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
+            313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
+            0l-40.5-40.5c-4.8-4.8-4.8-12.6
+            0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
+            0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
+            66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8
+            12.6 0 17.4L313.3 256l67.1 66.5z"></path>
         </svg>
     </td>
     <td>
-        <p>
-            <strong>Note:</strong> The slider cannot be adjusted using the <kbd>HOME</kbd>, <kbd>END</kbd>, <kbd>PAGE UP</kbd>, and
-            <kbd>PAGE DOWN</kbd> keys when NVDA is running.
-        </p>
         <p>Slider value announced as it changes.</p>
     </td>
 </tr>
@@ -1421,15 +1404,11 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-radio.html"><code>input [radio]</code>, test</a> </td>
     <td>single choice from a set of options</td>
     <td>
-        <em>label content</em> "radio button checked/not checked" "x of y" where x = position in radio group, y = number of 
+        <em>label content</em> "radio button unticked/ticked" "x of y" where x = position in radio group, y = number of 
         radio buttons in the group
     </td>
     <td>
-        <ul>
-            <li>List Form Controls <kbd>INSERT+F7</kbd></li>
-            <li>Move To Next Radio Button <kbd>R</kbd></li>
-            <li>Move to Prior Radio Button <kbd>SHIFT+R</kbd></li>
-        </ul>
+        No special commands
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1450,13 +1429,9 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#reset-button-state-typereset"><code>input [reset]</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-reset.html"><code>input [reset]</code> test</a> </td>
     <td>Button control for resetting a form</td>
-    <td>&nbsp;</td>
+    <td>Announced as "Reset button", unless there is a label, in which case it is label content + button</td>
     <td>
-        <ul>
-            <li>List Buttons <kbd>INSERT+F7</kbd></li>
-            <li>Next Button <kbd>B</kbd></li>
-            <li>Previous button <kbd>B</kbd></li>
-        </ul>
+        No speical commands
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
