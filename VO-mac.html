@@ -93,7 +93,7 @@ svg.unknown {
     <tr>
       <td><code>&lt;a&gt;</code> with <code>href</code></td>
       <td>Hyperlink</td>
-      <td>Announces "link" + link text</td>
+      <td>Announces link text + "link"</td>
       <td>VO + right/left arrow to navigate, VO + space to activate</td>
       <td><svg viewBox="0 0 448 512" width="20" aria-label="yes">
           <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
@@ -118,7 +118,7 @@ svg.unknown {
       <td><svg viewBox="0 0 448 512" width="20" aria-label="yes">
           <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg></td>
-      <td>Expands abbreviation if <code>title</code> attribute is present, announces as "group"</td>
+      <td>Expands abbreviation if <code>title</code> attribute is present, announces as "group".</td>
     </tr>
     <tr>
       <td><code>&lt;address&gt;</code></td>
@@ -153,7 +153,7 @@ svg.unknown {
     <tr>
       <td><code>&lt;audio&gt;</code></td>
       <td>Audio player</td>
-      <td>Announces as "audio", or "Audio Controls, group" if the controls attribute is present</td>
+      <td>Announces as "audio", or "Audio Controls, group" if the <code>controls</code> attribute is present</td>
       <td>Focusable via VO + space to play/pause</td>
       <td><svg viewBox="0 0 448 512" width="20" aria-label="yes">
           <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
@@ -193,12 +193,12 @@ svg.unknown {
     <tr>
       <td><code>&lt;blockquote&gt;</code></td>
       <td>Quoted section</td>
-      <td>Announces "blockquote"</td>
+      <td>No special interaction</td>
       <td>Navigable via VO commands</td>
       <td><svg viewBox="0 0 448 512" width="20" aria-label="yes">
           <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg></td>
-      <td>Clearly announces the start and end of blockquotes.</td>
+      <td>No semantics conveyed.</td>
     </tr>
     <tr>
       <td><code>&lt;body&gt;</code></td>
@@ -213,17 +213,17 @@ svg.unknown {
     <tr>
       <td><code>&lt;button&gt;</code></td>
       <td>Button control</td>
-      <td>Announces "button" + label</td>
+      <td>Announces label + "button"</td>
       <td>VO + space to activate</td>
       <td><svg viewBox="0 0 448 512" width="20" aria-label="yes">
           <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg></td>
-      <td>Recognizes the button state and label.</td>
+      <td>Recognizes the button label and, if provided, state.</td>
     </tr>
     <tr>
       <td><code>&lt;canvas&gt;</code></td>
       <td>Scriptable bitmap canvas</td>
-      <td>Announces "graphic" if <code>aria-label</code> is present</td>
+      <td>Announces "image" and <code>aria-label</code> content if <code>aria-label</code> is present</td>
       <td>Focusable via VO navigation</td>
       <td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected">
           <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path>
