@@ -82,6 +82,7 @@ svg.unknown {
   <thead>
     <tr>
       <th><strong>Element</strong></th>
+      <th><strong>Test Case</strong></th>
       <th><strong>Represents</strong></th>
       <th><strong>Aural UI</strong></th>
       <th><strong>Interaction</strong></th>
@@ -92,6 +93,7 @@ svg.unknown {
   <tbody>
     <tr>
       <td><code>&lt;a&gt;</code> with <code>href</code></td>
+      <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/a-href.html">a with href</a></td>
       <td>Hyperlink</td>
       <td>Announces link text + "link"</td>
       <td>VO + right/left arrow to navigate, VO + space to activate</td>
@@ -102,6 +104,7 @@ svg.unknown {
     </tr>
     <tr>
       <td><code>&lt;a&gt;</code> without <code>href</code></td>
+       <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/a-href.html">a without href</a></td>
       <td>Anchor</td>
       <td>Treated as plain text</td>
       <td>No special interaction</td>
@@ -112,6 +115,7 @@ svg.unknown {
     </tr>
     <tr>
       <td><code>&lt;abbr&gt;</code></td>
+      <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/abbr.html">abbr</a></td>
       <td>Abbreviation</td>
       <td>Reads element content; announces title as "group" if present before element content</td>
       <td>No special interaction</td>
@@ -122,6 +126,7 @@ svg.unknown {
     </tr>
     <tr>
       <td><code>&lt;address&gt;</code></td>
+      <td><a href="test-files/address.html">address</a></td>
       <td>Contact information</td>
       <td>Reads content as plain text</td>
       <td>No special interaction</td>
@@ -132,6 +137,7 @@ svg.unknown {
     </tr>
     <tr>
       <td><code>&lt;article&gt;</code></td>
+      <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/article.html">article</a></td>
       <td>Self-contained composition</td>
       <td>Announces "article"</td>
       <td>VO + Command + Option + Right Arrow to navigate</td>
@@ -142,6 +148,7 @@ svg.unknown {
     </tr>
     <tr>
       <td><code>&lt;aside&gt;</code></td>
+      <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/aside.html">aside</a></td>
       <td>Tangentially related content</td>
       <td>Announces "complementary"</td>
       <td>VO + Command + Option + Right Arrow to navigate</td>
@@ -152,8 +159,9 @@ svg.unknown {
     </tr>
     <tr>
       <td><code>&lt;audio&gt;</code></td>
+      <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/audio.html">audio</a></td>
       <td>Audio player</td>
-      <td>Announces as "audio", or "Audio Controls, group" if the <code>controls</code> attribute is present</td>
+      <td>Announces "Audio Controls, group" if the <code>controls</code> attribute is present, and as label text + "audio" if an <code>aria-label</code> is present</td>
       <td>Focusable via VO + space to play/pause</td>
       <td><svg viewBox="0 0 448 512" width="20" aria-label="yes">
           <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
@@ -162,6 +170,7 @@ svg.unknown {
     </tr>
     <tr>
       <td><code>&lt;b&gt;</code></td>
+      <td><a href="https://thepaciellogroup.github.io/AT-browser-tests/test-files/b.html">Bold</a></td>
       <td>Bold text</td>
       <td>Reads content as normal text</td>
       <td>No special interaction</td>
@@ -172,6 +181,7 @@ svg.unknown {
     </tr>
     <tr>
       <td><code>&lt;bdi&gt;</code></td>
+      <td><a href="../../../AppData/Local/Microsoft/Windows/INetCache/IE/L4E7YLMS/bdi[1].html">bdi</a></td>
       <td>Bi-directional isolation</td>
       <td>Reads element content</td>
       <td>No special interaction</td>
@@ -182,6 +192,7 @@ svg.unknown {
     </tr>
     <tr>
       <td><code>&lt;bdo&gt;</code></td>
+      <td><a href="https://thepaciellogroup.github.io/AT-browser-tests/test-files/bdo.html">bdo</a></td> 
       <td>Bi-directional override</td>
       <td>Reads element content</td>
       <td>No special interaction</td>
@@ -192,16 +203,18 @@ svg.unknown {
     </tr>
     <tr>
       <td><code>&lt;blockquote&gt;</code></td>
+      <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/blockquote-cite.html">Block quote</a></td>
       <td>Quoted section</td>
       <td>No special interaction</td>
       <td>Navigable via VO commands</td>
-      <td><svg viewBox="0 0 448 512" width="20" aria-label="yes">
-          <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+      <td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected">
+          <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path>
         </svg></td>
       <td>No semantics conveyed.</td>
     </tr>
     <tr>
       <td><code>&lt;body&gt;</code></td>
+      <td>no test</td>
       <td>Document body</td>
       <td>Reads content</td>
       <td>No special interaction</td>
@@ -212,6 +225,7 @@ svg.unknown {
     </tr>
     <tr>
       <td><code>&lt;button&gt;</code></td>
+      <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/button.html">Button</a></td>
       <td>Button control</td>
       <td>Announces label + "button"</td>
       <td>VO + space to activate</td>
@@ -222,8 +236,9 @@ svg.unknown {
     </tr>
     <tr>
       <td><code>&lt;canvas&gt;</code></td>
+      <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/canvas.html">canvas</a></td>
       <td>Scriptable bitmap canvas</td>
-      <td>Announces "image" and <code>aria-label</code> content if <code>aria-label</code> is present</td>
+      <td>Announces "image" if <code>aria-label</code> is present or as text if fallback content is provided. Otherwise, <code>canvas</code> is ignored</td>
       <td>Focusable via VO navigation</td>
       <td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected">
           <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path>
@@ -232,6 +247,7 @@ svg.unknown {
     </tr>
     <tr>
       <td><code>&lt;caption&gt;</code></td>
+      <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/table-caption-thead-tbody-tfoot-tr-th-td.html">Table caption</a></td>
       <td>Table caption</td>
       <td>Announces caption when table is navigated</td>
       <td>VO commands to navigate</td>
@@ -242,6 +258,7 @@ svg.unknown {
     </tr>
     <tr>
       <td><code>&lt;cite&gt;</code></td>
+      <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/blockquote-cite.html">cite</a></td>
       <td>Reference to a creative work</td>
       <td>Reads element content</td>
       <td>No special interaction</td>
@@ -252,6 +269,7 @@ svg.unknown {
     </tr>
     <tr>
       <td><code>&lt;code&gt;</code></td>
+      <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/code.html">code</a></td>
       <td>Code snippet</td>
       <td>Reads element content</td>
       <td>No special interaction</td>
@@ -262,6 +280,7 @@ svg.unknown {
     </tr>
     <tr>
       <td><code>&lt;col&gt;</code></td>
+      <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/tables-complex.html">col</a></td>
       <td>Table column</td>
       <td>No aural indication</td>
       <td>No special interaction</td>
@@ -272,6 +291,7 @@ svg.unknown {
     </tr>
     <tr>
       <td><code>&lt;colgroup&gt;</code></td>
+      <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/tables-complex.html">colgroup</a></td>
       <td>Group of columns in a table</td>
       <td>No aural indication</td>
       <td>No special interaction</td>
@@ -293,12 +313,12 @@ svg.unknown {
     <tr>
       <td><code>&lt;datalist&gt;</code></td>
       <td>Combo box suggestions</td>
-      <td>Announces "combo box"</td>
-      <td>VO + space to open</td>
+      <td>Announces as "list box pop-up" or "list box pop-up, combobox"</td>
+      <td>VO + space to open + Up/Down Arrows to navigate</td>
       <td><svg viewBox="0 0 448 512" width="20" aria-label="yes">
           <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg></td>
-      <td>Provides suggestions as the user types.</td>
+      <td>Provides suggestion list as the user types.</td>
     </tr>
     <tr>
       <td><code>&lt;dd&gt;</code></td>
