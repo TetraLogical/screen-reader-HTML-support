@@ -337,18 +337,16 @@ svg.unknown {
       <td><code>&lt;del&gt;</code></td>
       <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/del-ins.html">del</a></td>
       <td>Deleted text</td>
-      <td>Announces "deletion"</td>
+      <td>Announces "deletion" then text when part of a tag with plain text, otherwise no special interaction</td>
       <td>No special interaction</td>
-      <td><svg viewBox="0 0 448 512" width="20" aria-label="yes">
-          <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg></td>
-      <td>Uses a different tone to indicate deletion.</td>
+      <td><svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img"><path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"></path></svg></td>
+      <td>Uses a different tone to indicate deletion. Support was inconsistent across browsers and "deletion" is only ever announced when part of a tag with plain text.</td>
     </tr>
     <tr>
       <td><code>&lt;details&gt;</code></td>
       <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/details-summary.html">details</a></td>
       <td>Disclosure widget</td>
-      <td>Announces "group start/end"</td>
+      <td>Announces <code>summary</code> content as disclosure label + "summary" in Safari or "group" on additional browsers</td>
       <td>VO + space to expand/collapse</td>
       <td><svg viewBox="0 0 448 512" width="20" aria-label="yes">
           <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
@@ -370,11 +368,9 @@ svg.unknown {
       <td><code>&lt;dialog&gt;</code></td>
       <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dialog.html">dialog</a></td>
       <td>Dialog box</td>
-      <td>Announces "dialog"</td>
+      <td>Announces "dialog" on Chrome, announced as "group" on additional browsers </td>
       <td>Focus moved to dialog when opened</td>
-      <td><svg viewBox="0 0 448 512" width="20" aria-label="yes">
-          <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg></td>
+      <td><svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img"><path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"></path></svg></td>
       <td>Recognizes when dialog opens and traps focus within.</td>
     </tr>
     <tr>
@@ -392,7 +388,7 @@ svg.unknown {
       <td><code>&lt;dl&gt;</code></td>
       <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dl-dt-dd.html">dl</a></td>
       <td>Definition list</td>
-      <td>Announces "list with X items"</td>
+      <td>Announces "definition list with X items"</td>
       <td>VO commands to navigate</td>
       <td><svg viewBox="0 0 448 512" width="20" aria-label="yes">
           <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
