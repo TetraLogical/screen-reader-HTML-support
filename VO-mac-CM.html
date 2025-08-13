@@ -125,7 +125,7 @@ this feature is supposed to convey to the user.</li>
 </ul>
 <div class="table-wrapper" role="region" aria-label="Table" tabindex="0">
 <table>
-<caption> VoiceOver on iOS (2024) HTML Support - <del>Chrome Version 129.0.6668.90 (Official Build) (64-bit)</del> </caption>
+<caption> VoiceOver on Mac (2024) HTML Support - <del>Chrome Version 129.0.6668.90 (Official Build) (64-bit)</del> </caption>
 <thead>
 <tr>
     <th>Element</th>
@@ -141,13 +141,13 @@ this feature is supposed to convey to the user.</li>
 <tr id="toc-a" tabindex="-1">
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element"><code>a</code></a></th>
     <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/a-href.html"><code>a</code> with <code>href</code> test</a></td>
-    <td>Link with an href</td>
-    <td>Announces "link" + link text</td>
+    <td>Hyperlink with an href</td>
+    <td>Announces link text + "link"</td>
     <td>
         <ul>
-            <li>Swipe left/right, double-tap to activate</li>
-            <li>Rotor navigation to links, announces number of links</li>
-            <li>single finger swipe up/down to navigate when selected in rotor</li>
+            <li>VO + right/left arrow to navigate, VO + space to activate</li>
+            <li>VO + U to open rotor, Right/Left arrow to navigate to Links menu to see list of links</li>
+            <li>VO + Command + L to navigate to next link</li>
         </ul>
     </td>
     <td>
@@ -165,7 +165,7 @@ this feature is supposed to convey to the user.</li>
     <td>
 <p>Recognizes visited/unvisited state of links.</p>
 
-<p>Link number announced by rotor is incorrect as VO announces parts of a link text as seperate links. On the link <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/a-href.html">test page</a> there are 3 links, but VO reports as 9 links.</p>
+<p>VoiceOver recognizes visited/unvisited state of links.</p>
     </td>
 </tr>
 <tr>
@@ -174,24 +174,24 @@ this feature is supposed to convey to the user.</li>
         <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/abbr.html"><code>abbr</code>
         test</a> </td>
         <td>An abbreviation</td>
-        <td>Reads text only, not title</td>
+        <td>Reads element content; announces title as "group" if present before element content</td>
         <td>
         <p>No special interaction</p>
         </td>
         <td>
-            <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><path d="M464 32H48C21.5 32 0
-                53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
-                48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
-                12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
-                313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
-                0l-40.5-40.5c-4.8-4.8-4.8-12.6
-                0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-                0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-                66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8
-                12.6 0 17.4L313.3 256l67.1 66.5z"></path></svg>
+             <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
+             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248
+            6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104
+            104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg>
         </td>
         <td>
-        <p>No additional semantics conveyed if title is present.</p>
+        <p>Expands abbreviation if <code>title</code> attribute is present, announces as "group".</p>
         </td>
     </tr>
 <tr>
@@ -200,7 +200,7 @@ this feature is supposed to convey to the user.</li>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/address.html"><code>address</code>
     test</a> </td>
     <td>Contact information</td>
-    <td>Reads text only</td>
+    <td>Reads content as plain text</td>
     <td>No special interaction</td>
     <td>
     <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><path d="M464 32H48C21.5 32
@@ -224,10 +224,10 @@ this feature is supposed to convey to the user.</li>
     test</a> </td>
     <td>Interactive area within an image map</td>
     <td>
-        Announces alt text + "link"
+        Announces alt text if present + "image map"
     </td>
     <td>
-        Swipe left/right to navigate
+        Focusable via VO navigation
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -242,7 +242,7 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>Requires alt for accessibility.</td>
+    <td>Requires alt attribute for accessibility.</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/sections.html#the-article-element"><code>article</code></a>
@@ -250,8 +250,8 @@ this feature is supposed to convey to the user.</li>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/article.html"><code>article</code>
     test</a> </td>
     <td>Self-contained syndicatable or reusable composition</td>
-    <td>Reads text only, does not announce article</td>
-    <td>Rotor to 'articles' Swipe down with one finger to navigate by article</td>
+    <td>Announces as "article"</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
@@ -265,13 +265,13 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>No additional semantics conveyed. Documentation states that swipe one finger up should naviagte back through articles, but does not appear to work. article does support aria-describedby and announces "Description..." after visible text.</td>
+    <td>Recognizes the start and end of articles.</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element"><code>aside</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/aside.html"><code>aside</code> test</a> </td>
     <td>Sidebar for tangentially related content</td>
-    <td> Announces "complementary" </td>
+    <td>Announces "complementary"</td>
     <td>
         Rotor to 'landmarks' announces number of landmarks.
     </td>
