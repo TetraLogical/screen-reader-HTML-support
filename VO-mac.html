@@ -337,10 +337,10 @@ svg.unknown {
       <td><code>&lt;del&gt;</code></td>
       <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/del-ins.html">del</a></td>
       <td>Deleted text</td>
-      <td>Announces "deletion" then text when part of a tag with plain text, otherwise no aural indication</td>
+      <td>Announces "deletion" before deleted text when included as part of a tag with plain text, otherwise no aural indication</td>
       <td>No special interaction</td>
       <td><svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img"><path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"></path></svg></td>
-      <td>Uses a different tone to indicate deletion. Support was inconsistent across browsers and "deletion" is only ever announced when part of a tag with plain text.</td>
+      <td>Uses a different tone to indicate deletion. Support is inconsistent across browsers and "deletion" is only ever announced when part of a tag with plain text.</td>
     </tr>
     <tr>
       <td><code>&lt;details&gt;</code></td>
@@ -651,7 +651,7 @@ svg.unknown {
 <td><code>&lt;input type="number"&gt;</code></td>
 <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-number.html">input [number]</a></td>
 <td>Numeric entry</td>
-<td>Announces "incremental edit text number field"</td>
+<td>Announces as "incremental edit text number field"</td>
 <td>Focusable via VO navigation, Up/Down Arrow keys to increase/decrease value</td>
 <td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
 <td>Editable text field  when focused with VO or the incremental stepper can be interacted with by use of Up/Down arrow keys.</td>
@@ -660,22 +660,121 @@ svg.unknown {
 <td><code>&lt;input type="password"&gt;</code></td>
 <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-password.html">input [password]</a></td>
 <td>Password entry field</td>
-<td>Announces "secure text field"</td>
-<td>Normal text entry interaction</td>
+<td>Announces as "secure edit text"</td>
+<td>Focusable via VO navigation</td>
 <td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Characters are masked as entered.</td>
+<td>Characters are masked and not announced by VO as entered.</td>
 </tr>
     <tr>
       <td><code>&lt;input type="radio"&gt;</code></td>
       <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-radio.html">input [radio]</a></td>
       <td>Radio button</td>
-      <td>Announces "selected/unselected, radio button" + position of radio button out of total number in radio group</td>
+      <td>Announces as "selected/unselected, radio button" + position of radio button out of total number in radio group</td>
       <td>VO + space to select</td>
       <td><svg viewBox="0 0 448 512" width="20" aria-label="yes">
           <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg></td>
       <td>Recognizes position within radio group.</td>
     </tr>
+    <tr>
+<td><code>&lt;input type="range"&gt;</code></td>
+<td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-range.html">input [range]</a></td>
+<td>Range input using a slider</td>
+<td>Announces as current value + "slider"</td>
+<td>Right/Left Arrows to adjust value</td>
+<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
+<td>Allows setting a value within a defined range.</td>
+</tr>
+<tr>
+<td><code>&lt;input type="reset"&gt;</code></td>
+<td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-reset.html">input [reset]</a></td>
+<td>Resets form fields</td>
+<td>Announces "reset, button" or value content + "button" if <code>value</code> attribute is set</td>
+<td>VO + space to activate</td>
+<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
+<td>Resets all form inputs to their default values.</td>
+</tr>
+<tr>
+<td><code>&lt;input type="search"&gt;</code></td>
+<td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-search.html">input [search]</a></td>
+<td>Search query entry</td>
+<td>Announces "search text field"</td>
+<td>Focusable via VO navigation</td>
+<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
+<td>No special interaction.</td>
+</tr>
+<tr>
+<td><code>&lt;input type="submit"&gt;</code></td>
+<td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-submit.html">input [submit]</a></td>
+<td>Form submission button</td>
+<td>Announces "submit, button" or value content + "button" if <code>value</code> attribute is set</td>
+<td>VO + space to activate</td>
+<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
+<td>Submits the form data to the server.</td>
+</tr>
+<tr>
+<td><code>&lt;input type="tel"&gt;</code></td>
+<td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-tel.html">input [tel]</a></td>
+<td>Telephone number entry</td>
+<td>Announces as "telephone number field"</td>
+<td>Focusable via VO navigation</td>
+<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
+<td>Announces "edit text" when input is focused.</td>
+</tr>
+<tr>
+<td><code>&lt;input type="text"&gt;</code></td>
+<td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-text.html">input [text]</a></td>
+<td>Single-line text entry</td>
+<td>Announces as "text field"</td>
+<td>Focusable via VO navigation</td>
+<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
+<td>Announces "edit text" when input is focused.</td>
+</tr>
+<tr>
+<td><code>&lt;input type="time"&gt;</code></td>
+<td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-time.html">input [time]</a></td>
+<td>Time picker control</td>
+<td>Announces current time value + "time area"</td>
+<td>VO + Shift + Down Arrow to edit time values, Up/Down Arrow keys to incrementally increase/decrease value</td>
+<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
+<td>Provides an hour/minute input interface.</td>
+</tr>
+<tr>
+<td><code>&lt;input type="url"&gt;</code></td>
+<td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-url.html">input [url]</a></td>
+<td>URL entry field</td>
+<td>Announces "URL field"</td>
+<td>Focusable via VO navigation</td>
+<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
+<td>Announces "edit text" when input is focused.</td>
+</tr>
+<tr>
+<td><code>&lt;input type="week"&gt;</code></td>
+<td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-week.html">input [week]</a></td>
+<td>Week number input</td>
+<td>Announces "week and year field"</td>
+<td>Focusable via VO navigation</td>
+<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
+<td>Announces "edit text" when input is focused.</td>
+</tr>
+<tr>
+<td><code>&lt;ins&gt;</code></td>
+<td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/del-ins.html">ins</a></td>
+<td>Recently added text</td>
+<td>Announces "insertion" before inserted text when included as part of a tag with plain text, otherwise no aural indication</td>
+<td>No special interaction</td>
+<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
+<td>Uses a different tone to indicate deletion. Support was inconsistent across browsers and "insertion" is only ever announced when part of a tag with plain text.</td>
+</tr>
+<tr>
+<td><code>&lt;kbd&gt;</code></td>
+<td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/keyboard.html">kbd</a></td>
+<td>User keyboard input representation</td>
+<td>Reads content as plain text</td>
+<td>No special interaction</td>
+<td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> </svg></td>
+<td>No special semantics beyond reading the text.</td>
+</tr>
     <tr>
       <td><code>&lt;label&gt;</code></td>
       <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/label.html">label</a></td>
