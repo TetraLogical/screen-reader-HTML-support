@@ -148,7 +148,7 @@ this feature is supposed to convey to the user.</li>
     <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/a-no-href.html"><code>a</code> with no <code>href</code> test</a></td>
     <td>An anchor</td>
     <td>Ignored by TalkBack</td>
-    <td>No special commands</td>
+    <td>No special interactions</td>
     <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
 			<path d="M464 32H48C21.5 32
     0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0
@@ -171,7 +171,7 @@ this feature is supposed to convey to the user.</li>
 	<td>An abbreviation</td>
 	<td>Value provided by the <code>title</code> attribute</td>
 	<td>
-	<p>No special commands</p>
+	<p>No special interactions</p>
 	</td>
 	<td>
 		<svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><path d="M464 32H48C21.5 32 0
@@ -199,7 +199,7 @@ this feature is supposed to convey to the user.</li>
     <td>Contact information for a page or <a href="https://html.spec.whatwg.org/multipage/sections.html#the-article-element">article</a>
     element</td>
     <td><em>Element content</em>. </td>
-    <td>No special commands</td>
+    <td>No special interactions</td>
     <td>
 		<svg viewBox="0 0 448 512" width="20" aria-label="yes">
 		<path d="M400 480H48c-26.51
@@ -776,7 +776,7 @@ this feature is supposed to convey to the user.</li>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/div.html"><code>div</code> test</a> </td>
     <td>Generic flow container</td>
     <td><em>Element content</em></td>
-    <td>No special commands</td>
+    <td>No special interactions</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes">
             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
@@ -951,89 +951,256 @@ this feature is supposed to convey to the user.</li>
     4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path>
 		</svg>
     </td>
-    <td>The figure semantics are not conveyed. The image is announced using the file name even when the image has an appropriate <code>alt</code> attribute.</td>
+    <td>The <code>figure</code> semantics are not conveyed. The image is announced using the file name even when the image has an appropriate <code>alt</code> attribute.</td>
 </tr>
 <tr>
-<td><code>&lt;footer&gt;</code></td>
-<td>Footer</td>
-<td>Page or section footer</td>
-<td>Announces "footer"</td>
-<td>Rotor to landmarks or swipe left/right</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Recognized as a landmark region.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/sections.html#the-footer-element"><code>footer</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/footer.html"><code>footer</code> test</a> </td>
+    <td>Footer for a page or section</td>
+    <td><em>element content</em></td>
+    <td>No special interaction</td>
+    <td>
+		<svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
+			<path d="M464 32H48C21.5 32
+    0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0
+    48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6
+    290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8
+    4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8
+    4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6
+    0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
+    0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
+    66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
+    4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path>
+		</svg>
+    </td>
+    <td>The <code>&lt;footer&gt;</code> semantics are not conveyed, but the content in the footer is readable.</td>
 </tr>
 <tr>
-<td><code>&lt;form&gt;</code></td>
-<td>Form</td>
-<td>Collects user input</td>
-<td>Announces "form"</td>
-<td>Swipe left/right to navigate controls</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Recognizes form controls and fieldsets.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-form-element"><code>form</code></a> </th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/form.html"><code>form</code> test</a> </td>
+    <td>User-submittable form</td>
+    <td><em>element content</em></td>
+    <td>
+		<p>There is no specific gesture to navigate to forms, but the generic gesture for form controls can be used. Use three-finger swipe to scroll through the navigate by options to reach "Controls" to navigate by controls. When this option is chosen:</p>
+        <ul>
+            <li>Next control <kbd>Swipe down</kbd></li>
+            <li>Prior control <kbd>Swipe up</kbd></li>
+        </ul>
+    </td>
+    <td>
+		<svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
+			<path d="M464 32H48C21.5 32
+    0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0
+    48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6
+    290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8
+    4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8
+    4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6
+    0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
+    0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
+    66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
+    4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path>
+		</svg>
+    </td>
+    <td>No semantics conveyed. If the <code>form</code> has an accessible name, the accessible name is not announced by TalkBack.</td>
+</tr>
+<tr id="toc-h" tabindex="-1">
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/sections.html#the-h1-h2-h3-h4-h5-and-h6-elements"><code>h1 - h6</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/h1-h6.html"><code>h1 - h6</code> test</a> </td>
+    <td>Section heading</td>
+    <td>Announced as, <em>heading content</em> "heading" 1 to 6</td>
+    <td>
+		<p>Use three-finger swipe to scroll through the navigate by options to reach "Headings" to navigate by headings. When this option is chosen:</p>
+        <ul>
+            <li>Next heading <kbd>Swipe down</kbd></li>
+            <li>Prior heading <kbd>Swipe up</kbd></li>
+        </ul>
+    </td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>Identifies heading level and text.</td>
 </tr>
 <tr>
-<td><code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code></td>
-<td>Section headings</td>
-<td>Headings with levels 1 to 6</td>
-<td>Announces "heading level X"</td>
-<td>Rotor to headings, swipe to navigate</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Properly identifies heading level and content.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/semantics.htmlthe-head-element"><code>head</code></a></th>
+    <td> No test </td>
+    <td>Container for document metadata</td>
+    <td><em>None expected</em></td>
+    <td>No special interactions</td>
+    <td>
+        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected">
+            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
+            48 48 48h352c26.5 0 48-21.5
+            48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
+            0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
+            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
+        </svg>
+    </td>
+    <td>No UI</td>
 </tr>
 <tr>
-<td><code>&lt;header&gt;</code></td>
-<td>Header</td>
-<td>Header section</td>
-<td>Announces "header"</td>
-<td>Rotor to landmarks</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Identified as a landmark region.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/sections.html#the-header-element"><code>header</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/header.html"><code>header</code> test</a> </td>
+    <td>Introductory or navigational aids for a page or section</td>
+    <td><em>element content</em></td>
+    <td>No special interaction</td>
+    <td>
+		<svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
+			<path d="M464 32H48C21.5 32
+    0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0
+    48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6
+    290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8
+    4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8
+    4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6
+    0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
+    0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
+    66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
+    4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path>
+		</svg>
+    </td>
+    <td>No semantics conveyed. If the <code>header</code> has an accessible name, the accessible name is not announced by TalkBack.</td>
 </tr>
 <tr>
-<td><code>&lt;hr&gt;</code></td>
-<td>Thematic break</td>
-<td>Horizontal rule or separator</td>
-<td>Announces "separator"</td>
-<td>Swipe left/right to navigate</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Treated as a separator line.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-hr-element"><code>hr</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/hr.html"><code>hr</code> test</a> </td>
+    <td>Thematic break</td>
+    <td>Announced as, "Splitter" if it has an accessible name</td>
+    <td>No special command</td>
+    <td>
+		<svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
+			<path d="M464 32H48C21.5 32
+    0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0
+    48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6
+    290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8
+    4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8
+    4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6
+    0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
+    0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
+    66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
+    4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path>
+		</svg>
+    </td>
+    <td>Ignored unless the <code>&lt;hr&gt;</code> element has an accessible name.</td>
 </tr>
 <tr>
-<td><code>&lt;html&gt;</code></td>
-<td>Root element</td>
-<td>Main HTML element</td>
-<td>No aural indication</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> </svg></td>
-<td>Not directly read; root of the document.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-html-element"><code>html</code></a></th>
+    <td> No test </td>
+    <td>Root element</td>
+    <td><em>None expected</em></td>
+    <td>No special interactions</td>
+    <td>
+        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected">
+            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
+            48 48 48h352c26.5 0 48-21.5
+            48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
+            0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
+            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
+        </svg>
+    </td>
+    <td>No semantics expected.</td>
+</tr>
+<tr id="toc-i" tabindex="-1">
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-i-element"><code>i</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/i.html"><code>i</code> test</a> </td>
+    <td>Alternate voice</td>
+    <td><em>Element content</em></td>
+    <td>No special interactions</td>
+    <td>
+        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected">
+            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
+            48 48 48h352c26.5 0 48-21.5
+            48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
+            0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
+            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
+        </svg>
+    </td>
+    <td>No semantics conveyed. Treated as a separate item in TalkBack's swipe order, unless CSS <code>font-style: normal</code> is used.</td>
 </tr>
 <tr>
-<td><code>&lt;iframe&gt;</code></td>
-<td>Inline frame</td>
-<td>Nested browsing context</td>
-<td>Announces "frame"</td>
-<td>Swipe left/right to navigate</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Recognizes the frame's title if available.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-iframe-element"><code>iframe</code></a></th>
+    <td>
+        <ul>
+            <li><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/iframe.html"><code>iframe</code> test</a></li>
+            <li><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/iframe-title.html"><code>iframe</code> with title test</a></li>
+        </ul>
+    </td>
+    <td> <a href="https://html.spec.whatwg.org/multipage/browsers.html#sec-nested-browsing-contexts">Nested browsing context</a> </td>
+    <td>Announced as title attribute value if provided, otherwise just <em>element content</em></td>
+    <td>No special interactions</td>
+    <td>
+		<svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
+			<path d="M464 32H48C21.5 32
+    0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0
+    48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6
+    290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8
+    4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8
+    4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6
+    0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
+    0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
+    66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
+    4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path>
+		</svg>
+    </td>
+    <td>No semantics conveyed, but if the <code>&lt;iframe&gt;</code> element has a <code>title</code> attribute, the <code>iframe</code> is included in TalkBack's swipe order, and the value of the <code>title</code> is announced without the role of "frame".</td>
 </tr>
 <tr>
-<td><code>&lt;img&gt;</code></td>
-<td>Image</td>
-<td>Embedded image</td>
-<td>Announces "image" + <code>alt</code> text</td>
-<td>Double-tap to activate or swipe to navigate</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Reads <code>alt</code> or "image" if missing.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-img-element"><code>img</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/img-alt.html"><code>img</code> test</a> </td>
+    <td>Image</td>
+    <td>Announced as <em>alt attribute content</em> "graphic"</td>
+    <td>No special interactions</td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>Reads alt attribute content if present. Announces, "This image isn't labelled" if the <code>alt</code> attribute is missing and no other labelling technique is used.</td>
 </tr>
 <tr>
-<td><code>&lt;input type="button"&gt;</code></td>
-<td>Button</td>
-<td>Clickable button</td>
-<td>Announces "button" + label</td>
-<td>Double-tap to activate</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Recognizes the label of the button.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#button-state-typebutton"><code>input [button]</code></a> </th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-button.html"><code>input [button]</code> test</a> </td>
+    <td>Button control</td>
+    <td>Announced as <em>Label content</em> "button"</td>
+    <td> 
+		<p>Use three-finger swipe to scroll through the navigate by options to reach "Controls" to navigate by controls. When this option is chosen:</p>
+        <ul>
+            <li>Next control <kbd>Swipe down</kbd></li>
+            <li>Prior control <kbd>Swipe up</kbd></li>
+        </ul>
+    </td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>&nbsp;</td>
 </tr>
+
 <tr>
 <td><code>&lt;input type="checkbox"&gt;</code></td>
 <td>Checkbox</td>
