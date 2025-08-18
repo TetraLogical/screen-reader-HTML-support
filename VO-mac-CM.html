@@ -324,7 +324,7 @@ this feature is supposed to convey to the user.</li>
                 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
                 46-46c0-25.365-20.635-46-46-46z">
             </path>
-        </svg>    
+        </svg>
     </td>
     <td>Accessible buttons available in the player. Announcements are inconsistent across browsers.</td>
 </tr>
@@ -350,7 +350,7 @@ this feature is supposed to convey to the user.</li>
     <td> No test </td>
     <td> Base URL for relative links
     </td>
-    <td>No aural feedback</td>
+    <td>No aural interaction</td>
     <td>Not interactive</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
@@ -440,7 +440,7 @@ this feature is supposed to convey to the user.</li>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-br-element"><code>br</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/br.html"><code>br</code> test</a> </td>
     <td>Line break, e.g. in poem or postal address</td>
-    <td>No aural feedback</td>
+    <td>No aural interaction</td>
     <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
@@ -457,7 +457,7 @@ this feature is supposed to convey to the user.</li>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-button-element"><code>button</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/button.html"><code>button</code> test</a> </td>
     <td>Button control</td>
-    <td> Announces "button" + label</td>
+    <td>Announces as label + "button"</td>
     <td>
         <ul>
             <li>VO + right/left arrow to navigate, VO + space to activate</li>
@@ -478,14 +478,17 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>Announced as "toggle button" label and state (pressed/unpressed) when button has aria-pressed.</td>
+    <td>Recognizes the button label and, if provided, state (pressed/unpressed) when button has <code>aria-pressed</code> attribute.</td>
 </tr>
 <tr id="toc-c" tabindex="-1">
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/canvas.html#the-canvas-element"><code>canvas</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/canvas.html"><code>canvas</code> test</a> </td>
     <td>Scriptable bitmap canvas</td>
-    <td>Announces "graphic" if aria-label and Role="img" is provided, Other wise ignores canvas</td>
-    <td>Focusable via swipe gestures if role="img" present or sub DOM contains content.</td>
+    <td>Announces as "image" if <code>aria-label</code> is present or as text if fallback content is provided. Otherwise, <code>canvas</code> is ignored</td>
+    <td>        
+        <ul>
+            <li>VO + right/left arrow to navigate, Focusable via VO navigation</li>
+        </ul></td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
             <path d="M400 32H48C21.5 32 0
@@ -497,8 +500,8 @@ this feature is supposed to convey to the user.</li>
     </td>
     <td> 
         <ul>
-		<li>Sub DOM content announced if available</li>
-		<li>Canvas not idenified without explicit role</li>
+		<li>Accessible fallback content is read if provided</li>
+		<li>Canvas not identified without explicit role</li>
 	</ul>
     </td>
 </tr>
@@ -506,8 +509,19 @@ this feature is supposed to convey to the user.</li>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/tables.html#the-caption-element"><code>caption</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/table-caption-thead-tbody-tfoot-tr-th-td.html"><code>caption</code> test</a> </td>
     <td>Title for a table</td>
-    <td>Announces as part of the table. Role not announced</td>
-    <td>Rotor navigation to tables, announces number of tables</td>
+    <td><ul>
+        <li>Announces caption when table is navigated to and focused with VO. Individual role is not announced
+        </li>
+        <li>Announces "[caption content], table, X rows, Y columns"
+        </li>
+    </ul></td>
+    <td>
+        <ul>
+            <li>VO + right/left arrow to navigate, table element focusable with VO</li>
+            <li>VO + U to open rotor, Right/Left arrow to navigate to Tables menu to see list of tables named by the caption element</li>
+            <li>VO + Shift + Down Arrow to enter table, VO + Arrow Keys to navigate between table cells</li>
+        </ul>
+    </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
@@ -521,9 +535,7 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td> Properly linked to the table it describes.
-
-When rotor set to Tables, single finger swipe up or down, moves to next/previous table,table caption is announced, the "start of table" the row and column number.</td>
+    <td>The caption linked to the table it describes</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-cite-element"><code>cite</code></a></th>
@@ -560,7 +572,7 @@ When rotor set to Tables, single finger swipe up or down, moves to next/previous
         </svg>
     </td>
     <td>
-  No unique treatment; read as normal text.
+        No additional semantics conveyed; read as normal text.
     </td>
 </tr>
 <tr>
@@ -620,9 +632,11 @@ When rotor set to Tables, single finger swipe up or down, moves to next/previous
     <td> 
         Provides options for an input field 
     </td>
-    <td>Announces "text field, listbox popup"</td>
+    <td>Announces as "list box pop-up" on Safari or "list box pop-up, combobox" on Chrome</td>
     <td>
-        Double-tap to select
+        <ul>
+            <li>VO + space to open combobox suggestions + Up/Down Arrows to navigate</li>
+        </ul>
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -637,14 +651,15 @@ When rotor set to Tables, single finger swipe up or down, moves to next/previous
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>List of suggestions appear in browser suggestions rather than as a listbox. With VO enabled cannot display listbox.</td>
+    <td>Provides suggestion list as the user types.</td>
 </tr>    
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dd-element"><code>dd</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dl-dt-dd.html"><code>dd</code> test</a> </td>
     <td> Content of a term's description</td>
-    <td>Announces start of "description list" Reads element content suffixed with "Description" announces "description list end"</td>
-    <td>No special interaction</td>
+    <td>Announces start of "description list". Reads element content suffixed with "term" and announces "term end"</td>
+    <td> <ul>
+            <li>VO + right/left arrow to navigate, focusable via VO navigation</li></td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
@@ -658,35 +673,45 @@ When rotor set to Tables, single finger swipe up or down, moves to next/previous
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>Properly grouped with its <code>dt</code>/td>
+    <td>Linked with its associated <code>dt</code></td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element"><code>del</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/del-ins.html"><code>del</code> test</a> </td>
     <td>Marked as deleted</td>
-    <td>Announces "deletion" then text</td>
+    <td>Announces "deletion" before deleted text when included as part of a tag with plain text, otherwise no aural indication</td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
+                256C8 119.083 119.043 8 256 8s248 111.083 248
+                248zM262.655 90c-54.497 0-89.255 22.957-116.549
+                63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
+                26.31c5.205 3.947 12.621 3.008 16.665-2.122
+                17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
+                45.698 13.148 45.698 32.958 0 14.976-12.363
+                22.667-32.534 33.976C247.128 238.528 216 254.941 216
+                296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+                12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+                0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+                20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+                46-46c0-25.365-20.635-46-46-46z">
+            </path>
+        </svg>    
     </td>
-    <td></td>
+    <td>
+        <ul>
+        <li>Uses a different tone to indicate deletion</li>
+        <li>Support is inconsistent across browsers and "deletion" is only ever announced when part of a tag with plain text</li>
+       </ul>
+    </td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-details-element"><code>details</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/details-summary.html"><code>details</code> test</a> </td>
     <td>Expandable/collapsible content</td>
-    <td>Announces <code>summary</code> text, button, collapsed or expanded (when details content is visible)</td>
-    <td>Double-tap to expand/collapse</td>
+    <td>Announces <code>summary</code> content as disclosure label + "summary" in Safari or "group" on additional browsers</td>
+    <td>VO + space to expand/collapse</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
@@ -706,7 +731,7 @@ When rotor set to Tables, single finger swipe up or down, moves to next/previous
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element"><code>dfn</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dfn.html"><code>dfn</code> test</a> </td>
     <td>Indicates a defining instance of a term</td>
-    <td>Reads element content not role</td>
+    <td>Reads element content</td>
     <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
@@ -717,16 +742,17 @@ When rotor set to Tables, single finger swipe up or down, moves to next/previous
             12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
         </svg>
     </td>
-    <td>No unique treatment beyond reading</td>
+    <td>No additional semantics conveyed</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-dialog-element"><code>dialog</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dialog.html">dialog test</a> </td>
     <td>Modal dialog</td>
-    <td>On button that invokes a dialog: announces button text, pop up button, dialog popup
-
-On dialog: anounces "web dialog", accessible name reads auto focused control on dialog</td>
-    <td>Focus moves to dialog on open</td>
+    <td><ul>
+        <li>On button that invokes a dialog: announces as label + "button", or "dialog pop-up, button" if element has an <code>aria-haspopup="dialog"</code> attribute</li>
+        <li>On dialog: announces "dialog" on Chrome or "web dialog" on Safari, followed by the auto focused control on dialog</td></li>
+    </ul>
+    <td>Focus moved to dialog when opened</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
@@ -740,7 +766,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>Recognizes and traps focus within modal dialog. When dialog closed does not return focus to triggering control unless the dialog has an accessible name.</td>
+    <td>Recognizes and traps focus within modal dialog</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element"><code>div</code></a></th>
@@ -757,7 +783,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
         </svg>
     </td>
-    <td>No semantics conveyed</td>
+    <td>No semantics conveyed unless ARIA roles are provided.</td>
 </tr>
 <tr>
     <th scope="row"><a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dl-element"><code>dl</code></a></th>
