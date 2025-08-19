@@ -1993,12 +1993,11 @@ this feature is supposed to convey to the user.</li>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/sections.html#the-nav-element"><code>nav</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/nav.html"><code>nav</code> test</a> </td>
     <td>Section with navigational links</td>
-    <td><em>Accessible name</em> "landmark region"</td>
+    <td>Announces as "navigation"</td>
     <td>
         <ul>
-            <li>Move to Next Region <kbd>D</kbd></li>
-            <li>Move to Prior Region <kbd>SHIFT+D</kbd></li>
-            <li>List Landmark Regions <kbd>INSERT+F7</kbd></li>
+            <li>VO + right/left arrow to navigate</li>
+            <li>VO + U to open rotor, Right/Left arrow to navigate to Landmarks for a list of landmarks</li>
         </ul>
     </td>
     <td>
@@ -2014,7 +2013,7 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>&nbsp;</td>
+    <td>Identified as a navigation landmark</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#"><code>noscript</code></a></th>
@@ -2035,12 +2034,12 @@ this feature is supposed to convey to the user.</li>
 <tr id="toc-o" tabindex="-1">
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-object-element"><code>object</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/object.html"><code>object</code> test</a> </td>
-    <td> Image, nested browsing context, or plugin </td>
-    <td>Depends on embedded content</td>
+    <td>Image, nested browsing context, or plugin </td>
+    <td>Announces as "frame"</td>
     <td>
         <ul>
-            <li>Next Object <kbd>O</kbd></li>
-            <li>Prior Object <kbd>SHIFT+O</kbd></li>
+      <li>VO + right/left arrow to navigate, focusable via VO navigation </li>
+           <li>Depending on embedded object, VO + down arrow to enter embed</li>
         </ul>
     </td>
     <td>
@@ -2060,21 +2059,20 @@ this feature is supposed to convey to the user.</li>
             46-46c0-25.365-20.635-46-46-46z"></path>
         </svg>
     </td>
-    <td>Support varies depending on object type.</td>
+    <td>
+        <ul>
+            <li>Support varies depending on object type.</li>
+            <li>Fallback content is only announced if the source is broken, otherwise it is ignored by VO</li>
+            <li>Additionally, in Safari, the number of frame elements was announced in addition to "frame", starting from "frame 0"</li>
+        </ul>
+    </td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ol-element"><code>ol</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/ol-li.html"><code>ol</code> test</a> </td>
     <td>Ordered list</td>
-    <td>"List with [n] items" followed by the first list item</td>
-    <td>
-        <ul>
-            <li>Next List <kbd>L</kbd></li>
-            <li>Previous List <kbd>SHIFT+I</kbd></li>
-            <li>Next Item in a List <kbd>I</kbd></li>
-            <li>Previous item in a List <kbd>SHIFT+I</kbd></li>
-        </ul>
-    </td>
+    <td>Announces as "list with X items"</td>
+    <td>VO + Right Arrow</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
@@ -2088,30 +2086,33 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>Announces the numerical or alphabetical value for each list item.</td>
+    <td>Announces list structure and number of items</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-optgroup-element"><code>optgroup</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/select-option.html"><code>optgroup</code> test</a> </td>
     <td>Group of options in a list box</td>
-    <td><em>Label content</em> "grouping"</td>
-    <td>No special commands</td>
+    <td>No aural indication</td>
+    <td>VO + space to expand/collapse options list box</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
+            256C8 119.083 119.043 8 256 8s248 111.083 248
+            248zM262.655 90c-54.497 0-89.255 22.957-116.549
+            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
+            26.31c5.205 3.947 12.621 3.008 16.665-2.122
+            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
+            45.698 13.148 45.698 32.958 0 14.976-12.363
+            22.667-32.534 33.976C247.128 238.528 216 254.941 216
+            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+            46-46c0-25.365-20.635-46-46-46z"></path>
         </svg>
     </td>
     <td>
-        The list needs to be expanded in order for the grouping information to be announced. Use <kbd>ALT</kbd> followed 
-        by <kbd>DOWN ARROW</kbd> key to expand the list.
+        When <code>optgroup</code> element is labelled by an <code>aria-label</code>/<code>aria-labelledby</code> the label content is announced as "dimmed"
     </td>
 </tr>
 <tr>
