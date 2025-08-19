@@ -368,7 +368,7 @@ svg.unknown {
       <td><code>&lt;dialog&gt;</code></td>
       <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dialog.html">dialog</a></td>
       <td>Dialog box</td>
-      <td>Announces "dialog" on Chrome, announced as "group" on additional browsers </td>
+      <td>Announces "dialog" on Chrome, announced as "group" on additional browsers</td>
       <td>Focus moved to dialog when opened</td>
       <td><svg viewBox="0 0 448 512" width="20" aria-label="yes">
           <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
@@ -468,7 +468,12 @@ svg.unknown {
       <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/footer.html">footer</a></td>
       <td>Footer for page or section</td>
       <td>Announces as "content information"</td>
-      <td>VO + Right Arrow</td>
+      <td> 
+        <ul>
+            <li>VO + right/left arrow to navigate, focusable with VO</li>
+            <li>VO + U to open rotor, Right/Left arrow to navigate to 
+              landmarks menu to see list of landmarks including the footer element</li>
+        </ul></td>
       <td><svg viewBox="0 0 448 512" width="20" aria-label="yes">
           <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg></td>
@@ -591,7 +596,7 @@ svg.unknown {
   <td><svg viewBox="0 0 448 512" width="20" aria-label="yes">
     <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
   </svg></td>
-  <td>Announces "edit text" when input is focused.</td>
+  <td>In Chrome, announces "edit text" when input is focused</td>
 </tr>
 <tr>
   <td><code>&lt;input type="datetime-local"&gt;</code></td>

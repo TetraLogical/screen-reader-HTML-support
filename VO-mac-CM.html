@@ -278,10 +278,9 @@ this feature is supposed to convey to the user.</li>
     <td>Announces "complementary"</td>
     <td>
         <ul>
-            <li>VO + right/left arrow to navigate, Focusable via VO navigation</li>
+            <li>VO + right/left arrow to navigate, focusable via VO navigation</li>
             <li>VO + U to open rotor, Right/Left arrow to navigate to Landmarks for a list of landmarks</li>
         </ul>
-        
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -656,10 +655,14 @@ this feature is supposed to convey to the user.</li>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dd-element"><code>dd</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dl-dt-dd.html"><code>dd</code> test</a> </td>
-    <td> Content of a term's description</td>
-    <td>Announces start of "description list". Reads element content suffixed with "term" and announces "term end"</td>
+    <td>Content of a term's description</td>
+    <td>
+      Reads element content and number of list item within <code>dl</code> list
+    </td>
     <td> <ul>
-            <li>VO + right/left arrow to navigate, focusable via VO navigation</li></td>
+            <li>VO + right/left arrow to navigate, focusable via VO navigation</li>
+        </ul>
+        </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
@@ -673,7 +676,7 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>Linked with its associated <code>dt</code></td>
+    <td>Linked with its associated <code>dt</code>, which is announced prior to the <code>dd</code> suffixed with "term" </td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element"><code>del</code></a></th>
@@ -783,17 +786,19 @@ this feature is supposed to convey to the user.</li>
             12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
         </svg>
     </td>
-    <td>No semantics conveyed unless ARIA roles are provided.</td>
+    <td>No semantics conveyed unless ARIA roles are provided</td>
 </tr>
 <tr>
     <th scope="row"><a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dl-element"><code>dl</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dl-dt-dd.html"><code>dl</code> test</a> </td>
     <td>List of term-definition pairs</td>
     <td>
-       Announces start of "description list"
+       Announces as "description list" in Safari or "definition list" in Chrome, "with X items"
     </td>
     <td>
-        Not recognised as a list in rotor navigation
+    <ul>
+        <li>VO + right/left arrow to navigate, focusable via VO navigation</li>
+        </ul>
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -808,7 +813,7 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td></td>
+    <td>Identifies number of items within the <code>dl</code> list</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dt-element"><code>dt</code></a></th>
@@ -816,7 +821,12 @@ this feature is supposed to convey to the user.</li>
     <td> 
        Term in a definition list
     </td>
-    <td>Reads element content suffixed with "term"</td>
+    <td>
+        <ul>
+            <li>Reads element content suffixed with "term" along with list item number in <code>dl</code> list</li>
+            <li>Additionally, in Chrome, the current <code>dt</code> list item number out of the overall number of <code>dt</code> elements is also announced </li>
+        </ul>
+        </td>
     <td>
         Part of list navigation
     </td>
@@ -860,10 +870,14 @@ this feature is supposed to convey to the user.</li>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/embed.html"><code>embed</code> test</a> </td>
     <td> <a href="https://html.spec.whatwg.org/multipage/infrastructure.html#plugins">Plugins</a></td>
     <td>
-        Element content
+        Announces as "frame"
     </td>
     <td>
-       No special interactions
+        <ul>
+            <li>VO + right/left arrow to navigate, focusable via VO navigation </li>
+            <li>Depending on embedded object, VO + down arrow to enter embed</li>
+        </ul>
+       
     </td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
@@ -884,6 +898,10 @@ this feature is supposed to convey to the user.</li>
         </svg>    
     </td>
     <td>
+        <ul>
+            <li>Embedded objects are not announced in Firefox, announced as "frame" in other browsers</li>
+            <li>Additionally, in Safari, the number of frame elements was announced in addition to "frame", starting from "frame 0"</li>
+        </ul>
         
     </td>
 </tr>
@@ -892,12 +910,13 @@ this feature is supposed to convey to the user.</li>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/fieldset-legend.html"><code>fieldset</code> test</a> </td>
     <td>Group of form controls</td>
     <td>
-        "Grouping" followed by legend content when using arrow keys to navigate to the element. Legend content followed by "grouping" 
-        when navigating into a form control in the fieldset.
+        Announced legend content + "group"
     </td>
     <td>
-        No special commands, fieldset presence and accessible name announced when first control child is navigated to using virtual 
-        keys navigation keys for the child control.
+        <ul>
+            <li>VO + right/left arrow to navigate to fieldset and individual form controls</li>
+            <li>VO + U to open rotor, Right/Left arrow to navigate to Form Controls menu for the individual form controls within the <code>fieldset</code> element</li>
+        </ul>
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -912,14 +931,14 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>Only when <code>fieldset</code> has an accessible name via <code>legend</code> or other method.</td>
+    <td>Only when <code>fieldset</code> has an accessible name via <code>legend</code> or other method</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figcaption-element"><code>figcaption</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/figure-figcaption.html"><code>figcaption</code> test</a> </td>
-    <td> Caption for <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element">figure</a></td>
-    <td>Element content</td>
-    <td>No special commands</td>
+    <td>Caption for <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element">figure</a></td>
+    <td>Reads element content</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
@@ -933,14 +952,19 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>&nbsp;</td>
+    <td>Announces when associated with a figure.</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element"><code>figure</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/figure.html"><code>figure</code> test</a> </td>
     <td>Figure with optional caption</td>
-    <td>VoiceOver announces the content of the <figure> element based on what's inside it. For example, if the <code>figure</code> element wraps around an image, VoiceOver will read the image along with its accessible name, typically provided via the alt attribute.</td>
-    <td>No special commands</td>
+    <td>
+        <ul>
+            <li>VoiceOver announces the content of the <code>figure</code> element based on what's inside it. For example, if the <code>figure</code> element wraps around an image, VoiceOver will read the figure element as "image" along with its accessible name, typically provided via the alt attribute</li>
+            <li>If the <code>figure</code> element is labelled by an <code>aria-label</code> or <code>aria-labelledby</code> then it announces as label content + "figure"</li>
+        </ul>
+    </td>
+    <td>VO + right/left arrow to navigate, focusable via VO navigation</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
@@ -954,15 +978,23 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>"Figure" is not announced if the element does not have an accessible name or contain a <code>&lt;figcaption&gt;</code> element.</td>
+    <td>
+    <ul>
+        <li>"Figure" is not announced if the element does not have an accessible name or contain a <code>&lt;figcaption&gt;</code> element</li>
+        <li>If the <code>figure</code> element has an accessible name and wraps an image with an accessible name, it will recognise the start and end of the figure</li>
+    </ul>
+</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/sections.html#the-footer-element"><code>footer</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/footer.html"><code>footer</code> test</a> </td>
     <td>Footer for a page or section</td>
-    <td>"Content info landmark" element content</td>
+    <td>Announces as "content information"</td>
     <td>
-        No special interactions
+        <ul>
+            <li>VO + right/left arrow to navigate</li>
+            <li>VO + U to open rotor, Right/Left arrow to navigate to Landmarks for a list of landmarks</li>
+        </ul>
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -977,15 +1009,29 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>The <code>&lt;footer&gt;</code> element is not exposed if used in an <code>&lt;article&gt;</code> element.</td>
+    <td>
+        <ul>
+            <li>Identified as a landmark region</li>
+            <li>The <code>&lt;footer&gt;</code> element is not exposed if used in an <code>&lt;article&gt;</code> element</li>
+        </ul>
+        </td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-form-element"><code>form</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/form.html"><code>form</code> test</a> </td>
     <td>User-submittable form</td>
-    <td><code>form</code> is not announced, only the first field and element content</td>
     <td>
-        No special instructions
+        <ul>
+            <li>Announces as "form" if <code>aria-label</code> is present, otherwise not announced</li>
+            <li>When <code>form</code> is unlabelled, only the first field and element content are announced</li>
+        </ul>
+        </td>
+    <td>
+             <ul>
+            <li>VO + right/left arrow to navigate</li>
+            <li>VO + U to open rotor, Right/Left arrow to navigate to Form Controls menu to see list of individual form controls within a form</li>
+            <li>Tab / Shift + Tab to navigate to next focusable item (input / button)</li>
+        </ul>
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1023,11 +1069,11 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>Identifies heading level and text.</td>
+    <td>Identifies heading level and text</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/semantics.htmlthe-head-element"><code>head</code></a></th>
-    <td> No test </td>
+    <td>No test </td>
     <td>Container for document metadata</td>
     <td><em>None expected</em></td>
     <td>No special commands</td>
@@ -1046,9 +1092,12 @@ this feature is supposed to convey to the user.</li>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/sections.html#the-header-element"><code>header</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/header.html"><code>header</code> test</a> </td>
     <td>Introductory or navigational aids for a page or section</td>
-    <td>Announced as element content, "Banner landmark"</td>
+    <td>Announces as "banner"</td>
     <td>
-        No special instruction
+        <ul>
+            <li>VO + right/left arrow to navigate</li>
+            <li>VO + U to open rotor, Right/Left arrow to navigate to Landmarks for a list of landmarks</li>
+        </ul>
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1063,14 +1112,19 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>The <code>&lt;header&gt;</code> element is not exposed if used in an <code>&lt;article&gt;</code> element.</td>
+    <td>  
+         <ul>
+            <li>Identified as a landmark region</li>
+            <li>The <code>&lt;header&gt;</code> element is not exposed if used in an <code>&lt;article&gt;</code> element</li>
+        </ul>
+    </td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-hr-element"><code>hr</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/hr.html"><code>hr</code> test</a> </td>
     <td>Thematic break</td>
-    <td>Announced as, "Separator, dimmed"</td>
-    <td>No special command</td>
+    <td>Announced as Announces as "horizontal separator" in Safari and "horizontal splitter" in Chrome</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
@@ -1084,14 +1138,14 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>If an accessible name is provided, the element is announced as "Seperator, accessible name, dimmer"</td>
+    <td>Properly indicates a thematic break</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-html-element"><code>html</code></a></th>
-    <td> No test </td>
+    <td>No test </td>
     <td>Root element</td>
     <td><em>None expected</em></td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
             <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
@@ -1108,7 +1162,7 @@ this feature is supposed to convey to the user.</li>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/i.html"><code>i</code> test</a> </td>
     <td>Alternate voice</td>
     <td><em>Element content</em></td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
             <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
@@ -1129,11 +1183,11 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td> <a href="https://html.spec.whatwg.org/multipage/browsers.html#sec-nested-browsing-contexts">Nested browsing context</a> </td>
-    <td>Announced as title attribute value if provided, followed by "frame"</td>
+    <td>Announces as "frame" + the frame number or title + "frame" if a title attribute is present</td>
     <td>
         <ul>
-            <li>Next Frame <kbd>M</kbd></li>
-            <li>Prior Frame <kbd>SHIFT+M </kbd></li>
+            <li>VO + right/left arrow to navigate, focusable via VO navigation </li>
+            <li>Depending on frame, VO + down arrow to enter frame object</li>
         </ul>
     </td>
     <td>
@@ -1149,14 +1203,18 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>&nbsp;</td>
+    <td>Recognizes frame title when present</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-img-element"><code>img</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/img-alt.html"><code>img</code> test</a> </td>
     <td>Image</td>
     <td>
-	    The alt text is announced first, followed by the image. If the image is decorative and has no alt text, it’s ignored by VoiceOver. 
+	    <ul>
+            <li>Announced as image alt text + "image"</li>
+            <li>If no alt attribute is present, announces as file src name + "image"</li>
+            <li>If the image is decorative and has an empty alt, it's ignored by VoiceOver</li>
+        </ul> 
     </td>
     <td>
         No special interaction
@@ -1180,9 +1238,9 @@ this feature is supposed to convey to the user.</li>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#button-state-typebutton"><code>input [button]</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-button.html"><code>input [button]</code> test</a> </td>
     <td>Button control</td>
-    <td>Announced as "button"</td>
+    <td>Announces label, if present, + "button"</td>
     <td>
-        No special commands
+        VO + space to activate
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1197,15 +1255,15 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>&nbsp;</td>
+    <td>Recognizes button type and label</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#checkbox-state-typecheckbox"><code>input [checkbox]</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-checkbox.html"><code>input [checkbox]</code> test</a> </td>
     <td>Checkbox control</td>
-    <td>Announced as, "tickbox" followed by ticked/unticked state</td>
+    <td>Announces as "unticked/ticked" + "tickbox"</td>
     <td>
-        Double-tap to toggle setting
+        VO + space to check/uncheck
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1220,15 +1278,15 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>&nbsp;</td>
+    <td>Identifies the label and state</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#color-state-typecolor"><code>input [color]</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-color.html"><code>input [color]</code> test</a> </td>
     <td>Colour picker control</td>
-    <td>Announced as colour value</td>
+    <td>Announces as currently selected colour + "color well"</td>
     <td>
-        No special commands
+        VO + space to open colour picker
     </td>
     <td>
         <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
@@ -1244,15 +1302,15 @@ this feature is supposed to convey to the user.</li>
             12.6 0 17.4L313.3 256l67.1 66.5z"></path>
         </svg>
     </td>
-    <td></td>
+    <td>Allows selection of colours from the palette</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#date-state-typedate"><code>input [date]</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-date.html"><code>input [date]</code> test</a> </td>
     <td>date (day/month year) picker control</td>
-    <td>Not announced. Announced if there is a date value, additionally the label content ids announced if there is one. </td>
+    <td>Announces as "current date/selected date" + "date area"</td>
     <td>
-        No special interaction
+        VO + Shift + Down Arrow to edit date area, + Right/Left Arrows to navigate between date fields and Up/Down arrows to adjust stepper
     </td>
     <td>
         <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
@@ -1276,9 +1334,11 @@ this feature is supposed to convey to the user.</li>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#email-state-typeemail"><code>input [email]</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-email.html"><code>input [email]</code> test</a> </td>
     <td>text control for inputting email address</td>
-    <td>Announced as label, then "text field"</td>
+    <td>Announces "edit text, email field"</td>
     <td>
-        Double tap to edit
+        <ul>
+            <li>VO + right/left arrow to navigate, Focusable via VO navigation</li>
+        </ul>
     </td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
@@ -1303,9 +1363,9 @@ this feature is supposed to convey to the user.</li>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#file-upload-state-typefile"><code>input [file]</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-file-upload.html"><code>input [file]</code> test</a> </td>
     <td>File chooser control</td>
-    <td>Announced as <em>Label content</em> file name if selected, otherwise no file chosen, "button"</td>
+    <td>Announces as "No file selected/selected file name" + label, if present + "file upload button"</td>
     <td>
-	    No special interactions
+	    VO + space to open file selection control
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1320,7 +1380,12 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>&nbsp;</td>
+    <td>
+        <ul>
+        <li>Allows file browsing and selection</li>
+        <li>Safari can inconsistently still announce "No file selection" after a file has been selected</li>
+        </ul>
+    </td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#hidden-state-typehidden"><code>input [hidden]</code></a> </th>
