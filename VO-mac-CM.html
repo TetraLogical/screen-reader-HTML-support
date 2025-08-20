@@ -173,7 +173,7 @@ this feature is supposed to convey to the user.</li>
         <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/abbr.html"><code>abbr</code>
         test</a> </td>
         <td>An abbreviation</td>
-        <td>Reads element content; announces title as "group" if present before element content</td>
+        <td><em>Element content</em>; announces title as "group" if present before element content</td>
         <td>
         <p>No special commands</p>
         </td>
@@ -226,9 +226,8 @@ this feature is supposed to convey to the user.</li>
         Announces alt text if present + "image map"
     </td>
     <td>
-        <ul>
-            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation</li>
-        </ul>
+  <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation
+
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -253,9 +252,8 @@ this feature is supposed to convey to the user.</li>
     <td>Self-contained syndicatable or reusable composition</td>
     <td>Announces as "article"</td>
         <td>
-        <ul>
-            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation</li>
-        </ul>
+  <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation
+
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -492,9 +490,8 @@ this feature is supposed to convey to the user.</li>
     <td>Scriptable bitmap canvas</td>
     <td>Announces as "image" if <code>aria-label</code> is present or as text if fallback content is provided. Otherwise, <code>canvas</code> is ignored</td>
     <td>        
-        <ul>
-            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation</li>
-        </ul></td>
+  <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation
+</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
             <path d="M400 32H48C21.5 32 0
@@ -567,7 +564,7 @@ this feature is supposed to convey to the user.</li>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-code-element"><code>code</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/code.html"><code>code</code> test</a> </td>
     <td>Inline code or programming syntax</td>
-    <td>Reads element content</td>
+    <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
@@ -620,7 +617,7 @@ this feature is supposed to convey to the user.</li>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-data-element"><code>data</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/data.html"><code>data</code> test</a> </td>
     <td>Data and its human-readable equivalent</td>
-    <td>Reads element content</td>
+    <td><em>Element content</em></td>
     <td>No special commandss</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
@@ -671,11 +668,11 @@ this feature is supposed to convey to the user.</li>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dl-dt-dd.html"><code>dd</code> test</a> </td>
     <td>Content of a term's description</td>
     <td>
-      Reads element content and number of list item within <code>dl</code> list
+      <em>Element content</em> and number of list item within <code>dl</code> list
     </td>
-    <td> <ul>
-            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation</li>
-        </ul>
+    <td> 
+  <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation
+
         </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -718,7 +715,7 @@ this feature is supposed to convey to the user.</li>
     </td>
     <td>
         <ul>
-        <li>Uses a different tone to indicate deletion</li>
+        <li>VO uses a different tone to indicate deletion</li>
         <li>Support is inconsistent across browsers and "deletion" is only ever announced when part of a tag with plain text</li>
        </ul>
     </td>
@@ -728,7 +725,14 @@ this feature is supposed to convey to the user.</li>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/details-summary.html"><code>details</code> test</a> </td>
     <td>Expandable/collapsible content</td>
     <td>Announces <code>summary</code> content as disclosure label + "summary" in Safari or "group" on additional browsers</td>
-    <td><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Space</kbd>  to expand/collapse</td>
+    <td> 
+        <ul>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Space</kbd>  to activate</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>U</kbd> to open rotor, <kbd>Right/Left</kbd> arrow to navigate to Form Controls menu to see list of <code>details</code> elements labelled by <code>summary</code> content</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Command</kbd> + <kbd>J</kbd> to navigate to next form control</li>
+            <li><kbd>Tab</kbd> / <kbd>Shift</kbd> + <kbd>Tab</kbd> to navigate to next focusable item (form control / link)</li>
+        </ul>
+    </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
@@ -748,7 +752,7 @@ this feature is supposed to convey to the user.</li>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element"><code>dfn</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dfn.html"><code>dfn</code> test</a> </td>
     <td>Indicates a defining instance of a term</td>
-    <td>Reads element content</td>
+    <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
@@ -789,7 +793,7 @@ this feature is supposed to convey to the user.</li>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element"><code>div</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/div.html"><code>div</code> test</a> </td>
     <td>Generic block container</td>
-    <td>Reads element content</td>
+    <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
@@ -837,7 +841,7 @@ this feature is supposed to convey to the user.</li>
     </td>
     <td>
         <ul>
-            <li>Reads element content suffixed with "term" along with list item number in <code>dl</code> list</li>
+            <li><em>Element content</em> suffixed with "term" along with list item number in <code>dl</code> list</li>
             <li>Additionally, in Chrome, the current <code>dt</code> list item number out of the overall number of <code>dt</code> elements is also announced </li>
         </ul>
         </td>
@@ -951,7 +955,7 @@ this feature is supposed to convey to the user.</li>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figcaption-element"><code>figcaption</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/figure-figcaption.html"><code>figcaption</code> test</a> </td>
     <td>Caption for <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element">figure</a></td>
-    <td>Reads element content</td>
+    <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1365,9 +1369,8 @@ this feature is supposed to convey to the user.</li>
     <td>Text control for inputting email address</td>
     <td>Announces "edit text, email field"</td>
     <td>
-        <ul>
-            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation</li>
-        </ul>
+  <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation
+
     </td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
@@ -1495,9 +1498,8 @@ this feature is supposed to convey to the user.</li>
     <td>Text control for inputting a password</td>
     <td>Announces as label, if present, + "secure edit text" </td>
     <td>
-        <ul>
-            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation</li>
-        </ul>
+  <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation
+
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1605,9 +1607,8 @@ this feature is supposed to convey to the user.</li>
     <td>Text control for inputting search terms</td>
     <td>Announces as "search text field"</td>
     <td>
-        <ul>
-            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation</li>
-        </ul>
+  <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation
+
     </td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
@@ -1657,9 +1658,8 @@ this feature is supposed to convey to the user.</li>
     <td>Text box control for inputting a phone number</td>
     <td>Announces as "telephone number field"</td>
     <td>
-        <ul>
-            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation</li>
-        </ul>
+  <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation
+
     </td>
     <td>
     <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1691,9 +1691,8 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <ul>
-            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation</li>
-        </ul>
+  <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation
+
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1708,7 +1707,7 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>Announces "edit text" when input is focused.</td>
+    <td>Announces "edit text" when input is focused</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#time-state-typetime"><code>input [time]</code></a> </th>
@@ -1737,9 +1736,8 @@ this feature is supposed to convey to the user.</li>
     <td>Text control for inputting a URL</td>
     <td>Announces as "URL field"</td>
     <td>
-       <ul>
-            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation</li>
-        </ul>
+ <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation
+
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1780,7 +1778,11 @@ this feature is supposed to convey to the user.</li>
         </svg>
     </td>
     <td>
-        Uses a different tone to indicate insertion. Support was inconsistent across browsers and "insertion" is only ever announced when part of a tag with plain text.
+        <ul>
+            <li>VO uses a different tone to indicate insertion</li>
+            <li>Support was inconsistent across browsers and "insertion" is only ever announced when part of a tag with plain text</li>
+        </ul>
+         
     </td>
 </tr>
 <tr id="toc-k" tabindex="-1">
@@ -2209,12 +2211,9 @@ this feature is supposed to convey to the user.</li>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-p-element"><code>p</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/p.html"><code>p</code> test</a> </td>
     <td>Paragraph</td>
-    <td>Reads element content</td>
+    <td><em>Element content</em></td>
     <td>
-        <ul>
-            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>P</kbd> to read paragraph</li>
-
-        </ul>
+        <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>P</kbd> to read paragraph
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -2306,7 +2305,7 @@ this feature is supposed to convey to the user.</li>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-q-element"><code>q</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/q.html"><code>q</code> test</a> </td>
     <td>Quotation</td>
-    <td>Reads element content</td>
+    <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
@@ -2336,7 +2335,7 @@ this feature is supposed to convey to the user.</li>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rb-element"><code>rb</code></a></th>
     <td>No test </td>
     <td>Ruby base element</td>
-    <td>Reads element content</td>
+    <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img"><path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
@@ -2360,7 +2359,7 @@ this feature is supposed to convey to the user.</li>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element"><code>rp</code></a></th>
     <td> No test </td>
     <td>Fallback parenthesis for browsers that don't support Ruby</td>
-    <td>Reads element content</td>
+    <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
@@ -2385,7 +2384,7 @@ this feature is supposed to convey to the user.</li>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rt-element"><code>rt</code></a></th>
     <td> No test </td>
     <td>Represents an annotation</td>
-    <td>Reads element content</td>
+    <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
@@ -2435,7 +2434,7 @@ this feature is supposed to convey to the user.</li>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-ruby-element"><code>ruby</code></a></th>
     <td> No test </td>
     <td>Shows pronunciation</td>
-    <td>Reads element content</td>
+    <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
@@ -2460,7 +2459,7 @@ this feature is supposed to convey to the user.</li>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-s-element"><code>s</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/s.html"><code>s</code> test</a> </td>
     <td>Inaccurate text</td>
-    <td>Reads element content</td>
+    <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
@@ -2482,7 +2481,7 @@ this feature is supposed to convey to the user.</li>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-samp-element"><code>samp</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/samp.html"><code>samp</code> test</a> </td>
     <td>Computer output</td>
-    <td>Reads element content</td>
+    <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
@@ -2677,7 +2676,12 @@ this feature is supposed to convey to the user.</li>
             46-46c0-25.365-20.635-46-46-46z"></path>
         </svg>
     </td>
-    <td>No semantics conveyed</td>
+    <td>  
+        <ul>
+            <li>In Chrome, VO uses a different intonation when announcing content within a <code>strong</code> element</li>
+            <li>Otherwise, in additional browsers, VO treats content as plain text</li>
+        </ul>
+    </td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/semantics.htmlthe-style-element"><code>style</code></a></th>
@@ -2717,7 +2721,12 @@ this feature is supposed to convey to the user.</li>
             46-46c0-25.365-20.635-46-46-46z"></path>
         </svg>
     </td>
-    <td>No semantics conveyed</td>
+    <td>   
+        <ul>
+            <li>In Chrome, VO uses a different intonation when announcing content within a <code>strong</code> element</li>
+            <li>Otherwise, in additional browsers, VO treats content as plain text</li>
+        </ul>
+    </td>
 </tr>
 <tr>
     <th scope="row" id="el-summary"> 
@@ -2725,12 +2734,18 @@ this feature is supposed to convey to the user.</li>
     </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/details-summary.html"><code>summary</code> test</a> </td>
     <td>disclosure widget control/label</td>
-    <td><em>Label text</em> "button" expanded/collapsed</td>
     <td>
         <ul>
-            <li>List Buttons <kbd>INSERT+F7</kbd></li>
-            <li>Next Button <kbd>B</kbd></li>
-            <li>Prior button <kbd>B</kbd></li>
+            <li>In Safari, announced as <em>element content</em> + "expanded/collapsed, disclosure triangle, group" +</li>
+            <li>In Chrome, announced as <em>element content</em> + "expanded/collapsed, summary"</li>
+        </ul>
+    </td>
+    <td>
+        <ul>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Space</kbd>  to activate</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>U</kbd> to open rotor, <kbd>Right/Left</kbd> arrow to navigate to Form Controls menu to see list of <code>details</code> elements labelled by <code>summary</code> content</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Command</kbd> + <kbd>J</kbd> to navigate to next form control</li>
+            <li><kbd>Tab</kbd> / <kbd>Shift</kbd> + <kbd>Tab</kbd> to navigate to next focusable item (form control / link)</li>
         </ul>
     </td>
     <td>
@@ -2771,18 +2786,27 @@ this feature is supposed to convey to the user.</li>
             46-46c0-25.365-20.635-46-46-46z"></path>
         </svg>
     </td>
-    <td>No semantics conveyed</td>
+    <td>
+        <ul>
+            <li>In Chrome, VO uses a different intonation when announcing content within a <code>strong</code> element</li>
+            <li>Otherwise, in additional browsers, VO treats content as plain text</li>
+        </ul>
+    </td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/embedded-content-other.html#svg-0"><code>svg</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/svg.html"><code>svg</code> test</a> </td>
     <td>Scalable Vector Graphics</td>
-    <td><em>Accessible name</em> "Graphic" if labelled</td>
-    <td>
-        In Chrome or Firefox with <code>role="img"</code>:
+    <td><em>Accessible name</em> "Graphic" if labelled
         <ul>
-            <li>Next Graphic <kbd>G</kbd></li>
-            <li>Previous Graphic <kbd><kbd>Shift</kbd>+G</kbd></li>
+            <li>In Safari, announced as title (if present) + "group" (if no role) or "image" (if <code>role="img"</code> or <code>role="graphics-symbol"</code>)</li>
+            <li>In Chrome or Firefox, announced as title (if present) + "image"</li>
+        </ul>    
+    </td>
+    <td>
+        <ul>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable with VO</li>
+            <li>In Chrome or Firefox: <code>svg</code> elements are recognised by VO as graphics and can be navigated to with the standard keyboard shortcut <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Command</kbd> + <kbd>G</kbd></li>
         </ul>
     </td>
     <td>
@@ -2802,7 +2826,7 @@ this feature is supposed to convey to the user.</li>
             46-46c0-25.365-20.635-46-46-46z"></path>
         </svg>
     </td>
-    <td>The <code>&lt;svg&gt;</code> element is ignored in Firefox, unless it has <code>role="img"</code> and labelled.</td>
+    <td>In Safari, the standard keyboard shortcut <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Command</kbd> + <kbd>G</kbd> navigates to individual polygon elements within the <code>&lt;svg&gt;</code></td>
 </tr>
 <tr id="toc-t">
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/tables.html#the-table-element"> <code>table</code> </a> </th>
@@ -2838,7 +2862,13 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>&nbsp;</td>
+    <td>
+        <ul>
+            <li>Recognizes row/column headers and cell content</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>R</kbd> to read all cell content in current row</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>R</kbd> + <kbd>C</kbd> to read all cell content in current column</li>
+        </ul>
+    </td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/tables.html#the-tbody-element"><code>tbody</code></a></th>
@@ -2862,10 +2892,8 @@ this feature is supposed to convey to the user.</li>
     <td>Announces <em>Cell content</em></td>
     <td>
         <ul>
-            <li>Move to and Read Next Cell <kbd>CTRL+ALT+RIGHT ARROW</kbd></li>
-            <li>Move to and Read Prior Cell <kbd>CTRL+ALT+LEFT ARROW</kbd></li>
-            <li>Move to and Read Cell Above <kbd>CTRL+ALT+UP ARROW</kbd></li>
-            <li>Move to and Read Cell Below <kbd>CTRL+ALT+DOWN ARROW</kbd></li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Shift</kbd> + <kbd>Down</kbd> Arrow to enter table</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + Arrow Keys to navigate between table cells</li>
         </ul>
     </td>
     <td>
@@ -2902,12 +2930,13 @@ this feature is supposed to convey to the user.</li>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/rendering.html#the-textarea-element-2"><code>textarea</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/textarea.html"><code>textarea</code> test</a> </td>
     <td>Multiline text field</td>
-    <td><em>Accessible name</em> "edit", followed by the value if there is any text in the edit field</td>
+    <td>Announced as <em>accessible name</em> (if present) + "edit text", followed by the value if there is any text in the edit field</td>
     <td>
         <ul>
-            <li>List Form Controls <kbd>INSERT+F7</kbd></li>
-            <li>Move To Next Edit Box <kbd>E</kbd></li>
-            <li>Move to Prior Edit Box <kbd><kbd>Shift</kbd>+E</kbd></li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable with VO navigation</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>U</kbd> to open rotor, <kbd>Right/Left</kbd> arrow to navigate to Form Controls menu to see list of buttons</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Command</kbd> + <kbd>J</kbd> to navigate to next form control</li>
+            <li><kbd>Tab</kbd> / <kbd>Shift</kbd> + <kbd>Tab</kbd> to navigate to next focusable item (button / link)</li>
         </ul>
     </td>
     <td>
@@ -2923,7 +2952,7 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>&nbsp;</td>
+    <td>Announces "edit text" when input is focused</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/tables.html#the-tfoot-element"><code>tfoot</code></a></th>
