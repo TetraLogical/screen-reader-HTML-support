@@ -145,9 +145,10 @@ this feature is supposed to convey to the user.</li>
     <td>Announces link text + "link"</td>
     <td>
         <ul>
-            <li>VO + right/left arrow to navigate, VO + space to activate</li>
-            <li>VO + U to open rotor, Right/Left arrow to navigate to Links menu to see list of links</li>
-            <li>VO + Command + L to navigate to next link</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd> arrows to navigate, <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Space</kbd>  to activate</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>U</kbd> to open rotor, <kbd>Right/Left</kbd> arrow to navigate to Links menu to see list of links</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Command</kbd> + <kbd>L</kbd> to navigate to next link</li>
+            <li><kbd>Tab</kbd> / <kbd>Shift</kbd> + <kbd>Tab</kbd> to navigate to next focusable item (button / link)</li>
         </ul>
     </td>
     <td>
@@ -226,7 +227,7 @@ this feature is supposed to convey to the user.</li>
     </td>
     <td>
         <ul>
-            <li>VO + right/left arrow to navigate, Focusable via VO navigation</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation</li>
         </ul>
     </td>
     <td>
@@ -253,7 +254,7 @@ this feature is supposed to convey to the user.</li>
     <td>Announces as "article"</td>
         <td>
         <ul>
-            <li>VO + right/left arrow to navigate, Focusable via VO navigation</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation</li>
         </ul>
     </td>
     <td>
@@ -278,8 +279,8 @@ this feature is supposed to convey to the user.</li>
     <td>Announces "complementary"</td>
     <td>
         <ul>
-            <li>VO + right/left arrow to navigate, focusable via VO navigation</li>
-            <li>VO + U to open rotor, Right/Left arrow to navigate to Landmarks for a list of landmarks</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>U</kbd> to open rotor, <kbd>Right/Left</kbd> arrow to navigate to Landmarks for a list of landmarks</li>
         </ul>
     </td>
     <td>
@@ -301,10 +302,15 @@ this feature is supposed to convey to the user.</li>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/media.html#the-audio-element"><code>audio</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/audio.html"><code>audio</code> test</a> </td>
     <td>Audio content with controls</td>
-    <td>Announces as "Audio Controls, group" if the <code>controls</code> attribute is present, and as label text + "audio" if an <code>aria-label</code> is present</td>
+    <td>
+        <ul>
+            <li>Announces as "Audio Controls, group" if the <code>controls</code> attribute is present</li>
+            <li>Announced as as label text + "audio" if an <code>aria-label</code> is present</li>
+        </ul>
+    </td>
     <td> 
      <ul>
-        <li>VO + right/left arrow to navigate, VO + space to activate</li>
+        <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Space</kbd>  to activate</li>
         </ul>
     </td>
     <td>
@@ -459,9 +465,10 @@ this feature is supposed to convey to the user.</li>
     <td>Announces as label + "button"</td>
     <td>
         <ul>
-            <li>VO + right/left arrow to navigate, VO + space to activate</li>
-            <li>VO + U to open rotor, Right/Left arrow to navigate to Form Controls menu to see list of buttons</li>
-            <li>Tab / Shift + Tab to navigate to next focusable item (button / link)</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Space</kbd>  to activate</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>U</kbd> to open rotor, <kbd>Right/Left</kbd> arrow to navigate to Form Controls menu to see list of buttons</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Command</kbd> + <kbd>J</kbd> to navigate to next form control</li>
+            <li><kbd>Tab</kbd> / <kbd>Shift</kbd> + <kbd>Tab</kbd> to navigate to next focusable item (button / link)</li>
         </ul>
     </td>
     <td>
@@ -486,7 +493,7 @@ this feature is supposed to convey to the user.</li>
     <td>Announces as "image" if <code>aria-label</code> is present or as text if fallback content is provided. Otherwise, <code>canvas</code> is ignored</td>
     <td>        
         <ul>
-            <li>VO + right/left arrow to navigate, Focusable via VO navigation</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation</li>
         </ul></td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
@@ -516,9 +523,10 @@ this feature is supposed to convey to the user.</li>
     </ul></td>
     <td>
         <ul>
-            <li>VO + right/left arrow to navigate, table element focusable with VO</li>
-            <li>VO + U to open rotor, Right/Left arrow to navigate to Tables menu to see list of tables named by the caption element</li>
-            <li>VO + Shift + Down Arrow to enter table, VO + Arrow Keys to navigate between table cells</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, table element focusable with VO</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>U</kbd> to open rotor, <kbd>Right/Left</kbd> arrow to navigate to Tables menu to see list of tables named by the caption element</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Shift</kbd> + <kbd>Down</kbd> Arrow to enter table, <kbd>Control</kbd> + <kbd>Option</kbd> + Arrow Keys to navigate between table cells</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Command</kbd> + <kbd>T</kbd> to navigate to next table</li>
         </ul>
     </td>
     <td>
@@ -634,7 +642,8 @@ this feature is supposed to convey to the user.</li>
     <td>Announces as "list box pop-up" on Safari or "list box pop-up, combobox" on Chrome</td>
     <td>
         <ul>
-            <li>VO + space to open combobox suggestions + Up/Down Arrows to navigate</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Space</kbd>  to open combobox suggestions + <kbd>Up/Down</kbd> Arrows to navigate</li>
+            
         </ul>
     </td>
     <td>
@@ -650,7 +659,12 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>Provides suggestion list as the user types.</td>
+    <td>
+        <ul>
+            <li>Provides suggestion list as the user types.</li>
+            <li>VO doesn't recognise <code>dl</code> list elements as a semantic list, <code>dl</code> lists are not navigable by the standard keyboard <kbd>Command</kbd> for lists (<kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Command</kbd> + X)</li>
+        </ul>
+    </td>
 </tr>    
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dd-element"><code>dd</code></a></th>
@@ -660,7 +674,7 @@ this feature is supposed to convey to the user.</li>
       Reads element content and number of list item within <code>dl</code> list
     </td>
     <td> <ul>
-            <li>VO + right/left arrow to navigate, focusable via VO navigation</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation</li>
         </ul>
         </td>
     <td>
@@ -714,7 +728,7 @@ this feature is supposed to convey to the user.</li>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/details-summary.html"><code>details</code> test</a> </td>
     <td>Expandable/collapsible content</td>
     <td>Announces <code>summary</code> content as disclosure label + "summary" in Safari or "group" on additional browsers</td>
-    <td>VO + space to expand/collapse</td>
+    <td><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Space</kbd>  to expand/collapse</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
@@ -797,7 +811,7 @@ this feature is supposed to convey to the user.</li>
     </td>
     <td>
     <ul>
-        <li>VO + right/left arrow to navigate, focusable via VO navigation</li>
+        <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation</li>
         </ul>
     </td>
     <td>
@@ -874,8 +888,8 @@ this feature is supposed to convey to the user.</li>
     </td>
     <td>
         <ul>
-            <li>VO + right/left arrow to navigate, focusable via VO navigation </li>
-            <li>Depending on embedded object, VO + down arrow to enter embed</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation </li>
+            <li>Depending on embedded object, <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Down</kbd> arrow to enter embed</li>
         </ul>
        
     </td>
@@ -914,8 +928,8 @@ this feature is supposed to convey to the user.</li>
     </td>
     <td>
         <ul>
-            <li>VO + right/left arrow to navigate to fieldset and individual form controls</li>
-            <li>VO + U to open rotor, Right/Left arrow to navigate to Form Controls menu for the individual form controls within the <code>fieldset</code> element</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate to fieldset and individual form controls</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>U</kbd> to open rotor, <kbd>Right/Left</kbd> arrow to navigate to Form Controls menu for the individual form controls within the <code>fieldset</code> element</li>
         </ul>
     </td>
     <td>
@@ -964,7 +978,12 @@ this feature is supposed to convey to the user.</li>
             <li>If the <code>figure</code> element is labelled by an <code>aria-label</code> or <code>aria-labelledby</code> then it announces as label content + "figure"</li>
         </ul>
     </td>
-    <td>VO + right/left arrow to navigate, focusable via VO navigation</td>
+    <td>
+        <ul>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Command</kbd> + <kbd>G</kbd> to navigate to next graphic</li>
+        </ul>
+    </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
@@ -992,8 +1011,8 @@ this feature is supposed to convey to the user.</li>
     <td>Announces as "content information"</td>
     <td>
         <ul>
-            <li>VO + right/left arrow to navigate</li>
-            <li>VO + U to open rotor, Right/Left arrow to navigate to Landmarks for a list of landmarks</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>U</kbd> to open rotor, <kbd>Right/Left</kbd> arrow to navigate to Landmarks for a list of landmarks</li>
         </ul>
     </td>
     <td>
@@ -1012,7 +1031,7 @@ this feature is supposed to convey to the user.</li>
     <td>
         <ul>
             <li>Identified as a landmark region</li>
-            <li>The <code>&lt;footer&gt;</code> element is not exposed if used in an <code>&lt;article&gt;</code> element</li>
+            <li>The <code>&lt;footer&gt;</code> element is not exposed if used in an <code>&lt;article&gt;</code> or <code>&lt;section&gt;</code> element</li>
         </ul>
         </td>
 </tr>
@@ -1028,9 +1047,9 @@ this feature is supposed to convey to the user.</li>
         </td>
     <td>
         <ul>
-            <li>VO + right/left arrow to navigate</li>
-            <li>VO + U to open rotor, Right/Left arrow to navigate to Form Controls menu to see list of individual form controls within a form</li>
-            <li>Tab / Shift + Tab to navigate to next focusable item (input / button)</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>U</kbd> to open rotor, <kbd>Right/Left</kbd> arrow to navigate to Form Controls menu to see list of individual form controls within a form</li>
+            <li><kbd>Tab</kbd> / <kbd>Shift</kbd> + <kbd>Tab</kbd> to navigate to next focusable item (input / button)</li>
         </ul>
     </td>
     <td>
@@ -1052,9 +1071,9 @@ this feature is supposed to convey to the user.</li>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/sections.html#the-h1-h2-h3-h4-h5-and-h6-elements"><code>h1 - h6</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/h1-h6.html"><code>h1 - h6</code> test</a> </td>
     <td>Section heading</td>
-    <td>Announced as, <em>heading content</em> "heading, level" 1 to 6</td>
+    <td>Announced as heading content + "heading, level X" (1 to 6)</td>
     <td>
-       No special commands
+       <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Command</kbd> + <kbd>H</kbd> to navigate to next heading
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1095,8 +1114,8 @@ this feature is supposed to convey to the user.</li>
     <td>Announces as "banner"</td>
     <td>
         <ul>
-            <li>VO + right/left arrow to navigate</li>
-            <li>VO + U to open rotor, Right/Left arrow to navigate to Landmarks for a list of landmarks</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>U</kbd> to open rotor, <kbd>Right/Left</kbd> arrow to navigate to Landmarks for a list of landmarks</li>
         </ul>
     </td>
     <td>
@@ -1115,7 +1134,7 @@ this feature is supposed to convey to the user.</li>
     <td>  
          <ul>
             <li>Identified as a landmark region</li>
-            <li>The <code>&lt;header&gt;</code> element is not exposed if used in an <code>&lt;article&gt;</code> element</li>
+            <li>The <code>&lt;header&gt;</code> element is not exposed if used in an <code>&lt;article&gt;</code> or <code>&lt;section&gt;</code> element</li>
         </ul>
     </td>
 </tr>
@@ -1123,7 +1142,11 @@ this feature is supposed to convey to the user.</li>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-hr-element"><code>hr</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/hr.html"><code>hr</code> test</a> </td>
     <td>Thematic break</td>
-    <td>Announced as Announces as "horizontal separator" in Safari and "horizontal splitter" in Chrome</td>
+    <td>
+        <ul>
+            <li>Announced as "horizontal separator" in Safari</li>
+            <li>Announced as "horizontal splitter" in Chrome</li>
+        </ul>
     <td>No special commands</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1183,11 +1206,16 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td> <a href="https://html.spec.whatwg.org/multipage/browsers.html#sec-nested-browsing-contexts">Nested browsing context</a> </td>
-    <td>Announces as "frame" + the frame number or title + "frame" if a title attribute is present</td>
     <td>
         <ul>
-            <li>VO + right/left arrow to navigate, focusable via VO navigation </li>
-            <li>Depending on frame, VO + down arrow to enter frame object</li>
+            <li>Announces as "frame" + the frame number</li>
+            <li>Announces as title + "frame" if a title attribute is present</li>
+        </ul>
+    </td>
+    <td>
+        <ul>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation </li>
+            <li>Depending on frame, <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Down</kbd> arrow to enter frame object</li>
         </ul>
     </td>
     <td>
@@ -1217,7 +1245,10 @@ this feature is supposed to convey to the user.</li>
         </ul> 
     </td>
     <td>
-        No special commands
+        <ul>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Command</kbd> + <kbd>G</kbd> to navigate to next graphic</li>
+        </ul>
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1240,7 +1271,7 @@ this feature is supposed to convey to the user.</li>
     <td>Button control</td>
     <td>Announces label, if present, + "button"</td>
     <td>
-        VO + space to activate
+        <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Space</kbd>  to activate
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1263,7 +1294,7 @@ this feature is supposed to convey to the user.</li>
     <td>Checkbox control</td>
     <td>Announces as "unticked/ticked" + "tickbox"</td>
     <td>
-        VO + space to check/uncheck
+        <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Space</kbd>  to check/uncheck
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1286,7 +1317,7 @@ this feature is supposed to convey to the user.</li>
     <td>Colour picker control</td>
     <td>Announces as currently selected colour + "color well"</td>
     <td>
-        VO + space to open colour picker
+        <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Space</kbd>  to open colour picker
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1309,7 +1340,7 @@ this feature is supposed to convey to the user.</li>
     <td>date (day/month year) picker control</td>
     <td>Announces as "current date/selected date" + "date area"</td>
     <td>
-        VO + Shift + Down Arrow to edit date area, + Right/Left Arrows to navigate between date fields and Up/Down arrows to adjust stepper
+        <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Shift</kbd> + <kbd>Down</kbd> Arrow to edit date area, + <kbd>Right/Left</kbd> Arrows to navigate between date fields and <kbd>Up/Down</kbd> arrows to adjust stepper
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1335,7 +1366,7 @@ this feature is supposed to convey to the user.</li>
     <td>Announces "edit text, email field"</td>
     <td>
         <ul>
-            <li>VO + right/left arrow to navigate, Focusable via VO navigation</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation</li>
         </ul>
     </td>
     <td>
@@ -1363,7 +1394,7 @@ this feature is supposed to convey to the user.</li>
     <td>File chooser control</td>
     <td>Announces as "No file selected/selected file name" + label, if present + "file upload button"</td>
     <td>
-	    VO + space to open file selection control
+	    <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Space</kbd>  to open file selection control
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1415,7 +1446,7 @@ this feature is supposed to convey to the user.</li>
         <li>If alt text is present, announced as alt text content + "button"</li>
     </ul></td>
     <td>
-        VO + space to activate
+        <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Space</kbd>  to activate
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1439,8 +1470,8 @@ this feature is supposed to convey to the user.</li>
     <td>Announces as "incremental edit text number field"</td>
     <td>
          <ul>
-            <li>VO + right/left arrow to navigate, Focusable via VO navigation</li>
-            <li>Up/Down Arrow keys to increase/decrease stepper value</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation</li>
+            <li><kbd>Up/Down</kbd> Arrow keys to increase/decrease stepper value</li>
         </ul>
     </td>
     <td>
@@ -1456,7 +1487,7 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>Editable text field when focused with VO or the incremental stepper can be interacted with by use of Up/Down arrow keys</td>
+    <td>Editable text field when focused with VO or the incremental stepper can be interacted with by use of <kbd>Up/Down</kbd> arrow keys</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#password-state-typepassword"><code>input [password]</code></a> </th>
@@ -1465,7 +1496,7 @@ this feature is supposed to convey to the user.</li>
     <td>Announces as label, if present, + "secure edit text" </td>
     <td>
         <ul>
-            <li>VO + right/left arrow to navigate, Focusable via VO navigation</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation</li>
         </ul>
     </td>
     <td>
@@ -1496,7 +1527,7 @@ this feature is supposed to convey to the user.</li>
         Announces as "selected/unselected, radio button" + position of radio button out of total number in radio group, for example (1 of 3)
     </td>
     <td>
-        VO + space to select radio button
+        <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Space</kbd>  to select radio button
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1520,8 +1551,8 @@ this feature is supposed to convey to the user.</li>
     <td>Announces as current value + "slider"</td>
     <td>
         <ul>
-            <li>VO + right/left arrow to navigate, Focusable via VO navigation</li>
-            <li>Right/Left Arrows to adjust value</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation</li>
+            <li><kbd>Right/Left</kbd> Arrows to adjust value</li>
         </ul>
     </td>
     <td>
@@ -1547,7 +1578,7 @@ this feature is supposed to convey to the user.</li>
     <td>Button control for resetting a form</td>
     <td>Announces "reset, button" or value content + "button" if <code>value</code> attribute is set</td>
     <td>
-        VO + space to activate
+        <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Space</kbd>  to activate
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1575,7 +1606,7 @@ this feature is supposed to convey to the user.</li>
     <td>Announces as "search text field"</td>
     <td>
         <ul>
-            <li>VO + right/left arrow to navigate, Focusable via VO navigation</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation</li>
         </ul>
     </td>
     <td>
@@ -1603,7 +1634,7 @@ this feature is supposed to convey to the user.</li>
     <td>Button control for submitting a form</td>
     <td>Announces "submit, button" or value content + "button" if <code>value</code> attribute is set</td>
     <td>
-        VO + space to activate
+        <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Space</kbd>  to activate
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1627,7 +1658,7 @@ this feature is supposed to convey to the user.</li>
     <td>Announces as "telephone number field"</td>
     <td>
         <ul>
-            <li>VO + right/left arrow to navigate, Focusable via VO navigation</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation</li>
         </ul>
     </td>
     <td>
@@ -1661,7 +1692,7 @@ this feature is supposed to convey to the user.</li>
     </td>
     <td>
         <ul>
-            <li>VO + right/left arrow to navigate, Focusable via VO navigation</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation</li>
         </ul>
     </td>
     <td>
@@ -1684,7 +1715,7 @@ this feature is supposed to convey to the user.</li>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-time.html"><code>input [time]</code> test</a> </td>
     <td>Control for setting a specific time.</td>
     <td>Announces current time value + "time area"</td>
-      <td>VO + Shift + Down Arrow to edit time values, Up/Down Arrow keys to increase/decrease stepper value/td>
+      <td><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Shift</kbd> + <kbd>Down</kbd> Arrow to edit time values, <kbd>Up/Down</kbd> Arrow keys to increase/decrease stepper value/td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
@@ -1707,7 +1738,7 @@ this feature is supposed to convey to the user.</li>
     <td>Announces as "URL field"</td>
     <td>
        <ul>
-            <li>VO + right/left arrow to navigate, Focusable via VO navigation</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation</li>
         </ul>
     </td>
     <td>
@@ -1779,9 +1810,11 @@ this feature is supposed to convey to the user.</li>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/label.html"><code>label</code> test</a> </td>
     <td>Caption for a form control</td>
     <td>Label content announced when the corresponding form control has focus</td>
-    <td>  <ul>
-            <li>VO + U to open rotor, Right/Left arrow to navigate to Form Controls menu to see list of individual form controls named by associated label content</li>
-        </ul></td>
+    <td>  
+        <ul>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>U</kbd> to open rotor, <kbd>Right/Left</kbd> arrow to navigate to Form Controls menu to see list of individual form controls named by associated label content</li>
+        </ul>
+    </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
@@ -1836,7 +1869,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-       VO + Right Arrow to navigate
+       <kbd>Control</kbd> + <kbd>Option</kbd> + Right Arrow to navigate
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1875,8 +1908,8 @@ this feature is supposed to convey to the user.</li>
     <td>Announces "main"</td>
     <td>
         <ul>
-            <li>VO + right/left arrow to navigate</li>
-            <li>VO + U to open rotor, Right/Left arrow to navigate to Landmarks for a list of landmarks</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>U</kbd> to open rotor, <kbd>Right/Left</kbd> arrow to navigate to Landmarks for a list of landmarks</li>
         </ul>
     </td>
     <td>
@@ -1984,7 +2017,7 @@ this feature is supposed to convey to the user.</li>
             </li>
             <li>
                 If the <code>&lt;meta&gt;</code> element is labelled using the <code>aria-labelledby</code> attribute, 
-                the value is not announced by NVDA in Chrome.
+                the value is not announced by VO in Chrome.
             </li>
         </ul>
     </td>
@@ -1996,8 +2029,8 @@ this feature is supposed to convey to the user.</li>
     <td>Announces as "navigation"</td>
     <td>
         <ul>
-            <li>VO + right/left arrow to navigate</li>
-            <li>VO + U to open rotor, Right/Left arrow to navigate to Landmarks for a list of landmarks</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>U</kbd> to open rotor, <kbd>Right/Left</kbd> arrow to navigate to Landmarks for a list of landmarks</li>
         </ul>
     </td>
     <td>
@@ -2038,8 +2071,9 @@ this feature is supposed to convey to the user.</li>
     <td>Announces as "frame"</td>
     <td>
         <ul>
-      <li>VO + right/left arrow to navigate, focusable via VO navigation </li>
-           <li>Depending on embedded object, VO + down arrow to enter embed</li>
+           <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation </li>
+           <li>If <code>object</code> has an image type, it is recognised by VO as a graphic and can be navigated to with the standard keyboard shortcut <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Command</kbd> + <kbd>G</kbd></li>
+           <li>Depending on embedded <code>object</code>, <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Down</kbd> arrow to enter embed</li>
         </ul>
     </td>
     <td>
@@ -2072,7 +2106,12 @@ this feature is supposed to convey to the user.</li>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/ol-li.html"><code>ol</code> test</a> </td>
     <td>Ordered list</td>
     <td>Announces as "list with X items"</td>
-    <td>VO + Right Arrow</td>
+    <td>
+        <ul>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  Arrow to navigate</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Command</kbd> + <kbd>X</kbd> to navigate to next list element</li>
+        </ul>
+    </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
@@ -2093,7 +2132,7 @@ this feature is supposed to convey to the user.</li>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/select-option.html"><code>optgroup</code> test</a> </td>
     <td>Group of options in a list box</td>
     <td>No aural indication</td>
-    <td>VO + space to expand/collapse options list box</td>
+    <td><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Space</kbd>  to expand/collapse options list box</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
             <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
@@ -2119,8 +2158,8 @@ this feature is supposed to convey to the user.</li>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-option-element"><code>option</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/select-option.html"><code>option</code> test</a> </td>
     <td>Option in a list box or combo box control</td>
-    <td><em>Option content</em> x of y; where x = position in list, y = number of items in the list</td>
-    <td>Navigable using <kbd>UP</kbd>/<kbd>DOWN</kbd> arrow keys</td>
+    <td>Announced as option content + checkmark if currently selected</td>
+    <td><kbd>Up/Down</kbd> arrow keys to navigate options</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
@@ -2134,13 +2173,18 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>Use <kbd>ALT</kbd> followed by <kbd>DOWN ARROW</kbd> key to expand the list.</td>
+    <td>Use <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Space</kbd>  to expand/collapse options list</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-output-element"><code>output</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/output.html"><code>output</code> test</a> </td>
     <td>Calculated output value</td>
-    <td>Reads output value</td>
+    <td><ul>
+        <li>Announced as the output value</li>
+        <li>In Safari, when the output element has an accessible name, it is announced as output value + "output"</li>
+        <li>In Chrome, when the output element has an accessible name, it is announced as output value + "status"</li>
+        </ul>
+    </td>
     <td>No special commands</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
@@ -2159,17 +2203,17 @@ this feature is supposed to convey to the user.</li>
             46-46c0-25.365-20.635-46-46-46z"></path>
         </svg>
     </td>
-    <td>No semantics conveyed</td>
+    <td>VO only recognises the element as "output/status" if the <code>output</code> element has an accessible name. Otherwise, the semantics are ignored and only the value is announced.</td>
 </tr>
 <tr id="toc-p" tabindex="-1">
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-p-element"><code>p</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/p.html"><code>p</code> test</a> </td>
     <td>Paragraph</td>
-    <td><em>Element content</em></td>
+    <td>Reads element content</td>
     <td>
         <ul>
-            <li>Next Paragraph <kbd>P</kbd></li>
-            <li>Prior Paragraph <kbd>SHIFT+P</kbd></li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>P</kbd> to read paragraph</li>
+
         </ul>
     </td>
     <td>
@@ -2226,16 +2270,11 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+       <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
+            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 
+            48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 
+            296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 
+            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
         </svg>
     </td>
     <td>No semantics conveyed</td>
@@ -2244,11 +2283,7 @@ this feature is supposed to convey to the user.</li>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-progress-element"><code>progress</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/progress.html"><code>progress</code> test</a> </td>
     <td>Progress bar</td>
-    <td>
-        <ul>
-            <li>NVDA beeps as the value of the progress bar is updated with an ever increasing pitch as the value increases</lI>
-            <li><em>Accessible name</em>, "progress bar", value (if using arrow keys)</li>
-        </ul>
+    <td>Announced as accessible name (if present) + current percentage value + "progress indicator"
     <td>No special commands</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -2264,15 +2299,14 @@ this feature is supposed to convey to the user.</li>
         </svg>
     </td>
     <td>
-        Progress bars are not inherently focusable. But if a progress bar has <code>tabindex="0"</code>, then the accessible 
-        name of the progress bar will be announced on focus.
+        VO does not announce the new value of the progress bar if the <code>value</code> attribute is updated
     </td>
 </tr>
 <tr id="toc-q" tabindex="-1">
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-q-element"><code>q</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/q.html"><code>q</code> test</a> </td>
     <td>Quotation</td>
-    <td><em>Element content</em></td>
+    <td>Reads element content</td>
     <td>No special commands</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
@@ -2291,13 +2325,18 @@ this feature is supposed to convey to the user.</li>
             46-46c0-25.365-20.635-46-46-46z"></path>
         </svg>
     </td>
-    <td>&nbsp;</td>
+    <td>
+        <ul>
+            <li>In Chrome, VO uses a different intonation when announcing content within a <code>q</code> element</li>
+            <li>Otherwise, in additional browsers, VO treats quotation content as plain text</li>
+        </ul>
+    </td>
 </tr>
 <tr id="toc-r" tabindex="-1">
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rb-element"><code>rb</code></a></th>
-    <td> No test </td>
+    <td>No test </td>
     <td>Ruby base element</td>
-    <td><em>Element content</em></td>
+    <td>Reads element content</td>
     <td>No special commands</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img"><path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
@@ -2321,7 +2360,7 @@ this feature is supposed to convey to the user.</li>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element"><code>rp</code></a></th>
     <td> No test </td>
     <td>Fallback parenthesis for browsers that don't support Ruby</td>
-    <td><em>Element content</em></td>
+    <td>Reads element content</td>
     <td>No special commands</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
@@ -2346,7 +2385,7 @@ this feature is supposed to convey to the user.</li>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rt-element"><code>rt</code></a></th>
     <td> No test </td>
     <td>Represents an annotation</td>
-    <td><em>Element content</em></td>
+    <td>Reads element content</td>
     <td>No special commands</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
@@ -2369,7 +2408,7 @@ this feature is supposed to convey to the user.</li>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rtc-element"><code>rtc</code></a></th>
-    <td> No test </td>
+    <td>No test </td>
     <td>Ruby text container</td>
     <td><em>Element content</em></td>
     <td>No special commands</td>
@@ -2396,53 +2435,7 @@ this feature is supposed to convey to the user.</li>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-ruby-element"><code>ruby</code></a></th>
     <td> No test </td>
     <td>Shows pronunciation</td>
-    <td><em>Element content</em></td>
-    <td>No special commands</td>
-    <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
-    </td>
-    <td>&nbsp;</td>
-</tr>
-<tr id="toc-s" tabindex="-1">
-    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-s-element"><code>s</code></a></th>
-    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/s.html"><code>s</code> test</a> </td>
-    <td>Inaccurate text</td>
-    <td>"Deleted" <em>Element content</em></td>
-    <td>No special commands</td>
-    <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
-    </td>
-    <td>&nbsp;</td>
-</tr>
-<tr>
-    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-samp-element"><code>samp</code></a></th>
-    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/samp.html"><code>samp</code> test</a> </td>
-    <td>Computer output</td>
-    <td><em>Element content</em></td>
+    <td>Reads element content</td>
     <td>No special commands</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
@@ -2463,9 +2456,61 @@ this feature is supposed to convey to the user.</li>
     </td>
     <td>No semantics conveyed</td>
 </tr>
+<tr id="toc-s" tabindex="-1">
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-s-element"><code>s</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/s.html"><code>s</code> test</a> </td>
+    <td>Inaccurate text</td>
+    <td>Reads element content</td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
+            <path d="M464 32H48C21.5 32 0
+            53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
+            48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
+            12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
+            313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
+            0l-40.5-40.5c-4.8-4.8-4.8-12.6
+            0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
+            0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
+            66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
+            4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path>
+        </svg>
+    </td>
+    <td>No semantics conveyed</td>
+</tr>
+<tr>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-samp-element"><code>samp</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/samp.html"><code>samp</code> test</a> </td>
+    <td>Computer output</td>
+    <td>Reads element content</td>
+    <td>No special commands</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
+            256C8 119.083 119.043 8 256 8s248 111.083 248
+            248zM262.655 90c-54.497 0-89.255 22.957-116.549
+            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
+            26.31c5.205 3.947 12.621 3.008 16.665-2.122
+            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
+            45.698 13.148 45.698 32.958 0 14.976-12.363
+            22.667-32.534 33.976C247.128 238.528 216 254.941 216
+            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+            46-46c0-25.365-20.635-46-46-46z"></path>
+        </svg>
+    </td>
+    <td>     
+        <ul>
+            <li>In Chrome, VO uses a different intonation when announcing content within a <code>samp</code> element</li>
+            <li>Otherwise, in additional browsers, VO treats element content as plain text</li>
+        </ul>
+    </td>
+</tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-script-element"><code>script</code></a></th>
-    <td> No test </td>
+    <td>No test </td>
     <td>Embedded script</td>
     <td><em>None expected</em></td>
     <td>No special commands</td>
@@ -2489,13 +2534,12 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>Generic document or application section</td>
-    <td>Announces "region" if labelled</td>
+    <td>Announces as "region" if <code>section</code> is labelled by an accessible name</td>
     <td>
         If labelled, treated as a landmark:
         <ul>
-            <li>Move to Next Region <kbd>D</kbd></li>
-            <li>Move to Prior Region <kbd>SHIFT+D</kbd></li>
-            <li>List Landmark Regions <kbd>INSERT+F7</kbd></li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>U</kbd> to open rotor, <kbd>Right/Left</kbd> arrow to navigate to Landmarks for a list of landmarks</li>
         </ul>
     </td>
     <td>
@@ -2511,18 +2555,24 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
             </svg>
     </td>
-    <td>No semantics conveyed unless the section has an accessible name.</td>
+    <td>No semantics conveyed unless the section has an accessible name, in which case VO treats the it as a landmark region.</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element"><code>select</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/select-option.html"><code>select</code> test</a> </td>
     <td>Combo box</td>
-    <td><em>Accessible name</em> "combo box"</td>
     <td>
         <ul>
-            <li>Move To Next Combo Box <kbd>C</kbd></li>
-            <li>Move to Prior Combo Box <kbd>SHIFT+C </kbd></li>
-            <li>List of Form Controls <kbd>INSERT+F7</kbd></li>
+            <li>In Safari, announced as "pop-up button"</li>
+            <li>In Chrome, announced as [current value] + [accessible name] (if present) + "menu pop-up collapsed/expanded, button"</li>
+        </ul>
+    </td>
+    <td>
+         <ul>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Space</kbd>  to activate</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>U</kbd> to open rotor, <kbd>Right/Left</kbd> arrow to navigate to Form Controls menu to see list of <code>select</code> elements</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Command</kbd> + <kbd>J</kbd> to navigate to next form control</li>
+            <li><kbd>Tab</kbd> / <kbd>Shift</kbd> + <kbd>Tab</kbd> to navigate to next focusable item (form controls / link)</li>
         </ul>
     </td>
     <td>
@@ -2538,7 +2588,7 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>Provides list of options, recognizes <code>optgroup</code>.</td>
+    <td>Provides list of options</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-small-element"><code>small</code></a></th>
@@ -2732,7 +2782,7 @@ this feature is supposed to convey to the user.</li>
         In Chrome or Firefox with <code>role="img"</code>:
         <ul>
             <li>Next Graphic <kbd>G</kbd></li>
-            <li>Previous Graphic <kbd>SHIFT+G</kbd></li>
+            <li>Previous Graphic <kbd><kbd>Shift</kbd>+G</kbd></li>
         </ul>
     </td>
     <td>
@@ -2764,11 +2814,15 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>Data table</td>
-    <td>Announced as, "table with X rows and Y columns"</td>
+            <li>Announces "[caption content], table, X rows, Y columns"
+        </li>
+    </ul></td>
     <td>
         <ul>
-            <li>Next Table <kbd>T </kbd></li>
-            <li>Prior Table <kbd>SHIFT+T</kbd></li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, table element focusable with VO</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>U</kbd> to open rotor, <kbd>Right/Left</kbd> arrow to navigate to Tables menu to see list of tables named by the caption element</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Shift</kbd> + <kbd>Down</kbd> Arrow to enter table, <kbd>Control</kbd> + <kbd>Option</kbd> + Arrow Keys to navigate between table cells</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Command</kbd> + <kbd>T</kbd> to navigate to next table</li>
         </ul>
     </td>
     <td>
@@ -2853,7 +2907,7 @@ this feature is supposed to convey to the user.</li>
         <ul>
             <li>List Form Controls <kbd>INSERT+F7</kbd></li>
             <li>Move To Next Edit Box <kbd>E</kbd></li>
-            <li>Move to Prior Edit Box <kbd>SHIFT+E</kbd></li>
+            <li>Move to Prior Edit Box <kbd><kbd>Shift</kbd>+E</kbd></li>
         </ul>
     </td>
     <td>
@@ -3060,8 +3114,8 @@ this feature is supposed to convey to the user.</li>
     <td>List with <em>n</em> items</td>
     <td>
         <ul>
-            <li>Next List <kbd>L</kbd></li>
-            <li>Prior List <kbd>SHIFT+L</kbd></li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  Arrow to navigate</li>
+            <li><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Command</kbd> + <kbd>X</kbd> to navigate to next list element</li>
         </ul>
     </td>
     <td>
