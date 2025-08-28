@@ -1,7 +1,7 @@
 <html lang="en"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<title>NVDA HTML Support</title>
+<title>VoiceOver on iOS HTML Support</title>
 <link rel="stylesheet" href="https://tetralogical.com/css/global.css">
 <style>
 
@@ -43,9 +43,9 @@ body {background-color:white}
     </div>
   </div>
 </header><div class="region wrapper prose flow">
-<h1>NVDA HTML Support</h1>
+<h1>VoiceOver on iOS HTML Support</h1>
 <p> A Work <em>in progress</em>: Last updated 10 July 2025. </p>
-<p><strong>Editors:</strong> Steve Faulkner, Gez Lemon, Demelza Feltham </p>
+<p><strong>Editors:</strong> Steve Faulkner, Demelza Feltham </p>
 <p><strong>GitHub Repo:</strong> <a href="https://github.com/TetraLogical/screen-reader-HTML-support">screen-reader-HTML-support</a>
 </p>
 <p>Found a bug? Please <a href="https://github.com/TetraLogical/screen-reader-HTML-support/issues">report it</a>. </p>
@@ -1306,7 +1306,11 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td>File chooser control</td>
     <td>Announced as the file name if a file has been selected, otherwise "choose file, no file selected, button"</td>
     <td>
-	    No special interactions
+	    <ul>
+            <li>Swipe left/right, double-tap to activate</li>
+            <li>Rotor navigation to form controls, announces number of form controls</li>
+            <li>Single finger swipe up/down to navigate when selected in rotor</li>
+        </ul>
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1321,7 +1325,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>&nbsp;</td>
+    <td>Opens a file selection picker when activated.</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#hidden-state-typehidden"><code>input [hidden]</code></a> </th>
@@ -1330,16 +1334,11 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td><em>None expected</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
+            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 
+            48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 
+            296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 
+            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
         </svg>
     </td>
     <td>No UI</td>
@@ -1348,9 +1347,13 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#image-button-state-typeimage"><code>input [image]</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-image.html"><code>input [image]</code> test</a> </td>
     <td>Button control</td>
-    <td>Announced as "Submit button", unless there is alt text. In which case, it is announced as alt text content + "button"</td>
+    <td>Announced as "Submit button" or as alt text content + "button", if alt text is present</td>
     <td>
-        No special commands
+        <ul>
+            <li>Swipe left/right, double-tap to activate</li>
+            <li>Rotor navigation to form controls, announces number of form controls</li>
+            <li>Single finger swipe up/down to navigate when selected in rotor</li>
+        </ul>
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1365,7 +1368,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>&nbsp;</td>
+    <td>VoiceOver on-device image recognition settings don't work on <code>input type="image"</code> as they are not recognised as images</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#number-state-typenumber"><code>input [number]</code></a> </th>
