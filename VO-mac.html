@@ -27,6 +27,52 @@ body {background-color:white}
 </style>
 </head>
 <body>
+<svg hidden>
+<symbol id="yes">
+    <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+    21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+    26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248
+    6.248-16.379
+    0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+    0L184
+    302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+    0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104
+    104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+</symbol>
+<symbol id="no">
+    <path d="M464 32H48C21.5 32 0
+    53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
+    48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
+    12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
+    313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
+    0l-40.5-40.5c-4.8-4.8-4.8-12.6
+    0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
+    0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
+    66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8
+    12.6 0 17.4L313.3 256l67.1 66.5z"></path>
+</symbol>
+<symbol id="noneE">
+    <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48
+    48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92
+    296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0
+    12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path>
+</symbol>
+<symbol id="unknown">
+    <path d="M504 256c0
+    136.997-111.043 248-248 248S8 392.997 8 256C8 119.083
+    119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497
+    0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415
+    2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008
+    16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797
+    20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363
+    22.667-32.534 33.976C247.128 238.528 216 254.941 216
+    296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+    12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+    0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+    20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+    46-46c0-25.365-20.635-46-46-46z"></path>
+</symbol>
+</svg>
 <header class="site-head">
   <div class="wrapper">
     <a href="#main" class="cta skip-link" data-cta-variant="secondary">
@@ -76,49 +122,14 @@ varies from element to element and support for a particular
 element varies between screen reader software. </p>
 <h2>Support legend</h2>
 <ul>
-<li><svg viewBox="0 0 448 512" width="20" aria-label="yes"  class="yes">
-<path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248
-6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104
-104c6.249 6.25 16.379 6.25 22.628.001z"></path> </svg>
+<li><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
 means we have found this feature to be implemented
 interoperably (across multiple browsers)</li>
-<li><svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><path d="M464 32H48C21.5 32 0
-53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
-48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
-12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
-313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
-0l-40.5-40.5c-4.8-4.8-4.8-12.6
-0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8
-12.6 0 17.4L313.3 256l67.1 66.5z"></path></svg> means we
+<li><svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no"></svg> means we
 have found that this feature is not implemented</li>
-<li><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-<path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48
-48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92
-296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0
-12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> </svg>
+<li><svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE"></svg>
 means the element has no expected semantics.</li>
-<li><svg viewBox="0 0 512 512" width="20" aria-label="question
-mark" class="unknown" role="img"><path d="M504 256c0
-136.997-111.043 248-248 248S8 392.997 8 256C8 119.083
-119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497
-0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415
-2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008
-16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797
-20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363
-22.667-32.534 33.976C247.128 238.528 216 254.941 216
-296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-46-46c0-25.365-20.635-46-46-46z"></path></svg> means we
+<li><svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown"></svg> means we
 are unsure whether this feature is supported, this may be due
 to lack of testing or lack of clarity around what 'support' of
 this feature is supposed to convey to the user.</li>
@@ -152,16 +163,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-        <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-        21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-        26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248
-        6.248-16.379
-        0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-        0L184
-        302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-        0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104
-        104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>
 <p>VoiceOver recognizes visited/unvisited state of links.</p>
@@ -178,16 +180,7 @@ this feature is supposed to convey to the user.</li>
         <p>No special commands</p>
         </td>
         <td>
-             <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248
-            6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104
-            104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg>
+            <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
         </td>
         <td>
         <p>Expands abbreviation if <code>title</code> attribute is present, announces as "group".</p>
@@ -202,16 +195,7 @@ this feature is supposed to convey to the user.</li>
     <td>Reads content as plain text</td>
     <td>No special commands</td>
     <td>
-    <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><path d="M464 32H48C21.5 32
-    0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0
-    48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6
-    290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8
-    4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8
-    4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6
-    0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-    0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-    66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
-    4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path></svg>
+    <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no"></svg>
 
     </td>
     <td>No additional semantics conveyed</td>
@@ -230,17 +214,7 @@ this feature is supposed to convey to the user.</li>
 
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Requires alt attribute for accessibility.</td>
 </tr>
@@ -256,17 +230,7 @@ this feature is supposed to convey to the user.</li>
 
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Recognizes the start and end of articles.</td>
 </tr>
@@ -282,17 +246,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Recognized as complementary region.</td>
 </tr>
@@ -312,22 +266,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-                256C8 119.083 119.043 8 256 8s248 111.083 248
-                248zM262.655 90c-54.497 0-89.255 22.957-116.549
-                63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-                26.31c5.205 3.947 12.621 3.008 16.665-2.122
-                17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-                45.698 13.148 45.698 32.958 0 14.976-12.363
-                22.667-32.534 33.976C247.128 238.528 216 254.941 216
-                296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-                12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-                0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-                20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-                46-46c0-25.365-20.635-46-46-46z">
-            </path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown"></svg>
     </td>
     <td>Accessible buttons available in the player. Announcements are inconsistent across browsers.</td>
 </tr>
@@ -338,13 +277,7 @@ this feature is supposed to convey to the user.</li>
     <td>Reads content as normal text</td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-            48 48 48h352c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-            0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE"></svg>
     </td>
     <td>No specific emphasis expected.</td>
 </tr>
@@ -356,13 +289,7 @@ this feature is supposed to convey to the user.</li>
     <td>No aural interaction</td>
     <td>Not interactive</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-            48 48 48h352c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-            0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE"></svg>
     </td>
     <td>Typically ignored by VoiceOver.</td>
 </tr>
@@ -373,13 +300,7 @@ this feature is supposed to convey to the user.</li>
     <td>Reads content as normal text</td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-            48 48 48h352c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-            0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE"></svg>
     </td>
     <td>No aural impact; structure-only element.</td>
 </tr>
@@ -390,13 +311,7 @@ this feature is supposed to convey to the user.</li>
     <td>Reads content as normal text</td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-            48 48 48h352c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-            0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE"></svg>
     </td>
     <td>No special semantics conveyed. Reads text correctly regardless of direction.</td>
 </tr>
@@ -408,17 +323,7 @@ this feature is supposed to convey to the user.</li>
     <td>No special commands
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>No additional semantics conveyed.</td>
 </tr>
@@ -429,13 +334,7 @@ this feature is supposed to convey to the user.</li>
     <td>Reads content</td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-            48 48 48h352c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-            0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE"></svg>
     </td>
     <td>No unique aural feedback; body is implicit.</td>
 </tr>
@@ -446,13 +345,7 @@ this feature is supposed to convey to the user.</li>
     <td>No aural interaction</td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0
-    53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5
-    48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-    0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-    12 12v56c0 6.6-5.4 12-12 12H92z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE"></svg>
     </td>
     <td>No additional semantics conveyed.Treated as one new line, regardless of number of line break elements</td>
 </tr>
@@ -470,17 +363,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Recognizes the button label and, if provided, state (pressed/unpressed) when button has <code>aria-pressed</code> attribute.</td>
 </tr>
@@ -493,13 +376,7 @@ this feature is supposed to convey to the user.</li>
   <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Right/Left</kbd>  arrow to navigate, focusable via VO navigation
 </td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0
-    53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5
-    48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-    0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-    12 12v56c0 6.6-5.4 12-12 12H92z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE"></svg>
     </td>
     <td> 
         <ul>
@@ -527,17 +404,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>The caption linked to the table it describes</td>
 </tr>
@@ -548,13 +415,7 @@ this feature is supposed to convey to the user.</li>
     <td>Reads content as normal text</td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0
-    53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5
-    48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-    0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-    12 12v56c0 6.6-5.4 12-12 12H92z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE"></svg>
     </td>
     <td>
     <p>No specific aural emphasis.</p>
@@ -567,13 +428,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0
-    53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5
-    48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-    0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-    12 12v56c0 6.6-5.4 12-12 12H92z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE"></svg>
     </td>
     <td>
         No additional semantics conveyed; read as normal text.
@@ -586,13 +441,7 @@ this feature is supposed to convey to the user.</li>
     <td>No aural indication</td>
     <td>Not directly interactive</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-            48 48 48h352c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-            0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE"></svg>
     </td>
     <td>Impact conveyed through table structure only.</td>
 </tr>
@@ -603,13 +452,7 @@ this feature is supposed to convey to the user.</li>
     <td>No aural indication</td>
     <td>Not directly interactive</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-            48 48 48h352c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-            0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE"></svg>
     </td>
     <td>Structure-enhancing, with no direct aural output.</td>
 </tr>
@@ -620,13 +463,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em></td>
     <td>No special commandss</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-            48 48 48h352c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-            0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE"></svg>
     </td>
     <td>Treated as regular text</td>
 </tr>
@@ -644,17 +481,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>
         <ul>
@@ -675,17 +502,7 @@ this feature is supposed to convey to the user.</li>
 
         </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Linked with its associated <code>dt</code>, which is announced prior to the <code>dd</code> suffixed with "term" </td>
 </tr>
@@ -696,22 +513,7 @@ this feature is supposed to convey to the user.</li>
     <td>Announces "deletion" before deleted text when included as part of a tag with plain text, otherwise no aural indication</td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-                256C8 119.083 119.043 8 256 8s248 111.083 248
-                248zM262.655 90c-54.497 0-89.255 22.957-116.549
-                63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-                26.31c5.205 3.947 12.621 3.008 16.665-2.122
-                17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-                45.698 13.148 45.698 32.958 0 14.976-12.363
-                22.667-32.534 33.976C247.128 238.528 216 254.941 216
-                296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-                12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-                0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-                20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-                46-46c0-25.365-20.635-46-46-46z">
-            </path>
-        </svg>    
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown"></svg>    
     </td>
     <td>
 Support is inconsistent across browsers and "deletion" is only ever announced when part of a tag with plain text
@@ -731,17 +533,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Recognizes expanded/collapsed state.</td>
 </tr>
@@ -752,13 +544,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-            48 48 48h352c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-            0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE"></svg>
     </td>
     <td>No additional semantics conveyed</td>
 </tr>
@@ -772,17 +558,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     </ul>
     <td>Focus moved to dialog when opened</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Recognizes and traps focus within modal dialog</td>
 </tr>
@@ -793,13 +569,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-            48 48 48h352c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-            0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE"></svg>
     </td>
     <td>No semantics conveyed unless ARIA roles are provided</td>
 </tr>
@@ -816,17 +586,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Identifies number of items within the <code>dl</code> list</td>
 </tr>
@@ -846,17 +606,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         Part of list navigation
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Associated with the following <code>dd</code></td>
 </tr>
@@ -867,13 +617,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td>Element content</td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-            48 48 48h352c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-            0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE"></svg>
     </td>
     <td>
         No semantics conveyed. Refer to: <a href="https://www.tpgi.com/screen-readers-support-for-text-level-html-semantics/">Screen 
@@ -896,22 +640,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
        
     </td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-                256C8 119.083 119.043 8 256 8s248 111.083 248
-                248zM262.655 90c-54.497 0-89.255 22.957-116.549
-                63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-                26.31c5.205 3.947 12.621 3.008 16.665-2.122
-                17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-                45.698 13.148 45.698 32.958 0 14.976-12.363
-                22.667-32.534 33.976C247.128 238.528 216 254.941 216
-                296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-                12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-                0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-                20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-                46-46c0-25.365-20.635-46-46-46z">
-            </path>
-        </svg>    
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown"></svg>    
     </td>
     <td>
         <ul>
@@ -935,17 +664,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Only when <code>fieldset</code> has an accessible name via <code>legend</code> or other method</td>
 </tr>
@@ -956,17 +675,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Announces when associated with a figure.</td>
 </tr>
@@ -987,17 +696,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>
     <ul>
@@ -1018,17 +717,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>
         <ul>
@@ -1055,17 +744,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -1078,17 +757,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
        <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Command</kbd> + <kbd>H</kbd> to navigate to next heading
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Identifies heading level and text</td>
 </tr>
@@ -1099,13 +768,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>None expected</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-            48 48 48h352c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-            0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE"></svg>
     </td>
     <td>No UI</td>
 </tr>
@@ -1121,17 +784,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>  
          <ul>
@@ -1151,17 +804,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         </ul>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Properly indicates a thematic break</td>
 </tr>
@@ -1172,13 +815,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>None expected</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-            48 48 48h352c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-            0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE"></svg>
     </td>
     <td>No semantics expected.</td>
 </tr>
@@ -1189,13 +826,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-            48 48 48h352c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-            0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE"></svg>
     </td>
     <td>No semantics conveyed.</td>
 </tr>
@@ -1222,17 +853,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Recognizes frame title when present</td>
 </tr>
@@ -1254,17 +875,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Reads alt attribute content if present.</td>
 </tr>
@@ -1277,17 +888,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Space</kbd>  to activate
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Recognizes button type and label</td>
 </tr>
@@ -1300,17 +901,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Space</kbd>  to check/uncheck
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Identifies the label and state</td>
 </tr>
@@ -1323,17 +914,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Space</kbd>  to open colour picker
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Allows selection of colours from the palette</td>
 </tr>
@@ -1346,17 +927,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Shift</kbd> + <kbd>Down</kbd> Arrow to edit date area, + <kbd>Right/Left</kbd> Arrows to navigate between date fields and <kbd>Up/Down</kbd> arrows to adjust stepper
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>
         
@@ -1372,21 +943,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
 
     </td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown"></svg>
     </td>
     <td>Treated as a regular text field</td>
 </tr>
@@ -1399,17 +956,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
 	    <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Space</kbd>  to open file selection control
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>
         <ul>
@@ -1425,17 +972,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>None expected</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Used for form data; ignored by VoiceOver</td>
 </tr>
@@ -1451,17 +988,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Space</kbd>  to activate
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>In Chrome, announces "edit text" when input is focused</td>
 </tr>
@@ -1477,17 +1004,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Editable text field when focused with VO or the incremental stepper can be interacted with by use of <kbd>Up/Down</kbd> arrow keys</td>
 </tr>
@@ -1501,17 +1018,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
 
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>
         <ul>
@@ -1531,17 +1038,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Space</kbd>  to select radio button
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Recognizes position within radio group</td>
 </tr>
@@ -1557,17 +1054,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>
         <p>Allows setting a value within a defined range. Slider value announced as it changes.</p>
@@ -1582,17 +1069,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Space</kbd>  to activate
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Resets all form inputs to their default values</td>
 </tr>
@@ -1610,21 +1087,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
 
     </td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown"></svg>
     </td>
     <td>No special commands</td>
 </tr>
@@ -1637,17 +1100,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Space</kbd>  to activate
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Submits the form data to the server</td>
 </tr>
@@ -1661,17 +1114,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
 
     </td>
     <td>
-    <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Announces "edit text" when input is focused</td>
 </tr>
@@ -1694,17 +1137,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
 
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Announces "edit text" when input is focused</td>
 </tr>
@@ -1715,17 +1148,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td>Announces current time value + "time area"</td>
       <td><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Shift</kbd> + <kbd>Down</kbd> Arrow to edit time values, <kbd>Up/Down</kbd> Arrow keys to increase/decrease stepper value/td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Provides an hour/minute input interface.</td>
 </tr>
@@ -1739,17 +1162,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
 
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Announces "edit text" when input is focused</td>
 </tr>
@@ -1760,21 +1173,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td>Announces "insertion" before inserted text when included as part of a tag with plain text, otherwise no aural indication</td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown"></svg>
     </td>
     <td>
         Support was inconsistent across browsers and "insertion" is only ever announced when part of a tag with plain text 
@@ -1787,18 +1186,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td>Reads content as plain text</td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
-            <path d="M464 32H48C21.5 32 0
-            53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
-            12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
-            313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
-            0l-40.5-40.5c-4.8-4.8-4.8-12.6
-            0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-            0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-            66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
-            4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no"></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -1813,17 +1201,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>No semantics beyond association with input conveyed</td>
 </tr>
@@ -1836,17 +1214,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td>Legend content is announced as the group label for a group of related controls when one of the controls is first focused in the group.</td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Serves as the group label for a group of form controls. Refer to the <a href="#toc-f">fieldset</a> element</td>
 </tr>
@@ -1869,17 +1237,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
        <kbd>Control</kbd> + <kbd>Option</kbd> + Right Arrow to navigate
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Announces total item count and position of list items within list</td>
 </tr>
@@ -1889,13 +1247,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td>Link metadata</td>
     <td><em>None expected</em></td>
     <td>No special commands</td>
-    <td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-            48 48 48h352c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-            0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg></td>
+    <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE"></svg></td>
     <td>No UI</td>
 </tr>
 <tr id="toc-m" tabindex="-1">
@@ -1910,21 +1262,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown"></svg>
     </td>
     <td>Identified as a main landmark region</td>
 </tr>
@@ -1935,12 +1273,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>None expected</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 
-            48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 
-            296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE"></svg>
     </td>
     <td>No UI</td>
 </tr>
@@ -1953,17 +1286,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     </td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>If an <code>aria-label</code> is provided then VO recognises the start and end of highlighted content</td>
 </tr>
@@ -1974,12 +1297,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>None expected</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 
-            48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 
-            296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE"></svg>
     </td>
     <td>No UI</td>
 </tr>
@@ -1990,21 +1308,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td>Announces as current value + fallback content/accessible name + "level indicator" </td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown"></svg>
     </td>
     <td>
         <ul>
@@ -2031,17 +1335,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Identified as a navigation landmark</td>
 </tr>
@@ -2052,12 +1346,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td>Content of <code>&lt;noscript&gt;</code> element read if JavaScript is not available/enabled</td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 
-            48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 
-            296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE"></svg>
     </td>
     <td>Ignored when JavaScript is enabled.</td>
 </tr>
@@ -2075,21 +1364,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown"></svg>
     </td>
     <td>
         <ul>
@@ -2111,17 +1386,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Announces list structure and number of items</td>
 </tr>
@@ -2132,21 +1397,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td>No aural indication</td>
     <td><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Space</kbd>  to expand/collapse options list box</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown"></svg>
     </td>
     <td>
         When <code>optgroup</code> element is labelled by an <code>aria-label</code>/<code>aria-labelledby</code> the label content is announced as "dimmed"
@@ -2159,17 +1410,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td>Announced as option content + checkmark if currently selected</td>
     <td><kbd>Up/Down</kbd> arrow keys to navigate options</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Use <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Space</kbd>  to expand/collapse options list</td>
 </tr>
@@ -2185,21 +1426,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     </td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg\s+viewBox="0\s+0\s+512\s+512"\s+width="20"\s+aria-label="question\s+mark"\s+class="unknown"\s+role="img">\s+<path\s+d="M504\s+256c0\s+136\.997-111\.043\s+248-248\s+248S8\s+392\.997\s+8\s+256C8\s+119\.083\s+119\.043\s+8\s+256\s+8s248\s+111\.083\s+248\s+248zM262\.655\s+90c-54\.497\s+0-89\.255\s+22\.957-116\.549\s+63\.758-3\.536\s+5\.286-2\.353\s+12\.415\s+2\.715\s+16\.258l34\.699\s+26\.31c5\.205\s+3\.947\s+12\.621\s+3\.008\s+16\.665-2\.122\s+17\.864-22\.658\s+30\.113-35\.797\s+57\.303-35\.797\s+20\.429\s+0\s+45\.698\s+13\.148\s+45\.698\s+32\.958\s+0\s+14\.976-12\.363\s+22\.667-32\.534\s+33\.976C247\.128\s+238\.528\s+216\s+254\.941\s+216\s+296v4c0\s+6\.627\s+5\.373\s+12\s+12\s+12h56c6\.627\s+0\s+12-5\.373\s+12-12v-1\.333c0-28\.462\s+83\.186-29\.647\s+83\.186-106\.667\s+0-58\.002-60\.165-102-116\.531-102zM256\s+338c-25\.365\s+0-46\s+20\.635-46\s+46\s+0\s+25\.364\s+20\.635\s+46\s+46\s+46s46-20\.636\s+46-46c0-25\.365-20\.635-46-46-46z"><\/path>\s+<\/svg>
     </td>
     <td>VO only recognises the element as "output/status" if the <code>output</code> element has an accessible name. Otherwise, the semantics are ignored and only the value is announced.</td>
 </tr>
@@ -2212,17 +1439,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>P</kbd> to read paragraph
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>No aural semantics.</td>
 </tr>
@@ -2233,12 +1450,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>None expected</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 
-            48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 
-            296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE"></svg>
     </td>
     <td>No UI</td>
 </tr>
@@ -2249,12 +1461,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>None expected</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 
-            48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 
-            296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE"></svg>
     </td>
     <td>No UI</td>
 </tr>
@@ -2265,12 +1472,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
-       <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 
-            48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 
-            296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+       <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE"></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -2281,17 +1483,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td>Announced as accessible name (if present) + current percentage value + "progress indicator"
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>
         VO does not announce the new value of the progress bar if the <code>value</code> attribute is updated
@@ -2304,21 +1496,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown"></svg>
     </td>
     <td>
         <ul>
@@ -2334,20 +1512,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img"><path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown"></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -2358,21 +1523,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown"></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -2383,21 +1534,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown"></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -2408,21 +1545,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown"></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -2433,21 +1556,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown"></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -2458,18 +1567,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
-            <path d="M464 32H48C21.5 32 0
-            53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
-            12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
-            313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
-            0l-40.5-40.5c-4.8-4.8-4.8-12.6
-            0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-            0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-            66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
-            4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no"></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -2480,21 +1578,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown"></svg>
     </td>
     <td>     
         <ul>
@@ -2510,12 +1594,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>None expected</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 
-            48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 
-            296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE"></svg>
     </td>
     <td>No UI</td>
 </tr>
@@ -2538,17 +1617,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-            </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>No semantics conveyed unless the section has an accessible name, in which case VO treats the it as a landmark region.</td>
 </tr>
@@ -2571,17 +1640,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Provides list of options</td>
 </tr>
@@ -2592,21 +1651,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-                256C8 119.083 119.043 8 256 8s248 111.083 248
-                248zM262.655 90c-54.497 0-89.255 22.957-116.549
-                63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-                26.31c5.205 3.947 12.621 3.008 16.665-2.122
-                17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-                45.698 13.148 45.698 32.958 0 14.976-12.363
-                22.667-32.534 33.976C247.128 238.528 216 254.941 216
-                296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-                12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-                0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-                20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-                46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown"></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -2620,17 +1665,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>None expected</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>No UI</td>
 </tr>
@@ -2641,11 +1676,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 
-            48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 
-            5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE"></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -2656,21 +1687,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown"></svg>
     </td>
     <td>  
         <ul>
@@ -2686,11 +1703,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>None expected</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 
-            48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 
-            5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE"></svg>
     </td>
     <td>No UI</td>
 </tr>
@@ -2701,21 +1714,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown"></svg>
     </td>
     <td>   
         <ul>
@@ -2745,17 +1744,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-        <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-        21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-        26.51-21.49 48-48
-        48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-        0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-        0L184
-        302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-        0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-        22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Serves as a trigger for expanding/collapsing <code>&lt;details&gt;</code> section.</td>
 </tr>
@@ -2766,21 +1755,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown"></svg>
     </td>
     <td>
         <ul>
@@ -2806,21 +1781,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown"></svg>
     </td>
     <td>In Safari, the standard keyboard shortcut <kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>Command</kbd> + <kbd>G</kbd> navigates to individual polygon elements within the <code>&lt;svg&gt;</code></td>
 </tr>
@@ -2844,17 +1805,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>
         <ul>
@@ -2871,11 +1822,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 
-            48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 
-            5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE"></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -2891,17 +1838,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Announces corresponding header if programmatically associated.</td>
 </tr>
@@ -2912,11 +1849,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>None expected</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 
-            48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 
-            5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE"></svg>
     </td>
     <td>No UI</td>
 </tr>
@@ -2934,17 +1867,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Announces "edit text" when input is focused</td>
 </tr>
@@ -2958,18 +1881,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
-         <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
-            <path d="M464 32H48C21.5 32 0
-            53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
-            12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
-            313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
-            0l-40.5-40.5c-4.8-4.8-4.8-12.6
-            0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-            0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-            66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
-            4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path>
-        </svg>
+         <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no"></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -2980,18 +1892,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>Element content</em></td>
     <td>No special command. Reachable using standard table cell reading keystrokes.</td>
     <td>
-         <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
-            <path d="M464 32H48C21.5 32 0
-            53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
-            12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
-            313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
-            0l-40.5-40.5c-4.8-4.8-4.8-12.6
-            0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-            0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-            66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
-            4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path>
-        </svg>
+         <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no"></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -3002,18 +1903,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
-         <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
-            <path d="M464 32H48C21.5 32 0
-            53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
-            12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
-            313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
-            0l-40.5-40.5c-4.8-4.8-4.8-12.6
-            0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-            0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-            66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
-            4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path>
-        </svg>
+         <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no"></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -3024,21 +1914,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td>Announced as <em>element content</em>, or in Safari, accessible name + <em>element content</em> + "group", if element has an accessible name through an <code>aria-label/aria-labelledby</code> attribute</td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown"></svg>
     </td>
     <td>In Safari, content in <code>time</code> element is repeated twice</td>
 </tr>
@@ -3054,21 +1930,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         </ul>
         
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown"></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -3079,17 +1941,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>Element content</em></td>
     <td><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>R</kbd> to read all cell content in current row</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -3100,21 +1952,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>Caption display control</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown"></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -3125,18 +1963,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>Element content</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
-            <path d="M464 32H48C21.5 32 0
-            53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
-            12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
-            313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
-            0l-40.5-40.5c-4.8-4.8-4.8-12.6
-            0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-            0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-            66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
-            4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no"></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -3152,17 +1979,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes"></svg>
     </td>
     <td>Announces list structure and number of items</td>
 </tr>
@@ -3174,18 +1991,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     </td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
-            <path d="M464 32H48C21.5 32 0
-                53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
-                48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
-                12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
-                313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
-                0l-40.5-40.5c-4.8-4.8-4.8-12.6
-                0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-                0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-                66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
-                4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no"></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -3200,21 +2006,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
         </ul></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown"></svg>
     </td>
     <td>The <code>video</code> element is ignored by VO unless an accessible name is provided
     </td>
@@ -3226,12 +2018,7 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
     <td><em>None expected</em></td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 
-            48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 
-            296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 
-            5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE"></svg>
     </td>
     <td>No UI</td>
 </tr>
@@ -3251,5 +2038,4 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
   </div>
 </footer>
 	</div>
-
 </body></html>
