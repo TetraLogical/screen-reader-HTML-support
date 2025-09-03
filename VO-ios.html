@@ -1,7 +1,7 @@
 <html lang="en"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<title>NVDA HTML Support</title>
+<title>VoiceOver on iOS HTML Support</title>
 <link rel="stylesheet" href="https://tetralogical.com/css/global.css">
 <style>
 
@@ -44,7 +44,7 @@ body {background-color:white}
   </div>
 </header><div class="region wrapper prose flow">
 <h1>VoiceOver on iOS HTML Support</h1>
-<p> A Work <em>in progress</em>: Last updated 20 August 2025. </p>
+<p> A Work <em>in progress</em>: Last updated 10 July 2025. </p>
 <p><strong>Editors:</strong> Steve Faulkner, Demelza Feltham </p>
 <p><strong>GitHub Repo:</strong> <a href="https://github.com/TetraLogical/screen-reader-HTML-support">screen-reader-HTML-support</a>
 </p>
@@ -147,7 +147,7 @@ this feature is supposed to convey to the user.</li>
         <ul>
             <li>Swipe left/right, double-tap to activate</li>
             <li>Rotor navigation to links, announces number of links</li>
-            <li>single finger swipe up/down to navigate when selected in rotor</li>
+            <li>Single finger swipe up/down to navigate when selected in rotor</li>
         </ul>
     </td>
     <td>
@@ -174,7 +174,7 @@ this feature is supposed to convey to the user.</li>
         <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/abbr.html"><code>abbr</code>
         test</a> </td>
         <td>An abbreviation</td>
-        <td>Reads text only, not title</td>
+        <td><em>Element content</em>, not title</td>
         <td>
         <p>No special interaction</p>
         </td>
@@ -200,7 +200,7 @@ this feature is supposed to convey to the user.</li>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/address.html"><code>address</code>
     test</a> </td>
     <td>Contact information</td>
-    <td>Reads text only</td>
+    <td><em>Element content</em></td>
     <td>No special interaction</td>
     <td>
     <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><path d="M464 32H48C21.5 32
@@ -250,7 +250,7 @@ this feature is supposed to convey to the user.</li>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/article.html"><code>article</code>
     test</a> </td>
     <td>Self-contained syndicatable or reusable composition</td>
-    <td>Reads text only, does not announce article</td>
+    <td><em>Element content</em>, does not announce article</td>
     <td>Rotor to 'articles' Swipe down with one finger to navigate by article</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -271,9 +271,13 @@ this feature is supposed to convey to the user.</li>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element"><code>aside</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/aside.html"><code>aside</code> test</a> </td>
     <td>Sidebar for tangentially related content</td>
-    <td> Announces "complementary" </td>
+    <td>Announces "complementary" </td>
     <td>
-        Rotor to 'landmarks' announces number of landmarks.
+        <ul>
+            <li>Swipe left/right to enter landmark</li>
+            <li>When added to rotor, open rotor navigation to landmarks, announces number of landmarks</li>
+            <li>Single finger swipe up/down to navigate to next landmark when selected in rotor</li>
+        </ul>
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -288,7 +292,12 @@ this feature is supposed to convey to the user.</li>
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>Recognized as complementary region.</td>
+    <td>
+        <ul>
+            <li><li>Landmarks need to be added to the iOS VO rotor menu items before it is accessible. This can be added in the VoiceOver Settings, under Rotor.</li></li>
+            <li>Recognized as complementary region.</li>
+        </ul>
+    </td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/media.html#the-audio-element"><code>audio</code></a></th>
@@ -531,7 +540,7 @@ When rotor set to Tables, single finger swipe up or down, moves to next/previous
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-code-element"><code>code</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/code.html"><code>code</code> test</a> </td>
     <td>Inline code or programming syntax</td>
-    <td>Reads element content</td>
+    <td><em>Element content</em></td>
     <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
@@ -584,7 +593,7 @@ When rotor set to Tables, single finger swipe up or down, moves to next/previous
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-data-element"><code>data</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/data.html"><code>data</code> test</a> </td>
     <td>Data and its human-readable equivalent</td>
-    <td>Reads element content</td>
+    <td><em>Element content</em></td>
     <td>No special interactions</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
@@ -626,7 +635,7 @@ When rotor set to Tables, single finger swipe up or down, moves to next/previous
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dd-element"><code>dd</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dl-dt-dd.html"><code>dd</code> test</a> </td>
     <td> Content of a term's description</td>
-    <td>Announces start of "description list" Reads element content suffixed with "Description" announces "description list end"</td>
+    <td>Announces start of "description list" <em>Element content</em> suffixed with "Description" announces "description list end"</td>
     <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -647,7 +656,7 @@ When rotor set to Tables, single finger swipe up or down, moves to next/previous
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element"><code>del</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/del-ins.html"><code>del</code> test</a> </td>
     <td>Marked as deleted</td>
-    <td>Announces "deletion" then text</td>
+    <td>Announces as "deletion" + "deletion" + <em>element content</em></td>
     <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -689,7 +698,7 @@ When rotor set to Tables, single finger swipe up or down, moves to next/previous
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element"><code>dfn</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dfn.html"><code>dfn</code> test</a> </td>
     <td>Indicates a defining instance of a term</td>
-    <td>Reads element content not role</td>
+    <td><em>Element content</em> not role</td>
     <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
@@ -729,7 +738,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element"><code>div</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/div.html"><code>div</code> test</a> </td>
     <td>Generic block container</td>
-    <td>Reads element content</td>
+    <td><em>Element content</em></td>
     <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
@@ -773,7 +782,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td> 
        Term in a definition list
     </td>
-    <td>Reads element content suffixed with "term"</td>
+    <td><em>Element content</em> suffixed with "term"</td>
     <td>
         Part of list navigation
     </td>
@@ -797,7 +806,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/em.html"><code>em</code> test</a> </td>
     <td>Stress emphasis</td>
     <td>Element content</td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
             <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
@@ -853,7 +862,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
         when navigating into a form control in the fieldset.
     </td>
     <td>
-        No special commands, fieldset presence and accessible name announced when first control child is navigated to using virtual 
+        No special interaction, fieldset presence and accessible name announced when first control child is navigated to using virtual 
         keys navigation keys for the child control.
     </td>
     <td>
@@ -876,7 +885,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/figure-figcaption.html"><code>figcaption</code> test</a> </td>
     <td> Caption for <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element">figure</a></td>
     <td>Element content</td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
@@ -897,7 +906,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/figure.html"><code>figure</code> test</a> </td>
     <td>Figure with optional caption</td>
     <td>VoiceOver announces the content of the <figure> element based on what's inside it. For example, if the <code>figure</code> element wraps around an image, VoiceOver will read the image along with its accessible name, typically provided via the alt attribute.</td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
@@ -919,7 +928,11 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td>Footer for a page or section</td>
     <td>"Content info landmark" element content</td>
     <td>
-        No special interactions
+        <ul>
+            <li>Swipe left/right to enter landmark</li>
+            <li>When added to rotor, open rotor navigation to landmarks, announces number of landmarks</li>
+            <li>Single finger swipe up/down to navigate to next landmark when selected in rotor</li>
+        </ul>
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -934,7 +947,12 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>The <code>&lt;footer&gt;</code> element is not exposed if used in an <code>&lt;article&gt;</code> element.</td>
+    <td>
+        <ul>
+            <li>Landmarks need to be added to the iOS VO rotor menu items before it is accessible. This can be added in the VoiceOver Settings, under Rotor.</li>
+            <li>The <code>&lt;footer&gt;</code> element is not exposed if used in an <code>&lt;article&gt;</code> element.</li>
+        </ul>
+    </td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-form-element"><code>form</code></a> </th>
@@ -965,7 +983,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td>Section heading</td>
     <td>Announced as, <em>heading content</em> "heading, level" 1 to 6</td>
     <td>
-       No special commands
+       No special interaction
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -987,7 +1005,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td> No test </td>
     <td>Container for document metadata</td>
     <td><em>None expected</em></td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
             <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
@@ -1005,7 +1023,11 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td>Introductory or navigational aids for a page or section</td>
     <td>Announced as element content, "Banner landmark"</td>
     <td>
-        No special instruction
+        <ul>
+            <li>Swipe left/right to enter landmark</li>
+            <li>When added to rotor, open rotor navigation to landmarks, announces number of landmarks</li>
+            <li>Single finger swipe up/down to navigate to next landmark when selected in rotor</li>
+        </ul>
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1020,7 +1042,12 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>The <code>&lt;header&gt;</code> element is not exposed if used in an <code>&lt;article&gt;</code> element.</td>
+    <td>
+        <ul>
+            <li>The <code>&lt;header&gt;</code> element is not exposed if used in an <code>&lt;article&gt;</code> element.</li>
+            <li>Landmarks need to be added to the iOS VO rotor menu items before it is accessible. This can be added in the VoiceOver Settings, under Rotor.</li>
+        </ul>
+    </td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-hr-element"><code>hr</code></a></th>
@@ -1048,7 +1075,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td> No test </td>
     <td>Root element</td>
     <td><em>None expected</em></td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
             <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
@@ -1065,7 +1092,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/i.html"><code>i</code> test</a> </td>
     <td>Alternate voice</td>
     <td><em>Element content</em></td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
             <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
@@ -1086,11 +1113,106 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
         </ul>
     </td>
     <td> <a href="https://html.spec.whatwg.org/multipage/browsers.html#sec-nested-browsing-contexts">Nested browsing context</a> </td>
-    <td>Announced as title attribute value if provided, followed by "frame"</td>
+    <td><code>frame</code> container is not announced, VO focus lands on first interactive item within <code>frame</code> </td>
+    <td>
+    Swipe left/right to enter <code>frame</code>.
+    </td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
+            256C8 119.083 119.043 8 256 8s248 111.083 248
+            248zM262.655 90c-54.497 0-89.255 22.957-116.549
+            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
+            26.31c5.205 3.947 12.621 3.008 16.665-2.122
+            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
+            45.698 13.148 45.698 32.958 0 14.976-12.363
+            22.667-32.534 33.976C247.128 238.528 216 254.941 216
+            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+            46-46c0-25.365-20.635-46-46-46z"></path>
+        </svg>
+    </td>
     <td>
         <ul>
-            <li>Next Frame <kbd>M</kbd></li>
-            <li>Prior Frame <kbd>SHIFT+M </kbd></li>
+            <li>The <code>title</code> attribute is never conveyed even if present.</li>
+            <li>No additional semantics conveyed.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-img-element"><code>img</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/img-alt.html"><code>img</code> test</a> </td>
+    <td>Image</td>
+    <td>
+	    <ul>
+            <li>Announced as image alt text + "image"</li>
+            <li>If no alt attribute is present, announces as file src name + "image"</li>
+            <li>If the image is decorative and has an empty alt, it's ignored by VoiceOver</li>
+        </ul> 
+    </td>
+    <td>
+        No special interaction
+    </td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>
+        <ul>
+            <li>VoiceOver provides on-device settings that, if activated, announces it's own AI-determined descriptions of images when an image with an empty <code>alt</code> attribute hasa VO focus. There is also a setting to enable the announcement of any text found embedded in an image. These descriptions are announced as "image" + VO recognised description </li>
+            <li>Reads alt attribute content if present.</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#button-state-typebutton"><code>input [button]</code></a> </th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-button.html"><code>input [button]</code> test</a> </td>
+    <td>Button control</td>
+    <td>Announces label or <code>value</code> attribute, if present, + "button"</td>
+    <td>
+        <ul>
+            <li>Swipe left/right, double-tap to activate</li>
+            <li>Rotor navigation to form controls, announces number of form controls</li>
+            <li>Single finger swipe up/down to navigate when selected in rotor</li>
+        </ul>
+       
+    </td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
+            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+            26.51-21.49 48-48
+            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
+            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+            0L184
+            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
+            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        </svg>
+    </td>
+    <td>Announces <code>title</code> attribute in addition to label or <code>value</code> if present</td>
+</tr>
+<tr>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#checkbox-state-typecheckbox"><code>input [checkbox]</code></a> </th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-checkbox.html"><code>input [checkbox]</code> test</a> </td>
+    <td>Checkbox control</td>
+    <td>Announced as "tickbox" followed by ticked/unticked state</td>
+    <td>
+        <ul>
+            <li>Swipe left/right, double-tap to toggle setting</li>
+            <li>Rotor navigation to form controls, announces number of form controls</li>
+            <li>Single finger swipe up/down to navigate when selected in rotor</li>
         </ul>
     </td>
     <td>
@@ -1106,78 +1228,12 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>&nbsp;</td>
-</tr>
-<tr>
-    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-img-element"><code>img</code></a></th>
-    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/img-alt.html"><code>img</code> test</a> </td>
-    <td>Image</td>
     <td>
-	    The alt text is announced first, followed by the image. If the image is decorative and has no alt text, it’s ignored by VoiceOver. 
+        <ul>
+            <li>Announces "double-tap to toggle setting"</li>
+            <li>Announces <code>label</code> content if present.</li>
+        </ul>
     </td>
-    <td>
-        No special interaction
-    </td>
-    <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
-    </td>
-    <td>Reads alt attribute content if present.</td>
-</tr>
-<tr>
-    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#button-state-typebutton"><code>input [button]</code></a> </th>
-    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-button.html"><code>input [button]</code> test</a> </td>
-    <td>Button control</td>
-    <td>Announced as "button"</td>
-    <td>
-        No special commands
-    </td>
-    <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
-    </td>
-    <td>&nbsp;</td>
-</tr>
-<tr>
-    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#checkbox-state-typecheckbox"><code>input [checkbox]</code></a> </th>
-    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-checkbox.html"><code>input [checkbox]</code> test</a> </td>
-    <td>Checkbox control</td>
-    <td>Announced as, "tickbox" followed by ticked/unticked state</td>
-    <td>
-        Double-tap to toggle setting
-    </td>
-    <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
-    </td>
-    <td>&nbsp;</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#color-state-typecolor"><code>input [color]</code></a> </th>
@@ -1185,31 +1241,42 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td>Colour picker control</td>
     <td>Announced as colour value</td>
     <td>
-        No special commands
+        <ul>
+            <li>Swipe left/right, double-tap to activate</li>
+            <li>Rotor navigation to form controls, announces number of form controls</li>
+            <li>Single finger swipe up/down to navigate when selected in rotor</li>
+        </ul>
     </td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
-            <path d="M464 32H48C21.5 32 0
-            53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
-            12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
-            313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
-            0l-40.5-40.5c-4.8-4.8-4.8-12.6
-            0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-            0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-            66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8
-            12.6 0 17.4L313.3 256l67.1 66.5z"></path>
+ <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
+            256C8 119.083 119.043 8 256 8s248 111.083 248
+            248zM262.655 90c-54.497 0-89.255 22.957-116.549
+            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
+            26.31c5.205 3.947 12.621 3.008 16.665-2.122
+            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
+            45.698 13.148 45.698 32.958 0 14.976-12.363
+            22.667-32.534 33.976C247.128 238.528 216 254.941 216
+            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+            46-46c0-25.365-20.635-46-46-46z"></path>
         </svg>
     </td>
-    <td></td>
+    <td>Opens a colour selection grid when activated. "Double tap to activate" is not announced by VO.</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#date-state-typedate"><code>input [date]</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-date.html"><code>input [date]</code> test</a> </td>
-    <td>date (day/month year) picker control</td>
-    <td>Not announced. Announced if there is a date value, additionally the label content ids announced if there is one. </td>
+    <td>Date (day/month year) picker control</td>
+    <td>Announced if there is a date value, otherwise the input is not announced if empty</td>
     <td>
-        No special interaction
+        <ul>
+            <li>Swipe left/right, double-tap to activate</li>
+            <li>Rotor navigation to form controls, announces number of form controls</li>
+            <li>Single finger swipe up/down to navigate when selected in rotor</li>
+        </ul>
     </td>
     <td>
         <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
@@ -1226,16 +1293,20 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
         </svg>
     </td>
     <td>
-        
+        Opens a date selection picker when activated. "Double tap to activate" is not announced by VO.
     </td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#email-state-typeemail"><code>input [email]</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-email.html"><code>input [email]</code> test</a> </td>
-    <td>text control for inputting email address</td>
-    <td>Announced as label, then "text field"</td>
+    <td>Text control for inputting email address</td>
+    <td>Announced as label, if present + "text field"</td>
     <td>
-        Double tap to edit
+        <ul>
+            <li>Swipe left/right, double-tap to edit</li>
+            <li>Rotor navigation to form controls, announces number of form controls</li>
+            <li>Single finger swipe up/down to navigate when selected in rotor</li>
+        </ul>
     </td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
@@ -1254,15 +1325,19 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             46-46c0-25.365-20.635-46-46-46z"></path>
         </svg>
     </td>
-    <td>Treated as a regular text field</td>
+    <td>Treated as a regular text field, announces "Double tap to edit"</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#file-upload-state-typefile"><code>input [file]</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-file-upload.html"><code>input [file]</code> test</a> </td>
     <td>File chooser control</td>
-    <td>Announced as <em>Label content</em> file name if selected, otherwise no file chosen, "button"</td>
+    <td>Announced as the file name if a file has been selected, otherwise "choose file, no file selected, button"</td>
     <td>
-	    No special interactions
+	    <ul>
+            <li>Swipe left/right, double-tap to activate</li>
+            <li>Rotor navigation to form controls, announces number of form controls</li>
+            <li>Single finger swipe up/down to navigate when selected in rotor</li>
+        </ul>
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1277,25 +1352,20 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>&nbsp;</td>
+    <td>Opens a file selection picker when activated.</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#hidden-state-typehidden"><code>input [hidden]</code></a> </th>
-    <td> No test </td>
-    <td>hidden form control</td>
+    <td>No test </td>
+    <td>Hidden form control</td>
     <td><em>None expected</em></td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
+            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 
+            48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 
+            296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 
+            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
         </svg>
     </td>
     <td>No UI</td>
@@ -1304,9 +1374,13 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#image-button-state-typeimage"><code>input [image]</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-image.html"><code>input [image]</code> test</a> </td>
     <td>Button control</td>
-    <td>Announced as "Submit button", unless there is alt text. In which case, it is announced as alt text content + "button"</td>
+    <td>Announced as "Submit button" or as alt text content + "button", if alt text is present</td>
     <td>
-        No special commands
+        <ul>
+            <li>Swipe left/right, double-tap to activate</li>
+            <li>Rotor navigation to form controls, announces number of form controls</li>
+            <li>Single finger swipe up/down to navigate when selected in rotor</li>
+        </ul>
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1321,15 +1395,19 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>&nbsp;</td>
+    <td>VoiceOver on-device image recognition settings don't work on <code>input type="image"</code> as they are not recognised as images</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#number-state-typenumber"><code>input [number]</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-number.html"><code>input [number]</code> test</a> </td>
-    <td>Spin box control</td>
-    <td>Announced as label, then "text field"</td>
+    <td>Text control for inputting numbers</td>
+    <td>Announced as label content, if present + "text field"</td>
     <td>
-        No special commands
+        <ul>
+            <li>Swipe left/right, double-tap to edit</li>
+            <li>Rotor navigation to form controls, announces number of form controls</li>
+            <li>Single finger swipe up/down to navigate when selected in rotor</li>
+        </ul>
     </td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
@@ -1348,15 +1426,60 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             46-46c0-25.365-20.635-46-46-46z"></path>
         </svg>
     </td>
-    <td></td>
+    <td>
+        <ul>
+            <li>Treated as a regular text field, announces "Double tap to edit"</li>
+            <li>When inputting characters that are not numbers, VO announces that the entry is invalid</li>
+        </ul>
+    </td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#password-state-typepassword"><code>input [password]</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-password.html"><code>input [password]</code> test</a> </td>
     <td>Text control for inputting a password</td>
-    <td> Label content, "Secure text field" </td>
+    <td>Announced as label content, if present + "secure text field"</td>
     <td>
-        Double tap to edit
+        <ul>
+            <li>Swipe left/right, double-tap to edit</li>
+            <li>Rotor navigation to form controls, announces number of form controls</li>
+            <li>Single finger swipe up/down to navigate when selected in rotor</li>
+        </ul>
+    </td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
+            256C8 119.083 119.043 8 256 8s248 111.083 248
+            248zM262.655 90c-54.497 0-89.255 22.957-116.549
+            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
+            26.31c5.205 3.947 12.621 3.008 16.665-2.122
+            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
+            45.698 13.148 45.698 32.958 0 14.976-12.363
+            22.667-32.534 33.976C247.128 238.528 216 254.941 216
+            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+            46-46c0-25.365-20.635-46-46-46z"></path>
+        </svg>
+    </td>
+    <td>
+         <ul>
+            <li>Treated as a regular text field, announces "Double tap to edit"</li>
+            <li><strong>Note:</strong> input characters are visibly masked but when keyboard characters are being input they are audibly announced, compromising security</li>
+        </ul>
+    </td>
+</tr>
+<tr>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#range-state-typerange"><code>input [range]</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-range.html"><code>input [range]</code> test</a> </td>
+    <td>Slider control</td>
+    <td>Announced as label content, if present + step/value content (for example, "10") + current percentage value (for example, "55%")</td>
+    <td>
+        <ul>
+            <li>Swipe left/right, single finger swipe up/down to adjust the value</li>
+            <li>Rotor navigation to form controls, announces number of form controls</li>
+            <li>Single finger swipe up/down to navigate when selected in rotor</li>
+        </ul>
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1371,44 +1494,27 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td><strong>Note:</strong> keyboard character input announced as characters</td>
-</tr>
-<tr>
-    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#range-state-typerange"><code>input [range]</code></a></th>
-    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-range.html"><code>input [range]</code> test</a> </td>
-    <td>slider control</td>
-    <td> Label content + step/value content (for example, "10") + current value (for example, "55%"</td>
     <td>
-        Instruction announced as "Swipe up or down with one finger to adjust the value"
-    </td>
-    <td>
-        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
-            <path d="M464 32H48C21.5 32 0
-            53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
-            12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
-            313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
-            0l-40.5-40.5c-4.8-4.8-4.8-12.6
-            0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-            0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-            66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8
-            12.6 0 17.4L313.3 256l67.1 66.5z"></path>
-        </svg>
-    </td>
-    <td>
-        <p>Slider value announced as it changes.</p>
+        <ul>
+            <li>Instruction announced as "Swipe up or down with one finger to adjust the value"</li>
+            <li>Slider value announced as it changes.</li>
+        </ul>
     </td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#radio-button-state-typeradio"><code>input [radio]</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-radio.html"><code>input [radio]</code>, test</a> </td>
-    <td>single choice from a set of options</td>
+    <td>Single choice from a set of options</td>
     <td>
-        <em>label content</em> "radio button unticked/ticked" "x of y" where x = position in radio group, y = number of 
+        Announced as label content, if present + "radio button, unticked/ticked" "x of y" where x = position in radio group, y = number of 
         radio buttons in the group
     </td>
     <td>
-        No special commands
+        <ul>
+            <li>Swipe left/right, double-tap to select radio option</li>
+            <li>Rotor navigation to form controls, announces number of form controls</li>
+            <li>Single finger swipe up/down to navigate when selected in rotor</li>
+        </ul>
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1423,15 +1529,19 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>&nbsp;</td>
+    <td>Recognizes position within radio group</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#reset-button-state-typereset"><code>input [reset]</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-reset.html"><code>input [reset]</code> test</a> </td>
     <td>Button control for resetting a form</td>
-    <td>Announced as "Reset button", unless there is a label, in which case it is label content + button</td>
+    <td>Announced as "Reset, button", unless there is a label, in which case it is label content + "button"</td>
     <td>
-        No speical commands
+         <ul>
+            <li>Swipe left/right, double-tap to activate</li>
+            <li>Rotor navigation to form controls, announces number of form controls</li>
+            <li>Single finger swipe up/down to navigate when selected in rotor</li>
+        </ul>
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1446,7 +1556,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>&nbsp;</td>
+    <td>Resets all form inputs to their default value</td>
 </tr>
 <tr>
     <th scope="row"> 
@@ -1456,9 +1566,13 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-search.html"><code>input [search]</code> test</a> </td>
     <td>Text control for inputting search terms</td>
-    <td>Label content + "Search field"</td>
+    <td>Announced as label, if present + "Search field"</td>
     <td>
-       Double tap to enter
+        <ul>
+            <li>Swipe left/right, double-tap to edit</li>
+            <li>Rotor navigation to form controls, announces number of form controls</li>
+            <li>Single finger swipe up/down to navigate when selected in rotor</li>
+        </ul>
     </td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
@@ -1477,15 +1591,19 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             46-46c0-25.365-20.635-46-46-46z"></path>
         </svg>
     </td>
-    <td></td>
+    <td>No special interaction</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#submit-button-state-typesubmit"><code>input [submit]</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-submit.html"><code>input [submit]</code> test</a> </td>
     <td>Button control for submitting a form</td>
-    <td>label content + "button"</td>
+    <td>Announced as "Submit, button", unless there is a label, in which case it is label content + "button"</td>
     <td>
-
+         <ul>
+            <li>Swipe left/right, double-tap to activate</li>
+            <li>Rotor navigation to form controls, announces number of form controls</li>
+            <li>Single finger swipe up/down to navigate when selected in rotor</li>
+        </ul>
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1500,31 +1618,43 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>&nbsp;</td>
+    <td>Submits the form data to the server</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#telephone-state-typetel"><code>input [tel]</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-tel.html"><code>input [tel]</code> test</a> </td>
-    <td>text box control for inputting a phone number</td>
-    <td>label content + "text field"</td>
+    <td>Text box control for inputting a phone number</td>
+    <td>Announced as label, if present + "text field"</td>
     <td>
-        Double tap to edit
+         <ul>
+            <li>Swipe left/right, double-tap to edit</li>
+            <li>Rotor navigation to form controls, announces number of form controls</li>
+            <li>Single finger swipe up/down to navigate when selected in rotor</li>
+        </ul>
     </td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
-            <path d="M464 32H48C21.5 32 0
-            53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
-            12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
-            313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
-            0l-40.5-40.5c-4.8-4.8-4.8-12.6
-            0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-            0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-            66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8
-            12.6 0 17.4L313.3 256l67.1 66.5z"></path>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
+            256C8 119.083 119.043 8 256 8s248 111.083 248
+            248zM262.655 90c-54.497 0-89.255 22.957-116.549
+            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
+            26.31c5.205 3.947 12.621 3.008 16.665-2.122
+            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
+            45.698 13.148 45.698 32.958 0 14.976-12.363
+            22.667-32.534 33.976C247.128 238.528 216 254.941 216
+            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+            46-46c0-25.365-20.635-46-46-46z"></path>
         </svg>
     </td>
-    <td>&nbsp;</td>
+    <td>
+        <ul>
+            <li>Treated as a regular text field, announces "Double tap to edit"</li>
+            <li>Displays the phone number keypad when activated</li>
+        </ul>
+    </td>
 </tr>
 <tr>
     <th scope="row"> 
@@ -1533,10 +1663,14 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
         </a> 
     </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-text.html"><code>input [text]</code> test</a> </td>
-    <td>text box control</td>
-    <td>label content + "text field"</td>
+    <td>Text box control</td>
+    <td>Announced as label, if present + "text field"</td>
     <td>
-        Double tap to edit
+        <ul>
+            <li>Swipe left/right, double-tap to edit</li>
+            <li>Rotor navigation to form controls, announces number of form controls</li>
+            <li>Single finger swipe up/down to navigate when selected in rotor</li>
+        </ul>
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1551,17 +1685,20 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>&nbsp;</td>
+    <td>Announces "Double tap to edit"</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#time-state-typetime"><code>input [time]</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-time.html"><code>input [time]</code> test</a> </td>
     <td>Control for setting a specific time.</td>
     <td>When the input does not contain a value, there is no VO announcement. When the input contains a value, it is announced as its value</td>
-
-    <td>
-        Double tap to edit
-    </td>  
+    <td>         
+        <ul>
+            <li>Swipe left/right, double-tap to activate</li>
+            <li>Rotor navigation to form controls, announces number of form controls</li>
+            <li>Single finger swipe up/down to navigate when selected in rotor</li>
+        </ul>
+    </td>
     <td>
         <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
             <path d="M464 32H48C21.5 32 0
@@ -1576,37 +1713,55 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             12.6 0 17.4L313.3 256l67.1 66.5z"></path>
         </svg>
     </td>
-    <td>  No instructions are provided until the time picker dialog is expanded, then the following instructions are added "Swipe up or down with one finger to adjust the value"</td>
+    <td>
+        <ul>
+            <li>Displays the time slider picker control when activated</li>
+            <li>No instructions are provided until the time picker dialog is expanded, then the following instructions are added "Swipe up or down with one finger to adjust the value"</li>
+        </ul>
+    </td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#url-state-typeurl"><code>input [url]</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-url.html"><code>input [url]</code> test</a> </td>
     <td>Text control for inputting a URL</td>
-    <td>label content + "text field"</td>
+    <td>Announced as label, if present + "text field"</td>
     <td>
-        Double tap to edit
+        <ul>
+            <li>Swipe left/right, double-tap to edit</li>
+            <li>Rotor navigation to form controls, announces number of form controls</li>
+            <li>Single finger swipe up/down to navigate when selected in rotor</li>
+        </ul>
     </td>
-    <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+     <td>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
+            256C8 119.083 119.043 8 256 8s248 111.083 248
+            248zM262.655 90c-54.497 0-89.255 22.957-116.549
+            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
+            26.31c5.205 3.947 12.621 3.008 16.665-2.122
+            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
+            45.698 13.148 45.698 32.958 0 14.976-12.363
+            22.667-32.534 33.976C247.128 238.528 216 254.941 216
+            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+            46-46c0-25.365-20.635-46-46-46z"></path>
         </svg>
     </td>
-    <td>&nbsp;</td>
+    <td>
+        <ul>
+            <li>Treated as a regular text field, announces "Double tap to edit"</li>
+            <li>If the input data does not match a URL string, VO announces that the entry is invalid when the input has VO focus</li>
+        </ul>
+    </td>
 </tr>
 <tr>
     <th scope="row"><a href="https://html.spec.whatwg.org/multipage/edits.html#the-ins-element"><code>ins</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/del-ins.html"><code>ins</code> test</a> </td>
     <td>An addition to the document</td>
-    <td>"Insertion" + Element content</td>
-    <td>No special commands</td>
+    <td>Announces as "insertion" + "deletion" + <em>element content</em></td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
@@ -1630,7 +1785,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/keyboard.html"><code>kbd</code> test</a> </td>
     <td>Represents user input</td>
     <td><em>Element content</em></td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
             <path d="M464 32H48C21.5 32 0
@@ -1652,7 +1807,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/label.html"><code>label</code> test</a> </td>
     <td>Caption for a form control</td>
     <td>Label content announced when the corresponding form control has focus</td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
@@ -1666,7 +1821,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>&nbsp;</td>
+    <td>No semantics beyond association with input conveyed</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-legend-element"><code>legend</code></a></th>
@@ -1674,8 +1829,8 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td> 
         Caption for <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-fieldset-element"><code>fieldset</code></a>
     </td>
-    <td>Legend content is announced as the group label for a group of related controls when one of the controls is first focused in the group.</td>
-    <td>No special commands</td>
+    <td>Announces as first item of fieldset</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
@@ -1700,10 +1855,18 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
         </ul>
     </td>
     <td>List item</td>
-    <td>List elements part of an unordered list announce "Bullet, list start"
-    List elements part of an ordered list announce "X, list start", X = the list number</td>
     <td>
-       
+        <ul>
+            <li>If unordered: list announces as "Bullet, list start"</li>
+            <li>If ordered: list announces as "X, list start", X = the first item's list number</li>
+        </ul>
+    </td>
+    <td>
+        <ul>
+            <li>Swipe left/right to enter list</li>
+            <li>When added to rotor, open rotor navigation to lists, announces number of lists</li>
+            <li>Single finger swipe up/down to navigate to next list when selected in rotor</li>
+        </ul>
     </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1718,24 +1881,40 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>&nbsp;</td>
+    <td>  
+        <ul>
+            <li>Lists need to be added to the iOS VO rotor menu items before it is accessible. This can be added in the VoiceOver Settings, under Rotor.</li>
+            <li>Announces total item count and position of list items within list</li>
+        </ul>
+    </td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/semantics.htmlthe-link-element"><code>link</code></a></th>
     <td> No test </td>
     <td>Link metadata</td>
     <td><em>None expected</em></td>
-    <td>No special commands</td>
-    <td>&nbsp;</td>
+    <td>No special interaction</td>
+    <td>      
+        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
+            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 
+            48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 
+            296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 
+            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
+        </svg>
+    </td>
     <td>No UI</td>
 </tr>
 <tr id="toc-m" tabindex="-1">
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-main-element"><code>main</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/main.html"><code>main</code> test</a> </td>
     <td>Main content of a document</td>
-    <td></td>
+    <td>Reads landmark content</em></td>
     <td>
-        No speical commands
+        <ul>
+            <li>Swipe left/right to enter landmark</li>
+            <li>When added to rotor, open rotor navigation to landmarks, announces number of landmarks</li>
+            <li>Single finger swipe up/down to navigate to next landmark when selected in rotor</li>
+        </ul>
     </td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
@@ -1754,14 +1933,14 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             46-46c0-25.365-20.635-46-46-46z"></path>
         </svg>
     </td>
-    <td>No semantic feedback</td>
+    <td>No semantic feedback. Landmarks need to be added to the iOS VO rotor menu items before it is accessible. This can be added in the VoiceOver Settings, under Rotor.</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-map-element"><code>map</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/imagemap.html"><code>map</code> test</a> </td>
     <td> <a href="https://html.spec.whatwg.org/multipage/image-maps.html#image-map">Image map</a> </td>
     <td><em>None expected</em></td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
             <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 
@@ -1776,8 +1955,8 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-mark-element"><code>mark</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/mark.html"><code>mark</code> test</a> </td>
     <td>Highlight</td>
-    <td>"Highlighted" <em>Element content</em> "out of highlighted"</td>
-    <td>No special commands</td>
+    <td>Announces as <em>element content</em> + "highlighted"</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
@@ -1791,14 +1970,14 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>&nbsp;</td>
+    <td>Content provided via an <code>aria-label</code> or <code>aria-labelledby</code> is not announced.</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/semantics.htmlthe-meta-element"><code>meta</code></a></th>
     <td> No test </td>
     <td>Text metadata</td>
     <td><em>None expected</em></td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
             <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 
@@ -1813,8 +1992,8 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-meter-element"><code>meter</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/meter.html"><code>meter</code> test</a> </td>
     <td>Gauge</td>
-    <td><em>Accessible name</em> "progress bar" followed by the value</td>
-    <td>No special commands</td>
+    <td>Announces as label content, if present + the current percentage value (e.g. "83%")</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
             <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
@@ -1832,29 +2011,20 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             46-46c0-25.365-20.635-46-46-46z"></path>
         </svg>
     </td>
-    <td>
-        <ul>
-            <li>
-                If fallback content is used in the <code>&lt;meta&gt;</code> element, the fallback content is announced 
-                instead of the value by NVDA in Firefox. The fallback content is not announced using NVDA in Chrome.
-            </li>
-            <li>
-                If the <code>&lt;meta&gt;</code> element is labelled using the <code>aria-labelledby</code> attribute, 
-                the value is not announced by NVDA in Chrome and Firefox.
-            </li>
-        </ul>
+    <td>If fallback content is provided within the <code>&lt;meter&gt;</code> element, the fallback content is announced 
+        instead of the value.
     </td>
 </tr>
 <tr id="toc-n" tabindex="-1">
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/sections.html#the-nav-element"><code>nav</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/nav.html"><code>nav</code> test</a> </td>
     <td>Section with navigational links</td>
-    <td><em>Accessible name</em> "landmark region"</td>
+    <td>Announces first element in landmark + "navigation, landmark"</td>
     <td>
         <ul>
-            <li>Move to Next Region <kbd>D</kbd></li>
-            <li>Move to Prior Region <kbd>SHIFT+D</kbd></li>
-            <li>List Landmark Regions <kbd>INSERT+F7</kbd></li>
+            <li>Swipe left/right to enter landmark</li>
+            <li>When added to rotor, open rotor navigation to landmarks, announces number of landmarks</li>
+            <li>Single finger swipe up/down to navigate to next landmark when selected in rotor</li>
         </ul>
     </td>
     <td>
@@ -1870,14 +2040,14 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>&nbsp;</td>
+    <td>Landmarks need to be added to the iOS VO rotor menu items before it is accessible. This can be added in the VoiceOver Settings, under Rotor.</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#"><code>noscript</code></a></th>
-    <td> No test </td>
+    <td>No test </td>
     <td>Fallback content for script</td>
     <td>Content of <code>&lt;noscript&gt;</code> element read if JavaScript is not available/enabled</td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
             <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 
@@ -1891,13 +2061,9 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
 <tr id="toc-o" tabindex="-1">
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-object-element"><code>object</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/object.html"><code>object</code> test</a> </td>
-    <td> Image, nested browsing context, or plugin </td>
-    <td>Depends on embedded content</td>
-    <td>
-        <ul>
-            <li>Next Object <kbd>O</kbd></li>
-            <li>Prior Object <kbd>SHIFT+O</kbd></li>
-        </ul>
+    <td>Image, nested browsing context, or plugin </td>
+    <td>Depends on embedded content. Announces as "image" if source is a recognised image file type.</td>
+    <td>No special interaction
     </td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
@@ -1916,19 +2082,18 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             46-46c0-25.365-20.635-46-46-46z"></path>
         </svg>
     </td>
-    <td>Support varies depending on object type.</td>
+    <td>Support varies depending on object type. If fallback content is provided within the <code>object</code> element tags then this is announced instead if the data source is broken.</code></td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ol-element"><code>ol</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/ol-li.html"><code>ol</code> test</a> </td>
     <td>Ordered list</td>
-    <td>"List with [n] items" followed by the first list item</td>
+    <td>announces as "X, list start", X = the first item's list number</td>
     <td>
         <ul>
-            <li>Next List <kbd>L</kbd></li>
-            <li>Previous List <kbd>SHIFT+I</kbd></li>
-            <li>Next Item in a List <kbd>I</kbd></li>
-            <li>Previous item in a List <kbd>SHIFT+I</kbd></li>
+            <li>Swipe left/right to enter list</li>
+            <li>When added to rotor, open rotor navigation to lists, announces number of lists</li>
+            <li>Single finger swipe up/down to navigate to next list when selected in rotor</li>
         </ul>
     </td>
     <td>
@@ -1944,38 +2109,46 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>Announces the numerical or alphabetical value for each list item.</td>
+    <td>
+        <ul>
+            <li>Lists need to be added to the iOS VO rotor menu items before it is accessible. This can be added in the VoiceOver Settings, under Rotor.</li>
+            <li>Announces total item count and position of list items within list</li>
+        </ul>
+    </td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-optgroup-element"><code>optgroup</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/select-option.html"><code>optgroup</code> test</a> </td>
     <td>Group of options in a list box</td>
-    <td><em>Label content</em> "grouping"</td>
-    <td>No special commands</td>
+    <td><em>Element content</em></td>
+    <td>Swipe left/right within dropdown to <code>optgroup</code> content</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
+            256C8 119.083 119.043 8 256 8s248 111.083 248
+            248zM262.655 90c-54.497 0-89.255 22.957-116.549
+            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
+            26.31c5.205 3.947 12.621 3.008 16.665-2.122
+            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
+            45.698 13.148 45.698 32.958 0 14.976-12.363
+            22.667-32.534 33.976C247.128 238.528 216 254.941 216
+            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+            46-46c0-25.365-20.635-46-46-46z"></path>
         </svg>
     </td>
     <td>
-        The list needs to be expanded in order for the grouping information to be announced. Use <kbd>ALT</kbd> followed 
-        by <kbd>DOWN ARROW</kbd> key to expand the list.
+        No semantics conveyed
     </td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-option-element"><code>option</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/select-option.html"><code>option</code> test</a> </td>
     <td>Option in a list box or combo box control</td>
-    <td><em>Option content</em> x of y; where x = position in list, y = number of items in the list</td>
-    <td>Navigable using <kbd>UP</kbd>/<kbd>DOWN</kbd> arrow keys</td>
+    <td>Announced as "selected", if the option is currently selected + <code>option</code> content + "button"</td>
+    <td>Swipe up/down within dropdown, double-tap to select</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
@@ -1989,14 +2162,14 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>Use <kbd>ALT</kbd> followed by <kbd>DOWN ARROW</kbd> key to expand the list.</td>
+    <td>Double-tap on <code>select</code> element to expand the list of options.</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-output-element"><code>output</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/output.html"><code>output</code> test</a> </td>
     <td>Calculated output value</td>
     <td>Reads output value</td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
             <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
@@ -2021,65 +2194,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/p.html"><code>p</code> test</a> </td>
     <td>Paragraph</td>
     <td><em>Element content</em></td>
-    <td>
-        <ul>
-            <li>Next Paragraph <kbd>P</kbd></li>
-            <li>Prior Paragraph <kbd>SHIFT+P</kbd></li>
-        </ul>
-    </td>
-    <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
-    </td>
-    <td>No aural semantics.</td>
-</tr>
-<tr>
-    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/obsolete.html#the-param-element"><code>param</code> (obsolete)</a> </th>
-    <td> No test </td>
-    <td> Parameter for <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-object-element">object</a></td>
-    <td><em>None expected</em></td>
-    <td>No special commands</td>
-    <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 
-            48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 
-            296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
-    </td>
-    <td>No UI</td>
-</tr>
-<tr>
-    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-picture-element"><code>picture</code></a></th>
-    <td> No test </td>
-    <td>Container to offer alternative versions of an image for different scenarios.</td>
-    <td><em>None expected</em></td>
-    <td>No special commands</td>
-    <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 
-            48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 
-            296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
-    </td>
-    <td>No UI</td>
-</tr>
-<tr>
-    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-pre-element"><code>pre</code></a></th>
-    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/pre.html"><code>pre</code> test</a> </td>
-    <td>Block of preformatted text</td>
-    <td><em>Element content</em></td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
@@ -2096,15 +2211,43 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td>No semantics conveyed</td>
 </tr>
 <tr>
-    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-progress-element"><code>progress</code></a></th>
-    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/progress.html"><code>progress</code> test</a> </td>
-    <td>Progress bar</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/obsolete.html#the-param-element"><code>param</code> (obsolete)</a> </th>
+    <td>No test </td>
+    <td>Parameter for <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-object-element">object</a></td>
+    <td><em>None expected</em></td>
+    <td>No special interaction</td>
     <td>
-        <ul>
-            <li>NVDA beeps as the value of the progress bar is updated with an ever increasing pitch as the value increases</lI>
-            <li><em>Accessible name</em>, "progress bar", value (if using arrow keys)</li>
-        </ul>
-    <td>No special commands</td>
+        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
+            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 
+            48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 
+            296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 
+            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
+        </svg>
+    </td>
+    <td>No UI</td>
+</tr>
+<tr>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-picture-element"><code>picture</code></a></th>
+    <td> No test </td>
+    <td>Container to offer alternative versions of an image for different scenarios.</td>
+    <td><em>None expected</em></td>
+    <td>No special interaction</td>
+    <td>
+        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
+            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 
+            48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 
+            296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 
+            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
+        </svg>
+    </td>
+    <td>No UI</td>
+</tr>
+<tr>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-pre-element"><code>pre</code></a></th>
+    <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/pre.html"><code>pre</code> test</a> </td>
+    <td>Block of preformatted text</td>
+    <td><em>Element content</em></td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
@@ -2118,17 +2261,14 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>
-        Progress bars are not inherently focusable. But if a progress bar has <code>tabindex="0"</code>, then the accessible 
-        name of the progress bar will be announced on focus.
-    </td>
+    <td>No semantics conveyed but announced with a change in intonation</td>
 </tr>
-<tr id="toc-q" tabindex="-1">
-    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-q-element"><code>q</code></a></th>
-    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/q.html"><code>q</code> test</a> </td>
-    <td>Quotation</td>
-    <td><em>Element content</em></td>
-    <td>No special commands</td>
+<tr>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-progress-element"><code>progress</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/progress.html"><code>progress</code> test</a> </td>
+    <td>Progress bar</td>
+    <td>Announced as label, if present + current value as a percentage (e.g. "22%")</td> 
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
             <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
@@ -2146,14 +2286,41 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             46-46c0-25.365-20.635-46-46-46z"></path>
         </svg>
     </td>
-    <td>&nbsp;</td>
+    <td>
+        No semantics conveyed.
+    </td>
+</tr>
+<tr id="toc-q" tabindex="-1">
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-q-element"><code>q</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/q.html"><code>q</code> test</a> </td>
+    <td>Quotation</td>
+    <td><em>Element content</em></td>
+    <td>No special interaction</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
+            256C8 119.083 119.043 8 256 8s248 111.083 248
+            248zM262.655 90c-54.497 0-89.255 22.957-116.549
+            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
+            26.31c5.205 3.947 12.621 3.008 16.665-2.122
+            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
+            45.698 13.148 45.698 32.958 0 14.976-12.363
+            22.667-32.534 33.976C247.128 238.528 216 254.941 216
+            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+            46-46c0-25.365-20.635-46-46-46z"></path>
+        </svg>
+    </td>
+    <td>No semantics conveyed but announced in a different intonation.</td>
 </tr>
 <tr id="toc-r" tabindex="-1">
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rb-element"><code>rb</code></a></th>
-    <td> No test </td>
+    <td>No test </td>
     <td>Ruby base element</td>
     <td><em>Element content</em></td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img"><path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
             256C8 119.083 119.043 8 256 8s248 111.083 248
@@ -2177,7 +2344,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td> No test </td>
     <td>Fallback parenthesis for browsers that don't support Ruby</td>
     <td><em>Element content</em></td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
             <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
@@ -2202,7 +2369,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td> No test </td>
     <td>Represents an annotation</td>
     <td><em>Element content</em></td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
             <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
@@ -2224,10 +2391,10 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rtc-element"><code>rtc</code></a></th>
-    <td> No test </td>
+    <td>No test </td>
     <td>Ruby text container</td>
     <td><em>Element content</em></td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
             <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
@@ -2249,10 +2416,10 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-ruby-element"><code>ruby</code></a></th>
-    <td> No test </td>
+    <td>No test </td>
     <td>Shows pronunciation</td>
     <td><em>Element content</em></td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
             <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
@@ -2270,14 +2437,14 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             46-46c0-25.365-20.635-46-46-46z"></path>
         </svg>
     </td>
-    <td>&nbsp;</td>
+    <td>No semantics conveyed</td>
 </tr>
 <tr id="toc-s" tabindex="-1">
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-s-element"><code>s</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/s.html"><code>s</code> test</a> </td>
     <td>Inaccurate text</td>
-    <td>"Deleted" <em>Element content</em></td>
-    <td>No special commands</td>
+    <td>Announced as "deletion" + <em>element content</em></td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
@@ -2291,14 +2458,14 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
             22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
         </svg>
     </td>
-    <td>&nbsp;</td>
+    <td></td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-samp-element"><code>samp</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/samp.html"><code>samp</code> test</a> </td>
     <td>Computer output</td>
     <td><em>Element content</em></td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
             <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
@@ -2323,7 +2490,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td> No test </td>
     <td>Embedded script</td>
     <td><em>None expected</em></td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
             <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 
@@ -2344,35 +2511,44 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
         </ul>
     </td>
     <td>Generic document or application section</td>
-    <td>Announces "region" if labelled</td>
     <td>
-        If labelled, treated as a landmark:
         <ul>
-            <li>Move to Next Region <kbd>D</kbd></li>
-            <li>Move to Prior Region <kbd>SHIFT+D</kbd></li>
-            <li>List Landmark Regions <kbd>INSERT+F7</kbd></li>
+            <li>Announces as label content "region, landmark" if labelled</li>
+            <li>If <code>section</code> doesn't have an accessible name there is no aural indication</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-            </svg>
+       No special interaction.
     </td>
-    <td>No semantics conveyed unless the section has an accessible name.</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
+            256C8 119.083 119.043 8 256 8s248 111.083 248
+            248zM262.655 90c-54.497 0-89.255 22.957-116.549
+            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
+            26.31c5.205 3.947 12.621 3.008 16.665-2.122
+            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
+            45.698 13.148 45.698 32.958 0 14.976-12.363
+            22.667-32.534 33.976C247.128 238.528 216 254.941 216
+            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+            46-46c0-25.365-20.635-46-46-46z"></path>
+        </svg>
+    </td>
+    <td>
+        <ul>
+            <li>No semantics conveyed unless the section has an accessible name. </li>
+            <li>Whilst a <code>section</code> with an accessible name is announced as a landmark it is not treated as a landmark when rotor navigation is set to landmarks.</li>
+        </ul>
+    </td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element"><code>select</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/select-option.html"><code>select</code> test</a> </td>
     <td>Combo box</td>
-    <td><em>Accessible name</em> "combo box"</td>
+    <td>Announces as label content, if present + current selection + "pop-up button"</td>
     <td>
         <ul>
             <li>Move To Next Combo Box <kbd>C</kbd></li>
@@ -2400,7 +2576,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/small.html"><code>small</code> test</a> </td>
     <td>Side comment</td>
     <td><em>Element content</em></td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
             <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
@@ -2428,7 +2604,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
         <a href="https://html.spec.whatwg.org/multipage/media.html#the-audio-element">audio</a>
     </td>
     <td><em>None expected</em></td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
@@ -2449,7 +2625,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/span.html"><code>span</code> test</a> </td>
     <td>Generic phrasing container</td>
     <td><em>Element content</em></td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
             <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 
@@ -2464,7 +2640,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/strong.html"><code>strong</code> test</a> </td>
     <td>Importance</td>
     <td><em>Element content</em></td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
             <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
@@ -2489,7 +2665,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td> No test </td>
     <td>Embedded styling information</td>
     <td><em>None expected</em></td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
             <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 
@@ -2504,7 +2680,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/sub-sup.html"><code>sub</code> test</a> </td>
     <td>Subscript</td>
     <td><em>Element content</em></td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
             <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
@@ -2558,7 +2734,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/sub-sup.html"><code>sup</code> test</a> </td>
     <td>Superscript</td>
     <td><em>Element content</em></td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
             <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
@@ -2646,7 +2822,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/table-caption-thead-tbody-tfoot-tr-th-td.html"><code>tbody</code> test</a> </td>
     <td>Group of rows in a data table</td>
     <td><em>Element content</em></td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
             <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 
@@ -2689,7 +2865,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td> No test </td>
     <td>Template</td>
     <td><em>None expected</em></td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
             <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 
@@ -2734,7 +2910,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     </td>
     <td>Group of footer rows in a data table</td>
     <td>&nbsp;</td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
             <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
@@ -2780,7 +2956,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/table-caption-thead-tbody-tfoot-tr-th-td.html"><code>thead</code> test</a> </td>
     <td>Group of header rows in a data table</td>
     <td><em>Element content</em></td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
             <path d="M464 32H48C21.5 32 0
@@ -2802,7 +2978,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/time.html"><code>time</code> test</a> </td>
     <td>Machine-readable equivalent of date- or time-related data</td>
     <td><em>Element content</em></td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
             <path d="M464 32H48C21.5 32 0
@@ -2845,7 +3021,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/table-caption-thead-tbody-tfoot-tr-th-td.html"><code>tr</code> test</a> </td>
     <td>Data table row</td>
     <td>&nbsp;</td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
             <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
@@ -2866,7 +3042,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/video.html"><code>track</code> test</a> </td>
     <td>Timed text track</td>
     <td><em>Caption display control</em></td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
             <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
@@ -2891,7 +3067,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/u.html"><code>u</code> test</a> </td>
     <td>Underlined text</td>
     <td><em>Element content</em></td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
             <path d="M464 32H48C21.5 32 0
@@ -2939,7 +3115,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/var.html"><code>var</code> test</a> </td>
     <td>Represents a variable</td>
     <td><em>Element content</em></td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
             <path d="M464 32H48C21.5 32 0
@@ -2961,7 +3137,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/video.html"><code>video</code> test</a> </td>
     <td>Video Player</td>
     <td>Announces individual controls</td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
             <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
@@ -2986,7 +3162,7 @@ On dialog: anounces "web dialog", accessible name reads auto focused control on 
     <td> No test </td>
     <td>Line breaking opportunity</td>
     <td><em>None expected</em></td>
-    <td>No special commands</td>
+    <td>No special interaction</td>
     <td>
         <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
             <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 
