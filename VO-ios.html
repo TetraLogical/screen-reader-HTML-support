@@ -27,6 +27,52 @@ body {background-color:white}
 </style>
 </head>
 <body>
+<svg style="display:none">
+<symbol id="yes">
+    <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+    21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+    26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248
+    6.248-16.379
+    0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+    0L184
+    302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+    0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104
+    104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+</symbol>
+<symbol id="no">
+    <path d="M464 32H48C21.5 32 0
+    53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
+    48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
+    12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
+    313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
+    0l-40.5-40.5c-4.8-4.8-4.8-12.6
+    0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
+    0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
+    66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8
+    12.6 0 17.4L313.3 256l67.1 66.5z"></path>
+</symbol>
+<symbol id="noneE">
+    <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48
+    48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92
+    296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0
+    12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path>
+</symbol>
+<symbol id="unknown">
+    <path d="M504 256c0
+    136.997-111.043 248-248 248S8 392.997 8 256C8 119.083
+    119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497
+    0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415
+    2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008
+    16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797
+    20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363
+    22.667-32.534 33.976C247.128 238.528 216 254.941 216
+    296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+    12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+    0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+    20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+    46-46c0-25.365-20.635-46-46-46z"></path>
+</symbol>
+</svg>
 <header class="site-head">
   <div class="wrapper">
     <a href="#main" class="cta skip-link" data-cta-variant="secondary">
@@ -49,7 +95,6 @@ body {background-color:white}
 <p><strong>GitHub Repo:</strong> <a href="https://github.com/TetraLogical/screen-reader-HTML-support">screen-reader-HTML-support</a>
 </p>
 <p>Found a bug? Please <a href="https://github.com/TetraLogical/screen-reader-HTML-support/issues">report it</a>. </p>
-</header>
 <main>
 <h2>How HTML elements are supported by screen readers</h2>
 <p> Typical support patterns of HTML elements by screen readers: </p>
@@ -76,49 +121,14 @@ varies from element to element and support for a particular
 element varies between screen reader software. </p>
 <h2>Support legend</h2>
 <ul>
-<li><svg viewBox="0 0 448 512" width="20" aria-label="yes"  class="yes">
-<path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248
-6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104
-104c6.249 6.25 16.379 6.25 22.628.001z"></path> </svg>
+<li><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
 means we have found this feature to be implemented
 interoperably (across multiple browsers)</li>
-<li><svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><path d="M464 32H48C21.5 32 0
-53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
-48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
-12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
-313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
-0l-40.5-40.5c-4.8-4.8-4.8-12.6
-0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8
-12.6 0 17.4L313.3 256l67.1 66.5z"></path></svg> means we
+<li><svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no" /></svg> means we
 have found that this feature is not implemented</li>
-<li><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-<path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48
-48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92
-296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0
-12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> </svg>
+<li><svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
 means the element has no expected semantics.</li>
-<li><svg viewBox="0 0 512 512" width="20" aria-label="question
-mark" class="unknown" role="img"><path d="M504 256c0
-136.997-111.043 248-248 248S8 392.997 8 256C8 119.083
-119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497
-0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415
-2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008
-16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797
-20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363
-22.667-32.534 33.976C247.128 238.528 216 254.941 216
-296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-46-46c0-25.365-20.635-46-46-46z"></path></svg> means we
+<li><svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg> means we
 are unsure whether this feature is supported, this may be due
 to lack of testing or lack of clarity around what 'support' of
 this feature is supposed to convey to the user.</li>
@@ -151,16 +161,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-        <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-        21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-        26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248
-        6.248-16.379
-        0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-        0L184
-        302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-        0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104
-        104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>
 <p>Recognizes visited/unvisited state of links.</p>
@@ -179,16 +180,7 @@ this feature is supposed to convey to the user.</li>
         <p>No special interaction</p>
         </td>
         <td>
-            <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><path d="M464 32H48C21.5 32 0
-                53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
-                48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
-                12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
-                313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
-                0l-40.5-40.5c-4.8-4.8-4.8-12.6
-                0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-                0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-                66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8
-                12.6 0 17.4L313.3 256l67.1 66.5z"></path></svg>
+            <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no" /></svg>
         </td>
         <td>
         <p>No additional semantics conveyed if title is present.</p>
@@ -203,16 +195,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em></td>
     <td>No special interaction</td>
     <td>
-    <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><path d="M464 32H48C21.5 32
-    0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0
-    48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6
-    290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8
-    4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8
-    4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6
-    0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-    0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-    66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
-    4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path></svg>
+    <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no" /></svg>
 
     </td>
     <td>No additional semantics conveyed</td>
@@ -230,17 +213,7 @@ this feature is supposed to convey to the user.</li>
         Swipe left/right to navigate
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>Requires alt for accessibility.</td>
 </tr>
@@ -253,17 +226,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em>, does not announce article</td>
     <td>Rotor to 'articles' Swipe down with one finger to navigate by article</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>No additional semantics conveyed. Documentation states that swipe one finger up should naviagte back through articles, but does not appear to work. article does support aria-describedby and announces "Description..." after visible text.</td>
 </tr>
@@ -280,17 +243,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>
         <ul>
@@ -306,17 +259,7 @@ this feature is supposed to convey to the user.</li>
     <td>Announces "audio"</td>
     <td>Double-tap to play/pause. Swipe up down with one finger to operate the time scrubber.</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>Accessible buttons available in the player. The time scrubber operation is flaky when VoiceOver is enabled.</td>
 </tr>
@@ -327,13 +270,7 @@ this feature is supposed to convey to the user.</li>
     <td>Reads content as normal text</td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-            48 48 48h352c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-            0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     </td>
     <td>No specific emphasis expected.</td>
 </tr>
@@ -345,13 +282,7 @@ this feature is supposed to convey to the user.</li>
     <td>No aural feedback</td>
     <td>Not interactive</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-            48 48 48h352c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-            0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     </td>
     <td>Typically ignored by VoiceOver.</td>
 </tr>
@@ -362,13 +293,7 @@ this feature is supposed to convey to the user.</li>
     <td>Reads content as normal text</td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-            48 48 48h352c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-            0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     </td>
     <td>No aural impact; structure-only element.</td>
 </tr>
@@ -379,13 +304,7 @@ this feature is supposed to convey to the user.</li>
     <td>Reads content as normal text</td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-            48 48 48h352c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-            0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     </td>
     <td>No special semantics conveyed. Reads text correctly regardless of direction.</td>
 </tr>
@@ -397,17 +316,7 @@ this feature is supposed to convey to the user.</li>
     <td>No special interaction
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>No additional semantics conveyed.</td>
 </tr>
@@ -418,13 +327,7 @@ this feature is supposed to convey to the user.</li>
     <td>Reads content</td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-            48 48 48h352c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-            0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     </td>
     <td>No unique aural feedback; body is implicit.</td>
 </tr>
@@ -435,13 +338,7 @@ this feature is supposed to convey to the user.</li>
     <td>Announces nothing</td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0
-    53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5
-    48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-    0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-    12 12v56c0 6.6-5.4 12-12 12H92z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     </td>
     <td>No additional semantics conveyed.Treated as one new line, regardless of number of line break elements</td>
 </tr>
@@ -458,17 +355,7 @@ this feature is supposed to convey to the user.</li>
 	    </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>Announced as "toggle button" label and state (pressed/unpressed) when button has aria-pressed.</td>
 </tr>
@@ -479,13 +366,7 @@ this feature is supposed to convey to the user.</li>
     <td>Announces "graphic" if aria-label and Role="img" is provided, Other wise ignores canvas</td>
     <td>Focusable via swipe gestures if role="img" present or sub DOM contains content.</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0
-    53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5
-    48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-    0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-    12 12v56c0 6.6-5.4 12-12 12H92z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     </td>
     <td> 
         <ul>
@@ -507,17 +388,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td> 
 <ul>
@@ -533,13 +404,7 @@ this feature is supposed to convey to the user.</li>
     <td>Reads content as normal text</td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0
-    53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5
-    48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-    0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-    12 12v56c0 6.6-5.4 12-12 12H92z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     </td>
     <td>
     <p>No semantics conveyed.</p>
@@ -552,13 +417,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0
-    53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5
-    48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-    0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-    12 12v56c0 6.6-5.4 12-12 12H92z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     </td>
     <td>
   No unique treatment; read as normal text.
@@ -571,13 +430,7 @@ this feature is supposed to convey to the user.</li>
     <td>No aural indication</td>
     <td>Not directly interactive</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-            48 48 48h352c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-            0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     </td>
     <td>Impact conveyed through table structure only.</td>
 </tr>
@@ -594,13 +447,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-            48 48 48h352c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-            0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     </td>
     <td>
         <ul>
@@ -616,13 +463,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em></td>
     <td>No special interactions</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-            48 48 48h352c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-            0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     </td>
     <td>Treated as regular text</td>
 </tr>
@@ -637,17 +478,7 @@ this feature is supposed to convey to the user.</li>
         Swipe left/right to focus on input, double-tap to select
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>List of suggestions appear in browser suggestions rather than as a listbox. With VO enabled cannot display listbox.</td>
 </tr>    
@@ -658,17 +489,7 @@ this feature is supposed to convey to the user.</li>
     <td>Announces start of "description list" <em>Element content</em> suffixed with "Description" announces "description list end"</td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>Properly grouped with its <code>dt</code>/td>
 </tr>
@@ -679,17 +500,7 @@ this feature is supposed to convey to the user.</li>
     <td>Announces as "deletion" + <em>element content</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td></td>
 </tr>
@@ -700,17 +511,7 @@ this feature is supposed to convey to the user.</li>
     <td>Announces <code>summary</code> text, button, collapsed or expanded (when details content is visible)</td>
     <td>Double-tap to expand/collapse</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>Recognizes expanded/collapsed state.</td>
 </tr>
@@ -721,13 +522,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em> not role</td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-            48 48 48h352c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-            0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     </td>
     <td>No unique treatment beyond reading</td>
 </tr>
@@ -743,17 +538,7 @@ this feature is supposed to convey to the user.</li>
     </td>
     <td>Focus moves to dialog on open</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>Recognizes and traps focus within modal dialog. When dialog closed does not return focus to triggering control unless the dialog has an accessible name.</td>
 </tr>
@@ -764,13 +549,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-            48 48 48h352c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-            0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -785,17 +564,7 @@ this feature is supposed to convey to the user.</li>
         Not recognised as a list in rotor navigation
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td></td>
 </tr>
@@ -810,17 +579,7 @@ this feature is supposed to convey to the user.</li>
         Part of list navigation
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>Associated with the following <code>dd</code></td>
 </tr>
@@ -831,13 +590,7 @@ this feature is supposed to convey to the user.</li>
     <td>Element content</td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-            48 48 48h352c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-            0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     </td>
     <td>
         No semantics conveyed. Refer to: <a href="https://www.tpgi.com/screen-readers-support-for-text-level-html-semantics/">Screen 
@@ -855,22 +608,7 @@ this feature is supposed to convey to the user.</li>
        No special interactions
     </td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-                256C8 119.083 119.043 8 256 8s248 111.083 248
-                248zM262.655 90c-54.497 0-89.255 22.957-116.549
-                63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-                26.31c5.205 3.947 12.621 3.008 16.665-2.122
-                17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-                45.698 13.148 45.698 32.958 0 14.976-12.363
-                22.667-32.534 33.976C247.128 238.528 216 254.941 216
-                296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-                12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-                0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-                20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-                46-46c0-25.365-20.635-46-46-46z">
-            </path>
-        </svg>    
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>    
     </td>
     <td>
         
@@ -889,17 +627,7 @@ this feature is supposed to convey to the user.</li>
         keys navigation keys for the child control.
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>Only when <code>fieldset</code> has an accessible name via <code>legend</code> or other method.</td>
 </tr>
@@ -910,17 +638,7 @@ this feature is supposed to convey to the user.</li>
     <td>Element content</td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>&nbsp;</td>
 </tr>
@@ -931,17 +649,7 @@ this feature is supposed to convey to the user.</li>
     <td>VoiceOver announces the content of the <figure> element based on what's inside it. For example, if the <code>figure</code> element wraps around an image, VoiceOver will read the image along with its accessible name, typically provided via the alt attribute.</td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>"Figure" is not announced if the element does not have an accessible name or contain a <code>&lt;figcaption&gt;</code> element.</td>
 </tr>
@@ -958,17 +666,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>
         <ul>
@@ -986,17 +684,7 @@ this feature is supposed to convey to the user.</li>
         No special instructions
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -1009,17 +697,7 @@ this feature is supposed to convey to the user.</li>
        No special interaction
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>Identifies heading level and text.</td>
 </tr>
@@ -1030,13 +708,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>None expected</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-            48 48 48h352c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-            0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     </td>
     <td>No UI</td>
 </tr>
@@ -1053,17 +725,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>
         <ul>
@@ -1079,17 +741,7 @@ this feature is supposed to convey to the user.</li>
     <td>Announced as, "Separator, dimmed"</td>
     <td>No special command</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>If an accessible name is provided, the element is announced as "Seperator, accessible name, dimmer"</td>
 </tr>
@@ -1100,13 +752,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>None expected</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-            48 48 48h352c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-            0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     </td>
     <td>No semantics expected.</td>
 </tr>
@@ -1117,13 +763,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-            48 48 48h352c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-            0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     </td>
     <td>No semantics conveyed.</td>
 </tr>
@@ -1141,21 +781,7 @@ this feature is supposed to convey to the user.</li>
     Swipe left/right to enter <code>frame</code>.
     </td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     </td>
     <td>
         <ul>
@@ -1183,17 +809,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>
         <ul>
@@ -1217,17 +833,7 @@ this feature is supposed to convey to the user.</li>
        
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>Announces <code>title</code> attribute in addition to label or <code>value</code> if present</td>
 </tr>
@@ -1244,17 +850,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>
         <ul>
@@ -1276,21 +872,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
- <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+ <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     </td>
     <td>Opens a colour selection grid when activated. "Double tap to activate" is not announced by VO.</td>
 </tr>
@@ -1307,18 +889,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
-            <path d="M464 32H48C21.5 32 0
-            53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
-            12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
-            313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
-            0l-40.5-40.5c-4.8-4.8-4.8-12.6
-            0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-            0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-            66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8
-            12.6 0 17.4L313.3 256l67.1 66.5z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no" /></svg>
     </td>
     <td>
         Opens a date selection picker when activated. "Double tap to activate" is not announced by VO.
@@ -1337,21 +908,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     </td>
     <td>Treated as a regular text field, announces "Double tap to edit"</td>
 </tr>
@@ -1368,17 +925,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>Opens a file selection picker when activated.</td>
 </tr>
@@ -1389,12 +936,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>None expected</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 
-            48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 
-            296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     </td>
     <td>No UI</td>
 </tr>
@@ -1411,17 +953,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>VoiceOver on-device image recognition settings don't work on <code>input type="image"</code> as they are not recognised as images</td>
 </tr>
@@ -1438,21 +970,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     </td>
     <td>
         <ul>
@@ -1474,21 +992,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     </td>
     <td>
          <ul>
@@ -1510,17 +1014,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>
         <ul>
@@ -1545,17 +1039,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>Recognizes position within radio group</td>
 </tr>
@@ -1572,17 +1056,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>Resets all form inputs to their default value</td>
 </tr>
@@ -1603,21 +1077,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     </td>
     <td>No special interaction</td>
 </tr>
@@ -1634,17 +1094,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>Submits the form data to the server</td>
 </tr>
@@ -1661,21 +1111,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     </td>
     <td>
         <ul>
@@ -1701,17 +1137,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>Announces "Double tap to edit"</td>
 </tr>
@@ -1728,18 +1154,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
-            <path d="M464 32H48C21.5 32 0
-            53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
-            12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
-            313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
-            0l-40.5-40.5c-4.8-4.8-4.8-12.6
-            0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-            0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-            66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8
-            12.6 0 17.4L313.3 256l67.1 66.5z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no" /></svg>
     </td>
     <td>
         <ul>
@@ -1761,21 +1176,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
      <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     </td>
     <td>
         <ul>
@@ -1791,18 +1192,7 @@ this feature is supposed to convey to the user.</li>
     <td>Announces as "insertion" + "deletion" + <em>element content</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627
-            22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>
         
@@ -1815,18 +1205,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
-            <path d="M464 32H48C21.5 32 0
-            53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
-            12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
-            313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
-            0l-40.5-40.5c-4.8-4.8-4.8-12.6
-            0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-            0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-            66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
-            4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no" /></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -1837,17 +1216,7 @@ this feature is supposed to convey to the user.</li>
     <td>Label content announced when the corresponding form control has focus</td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>No semantics beyond association with input conveyed</td>
 </tr>
@@ -1860,17 +1229,7 @@ this feature is supposed to convey to the user.</li>
     <td>Announces as first item of fieldset</td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>Serves as the group label for a group of form controls. Refer to the <a href="#toc-f">fieldset</a> element</td>
 </tr>
@@ -1897,17 +1256,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>  
         <ul>
@@ -1923,12 +1272,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>None expected</em></td>
     <td>No special interaction</td>
     <td>      
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 
-            48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 
-            296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     </td>
     <td>No UI</td>
 </tr>
@@ -1945,21 +1289,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     </td>
     <td>No semantic feedback. Landmarks need to be added to the iOS VO rotor menu items before it is accessible. This can be added in the VoiceOver Settings, under Rotor.</td>
 </tr>
@@ -1970,12 +1300,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>None expected</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 
-            48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 
-            296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     </td>
     <td>No UI</td>
 </tr>
@@ -1986,17 +1311,7 @@ this feature is supposed to convey to the user.</li>
     <td>Announces as <em>element content</em> + "highlighted"</td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>Content provided via an <code>aria-label</code> or <code>aria-labelledby</code> is not announced.</td>
 </tr>
@@ -2007,12 +1322,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>None expected</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 
-            48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 
-            296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     </td>
     <td>No UI</td>
 </tr>
@@ -2023,21 +1333,7 @@ this feature is supposed to convey to the user.</li>
     <td>Announces as label content, if present + the current percentage value (e.g. "83%")</td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     </td>
     <td>If fallback content is provided within the <code>&lt;meter&gt;</code> element, the fallback content is announced 
         instead of the value.
@@ -2056,17 +1352,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>Landmarks need to be added to the iOS VO rotor menu items before it is accessible. This can be added in the VoiceOver Settings, under Rotor.</td>
 </tr>
@@ -2077,12 +1363,7 @@ this feature is supposed to convey to the user.</li>
     <td>Content of <code>&lt;noscript&gt;</code> element read if JavaScript is not available/enabled</td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 
-            48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 
-            296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     </td>
     <td>Ignored when JavaScript is enabled.</td>
 </tr>
@@ -2094,21 +1375,7 @@ this feature is supposed to convey to the user.</li>
     <td>No special interaction
     </td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     </td>
     <td>Support varies depending on object type. If fallback content is provided within the <code>object</code> element tags then this is announced instead if the data source is broken.</code></td>
 </tr>
@@ -2125,17 +1392,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>
         <ul>
@@ -2151,21 +1408,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em></td>
     <td>Swipe left/right within dropdown to <code>optgroup</code> content</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     </td>
     <td>
         No semantics conveyed
@@ -2178,17 +1421,7 @@ this feature is supposed to convey to the user.</li>
     <td>Announced as "selected", if the option is currently selected + <code>option</code> content + "button"</td>
     <td>Swipe up/down within dropdown, double-tap to select</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>Double-tap on <code>select</code> element to expand the list of options.</td>
 </tr>
@@ -2199,21 +1432,7 @@ this feature is supposed to convey to the user.</li>
     <td>Reads output value</td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -2224,17 +1443,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -2245,12 +1454,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>None expected</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 
-            48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 
-            296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     </td>
     <td>No UI</td>
 </tr>
@@ -2261,12 +1465,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>None expected</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 
-            48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 
-            296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     </td>
     <td>No UI</td>
 </tr>
@@ -2277,17 +1476,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>No semantics conveyed but announced with a change in intonation</td>
 </tr>
@@ -2298,21 +1487,7 @@ this feature is supposed to convey to the user.</li>
     <td>Announced as label, if present + current value as a percentage (e.g. "22%")</td> 
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     </td>
     <td>
         No semantics conveyed.
@@ -2325,21 +1500,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     </td>
     <td>No semantics conveyed but announced in a different intonation.</td>
 </tr>
@@ -2350,20 +1511,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img"><path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -2374,21 +1522,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -2399,21 +1533,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -2424,21 +1544,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -2449,21 +1555,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -2474,17 +1566,7 @@ this feature is supposed to convey to the user.</li>
     <td>Announced as "deletion" + <em>element content</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td></td>
 </tr>
@@ -2495,21 +1577,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -2520,12 +1588,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>None expected</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 
-            48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 
-            296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 
-            12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     </td>
     <td>No UI</td>
 </tr>
@@ -2549,21 +1612,7 @@ this feature is supposed to convey to the user.</li>
        No special interaction.
     </td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     </td>
     <td>
         <ul>
@@ -2585,17 +1634,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>
         <ul>
@@ -2611,21 +1650,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-                256C8 119.083 119.043 8 256 8s248 111.083 248
-                248zM262.655 90c-54.497 0-89.255 22.957-116.549
-                63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-                26.31c5.205 3.947 12.621 3.008 16.665-2.122
-                17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-                45.698 13.148 45.698 32.958 0 14.976-12.363
-                22.667-32.534 33.976C247.128 238.528 216 254.941 216
-                296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-                12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-                0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-                20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-                46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -2639,17 +1664,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>None expected</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>No UI</td>
 </tr>
@@ -2660,11 +1675,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 
-            48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 
-            5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -2675,21 +1686,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -2700,11 +1697,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>None expected</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 
-            48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 
-            5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     </td>
     <td>No UI</td>
 </tr>
@@ -2715,21 +1708,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -2749,17 +1728,7 @@ this feature is supposed to convey to the user.</li>
     </td>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-        <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-        21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-        26.51-21.49 48-48
-        48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-        0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-        0L184
-        302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-        0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-        22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>Serves as a trigger for expanding/collapsing <code>&lt;details&gt;</code> section.</td>
 </tr>
@@ -2770,21 +1739,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -2801,21 +1756,7 @@ this feature is supposed to convey to the user.</li>
     <td>No special interaction
     </td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     </td>
     <td> 
         <ul>
@@ -2844,17 +1785,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>
         <ul>
@@ -2870,11 +1801,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 
-            48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 
-            5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -2891,17 +1818,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>Announces row and column number of the cell</td>
 </tr>
@@ -2912,11 +1829,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>None expected</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 
-            48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 
-            5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> 
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     </td>
     <td>No UI</td>
 </tr>
@@ -2933,17 +1846,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>Announces "double-tap to edit"</td>
 </tr>
@@ -2957,21 +1860,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em>></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -2982,17 +1871,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em></td>
     <td>Announces as cell content + "column/row header"</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>VO recognises row/column headers</td>
 </tr>
@@ -3003,18 +1882,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
-            <path d="M464 32H48C21.5 32 0
-            53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
-            12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
-            313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
-            0l-40.5-40.5c-4.8-4.8-4.8-12.6
-            0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-            0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-            66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
-            4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no" /></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -3025,18 +1893,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
-            <path d="M464 32H48C21.5 32 0
-            53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
-            12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
-            313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
-            0l-40.5-40.5c-4.8-4.8-4.8-12.6
-            0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-            0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-            66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
-            4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no" /></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -3047,17 +1904,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em></td>
     <td>In Safari, navigate to tab view from the toolbar. VO will announce page title content + "tab, X of Y", Y being the total number of pages and X the item number of the current page</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td></td>
 </tr>
@@ -3068,17 +1915,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -3089,21 +1926,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Caption display control</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -3114,18 +1937,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
-            <path d="M464 32H48C21.5 32 0
-            53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
-            48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
-            12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
-            313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
-            0l-40.5-40.5c-4.8-4.8-4.8-12.6
-            0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-            0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-            66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
-            4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no" /></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -3142,17 +1954,7 @@ this feature is supposed to convey to the user.</li>
         </ul>
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-            <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-            21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-            26.51-21.49 48-48
-            48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-            0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-            0L184
-            302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-            0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-            22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>
         <ul>
@@ -3168,18 +1970,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
-            <path d="M464 32H48C21.5 32 0
-                53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
-                48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
-                12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
-                313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
-                0l-40.5-40.5c-4.8-4.8-4.8-12.6
-                0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-                0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-                66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
-                4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no" /></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
@@ -3190,21 +1981,7 @@ this feature is supposed to convey to the user.</li>
     <td>Announces as video duration (e.g. "37 seconds") "video playback, elapsed time X seconds", where X is the current timestamp</td>
     <td>Swipe left/right to focus with VO, double-tap to play/pause</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-            <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-            256C8 119.083 119.043 8 256 8s248 111.083 248
-            248zM262.655 90c-54.497 0-89.255 22.957-116.549
-            63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-            26.31c5.205 3.947 12.621 3.008 16.665-2.122
-            17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-            45.698 13.148 45.698 32.958 0 14.976-12.363
-            22.667-32.534 33.976C247.128 238.528 216 254.941 216
-            296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-            12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-            0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-            20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-            46-46c0-25.365-20.635-46-46-46z"></path>
-        </svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     </td>
     <td>Announces "double-tap to play or pause"</td>
 </tr>
@@ -3215,12 +1992,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>None expected</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 
-            48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 
-            296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 
-            5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path>
-        </svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     </td>
     <td>No UI</td>
 </tr>

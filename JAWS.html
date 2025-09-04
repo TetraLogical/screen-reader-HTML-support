@@ -31,6 +31,52 @@ th[scope="row"],td {vertical-align: top;}
 </style>
 </head>
 <body>
+<svg style="display:none">
+<symbol id="yes">
+    <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
+    21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
+    26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248
+    6.248-16.379
+    0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
+    0L184
+    302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
+    0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104
+    104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+</symbol>
+<symbol id="no">
+    <path d="M464 32H48C21.5 32 0
+    53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
+    48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
+    12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
+    313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
+    0l-40.5-40.5c-4.8-4.8-4.8-12.6
+    0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
+    0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
+    66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8
+    12.6 0 17.4L313.3 256l67.1 66.5z"></path>
+</symbol>
+<symbol id="noneE">
+    <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48
+    48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92
+    296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0
+    12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path>
+</symbol>
+<symbol id="unknown">
+    <path d="M504 256c0
+    136.997-111.043 248-248 248S8 392.997 8 256C8 119.083
+    119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497
+    0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415
+    2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008
+    16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797
+    20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363
+    22.667-32.534 33.976C247.128 238.528 216 254.941 216
+    296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
+    12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
+    0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
+    20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
+    46-46c0-25.365-20.635-46-46-46z"></path>
+</symbol>
+</svg>
 <header class="site-head">
   <div class="wrapper"> <a href="#main" class="cta skip-link" data-cta-variant="secondary"> <span>Skip to content</span>
     <svg aria-hidden="true" role="presentation" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
@@ -69,7 +115,6 @@ th[scope="row"],td {vertical-align: top;}
 <p><strong>Editor:</strong> Steve Faulkner</p>
 <p><strong>GitHub Repo:</strong> <a href="https://github.com/TetraLogical/screen-reader-HTML-support">screen-reader-HTML-support</a> </p>
 <p>Found a bug? Please <a href="https://github.com/TetraLogical/screen-reader-HTML-support/issues">report it</a>. </p>
-</header>
 <main>
 <h2>How HTML elements are supported by screen readers</h2>
 <p> Typical support patterns of HTML elements by screen readers: </p>
@@ -99,26 +144,11 @@ th[scope="row"],td {vertical-align: top;}
 <h2>Support legend</h2>
 <ul>
   <li>
-    <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248
-6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104
-104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+    <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     means we have found this feature to be implemented
     interoperably (across multiple browsers)</li>
   <li>
-    <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-      <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48
-48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92
-296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0
-12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path>
-    </svg>
+    <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     means the element has no expected semantics.</li>
   <li>
     <svg viewBox="0 0 512 512" width="20" aria-label="question
@@ -141,16 +171,7 @@ mark" class="unknown" role="img">
     are unsure whether this feature is supported, this may be due
     to lack of testing or lack of clarity around what 'support' of
     this feature is supposed to convey to the user.</li>
-	<li><svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><path d="M464 32H48C21.5 32 0
-53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
-48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
-12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
-313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
-0l-40.5-40.5c-4.8-4.8-4.8-12.6
-0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8
-12.6 0 17.4L313.3 256l67.1 66.5z"></path></svg> means we
+	<li><svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no" /></svg> means we
 have found that this feature is not implemented</li>
 </ul>
 <div class="table-wrapper" role="region" aria-label="Table" tabindex="0">
@@ -197,25 +218,10 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
 <td>
 <p>
 <strong>With <code>href</code>:</strong>
-<svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-<path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248
-6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104
-104c6.249 6.25 16.379 6.25 22.628.001z"></path>
+<svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
 </p>
 <p> With no <code>href</code>:
-  <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-    <path d="M400 32H48C21.5 32
-0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0
-48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12
-5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path>
-  </svg>
+  <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
 </p>
 </td>
 <td><p> <strong>With <code>href</code>:</strong> </p>
@@ -264,28 +270,10 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
       the Web/HTML/PDFs group. Next, expand the Reading group
       and use the abbreviation and acronym options</p></td>
   <td><p>By default
-      <svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-        <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5
-21.5 48 48 48h352c26.5 0 48-21.5
-48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12
-5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path>
-      </svg>
+      <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     </p>
     <p>Via preference
-      <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-        <path d="M400 480H48c-26.51
-0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51
-0 48 21.49 48 48v352c0 26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-
-
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-      </svg>
+      <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </p></td>
   <td><p>No semantics conveyed by default</p>
     <p>Note that expansions are not announced by default and
@@ -303,33 +291,10 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
     present. </td>
   <td>No special commands</td>
   <td><p>no accessible name
-      <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
-        <path d="M464 32H48C21.5 32
-0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0
-48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6
-290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8
-4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8
-4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6
-0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
-4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path>
-      </svg>
+      <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no" /></svg>
     </p>
     <p>With accessible name
-      <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-        <path d="M400 480H48c-26.51
-0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51
-0 48 21.49 48 48v352c0 26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-
-
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-      </svg>
+      <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </p></td>
   <td>With accessible name <code>address</code> is announced
     as a <code>group</code> Group - accessible name,
@@ -354,17 +319,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
       <li>Next Non Link Text <kbd>N</kbd></li>
       <li>Prior Non Link Text <kbd>SHIFT+N</kbd></li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>Although area elements are links they are not conveyed
     as links aurally.</td>
@@ -376,18 +331,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td>not supported, all <code>aria-level</code> reported as <code>h2</code><br></td>
   <td><ul>
     </ul></td>
-  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
-      <path d="M464 32H48C21.5 32 0
-53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
-48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
-12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
-313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
-0l-40.5-40.5c-4.8-4.8-4.8-12.6
-0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8
-12.6 0 17.4L313.3 256l67.1 66.5z"></path>
-    </svg>
+  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no" /></svg>
     <br></td>
   <td>Issue filed: <a href="https://github.com/FreedomScientific/standards-support/issues/814">JAWS
     
@@ -407,17 +351,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
       <li>Article List <kbd>INSERT+CTRL+O</kbd> <br>
       </li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>Included as a navigable region &lt; JAWS 2018</td>
 </tr>
@@ -434,17 +368,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
       <li>Select a Region <kbd>INSERT+CTRL+R</kbd> <br>
       </li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>Included as a navigable region</td>
 </tr>
@@ -455,17 +379,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td>"audio" "group+<em>accessible name</em>" announces
     controls as navigated.</td>
   <td> If the audio element has a <code>controls</code> attribute the buttons in the UI are navigable using <a href="#button-commands">button</a> commands. </td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -475,13 +389,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td>Keywords</td>
   <td><em>Element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-      <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-48 48 48h352c26.5 0 48-21.5
-48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-12 12v56c0 6.6-5.4 12-12 12H92z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     <br></td>
   <td>Refer to: <a href="https://www.tpgi.com/screen-readers-support-for-text-level-html-semantics/">Scree Readers support for text level HTML semantics</a></td>
 </tr>
@@ -494,13 +402,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
     context</a> for <a data-anolis-xref="attr-hyperlink-target" href="https://html.spec.whatwg.org/multipage/links.html#hyperlink">hyperlinks</a> and <a data-anolis-xref="attr-fs-target" href="https://html.spec.whatwg.org/multipage/form-elements.html#forms-form-submission">forms</a></td>
   <td><em>None expected</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-      <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-48 48 48h352c26.5 0 48-21.5
-48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-12 12v56c0 6.6-5.4 12-12 12H92z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     <br></td>
   <td><strong>No UI</strong></td>
 </tr>
@@ -510,13 +412,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td>Text directionality isolation</td>
   <td><em>Element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-      <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-48 48 48h352c26.5 0 48-21.5
-48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-12 12v56c0 6.6-5.4 12-12 12H92z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     <br></td>
   <td>No semantics conveyed</td>
 </tr>
@@ -526,13 +422,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td>Text directionality formatting</td>
   <td><em>Element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-      <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-48 48 48h352c26.5 0 48-21.5
-48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-12 12v56c0 6.6-5.4 12-12 12H92z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     <br></td>
   <td>No semantics conveyed</td>
 </tr>
@@ -544,17 +434,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td><ul>
       <li>List Block quotes <kbd>CTRL+INSERT+Q</kbd></li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>Semantics conveyed via navigation and element name
     announcement.</td>
@@ -565,13 +445,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td>Document body</td>
   <td><em>Element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-      <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-48 48 48h352c26.5 0 48-21.5
-48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-12 12v56c0 6.6-5.4 12-12 12H92z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     <br></td>
   <td><p>No semantics conveyed</p>
     <p>Is included in focus order in most browsers.</p></td>
@@ -582,13 +456,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td>Line break, e.g. in poem or postal address</td>
   <td>&nbsp;</td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-      <path d="M400 32H48C21.5 32 0
-53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5
-48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-12 12v56c0 6.6-5.4 12-12 12H92z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     <br></td>
   <td><em>Line break</em></td>
 </tr>
@@ -602,17 +470,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
       <li>Next Button <kbd>B</kbd></li>
       <li>Previous button <kbd>B</kbd></li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>Semantics conveyed via navigation and element name
     announcement</td>
@@ -623,17 +481,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td>Scriptable bitmap canvas</td>
   <td><em>"graphic" element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td> The canvas is 'transparent' for screen reader users.
     HTML content included in the <a href="https://www.tpgi.com/html5-canvas-sub-dom/">HTML5
@@ -646,17 +494,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td>Table caption</td>
   <td><em>Element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td> Announced when a table is navigated to. Used as table
     title in the table list (List Tables <kbd>CTRL+INSERT+T</kbd>)
@@ -668,13 +506,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td>Reference to a creative work</td>
   <td><em>Element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-      <path d="M400 32H48C21.5 32 0
-53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5
-48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-12 12v56c0 6.6-5.4 12-12 12H92z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     <br></td>
   <td><p>No semantics conveyed or expected as <code>&lt;cite&gt;</code> has a <code>role="generic"</code></p></td>
 </tr>
@@ -684,13 +516,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td>Computer code</td>
   <td><em>Element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-      <path d="M400 32H48C21.5 32 0
-53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5
-48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-12 12v56c0 6.6-5.4 12-12 12H92z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     <br></td>
   <td><p>No semantics conveyed or expected as <code>&lt;code&gt;</code> currently has a <code>role="generic"</code></p></td>
 </tr>
@@ -700,13 +526,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td>Table column</td>
   <td><em>None expected</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-      <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-48 48 48h352c26.5 0 48-21.5
-48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-12 12v56c0 6.6-5.4 12-12 12H92z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     <br></td>
   <td>No semantics conveyed</td>
 </tr>
@@ -716,13 +536,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td>Group of columns in a table</td>
   <td><em>None expected</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-      <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-48 48 48h352c26.5 0 48-21.5
-48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-12 12v56c0 6.6-5.4 12-12 12H92z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -732,13 +546,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td>Machine-readable equivalent</td>
   <td><em>Element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-      <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-48 48 48h352c26.5 0 48-21.5
-48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-12 12v56c0 6.6-5.4 12-12 12H92z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     <br></td>
   <td><p>No semantics conveyed or expected as <code>&lt;data&gt;</code> has a <code>role="generic"</code></p></td>
 </tr>
@@ -756,17 +564,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
       <li>Move to Prior Combo Box <kbd>SHIFT+C </kbd></li>
       <li>List of Combo boxes <kbd>CTRL+INSERT+C</kbd></li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -776,17 +574,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td> Content for corresponding <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dt-element">dt</a> element(s) </td>
   <td><em>Element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td> Included as part of <code>dt</code> list item, user
     must use <kbd>arrow down</kbd> for content to be
@@ -800,17 +588,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td>voice change, deletion <em>Element content</em> end
     deletion</td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg></td>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg></td>
   <td>Refer to: <a href="https://www.tpgi.com/screen-readers-support-for-text-level-html-semantics/">Scree Readers support for text level HTML semantics</a></td>
 </tr>
 <tr>
@@ -820,17 +598,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td>When the details element has an accessible name it is
     announced along with group start/end.</td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg></td>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg></td>
   <td>Refer to <a href="#el-summary"><code>summary</code></a> element</td>
 </tr>
 <tr>
@@ -839,18 +607,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td>Defining instance of a term</td>
   <td><em>Element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
-      <path d="M464 32H48C21.5 32 0
-53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
-48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
-12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
-313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
-0l-40.5-40.5c-4.8-4.8-4.8-12.6
-0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
-4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path>
-    </svg>
+  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no" /></svg>
     <br></td>
   <td>No semantics conveyed Refer to <a href="https://github.com/FreedomScientific/standards-support/issues/821">JAWS tracker Issue 821</a></td>
 </tr>
@@ -860,17 +617,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td>The dialog element represents a transitory part of an application, in the form of a small window ("dialog box")</td>
   <td>dialog, accessible name if provided, accessible description if provided.</td>
   <td>When the <code>dialog</code> opens focus is moved to first focusable element. <code>dialog</code> can be closed with the <kbd>ESC</kbd> key. Upon closing focus moves back to the trigger control. While displayed focus is contained within the <code>dialog</code>.</td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td><b>Note:</b> Focus is contained within the <code>dialog</code>, but the browser address bar is included within the focus order. This is a browser implemented behaviour.</td>
 </tr>
@@ -884,17 +631,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
       <li>Move to Prior Division <kbd>SHIFT+Z</kbd></li>
       <li>List Divisions <kbd>CTRL+INSERT+Z</kbd></li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>No semantics conveyed</td>
 </tr>
@@ -911,17 +648,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
       <li> Next Item in a List <kbd>I</kbd></li>
       <li>Previous item in a List <kbd>SHIFT+I</kbd></li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -934,17 +661,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
       <li>Next Item in a List <kbd>I</kbd></li>
       <li>Previous Item in a List <kbd>SHIFT+I</kbd></li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>Identified as a list item</td>
 </tr>
@@ -954,13 +671,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td>Stress emphasis</td>
   <td><em>Element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-      <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-48 48 48h352c26.5 0 48-21.5
-48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-12 12v56c0 6.6-5.4 12-12 12H92z"></path>
-    </svg></td>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg></td>
   <td>No semantics conveyed. Refer to: <a href="https://www.tpgi.com/screen-readers-support-for-text-level-html-semantics/">Scree Readers support for text level HTML semantics</a></td>
 </tr>
 <tr>
@@ -969,21 +680,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td><a href="https://html.spec.whatwg.org/multipage/infrastructure.html#plugins">Plugins</a></td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td><svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-      <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-256C8 119.083 119.043 8 256 8s248 111.083 248
-248zM262.655 90c-54.497 0-89.255 22.957-116.549
-63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-26.31c5.205 3.947 12.621 3.008 16.665-2.122
-17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-45.698 13.148 45.698 32.958 0 14.976-12.363
-22.667-32.534 33.976C247.128 238.528 216 254.941 216
-296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-46-46c0-25.365-20.635-46-46-46z"></path>
-    </svg>
+  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -995,17 +692,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td>No special commands, fieldset presence and accessible
     name announced when first control child is navigated to
     using virtual keys navigation keys for the child control.</td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>Only when <code>fieldset</code> has an accessible name
     via <code>legend</code> or other method.</td>
@@ -1016,17 +703,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td> Caption for <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element">figure</a></td>
   <td><em>Element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -1037,17 +714,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td>"Figure start" <em>figcaption content, element
     content, figcaption content "Figure end"</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -1065,17 +732,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
       <li>Select a Region <kbd>INSERT+CTRL+R</kbd> <br>
       </li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -1094,17 +751,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
       <li>Select a Region <kbd>INSERT+CTRL+R</kbd> <br>
       </li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg></td>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg></td>
   <td>No semantics conveyed unless <code>form</code> has an accessible name, then exposed as a landmark.</td>
 </tr>
 <tr id="toc-h">
@@ -1129,17 +776,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
       <li>First Heading at Level <kbd>ALT+CTRL+INSERT+1</kbd> through <kbd>6</kbd></li>
       <li>Last Heading at Level <kbd>ALT+CTRL+INSERT+ SHIFT+1</kbd> through <kbd>6</kbd></li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -1149,13 +786,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td>Container for document metadata</td>
   <td><em>None expected</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-      <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-48 48 48h352c26.5 0 48-21.5
-48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-12 12v56c0 6.6-5.4 12-12 12H92z"></path>
-    </svg></td>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg></td>
   <td><strong>No UI</strong></td>
 </tr>
 <tr>
@@ -1171,17 +802,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
       <li>Select a Region <kbd>INSERT+CTRL+R</kbd> <br>
       </li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -1194,17 +815,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
       <li>Move to Next Separator <kbd>DASH</kbd></li>
       <li>Move to Prior Separator <kbd>SHIFT+DASH</kbd></li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -1214,13 +825,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td>Root element</td>
   <td><em>None expected</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-      <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-48 48 48h352c26.5 0 48-21.5
-48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-12 12v56c0 6.6-5.4 12-12 12H92z"></path>
-    </svg></td>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg></td>
   <td>&nbsp;</td>
 </tr>
 <tr id="toc-i">
@@ -1229,13 +834,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td>Alternate voice</td>
   <td><em>Element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE">
-      <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5
-48 48 48h352c26.5 0 48-21.5
-48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6
-0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4
-12 12v56c0 6.6-5.4 12-12 12H92z"></path>
-    </svg></td>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg></td>
   <td>No semantics conveyed</td>
 </tr>
 <tr>
@@ -1252,17 +851,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
       <li>Next Frame <kbd>M</kbd></li>
       <li>Previous Frame <kbd>SHIFT+M </kbd></li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -1276,17 +865,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
       <li>Next Graphic <kbd>G</kbd></li>
       <li>Previous Graphic <kbd>SHIFT+G</kbd></li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -1306,17 +885,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
       <li>Next Button <kbd>B</kbd></li>
       <li>Previous button <kbd>B</kbd></li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -1336,17 +905,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
       <li>Move To Next Check Box <kbd>X </kbd></li>
       <li>Move to Prior Check Box <kbd>SHIFT+X</kbd></li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -1362,17 +921,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td>Colour picker control</td>
   <td>&nbsp;</td>
   <td>no special commands?</td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>Identified as button by JAWS but not navigable using
     button navigation keys.</td>
@@ -1389,17 +938,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td>date (day/month year) picker control</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -1431,21 +970,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
       <li>Move To Next Edit Box <kbd>E</kbd></li>
       <li>Move to Prior Edit Box <kbd>SHIFT+E</kbd></li>
     </ul></td>
-  <td><svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-      <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-256C8 119.083 119.043 8 256 8s248 111.083 248
-248zM262.655 90c-54.497 0-89.255 22.957-116.549
-63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-26.31c5.205 3.947 12.621 3.008 16.665-2.122
-17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-45.698 13.148 45.698 32.958 0 14.976-12.363
-22.667-32.534 33.976C247.128 238.528 216 254.941 216
-296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-46-46c0-25.365-20.635-46-46-46z"></path>
-    </svg>
+  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     <br></td>
   <td>Announced as <em>edit</em> does not announce type of edit.
   <br></td>
@@ -1471,17 +996,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
       <li>Move To Next Edit Box <kbd>E </kbd></li>
       <li>Move to Prior Edit Box <kbd>SHIFT+E</kbd></li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>As it's a composite control, it can be navigated to
     using either button or edit commands.</td>
@@ -1495,17 +1010,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td>hidden form control</td>
   <td><em>None expected</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg></td>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg></td>
   <td><strong>No UI</strong></td>
 </tr>
 <tr>
@@ -1524,17 +1029,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
       <li>Next Button <kbd>B</kbd></li>
       <li>Previous button <kbd>B</kbd></li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -1570,17 +1065,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
       <li>Increase value <kbd>UP ARROW</kbd></li>
       <li>Decrease value <kbd>DOWN ARROW</kbd></li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td><p><strong>Note:</strong> value in edit box announced as
       changed increase/decreased using arrow keys.</p>
@@ -1607,17 +1092,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
       <li>Move To Next Edit Box <kbd>E </kbd></li>
       <li>Move to Prior Edit Box <kbd>SHIFT+E</kbd></li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td><strong>Note:</strong> keyboard character input
     announced as "star"</td>
@@ -1646,17 +1121,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
         minimum and maximum values of the slider.</li>
       <li><kbd>PAGE UP</kbd> and <kbd>PAGE DOWN</kbd> increment or decrement the slider by a given amount.</li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td><p><strong>Note:</strong> When slider has no accessible
       name (label) or is disabled or readonly, it is
@@ -1685,17 +1150,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
       <li>Move to Prior Radio Button&nbsp; <kbd>SHIFT+A</kbd> <br>
       </li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -1715,17 +1170,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
       <li>Next Button <kbd>B</kbd></li>
       <li>Previous button <kbd>B</kbd></li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -1745,21 +1190,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
       <li>Move To Next Edit Box <kbd>E </kbd></li>
       <li>Move to Prior Edit Box <kbd>SHIFT+E</kbd></li>
     </ul></td>
-  <td><svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-      <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-256C8 119.083 119.043 8 256 8s248 111.083 248
-248zM262.655 90c-54.497 0-89.255 22.957-116.549
-63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-26.31c5.205 3.947 12.621 3.008 16.665-2.122
-17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-45.698 13.148 45.698 32.958 0 14.976-12.363
-22.667-32.534 33.976C247.128 238.528 216 254.941 216
-296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-46-46c0-25.365-20.635-46-46-46z"></path>
-    </svg>
+  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -1777,17 +1208,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
       <li>Next Button <kbd>B</kbd></li>
       <li>Previous button <kbd>B</kbd></li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -1807,17 +1228,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
       <li>Move To Next Edit Box <kbd>E </kbd></li>
       <li>Move to Prior Edit Box <kbd>SHIFT+E</kbd></li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg></td>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg></td>
   <td>&nbsp;</td>
 </tr>
 <tr>
@@ -1836,17 +1247,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
       <li>Move To Next Edit Box <kbd>E </kbd></li>
       <li>Move to Prior Edit Box <kbd>SHIFT+E</kbd></li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -1862,17 +1263,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td>Control for setting a specific time.</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -1892,17 +1283,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
       <li>Move To Next Edit Box <kbd>E </kbd></li>
       <li>Move to Prior Edit Box <kbd>SHIFT+E</kbd></li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg></td>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg></td>
   <td>&nbsp;</td>
 </tr>
 <tr>
@@ -1935,18 +1316,7 @@ text-decoration-style: initial; text-decoration-color:
 initial;">insertion/end insertion</p>
     <em>Element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627
-22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>Refer to: <a href="https://www.tpgi.com/screen-readers-support-for-text-level-html-semantics/">Scree Readers support for text level HTML semantics</a></td>
 </tr>
@@ -1956,18 +1326,7 @@ initial;">insertion/end insertion</p>
   <td>User input</td>
   <td><em>Element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
-      <path d="M464 32H48C21.5 32 0
-53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
-48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
-12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
-313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
-0l-40.5-40.5c-4.8-4.8-4.8-12.6
-0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
-4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path>
-    </svg>
+  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no" /></svg>
     <br></td>
   <td>No semantics conveyed</td>
 </tr>
@@ -1990,17 +1349,7 @@ No test
   <td>Caption for a form control</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -2010,17 +1359,7 @@ No test
   <td> Caption for <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-fieldset-element"><code>fieldset</code></a></td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>Refer to <a href="#toc-f">fieldset</a> element</td>
 </tr>
@@ -2041,17 +1380,7 @@ No test
       <li> Next Item in a List <kbd>I</kbd></li>
       <li> Previous Item in a List <kbd>SHIFT+I</kbd></li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -2078,17 +1407,7 @@ No test
       <li>Select a Region <kbd>INSERT+CTRL+R</kbd> <br>
       </li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -2110,18 +1429,7 @@ No test
   <td>Highlight</td>
   <td><em>Element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
-      <path d="M464 32H48C21.5 32 0
-53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
-48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
-12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
-313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
-0l-40.5-40.5c-4.8-4.8-4.8-12.6
-0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
-4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path>
-    </svg>
+  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no" /></svg>
     <br></td>
   <td>No semantics conveyed</td>
 </tr>
@@ -2179,21 +1487,7 @@ No test
   <td>Gauge</td>
   <td>&nbsp;</td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-      <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-256C8 119.083 119.043 8 256 8s248 111.083 248
-248zM262.655 90c-54.497 0-89.255 22.957-116.549
-63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-26.31c5.205 3.947 12.621 3.008 16.665-2.122
-17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-45.698 13.148 45.698 32.958 0 14.976-12.363
-22.667-32.534 33.976C247.128 238.528 216 254.941 216
-296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-46-46c0-25.365-20.635-46-46-46z"></path>
-    </svg>
+  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -2210,17 +1504,7 @@ No test
       <li>Select a Region <kbd>INSERT+CTRL+R</kbd> <br>
       </li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -2245,21 +1529,7 @@ No test
       <li><strong>note:</strong> No navigation keys in JAWS
         2018 &gt;</li>
     </ul></td>
-  <td><svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-      <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-256C8 119.083 119.043 8 256 8s248 111.083 248
-248zM262.655 90c-54.497 0-89.255 22.957-116.549
-63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-26.31c5.205 3.947 12.621 3.008 16.665-2.122
-17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-45.698 13.148 45.698 32.958 0 14.976-12.363
-22.667-32.534 33.976C247.128 238.528 216 254.941 216
-296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-46-46c0-25.365-20.635-46-46-46z"></path>
-    </svg>
+  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -2275,17 +1545,7 @@ No test
       <li>Next Item in a List <kbd>I</kbd></li>
       <li>Previous item in a List <kbd>SHIFT+I</kbd></li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -2295,21 +1555,7 @@ No test
   <td>Group of options in a list box</td>
   <td>&nbsp;</td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-      <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-256C8 119.083 119.043 8 256 8s248 111.083 248
-248zM262.655 90c-54.497 0-89.255 22.957-116.549
-63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-26.31c5.205 3.947 12.621 3.008 16.665-2.122
-17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-45.698 13.148 45.698 32.958 0 14.976-12.363
-22.667-32.534 33.976C247.128 238.528 216 254.941 216
-296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-46-46c0-25.365-20.635-46-46-46z"></path>
-    </svg>
+  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -2319,17 +1565,7 @@ No test
   <td>Option in a list box or combo box control</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -2339,21 +1575,7 @@ No test
   <td>Calculated output value</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td><svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-      <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-256C8 119.083 119.043 8 256 8s248 111.083 248
-248zM262.655 90c-54.497 0-89.255 22.957-116.549
-63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-26.31c5.205 3.947 12.621 3.008 16.665-2.122
-17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-45.698 13.148 45.698 32.958 0 14.976-12.363
-22.667-32.534 33.976C247.128 238.528 216 254.941 216
-296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-46-46c0-25.365-20.635-46-46-46z"></path>
-    </svg>
+  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     <br></td>
   <td>No semantics conveyed</td>
 </tr>
@@ -2367,17 +1589,7 @@ No test
       <li>Next Paragraph <kbd>P</kbd></li>
       <li>Previous Paragraph <kbd>SHIFT+P</kbd></li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>No aural semantics, conveyed via navigation and
     paragraph list.</td>
@@ -2388,17 +1600,7 @@ No test
   <td> Parameter for <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-object-element">object</a></td>
   <td><em>None expected</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg></td>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg></td>
   <td><strong>No UI</strong></td>
 </tr>
 <tr>
@@ -2407,17 +1609,7 @@ No test
   <td>&nbsp;</td>
   <td><em>None expected</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg></td>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg></td>
   <td><strong>No UI</strong></td>
 </tr>
 <tr>
@@ -2426,17 +1618,7 @@ No test
   <td>Block of preformatted text</td>
   <td><em>Element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg></td>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg></td>
   <td>No semantics conveyed</td>
 </tr>
 <tr>
@@ -2446,17 +1628,7 @@ No test
   <td><p> <em><code>value</code> content</em>, "progress bar"
       (if using arrow keys) </p></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td><p> Progress bars are not inherently focusable. But if a
       progress bar has a <code>tabindex="0"</code>, then the
@@ -2471,21 +1643,7 @@ No test
   <td>Quotation</td>
   <td><em>Element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-      <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-256C8 119.083 119.043 8 256 8s248 111.083 248
-248zM262.655 90c-54.497 0-89.255 22.957-116.549
-63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-26.31c5.205 3.947 12.621 3.008 16.665-2.122
-17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-45.698 13.148 45.698 32.958 0 14.976-12.363
-22.667-32.534 33.976C247.128 238.528 216 254.941 216
-296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-46-46c0-25.365-20.635-46-46-46z"></path>
-    </svg>
+  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -2495,21 +1653,7 @@ No test
   <td>&nbsp;</td>
   <td><em>Element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-      <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-256C8 119.083 119.043 8 256 8s248 111.083 248
-248zM262.655 90c-54.497 0-89.255 22.957-116.549
-63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-26.31c5.205 3.947 12.621 3.008 16.665-2.122
-17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-45.698 13.148 45.698 32.958 0 14.976-12.363
-22.667-32.534 33.976C247.128 238.528 216 254.941 216
-296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-46-46c0-25.365-20.635-46-46-46z"></path>
-    </svg>
+  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     <br></td>
   <td>No semantics conveyed</td>
 </tr>
@@ -2530,21 +1674,7 @@ No test
   <td>&nbsp;</td>
   <td><em>Element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-      <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-256C8 119.083 119.043 8 256 8s248 111.083 248
-248zM262.655 90c-54.497 0-89.255 22.957-116.549
-63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-26.31c5.205 3.947 12.621 3.008 16.665-2.122
-17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-45.698 13.148 45.698 32.958 0 14.976-12.363
-22.667-32.534 33.976C247.128 238.528 216 254.941 216
-296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-46-46c0-25.365-20.635-46-46-46z"></path>
-    </svg>
+  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     <br></td>
   <td>No semantics conveyed</td>
 </tr>
@@ -2554,21 +1684,7 @@ No test
   <td>&nbsp;</td>
   <td><em>Element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-      <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-256C8 119.083 119.043 8 256 8s248 111.083 248
-248zM262.655 90c-54.497 0-89.255 22.957-116.549
-63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-26.31c5.205 3.947 12.621 3.008 16.665-2.122
-17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-45.698 13.148 45.698 32.958 0 14.976-12.363
-22.667-32.534 33.976C247.128 238.528 216 254.941 216
-296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-46-46c0-25.365-20.635-46-46-46z"></path>
-    </svg>
+  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     <br></td>
   <td>No semantics conveyed</td>
 </tr>
@@ -2578,21 +1694,7 @@ No test
   <td>&nbsp;</td>
   <td><em>Element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-      <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-256C8 119.083 119.043 8 256 8s248 111.083 248
-248zM262.655 90c-54.497 0-89.255 22.957-116.549
-63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-26.31c5.205 3.947 12.621 3.008 16.665-2.122
-17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-45.698 13.148 45.698 32.958 0 14.976-12.363
-22.667-32.534 33.976C247.128 238.528 216 254.941 216
-296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-46-46c0-25.365-20.635-46-46-46z"></path>
-    </svg>
+  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     <br></td>
   <td>No semantics conveyed</td>
 </tr>
@@ -2602,21 +1704,7 @@ No test
   <td>&nbsp;</td>
   <td><em>Element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-      <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-256C8 119.083 119.043 8 256 8s248 111.083 248
-248zM262.655 90c-54.497 0-89.255 22.957-116.549
-63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-26.31c5.205 3.947 12.621 3.008 16.665-2.122
-17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-45.698 13.148 45.698 32.958 0 14.976-12.363
-22.667-32.534 33.976C247.128 238.528 216 254.941 216
-296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-46-46c0-25.365-20.635-46-46-46z"></path>
-    </svg>
+  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -2626,21 +1714,7 @@ No test
   <td>Computer output</td>
   <td><em>Element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-      <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-256C8 119.083 119.043 8 256 8s248 111.083 248
-248zM262.655 90c-54.497 0-89.255 22.957-116.549
-63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-26.31c5.205 3.947 12.621 3.008 16.665-2.122
-17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-45.698 13.148 45.698 32.958 0 14.976-12.363
-22.667-32.534 33.976C247.128 238.528 216 254.941 216
-296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-46-46c0-25.365-20.635-46-46-46z"></path>
-    </svg>
+  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     <br></td>
   <td>No semantics conveyed</td>
 </tr>
@@ -2659,17 +1733,7 @@ No test
   <td>Embedded script</td>
   <td><em>None expected</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg></td>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg></td>
   <td><strong>No UI</strong></td>
 </tr>
 <tr>
@@ -2682,17 +1746,7 @@ No test
   <td>Generic document or application section</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>No semantics conveyed unless the section has an
     accessible name.</td>
@@ -2707,17 +1761,7 @@ No test
       <li>Move to Prior Combo Box <kbd>SHIFT+C </kbd></li>
       <li>List of Combo boxes <kbd>CTRL+INSERT+C</kbd></li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -2727,21 +1771,7 @@ No test
   <td>Side comment</td>
   <td><em>Element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-      <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-256C8 119.083 119.043 8 256 8s248 111.083 248
-248zM262.655 90c-54.497 0-89.255 22.957-116.549
-63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-26.31c5.205 3.947 12.621 3.008 16.665-2.122
-17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-45.698 13.148 45.698 32.958 0 14.976-12.363
-22.667-32.534 33.976C247.128 238.528 216 254.941 216
-296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-46-46c0-25.365-20.635-46-46-46z"></path>
-    </svg>
+  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     <br></td>
   <td>No semantics conveyed</td>
 </tr>
@@ -2751,17 +1781,7 @@ No test
   <td> Media source for <a href="https://html.spec.whatwg.org/multipage/media.html#the-video-element">video</a> or <a href="https://html.spec.whatwg.org/multipage/media.html#the-audio-element">audio</a></td>
   <td><em>None expected</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg></td>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg></td>
   <td><strong>No UI</strong></td>
 </tr>
 <tr>
@@ -2770,17 +1790,7 @@ No test
   <td>Generic phrasing container</td>
   <td><em>None expected</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg></td>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg></td>
   <td>No semantics conveyed</td>
 </tr>
 <tr>
@@ -2789,21 +1799,7 @@ No test
   <td>Importance</td>
   <td><em>Element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-      <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-256C8 119.083 119.043 8 256 8s248 111.083 248
-248zM262.655 90c-54.497 0-89.255 22.957-116.549
-63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-26.31c5.205 3.947 12.621 3.008 16.665-2.122
-17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-45.698 13.148 45.698 32.958 0 14.976-12.363
-22.667-32.534 33.976C247.128 238.528 216 254.941 216
-296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-46-46c0-25.365-20.635-46-46-46z"></path>
-    </svg>
+  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     <br></td>
   <td>No semantics conveyed</td>
 </tr>
@@ -2822,21 +1818,7 @@ No test
   <td>Subscript</td>
   <td><em>Element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-      <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-256C8 119.083 119.043 8 256 8s248 111.083 248
-248zM262.655 90c-54.497 0-89.255 22.957-116.549
-63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-26.31c5.205 3.947 12.621 3.008 16.665-2.122
-17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-45.698 13.148 45.698 32.958 0 14.976-12.363
-22.667-32.534 33.976C247.128 238.528 216 254.941 216
-296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-46-46c0-25.365-20.635-46-46-46z"></path>
-    </svg>
+  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     <br></td>
   <td>No semantics conveyed</td>
 </tr>
@@ -2850,17 +1832,7 @@ No test
       <li>Next Button <kbd>B</kbd></li>
       <li>Previous button <kbd>B</kbd></li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>Article <a href="https://www.scottohara.me/blog/2019/01/21/how-do-you-figure.html">How
     
@@ -2873,21 +1845,7 @@ No test
   <td>Superscript</td>
   <td><em>Element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-      <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-256C8 119.083 119.043 8 256 8s248 111.083 248
-248zM262.655 90c-54.497 0-89.255 22.957-116.549
-63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-26.31c5.205 3.947 12.621 3.008 16.665-2.122
-17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-45.698 13.148 45.698 32.958 0 14.976-12.363
-22.667-32.534 33.976C247.128 238.528 216 254.941 216
-296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-46-46c0-25.365-20.635-46-46-46z"></path>
-    </svg>
+  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     <br></td>
   <td>No semantics conveyed</td>
 </tr>
@@ -2897,21 +1855,7 @@ No test
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-      <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-256C8 119.083 119.043 8 256 8s248 111.083 248
-248zM262.655 90c-54.497 0-89.255 22.957-116.549
-63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-26.31c5.205 3.947 12.621 3.008 16.665-2.122
-17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-45.698 13.148 45.698 32.958 0 14.976-12.363
-22.667-32.534 33.976C247.128 238.528 216 254.941 216
-296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-46-46c0-25.365-20.635-46-46-46z"></path>
-    </svg>
+  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -2929,17 +1873,7 @@ No test
         table, move to the line that reads, "Table with x
         columns and y rows," and press <kbd>F8</kbd>.</li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -2973,17 +1907,7 @@ No test
       <li>Move to and Read Cell Below <kbd>CTRL+ALT+DOWN
         ARROW</kbd></li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -3006,17 +1930,7 @@ No test
       <li>Move To Next Edit Box <kbd>E</kbd></li>
       <li>Move to Prior Edit Box <kbd>SHIFT+E</kbd></li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>JAWS does not announce the content of a text area when
     navigated to. If the <code>textarea</code> has text in
@@ -3031,21 +1945,7 @@ No test
   <td>Group of footer rows in a data table</td>
   <td><em>Element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-      <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-256C8 119.083 119.043 8 256 8s248 111.083 248
-248zM262.655 90c-54.497 0-89.255 22.957-116.549
-63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-26.31c5.205 3.947 12.621 3.008 16.665-2.122
-17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-45.698 13.148 45.698 32.958 0 14.976-12.363
-22.667-32.534 33.976C247.128 238.528 216 254.941 216
-296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-46-46c0-25.365-20.635-46-46-46z"></path>
-    </svg>
+  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     <br></td>
   <td>No semantics conveyed</td>
 </tr>
@@ -3055,17 +1955,7 @@ No test
   <td>Header cell in a data table</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -3075,18 +1965,7 @@ No test
   <td>Group of header rows in a data table</td>
   <td><em>Element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
-      <path d="M464 32H48C21.5 32 0
-53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
-48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
-12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
-313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
-0l-40.5-40.5c-4.8-4.8-4.8-12.6
-0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
-4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path>
-    </svg>
+  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no" /></svg>
     <br></td>
   <td>No semantics conveyed</td>
 </tr>
@@ -3097,18 +1976,7 @@ No test
     data</td>
   <td><em>Element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
-      <path d="M464 32H48C21.5 32 0
-53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
-48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
-12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
-313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
-0l-40.5-40.5c-4.8-4.8-4.8-12.6
-0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
-4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path>
-    </svg>
+  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no" /></svg>
     <br></td>
   <td>No semantics conveyed</td>
 </tr>
@@ -3118,17 +1986,7 @@ No test
   <td>Document title</td>
   <td><em>Element content</em></td>
   <td>Read Window Title <kbd>INSERT+T</kbd></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>Semantics conveyed via navigation and announcement key
     stroke.</td>
@@ -3148,17 +2006,7 @@ No test
         
         UP</kbd></li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -3168,21 +2016,7 @@ No test
   <td>Timed text track</td>
   <td><em>Caption display control</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-      <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-256C8 119.083 119.043 8 256 8s248 111.083 248
-248zM262.655 90c-54.497 0-89.255 22.957-116.549
-63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-26.31c5.205 3.947 12.621 3.008 16.665-2.122
-17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-45.698 13.148 45.698 32.958 0 14.976-12.363
-22.667-32.534 33.976C247.128 238.528 216 254.941 216
-296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-46-46c0-25.365-20.635-46-46-46z"></path>
-    </svg>
+  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -3192,18 +2026,7 @@ No test
   <td>Keywords</td>
   <td><em>Element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
-      <path d="M464 32H48C21.5 32 0
-53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
-48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
-12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
-313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
-0l-40.5-40.5c-4.8-4.8-4.8-12.6
-0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
-4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path>
-    </svg>
+  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no" /></svg>
     <br></td>
   <td>No semantics conveyed</td>
 </tr>
@@ -3219,17 +2042,7 @@ No test
       <li>Next Item in a List <kbd>I</kbd></li>
       <li>Previous item in a List <kbd>SHIFT+I</kbd></li>
     </ul></td>
-  <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
-      <path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51
-21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0
-26.51-21.49 48-48
-48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379
-0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628
-0L184
-302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628
-0l-22.627 22.627c-6.248 6.248-6.248 16.379 0
-22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path>
-    </svg>
+  <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -3239,18 +2052,7 @@ No test
   <td>Variable</td>
   <td><em>Element content</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no">
-      <path d="M464 32H48C21.5 32 0
-53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5
-48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8
-12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256
-313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4
-0l-40.5-40.5c-4.8-4.8-4.8-12.6
-0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6
-0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1
-66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8
-4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path>
-    </svg>
+  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no" /></svg>
     <br></td>
   <td>No semantics conveyed</td>
 </tr>
@@ -3261,21 +2063,7 @@ No test
   <td>"video" "group+<em>accessible name</em>" announces
     controls as navigated.</td>
   <td>&nbsp;</td>
-  <td><svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-      <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-256C8 119.083 119.043 8 256 8s248 111.083 248
-248zM262.655 90c-54.497 0-89.255 22.957-116.549
-63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-26.31c5.205 3.947 12.621 3.008 16.665-2.122
-17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-45.698 13.148 45.698 32.958 0 14.976-12.363
-22.667-32.534 33.976C247.128 238.528 216 254.941 216
-296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-46-46c0-25.365-20.635-46-46-46z"></path>
-    </svg>
+  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     <br></td>
   <td>&nbsp;</td>
 </tr>
@@ -3285,21 +2073,7 @@ No test
   <td>Line breaking opportunity</td>
   <td><em>None expected</em></td>
   <td>No special commands</td>
-  <td><svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
-      <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8
-256C8 119.083 119.043 8 256 8s248 111.083 248
-248zM262.655 90c-54.497 0-89.255 22.957-116.549
-63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699
-26.31c5.205 3.947 12.621 3.008 16.665-2.122
-17.864-22.658 30.113-35.797 57.303-35.797 20.429 0
-45.698 13.148 45.698 32.958 0 14.976-12.363
-22.667-32.534 33.976C247.128 238.528 216 254.941 216
-296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373
-12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667
-0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46
-20.635-46 46 0 25.364 20.635 46 46 46s46-20.636
-46-46c0-25.365-20.635-46-46-46z"></path>
-    </svg>
+  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     <br></td>
   <td><strong>No UI</strong></td>
 </tr>
