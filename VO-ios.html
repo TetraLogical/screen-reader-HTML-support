@@ -135,7 +135,7 @@ this feature is supposed to convey to the user.</li>
 </ul>
 <div class="table-wrapper" role="region" aria-label="Table" tabindex="0">
 <table>
-<caption> VoiceOver on iOS (2024) HTML Support - iOS 18.6.2 testing on Safari</caption>
+<caption> VoiceOver on iOS HTML Support - iOS 18.6.2 testing on Safari</caption>
 <thead>
 <tr>
     <th>Element</th>
@@ -170,6 +170,16 @@ this feature is supposed to convey to the user.</li>
     </td>
 </tr>
 <tr>
+    <th scope="row"><a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element"><code>a</code></a> without <code>href</code></th>
+    <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/a-no-href.html"><code>a</code> with no <code>href</code> test</a></td>
+    <td>An anchor</td>
+    <td>Announces as plain text</td>
+    <td>No special commands</td>
+    <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg></td>
+    <td>Treated as regular text without any link functionality.</td>
+</tr>
+
+<tr>
         <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element"><code>abbr</code></a>
         </th>
         <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/abbr.html"><code>abbr</code>
@@ -183,7 +193,7 @@ this feature is supposed to convey to the user.</li>
             <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no" /></svg>
         </td>
         <td>
-        <p>No additional semantics conveyed if title is present.</p>
+        <p>No additional semantics conveyed if <code>title</code> is present.</p>
         </td>
     </tr>
 <tr>
@@ -215,7 +225,18 @@ this feature is supposed to convey to the user.</li>
     <td>
         <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
-    <td>Requires alt for accessibility.</td>
+    <td>Requires <code>alt</code> for accessibility.</td>
+</tr>
+<tr>
+  <th scope="row"> <a href="https://www.w3.org/TR/wai-aria-1.3/#aria-level"><code>aria-level</code></a> </th>
+  <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/h7-h10.html">h7-h10 (role="heading"+aria-level=7-10)</a></td>
+  <td>?</td>
+  <td>?</td>
+  <td><ul>
+    </ul></td>
+  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="unknown" class="unknown"><use href="#unknown" /></svg>
+    <br></td>
+  <td>?</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/sections.html#the-article-element"><code>article</code></a>
@@ -228,7 +249,7 @@ this feature is supposed to convey to the user.</li>
     <td>
         <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
-    <td>No additional semantics conveyed. Documentation states that swipe one finger up should naviagte back through articles, but does not appear to work. article does support aria-describedby and announces "Description..." after visible text.</td>
+    <td>No additional semantics conveyed. Documentation states that swipe one finger up should navigate back through <code>article</code>'s, but does not appear to work. <code>article</code> does support <code>aria-describedby</code> and announces "Description..." after visible text.</td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element"><code>aside</code></a></th>
@@ -284,7 +305,7 @@ this feature is supposed to convey to the user.</li>
     <td>
         <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     </td>
-    <td>Typically ignored by VoiceOver.</td>
+    <td><b>No UI</b></td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element"><code>bdi</code></a></th>
@@ -316,7 +337,7 @@ this feature is supposed to convey to the user.</li>
     <td>No special interaction
     </td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="no" class="no"><use href="#no" /></svg>
     </td>
     <td>No additional semantics conveyed.</td>
 </tr>
@@ -357,7 +378,7 @@ this feature is supposed to convey to the user.</li>
     <td>
         <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
-    <td>Announced as "toggle button" label and state (pressed/unpressed) when button has aria-pressed.</td>
+    <td>Announced as "toggle button" label and state (pressed/unpressed) when button has <code>aria-pressed</code>.</td>
 </tr>
 <tr id="toc-c" tabindex="-1">
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/canvas.html#the-canvas-element"><code>canvas</code></a> </th>

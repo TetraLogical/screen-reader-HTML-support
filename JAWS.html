@@ -111,7 +111,7 @@ th[scope="row"],td {vertical-align: top;}
 </header>
 <div class="region wrapper prose flow">
 <h1>JAWS HTML Support</h1>
-<p> A Work <em>in progress</em>: Last updated 10 July 2025. </p>
+<p> A Work <em>in progress</em>: Last updated 10 September 2025. </p>
 <p><strong>Editor:</strong> Steve Faulkner</p>
 <p><strong>GitHub Repo:</strong> <a href="https://github.com/TetraLogical/screen-reader-HTML-support">screen-reader-HTML-support</a> </p>
 <p>Found a bug? Please <a href="https://github.com/TetraLogical/screen-reader-HTML-support/issues">report it</a>. </p>
@@ -192,15 +192,14 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
 <tr id="toc-a">
 <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element"><code>a</code></a> </th>
 <td><p> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/a-href.html"><code>a</code> with <code>href</code> test</a> </p>
-  <p> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/a-no-href.html"><code>a</code> with no <code>href</code> test</a> </p></td>
+  <p>&nbsp;</p></td>
 <td><p> <strong>With <code>href</code>:</strong> a hyperlink </p>
-  <p> <strong>With no <code>href</code>:</strong> an
-    anchor </p></td>
+  <p>&nbsp;</p></td>
 <td><p> <strong>With <code>href</code>:</strong> <em>element
     
     
     content</em> "link" </p>
-  <p> <strong>With no <code>href</code>:</strong> <em>element content</em> </p></td>
+  <p>&nbsp;</p></td>
 <td><p><strong>With <code>href</code>:</strong></p>
   <ul>
     <li>List Links <kbd>INSERT+F7</kbd></li>
@@ -213,15 +212,11 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
     <li>Next Non Link Text <kbd>N</kbd></li>
     <li>Prior Non Link Text <kbd>SHIFT+N</kbd></li>
   </ul>
-  <p> <strong>With no <code>href</code>:</strong> no
-    special commands </p></td>
+  <p>&nbsp;</p></td>
 <td>
 <p>
 <strong>With <code>href</code>:</strong>
 <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
-</p>
-<p> With no <code>href</code>:
-  <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
 </p>
 </td>
 <td><p> <strong>With <code>href</code>:</strong> </p>
@@ -255,8 +250,18 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
     <li><strong>FTP Link:</strong> This indicates a link
       that points to a FTP (File Transfer Protocol) server.</li>
   </ul>
-  <p><strong>With no <code>href</code>:</strong></p>
-  <p>No semantics conveyed or expected as <code>&lt;a&gt;</code> has a <code>role="generic"</code></p></td>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p></td>
+</tr>
+<tr>
+    <th scope="row"><a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element"><code>a</code></a> without <code>href</code></th>
+    <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/a-no-href.html"><code>a</code> with no <code>href</code> test</a></td>
+    <td>An anchor</td>
+    <td>Announces as plain text</td>
+    <td>No special commands</td>
+    <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg></td>
+    <td><p>Treated as regular text without any link functionality.</p>
+      <p>No semantics conveyed or expected as <code>&lt;a&gt;</code> has a <code>role="generic"</code></p></td>
 </tr>
 <tr>
   <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element"><code>abbr</code></a> </th>
@@ -381,17 +386,17 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td> If the audio element has a <code>controls</code> attribute the buttons in the UI are navigable using <a href="#button-commands">button</a> commands. </td>
   <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
-  <td>&nbsp;</td>
+  <td>Controls in the audio player are accessible.</td>
 </tr>
 <tr id="toc-b">
   <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-b-element"><code>b</code></a> </th>
   <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/b.html"><code>b</code> test</a></td>
-  <td>Keywords</td>
+  <td>Text bolded for utilitarian purposes</td>
   <td><em>Element content</em></td>
   <td>No special commands</td>
   <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     <br></td>
-  <td>Refer to: <a href="https://www.tpgi.com/screen-readers-support-for-text-level-html-semantics/">Scree Readers support for text level HTML semantics</a></td>
+  <td>Refer to: <a href="https://www.tpgi.com/screen-readers-support-for-text-level-html-semantics/">Screen Readers support for text level HTML semantics</a></td>
 </tr>
 <tr>
   <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/semantics.htmlthe-base-element"><code>base</code></a> </th>
@@ -414,7 +419,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td>No special commands</td>
   <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     <br></td>
-  <td>No semantics conveyed</td>
+  <td>No aural impact; structure-only element.</td>
 </tr>
 <tr>
   <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdo-element"><code>bdo</code></a> </th>
@@ -424,7 +429,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
   <td>No special commands</td>
   <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
     <br></td>
-  <td>No semantics conveyed</td>
+  <td>No special semantics conveyed. Reads text correctly regardless of direction.</td>
 </tr>
 <tr>
   <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-blockquote-element"><code>blockquote</code></a> </th>
@@ -472,7 +477,7 @@ JAWS (2024) HTML Support Chrome Version 135.0.7049.85 (Official Build) (64-bit) 
     </ul></td>
   <td><svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     <br></td>
-  <td>Semantics conveyed via navigation and element name
+  <td>Semantics conveyed via navigation and element name. Announced as "toggle button" label and state (pressed/unpressed) when button has <code>aria-pressed</code>.
     announcement</td>
 </tr>
 <tr id="toc-c">
