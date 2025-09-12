@@ -1771,7 +1771,7 @@ this feature is supposed to convey to the user.</li>
     <td>
         <ul>
             <li>Announces as accessible name, if present, otherwise VO ignores an unlabelled <code>svg</code> element</li>
-            <li>Announces as "image" if <code>role="img"</code> is provided, <code>role="graphic-object"</code> and <code>role="graphics-object"</code> and <code>role="graphics-symbol"</code> are ignored by VO</li>
+            <li>Announces as "image" if <code>role="img"</code> is provided, <code>role="graphic-object"</code> and <code>role="graphics-object"</code> and <code>role="graphics-document"</code> are ignored by VO</li>
         </ul>
     </td>
     <td>No special interaction
@@ -1889,8 +1889,14 @@ this feature is supposed to convey to the user.</li>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/tables.html#the-th-element"><code>th</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/table-caption-thead-tbody-tfoot-tr-th-td.html"><code>th</code> test</a> </td>
     <td>Header cell in a data table</td>
-    <td><em>Element content</em></td>
     <td>Announces as cell content + "column/row header"</td>
+    <td>
+        <ul>
+            <li>Swipe left/right to navigate table cell by cell</li>
+            <li>When added to rotor, open rotor navigation to tables, announces number of tables</li>
+            <li>Single finger swipe up/down to navigate to next table when selected in rotor</li>
+        </ul>
+    </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
@@ -1903,7 +1909,7 @@ this feature is supposed to convey to the user.</li>
     <td><em>Element content</em></td>
     <td>No special interaction</td>
     <td>
-        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no" /></svg>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
     </td>
     <td>No semantics conveyed</td>
 </tr>
