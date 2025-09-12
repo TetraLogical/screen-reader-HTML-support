@@ -785,6 +785,7 @@ have found that this feature is not implemented</li>
     <td>
 		<svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no" class="no">
 			<use href="#no" />
+        </svg>
     </td>
     <td>No semantics conveyed. If the <code>form</code> has an accessible name, the accessible name is not announced by TalkBack.</td>
 </tr>
@@ -895,13 +896,24 @@ have found that this feature is not implemented</li>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/img-alt.html"><code>img</code> test</a> </td>
     <td>Image</td>
     <td>Announced as <em>alt attribute content</em> "graphic"</td>
-    <td>No special interactions</td>
+    <td>
+        <p>If added to the TalkBack navigation menu, in one motion, swipe down then right to open the TalkBack menu. Under navigation, navigate to "Images and videos" to navigate by images. When this option is chosen:</p>
+        <ul>
+            <li>Next image <kbd>Swipe down</kbd></li>
+            <li>Prior image <kbd>Swipe up</kbd></li>
+        </ul>
+    </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
             <use href="#yes" />
         </svg>
     </td>
-    <td>Reads alt attribute content if present. Announces, "This image isn't labelled" if the <code>alt</code> attribute is missing and no other labelling technique is used.</td>
+    <td>
+        <ul>
+            <li>Reads alt attribute content if present. Announces, "This image isn't labelled" if the <code>alt</code> attribute is missing and no other labelling technique is used.</li>
+            <li>Images and videos needs to be added to the TalkBack navigation menu before it is accessible. This can be added to the navigation menu in Customise TalkBack menu, under Customise menu</li>
+        </ul>
+    </td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#button-state-typebutton"><code>input [button]</code></a> </th>
@@ -1335,7 +1347,7 @@ have found that this feature is not implemented</li>
         </ul>
     </td>
     <td>List item</td>
-    <td><em>Element content</em> followed by grouping information, such as "1 of 6"</td>
+    <td><em>Element content</em> followed by grouping information, such as "1 of X"</td>
     <td>No special interactions</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1461,7 +1473,7 @@ have found that this feature is not implemented</li>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ol-element"><code>ol</code></a> </th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/ol-li.html"><code>ol</code> test</a> </td>
     <td>Ordered list</td>
-    <td>The list items are announced with grouping information, such as "1 of 6".</td>
+    <td>The list items are announced with grouping information, such as "1 of X".</td>
     <td>No special interactions</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
@@ -1742,7 +1754,7 @@ have found that this feature is not implemented</li>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/small.html"><code>small</code> test</a> </td>
     <td>Side comment</td>
     <td><em>Element content</em></td>
-    <td>No special commands</td>
+    <td>No special interactions</td>
     <td>
         <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
             <use href="#unknown" />
@@ -1758,7 +1770,7 @@ have found that this feature is not implemented</li>
         <a href="https://html.spec.whatwg.org/multipage/media.html#the-audio-element">audio</a>
     </td>
     <td><em>None expected</em></td>
-    <td>No special commands</td>
+    <td>No special interactions</td>
     <td>
         <svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes">
             <use href="#yes" />
@@ -1767,220 +1779,358 @@ have found that this feature is not implemented</li>
     <td>No UI</td>
 </tr>
 <tr>
-<td>⚠️ <code>&lt;span&gt;</code></td>
-<td>Inline container</td>
-<td>Generic inline container</td>
-<td>Reads content as normal text</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> </svg></td>
-<td>Treated as part of the text flow.</td>
+    <th scope="row"><a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-span-element"><code>span</code></a></th>
+    <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/span.html"><code>span</code> test</a></td>
+    <td>Generic inline container</td>
+    <td>Reads content as normal text</td>
+    <td>No special interactions</td>
+    <td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> </svg></td>
+    <td>No semantics conveyed</td>
 </tr>
 <tr>
-<td>⚠️ <code>&lt;strong&gt;</code></td>
-<td>Strong emphasis</td>
-<td>Important text</td>
-<td>Reads with strong emphasis</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Uses a more assertive voice inflection.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-strong-element"><code>strong</code></a> </th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/strong.html"><code>strong</code> test</a> </td>
+    <td>Importance</td>
+    <td><em>Element content</em></td>
+    <td>No special interaction</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+           <use href="#unknown" />
+        </svg>
+    </td>
+    <td>No semantics conveyed</td>
 </tr>
 <tr>
-<td>⚠️ <code>&lt;style&gt;</code></td>
-<td>CSS styles</td>
-<td>Embedded stylesheets</td>
-<td>No aural feedback</td>
-<td>Not interactive</td>
-<td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> </svg></td>
-<td>Applies CSS styles; ignored by screen reader.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/semantics.htmlthe-style-element"><code>style</code></a></th>
+    <td> No test </td>
+    <td>Embedded styling information</td>
+    <td><em>None expected</em></td>
+    <td>No special interactions</td>
+    <td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> </svg></td>
+    <td>No UI</td>
 </tr>
 <tr>
-<td>⚠️ <code>&lt;sub&gt;</code></td>
-<td>Subscript text</td>
-<td>Subscript text</td>
-<td>Reads content as normal text</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>No unique indication of subscript.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-sub-and-sup-elements"><code>sub</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/sub-sup.html"><code>sub</code> test</a> </td>
+    <td>Subscript</td>
+    <td><em>Element content</em></td>
+    <td>No special interactions</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+           <use href="#unknown" />
+        </svg>
+    </td>
+    <td>No semantics conveyed</td>
 </tr>
 <tr>
-<td>⚠️ <code>&lt;summary&gt;</code></td>
-<td>Disclosure summary</td>
-<td>Summary for <code>&lt;details&gt;</code></td>
-<td>Announces "summary"</td>
-<td>Double-tap to expand/collapse</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Acts as a trigger for the <code>&lt;details&gt;</code> element.</td>
+    <th scope="row" id="el-summary"> 
+        <a href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-summary-element"> <code>summary</code> </a> 
+    </th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/details-summary.html"><code>summary</code> test</a> </td>
+    <td>disclosure widget control/label</td>
+    <td>Announced as "collapsed/expanded", <em>label content</em>, "disclosure triangle"</td>
+    <td>
+        <p>Use three-finger swipe to scroll through the navigate by options to reach "Controls" to navigate by controls. When this option is chosen:</p>
+        <ul>
+            <li>Next control <kbd>Swipe down</kbd></li>
+            <li>Prior control <kbd>Swipe up</kbd></li>
+        </ul>
+    </td>
+    <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
+    <td>
+        <ul>
+            <li>Announces "double-tap to activate"</li>
+            <li>Serves as a trigger for expanding/collapsing <code>&lt;details&gt;</code> section.</li>
+        </ul>
+    </td>
 </tr>
 <tr>
-<td>:warning: <code>&lt;sup&gt;</code></td>
-<td>Superscript text</td>
-<td>Superscript text</td>
-<td>Reads content as normal text</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>No unique indication of superscript.</td>
+ <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-sub-and-sup-elements"><code>sup</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/sub-sup.html"><code>sup</code> test</a> </td>
+    <td>Superscript</td>
+    <td><em>Element content</em></td>
+    <td>No special interaction</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" aria-label="question mark" class="unknown" role="img">
+           <use href="#unknown" />
+        </svg>
+    </td>
+    <td>No semantics conveyed</td>
 </tr>
 <tr>
-<td>⚠️ <code>&lt;svg&gt;</code></td>
-<td>Scalable Vector Graphics</td>
-<td>Vector graphics</td>
-<td>Announces "graphic" if labeled</td>
-<td>Swipe to navigate</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Reads accessible labels, if provided.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/embedded-content-other.html#svg-0"><code>svg</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/svg.html"><code>svg</code> test</a> </td>
+    <td>Scalable Vector Graphics</td>
+    <td>
+        <ul>
+            <li>Announced as <em>label content</em>, "graphic" if an accessible name is provided</li>
+            <li>TalkBack announces <code>role="graphic-object"</code>, <code>role="graphics-document"</code> and <code>role="graphics-symbol"</code> as their respective roles</li>
+        </ul>
+    </td>
+    <td>
+        <p>If added to the TalkBack navigation menu, in one motion, swipe down then right to open the TalkBack menu. Under navigation, navigate to "Images and videos" to navigate by images. When this option is chosen:</p>
+        <ul>
+            <li>Next image <kbd>Swipe down</kbd></li>
+            <li>Prior image <kbd>Swipe up</kbd></li>
+        </ul>
+    </td>
+    <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
+    <td>
+        <ul>
+            <li>The <code>&lt;svg&gt;</code> element is ignored by TalkBack, unless it has an accessible name or <code>role="img"</code>.
+            <li>If Images and videos is added to the navigation menu, unlabelled <code>&lt;svg&gt;</code> elements are recognised as images and are announced as "Unlabelled, graphic"</li>
+        </ul>
+    </td>
 </tr>
 <tr>
-<td>⚠️ <code>&lt;table&gt;</code></td>
-<td>Data table</td>
-<td>Tabular data</td>
-<td>Announces "table with X rows and Y columns"</td>
-<td>Swipe to navigate cells</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Provides structured navigation through rows/columns.</td>
+   <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/tables.html#the-table-element"> <code>table</code> </a> </th>
+    <td>
+        <ul> 
+            <li><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/table-caption-thead-tbody-tfoot-tr-th-td.html"><code>table</code>
+    test</a> </li>
+            <li> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/tables-complex.html">complex <code>table</code> test</a> </li>
+        </ul>
+    </td>
+    <td>Data table</td>
+    <td>Announces as <em>caption content</em>, "In table", <em>caption content</em> "X rows. Y columns"</td>
+    <td>
+        <p>When in a table, use three-finger swipe to scroll through the navigate by options to reach "Rows and columns" to navigate by rows and columns. When this option is chosen:</p>
+        <ul>
+            <li>Next row <kbd>Swipe down</kbd></li>
+            <li>Prior row <kbd>Swipe up</kbd></li>
+            <li>Next column <kbd>Swipe right</kbd></li>
+            <li>Prior column <kbd>Swipe left</kbd></li>
+        </ul>
+    </td>
+    <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
+    <td>Provides structured navigation through rows/columns. Recognizes row/column headers and cell content.</td>
 </tr>
 <tr>
-<td>⚠️ <code>&lt;tbody&gt;</code></td>
-<td>Table body</td>
-<td>Table content container</td>
-<td>Included in table navigation</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Recognized as part of table structure.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/tables.html#the-tbody-element"><code>tbody</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/table-caption-thead-tbody-tfoot-tr-th-td.html"><code>tbody</code> test</a> </td>
+    <td>Group of rows in a data table</td>
+    <td><em>Element content</em></td>
+    <td>No special interaction</td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
+    </td>
+    <td>No semantics conveyed</td>
 </tr>
 <tr>
-<td>⚠️ <code>&lt;td&gt;</code></td>
-<td>Table data cell</td>
-<td>Cell within a table row</td>
-<td>Reads cell content</td>
-<td>Included in table navigation</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Properly linked to headers where applicable.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/tables.html#the-td-element"><code>td</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/table-caption-thead-tbody-tfoot-tr-th-td.html"><code>td</code> test</a> </td>
+    <td>Data cell in a data table</td>
+    <td>Announces cell content, "Row X. Column Y."</td>
+    <td>
+        <p>When in a table, use three-finger swipe to scroll through the navigate by options to reach "Rows and columns" to navigate by rows and columns. When this option is chosen:</p>
+        <ul>
+            <li>Next row <kbd>Swipe down</kbd></li>
+            <li>Prior row <kbd>Swipe up</kbd></li>
+            <li>Next column <kbd>Swipe right</kbd></li>
+            <li>Prior column <kbd>Swipe left</kbd></li>
+        </ul>
+    </td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
+    </td>
+    <td>Announces row and column number of the cell.</td>
 </tr>
 <tr>
-<td>⚠️ <code>&lt;template&gt;</code></td>
-<td>Template container</td>
-<td>Client-side template content</td>
-<td>No aural feedback</td>
-<td>Not interactive</td>
-<td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> </svg></td>
-<td>Hidden unless instantiated by JavaScript.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-template-element"><code>template</code></a></th>
+    <td>No test </td>
+    <td>Template</td>
+    <td><em>None expected</em></td>
+    <td>No special interaction</td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
+    </td>
+    <td>No UI</td>
 </tr>
 <tr>
-<td>⚠️ <code>&lt;textarea&gt;</code></td>
-<td>Multi-line text input</td>
-<td>Editable multi-line text area</td>
-<td>Announces "text area"</td>
-<td>Text entry interaction</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Allows multiple lines of input.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/rendering.html#the-textarea-element-2"><code>textarea</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/textarea.html"><code>textarea</code> test</a> </td>
+    <td>Multiline text field</td>
+    <td>Announces as the value of any text in the edit field, "Edit box", <em>label content</em>, if present</td>
+    <td>
+        <p>Use three-finger swipe to scroll through the navigate by options to reach "Controls" to navigate by controls. When this option is chosen:</p>
+        <ul>
+            <li>Next control <kbd>Swipe down</kbd></li>
+            <li>Prior control <kbd>Swipe up</kbd></li>
+        </ul>
+    </td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
+    </td>
+    <td>Announces "double-tap to edit text"</td>
 </tr>
 <tr>
-<td>⚠️ <code>&lt;tfoot&gt;</code></td>
-<td>Table footer</td>
-<td>Footer section of a table</td>
-<td>Included in table navigation</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Recognized as part of table structure.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/tables.html#the-tfoot-element"><code>tfoot</code></a></th>
+    <td> 
+        <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/table-caption-thead-tbody-tfoot-tr-th-td.html"><code>tfoot</code>
+    test</a> 
+    </td>
+    <td>Group of footer rows in a data table</td>
+    <td><em>Element content</em></td>
+    <td>No special interaction</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
+    </td>
+    <td>No semantics conveyed</td>
 </tr>
 <tr>
-<td>⚠️ <code>&lt;th&gt;</code></td>
-<td>Table header cell</td>
-<td>Header cell within a table</td>
-<td>Announces "column header" or "row header"</td>
-<td>Included in table navigation</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Recognizes association with data cells.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/tables.html#the-th-element"><code>th</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/table-caption-thead-tbody-tfoot-tr-th-td.html"><code>th</code> test</a> </td>
+    <td>Header cell in a data table</td>
+    <td>Announces as <em>cell content</em>, "column/row header"</td>
+    <td>
+        <p>When in a table, use three-finger swipe to scroll through the navigate by options to reach "Rows and columns" to navigate by rows and columns. When this option is chosen:</p>
+        <ul>
+            <li>Next row <kbd>Swipe down</kbd></li>
+            <li>Prior row <kbd>Swipe up</kbd></li>
+            <li>Next column <kbd>Swipe right</kbd></li>
+            <li>Prior column <kbd>Swipe left</kbd></li>
+        </ul>
+    </td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
+    </td>
+    <td>TalkBack recognises row/column headers</td>
 </tr>
 <tr>
-<td>⚠️ <code>&lt;thead&gt;</code></td>
-<td>Table header</td>
-<td>Header section of a table</td>
-<td>Included in table navigation</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Recognized as part of table structure.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/tables.html#the-thead-element"><code>thead</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/table-caption-thead-tbody-tfoot-tr-th-td.html"><code>thead</code> test</a> </td>
+    <td>Group of header rows in a data table</td>
+    <td><em>Element content</em></td>
+    <td>No special interaction</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
+    </td>
+    <td>No semantics conveyed</td>
 </tr>
 <tr>
-<td>⚠️ <code>&lt;time&gt;</code></td>
-<td>Time</td>
-<td>Date/time representation</td>
-<td>Reads element content</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Displays human-readable time/date.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-time-element"><code>time</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/time.html"><code>time</code> test</a> </td>
+    <td>Machine-readable equivalent of date- or time-related data</td>
+    <td>
+        <ul>
+            <li><em>Element content</em></li>
+            <li>If an <code>aria-label</code> or <code>aria-labelledby</code> is present, this is announced instead of the content within the <code>time</code> element</li>
+        </ul>
+    </td>
+    <td>No special interaction</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no" /></svg>
+    </td>
+    <td>No semantics conveyed</td>
 </tr>
 <tr>
-<td>⚠️ <code>&lt;title&gt;</code></td>
-<td>Document title</td>
-<td>Title of the document</td>
-<td>Announces when the page loads</td>
-<td>Not interactive</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Read when the page/tab gains focus.</td>
+    <th scope="row"><a href="https://html.spec.whatwg.org/multipage/semantics.htmlthe-title-element"><code>title</code></a></th>
+    <td>No test </td>
+    <td>Document title</td>
+    <td>Announces when the page loads as <em>title content</em>, "Web view"</td>
+    <td>No special interactions</td>
+    <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
+    <td>Announced when the page/tab gains focus.</td>
 </tr>
 <tr>
-<td>⚠️ <code>&lt;tr&gt;</code></td>
-<td>Table row</td>
-<td>Row within a table</td>
-<td>Included in table navigation</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Reads content within each cell of the row.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/tables.html#the-tr-element"><code>tr</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/table-caption-thead-tbody-tfoot-tr-th-td.html"><code>tr</code> test</a> </td>
+    <td>Data table row</td>
+    <td>When navigating by rows and columns, announces as <em>element content</em>, <em>row header content</em></td>
+    <td>
+        <p>When in a table, use three-finger swipe to scroll through the navigate by options to reach "Rows and columns" to navigate by rows and columns. When this option is chosen:</p>
+        <ul>
+            <li>Next row <kbd>Swipe down</kbd></li>
+            <li>Prior row <kbd>Swipe up</kbd></li>
+            <li>Next column <kbd>Swipe right</kbd></li>
+            <li>Prior column <kbd>Swipe left</kbd></li>
+        </ul>
+    </td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
+    </td>
+    <td>Recognises row header, if present</td>
 </tr>
 <tr>
-<td>⚠️ <code>&lt;track&gt;</code></td>
-<td>Media track</td>
-<td>Subtitles, captions, or descriptions</td>
-<td>Announces track type when enabled</td>
-<td>Swipe to activate/deactivate</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Used with <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> elements.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/media.html#the-track-element"><code>track</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/video.html"><code>track</code> test</a> </td>
+    <td>Timed text track</td>
+    <td>Announces current text track content when focused with TalkBack</td>
+    <td>No special interaction</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
+    </td>
+    <td>No semantics conveyed</td>
 </tr>
 <tr>
-<td>⚠️ <code>&lt;u&gt;</code></td>
-<td>Underlined text</td>
-<td>Text with underline styling</td>
-<td>Reads content as normal text</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> </svg></td>
-<td>No unique aural distinction for underline.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-u-element"><code>u</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/u.html"><code>u</code> test</a> </td>
+    <td>Underlined text</td>
+    <td><em>Element content</em></td>
+    <td>No special interaction</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no" /></svg>
+    </td>
+    <td>No semantics conveyed</td>
 </tr>
 <tr>
-<td>⚠️ <code>&lt;ul&gt;</code></td>
-<td>Unordered list</td>
-<td>Bullet list</td>
-<td>Announces "list with X items"</td>
-<td>Swipe to navigate list items</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Recognizes and reads list structure.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ul-element"><code>ul</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/ul-li.html"><code>ul</code> test</a> </td>
+    <td>Unordered List</td>
+    <td>Announces as "Bullet, 1 of X, X items" when first list item is focused. The following list items are announced with grouping information, such as "1 of X".</td>
+    <td>No special interactions</td>
+    <td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
+    <td>The list itself is not included in TalkBack's swipe order; only the list items have focus.</td>
 </tr>
 <tr>
-<td>⚠️ <code>&lt;var&gt;</code></td>
-<td>Variable</td>
-<td>Variable or argument in text/code</td>
-<td>Reads element content</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> </svg></td>
-<td>No unique treatment beyond normal text.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-var-element"><code>var</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/var.html"><code>var</code> test</a> </td>
+    <td>Represents a variable</td>
+    <td>
+        <ul>
+            <li><em>Element content</em></li>
+            <li>If an <code>aria-label</code> or <code>aria-labelledby</code> is present, this is announced instead of the content within the <code>var</code> element</li>
+        </ul>
+    </td>
+    <td>No special interaction</td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="no" class="no"><use href="#no" /></svg>
+    </td>
+    <td>No semantics conveyed</td>
 </tr>
 <tr>
-<td>⚠️ <code>&lt;video&gt;</code></td>
-<td>Video player</td>
-<td>Embedded video with controls</td>
-<td>Announces "video"</td>
-<td>Double-tap to play/pause</td>
-<td><svg viewBox="0 0 448 512" width="20" aria-label="yes" class="yes"><path d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></td>
-<td>Provides full media controls.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/media.html#the-video-element"><code>video</code></a></th>
+    <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/video.html"><code>video</code> test</a> </td>
+    <td>Video Player</td>
+    <td>Announces as <em>label content</em>, "video" when focused. The individual controls then follow in the swipe order.</td>
+    <td>
+        <p>Double-tap to play or pause the video file</p>
+        <p>If added to the TalkBack navigation menu, in one motion, swipe down then right to open the TalkBack menu. Under navigation, navigate to "Images and videos" to navigate by videos. When this option is chosen:</p>
+        <ul>
+            <li>Next video <kbd>Swipe down</kbd></li>
+            <li>Prior video <kbd>Swipe up</kbd></li>
+        </ul>
+    </td>
+    <td>
+        <svg viewBox="0 0 512 512" width="20" role="img" aria-label="question mark" class="unknown"><use href="#unknown" /></svg>
+    </td>
+    <td>
+        <ul>
+            <li>Images and videos needs to be added to the TalkBack navigation menu before it is accessible. This can be added to the navigation menu in Customise TalkBack menu, under Customise menu</li>
+            <li>Double-tap to play or pause is not announced when the <code>video</code> element is focused</li>
+        </ul>
+    </td>
 </tr>
 <tr>
-<td>⚠️ <code>&lt;wbr&gt;</code></td>
-<td>Word break opportunity</td>
-<td>Suggests a line break opportunity</td>
-<td>No direct aural feedback</td>
-<td>No special interaction</td>
-<td><svg viewBox="0 0 448 512" role="img" width="20" aria-label="none expected" class="noneE"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM92 296c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h264c6.6 0 12 5.4 12 12v56c0 6.6-5.4 12-12 12H92z"></path> </svg></td>
-<td>Breaks are handled visually via CSS/layout.</td>
+    <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-wbr-element"><code>wbr</code></a></th>
+    <td> No test </td>
+    <td>Line breaking opportunity</td>
+    <td><em>None expected</em></td>
+    <td>No special interaction</td>
+    <td>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
+    </td>
+    <td>No UI</td>
 </tr>
 </tbody>
 </table>
