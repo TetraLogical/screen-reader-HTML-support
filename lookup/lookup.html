@@ -218,6 +218,51 @@ h1 {padding-bottom: 1em}
   const select = document.getElementById('elementSelect');
   select.innerHTML = `<option value="" selected>Select an element</option>` + sorted.map(e => `<option value="${e}">${e}</option>`).join('');
 
+  /* ==== ADDED: slug helpers & maps (supports #input-search etc) ==== */
+  function baseAndVariantsFromLabel(label) {
+    const s = (label || '').toLowerCase().trim();
+    const m = s.match(/\b([a-z][a-z0-9:-]*)\b/); // first tag-like token
+    const base = m ? m[1] : '';
+    const variants = [];
+
+    // [type=reset], [search], [number], etc.
+    (s.match(/\[([^\]]+)\]/g) || []).forEach(br => {
+      const inner = br.slice(1, -1).trim();
+      const m2 = inner.match(/type\s*=\s*([a-z0-9-]+)/);
+      const v = (m2 ? m2[1] : inner)
+        .replace(/[^a-z0-9-]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+      if (v && !variants.includes(v)) variants.push(v);
+    });
+    // also pick up "type=..." outside brackets
+    (s.match(/type\s*=\s*([a-z0-9-]+)/g) || []).forEach(seg => {
+      const m3 = seg.match(/type\s*=\s*([a-z0-9-]+)/);
+      const v = m3 ? m3[1] : '';
+      if (v && !variants.includes(v)) variants.push(v);
+    });
+
+    return { base, variants };
+  }
+
+  const slugToValue = Object.create(null);        // slug -> option value
+  const valueToPrimarySlug = Object.create(null); // option value -> preferred slug
+
+  for (const val of sorted) {
+    const { base, variants } = baseAndVariantsFromLabel(val);
+    if (!base) continue;
+
+    // primary slug for this option (use first variant if any, else base)
+    valueToPrimarySlug[val] = variants.length ? `${base}-${variants[0]}` : base;
+
+    // map base and variant slugs back to the option value
+    if (!(base in slugToValue)) slugToValue[base] = val;
+    for (const v of variants) {
+      const slug = `${base}-${v}`;
+      if (!(slug in slugToValue)) slugToValue[slug] = val;
+    }
+  }
+  /* ==== /ADDED ==== */
+
   const meta = document.getElementById('meta');
   const thead = document.getElementById('thead');
   const tbody = document.getElementById('tbody');
@@ -281,8 +326,74 @@ h1 {padding-bottom: 1em}
     meta.textContent = rowsCount ? `Showing ${rowsCount} row(s) for “${el}”.` : `No matches for “${el}”.`;
   }
 
-  select.addEventListener('change', render);
-  if (select.options.length > 1) { select.selectedIndex = 1; render(); }
+ // --- Deep-linking by URL hash (e.g., #main or #<a>) ---
+(function () {
+  // 1) Update the URL when selection changes
+  try { select.removeEventListener('change', render); } catch (e) {}
+  select.addEventListener('change', function () {
+    /* ==== CHANGED: write preferred slug to the hash ==== */
+    const v = select.value;
+    const slug = valueToPrimarySlug[v] || v;
+    try { window.location.hash = '#' + encodeURIComponent(slug); } catch (e) {}
+    render();
+  });
+
+  // 2) Helpers to normalize and read the hash
+  function norm(s) {
+    if (!s) return '';
+    s = String(s).trim();
+    if (s.startsWith('<') && s.endsWith('>')) s = s.slice(1, -1);
+    return s.replace(/\s+/g, ' ').trim().toLowerCase();
+  }
+  function getHashElement() {
+    var h = (window.location.hash || '').slice(1);
+    if (!h) return '';
+    try { h = decodeURIComponent(h); } catch (e) {}
+    return norm(h);
+  }
+  function applyHashSelection() {
+    var target = getHashElement();
+    if (!target) return false;
+
+    // Exact match to an option value?
+    for (var i = 0; i < select.options.length; i++) {
+      if (select.options[i].value === target) {
+        select.value = target;
+        render();
+        return true;
+      }
+    }
+
+    /* ==== ADDED: resolve hyphenated slugs like "input-search" ==== */
+    if (slugToValue[target]) {
+      select.value = slugToValue[target];
+      render();
+      return true;
+    }
+    // Try falling back to base part (e.g., "input" from "input-search")
+    var base = target.split('-')[0];
+    if (slugToValue[base]) {
+      select.value = slugToValue[base];
+      render();
+      return true;
+    }
+    /* ==== /ADDED ==== */
+
+    return false;
+  }
+
+  // 3) React to manual hash changes
+  window.addEventListener('hashchange', applyHashSelection);
+
+  // 4) Initial render: prefer hash, else first real option
+  if (!applyHashSelection()) {
+    if (select.options.length > 1) {
+      select.selectedIndex = 1;
+      render();
+    }
+  }
 })();
+  })();
+
     </script>
 </body></html>
