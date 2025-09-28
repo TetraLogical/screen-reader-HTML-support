@@ -1,19 +1,20 @@
 name: Update lookup.html data
 
-on:
-  workflow_dispatch: {}
-  push:
-    branches: [ main ]
-    paths:
-      - "JAWS.html"
-      - "NVDA.html"
-      - "TalkBack-android.html"
-      - "VO-ios.html"
-      - "VO-mac.html"
-      - "lookup/lookup.html"
-      - ".github/workflows/Update-data.yml"
-permissions:
-  contents: write
+
+# on:
+ # workflow_dispatch: {}
+ # push:
+  #  branches: [ main ]
+  #  paths:
+   #   - "JAWS.html"
+    #  - "NVDA.html"
+    #  - "TalkBack-android.html"
+     # - "VO-ios.html"
+    #  - "VO-mac.html"
+   #   - "lookup/lookup.html"
+ #     - ".github/workflows/Update-data.yml"
+#permissions:
+#  contents: write
 
 jobs:
   build:
