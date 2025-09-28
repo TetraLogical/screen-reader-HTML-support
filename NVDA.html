@@ -90,7 +90,7 @@ body {background-color:white}
   </div>
 </header><div class="region wrapper prose flow">
 <h1>NVDA HTML Support</h1>
-<p> A Work <em>in progress</em>: Last updated 15 September 2025. </p>
+<p> A Work <em>in progress</em>: Last updated 28 September 2025. </p>
 <p><strong>Editors:</strong> Steve Faulkner, Gez Lemon </p>
 <p><strong>GitHub Repo:</strong> <a href="https://github.com/TetraLogical/screen-reader-HTML-support">screen-reader-HTML-support</a>
 </p>
@@ -606,9 +606,11 @@ this feature is supposed to convey to the user.</li>
         <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
     <td>
-        Navigating using <kbd>I</kbd> and <kbd>Shift+I</kbd> in a description list moves between the <code>&lt;dt&gt;</code> elements. 
-        Arrow keys are required to read the content in the <code>&lt;dd&gt;</code> element.
-    </td>
+        <p>Navigating using <kbd>I</kbd> and <kbd>Shift+I</kbd> in a description list moves between the <code>&lt;dt&gt;</code> elements. 
+          Arrow keys are required to read the content in the <code>&lt;dd&gt;</code> element.
+        </p>
+        <p>&nbsp;</p>
+        <p>Refer to: <a href="https://adrianroselli.com/2025/01/updated-brief-note-on-description-list-support.html#NVDA">Adrian Roselli: Updated Brief Note on Description List Support - Firefox 133 / NVDA 2024.4.1</a></p></td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dt-element"><code>dt</code></a></th>
@@ -1381,14 +1383,14 @@ this feature is supposed to convey to the user.</li>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#"><code>noscript</code></a></th>
-    <td> No test </td>
+    <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/noscript.html"><code>noscript</code> test</a></td>
     <td>Fallback content for script</td>
     <td>Content of <code>&lt;noscript&gt;</code> element read if JavaScript is not available/enabled</td>
     <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
-    <td>Ignored when JavaScript is enabled.</td>
+    <td>Ignored when JavaScript is enabled. Reads content rendered on screen when Javascript not enanabled</td>
 </tr>
 <tr id="toc-o" tabindex="-1">
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-object-element"><code>object</code></a></th>

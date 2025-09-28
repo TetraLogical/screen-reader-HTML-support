@@ -90,7 +90,7 @@ body {background-color:white}
   </div>
 </header><div class="region wrapper prose flow">
 <h1>VoiceOver on iOS HTML Support</h1>
-<p> A Work <em>in progress</em>: Last updated 11 September 2025. </p>
+<p> A Work <em>in progress</em>: Last updated 28 September 2025. </p>
 <p><strong>Editors:</strong> Steve Faulkner, Demelza Feltham, Catriona Morrison </p>
 <p><strong>GitHub Repo:</strong> <a href="https://github.com/TetraLogical/screen-reader-HTML-support">screen-reader-HTML-support</a>
 </p>
@@ -587,7 +587,7 @@ this feature is supposed to convey to the user.</li>
     <td>
         <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
-    <td></td>
+    <td> <p>Refer to: <a href="https://adrianroselli.com/2025/01/updated-brief-note-on-description-list-support.html#VOmacOS">Adrian Roselli: Updated Brief Note on Description List Support - Safari 18.2 / VoiceOver / iPadOS 18.2</a></p></td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dt-element"><code>dt</code></a></th>
@@ -1379,14 +1379,14 @@ this feature is supposed to convey to the user.</li>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#"><code>noscript</code></a></th>
-    <td>No test </td>
+    <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/noscript.html"><code>noscript</code> test</a></td>
     <td>Fallback content for script</td>
     <td>Content of <code>&lt;noscript&gt;</code> element read if JavaScript is not available/enabled</td>
-    <td>No special interaction</td>
+    <td>No special commands</td>
     <td>
-        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="none expected" class="noneE"><use href="#noneE" /></svg>
+        <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
-    <td>Ignored when JavaScript is enabled.</td>
+    <td>Ignored when JavaScript is enabled. Reads content rendered on screen when Javascript not enanabled</td>
 </tr>
 <tr id="toc-o" tabindex="-1">
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-object-element"><code>object</code></a></th>
