@@ -11,7 +11,7 @@ on:
       - "VO-ios.html"
       - "VO-mac.html"
       - "lookup/lookup.html"
-      - ".github/workflows/update-lookup.yml"
+      - ".github/workflows/Update-data.yml"
 permissions:
   contents: write
 
