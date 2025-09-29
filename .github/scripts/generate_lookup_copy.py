@@ -327,7 +327,10 @@ def inject_json(template_html: str, data: list[dict]) -> str:
     payload = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
     # Avoid closing the script tag accidentally
     payload = payload.replace("</", "<\\/")
-    return rx.sub(rf"\1{payload}\3", template_html)
+
+    # IMPORTANT: use a function so backslashes in `payload` are NOT interpreted by re.sub
+    return rx.sub(lambda m: m.group(1) + payload + m.group(3), template_html)
+
 
 
 def validate_for_lookup(data: list[dict]) -> None:
