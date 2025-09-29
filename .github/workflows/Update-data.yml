@@ -41,7 +41,8 @@ jobs:
           TS="$(date -u +%Y%m%d-%H%M%S)"
           BASENAME="${OUTPUT_BASENAME:-lookup.auto}"
           OUTPUT_FILE="lookup/${BASENAME}.${TS}.html"
-          echo "OUTPUT_FILE=${OUTPUT_FILE}" >> "$GITHUB_ENV"
+          echo "OUTPUT_FILE=${OUTPUT_FILE}" >> "$GITHUB_ENV"   # for later steps
+          export OUTPUT_FILE                                   # <-- needed for this step
           python .github/scripts/generate_lookup_copy.py
 
       - name: Commit and push the new file
