@@ -14,7 +14,6 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -41,12 +40,12 @@ jobs:
           TS="$(date -u +%Y%m%d-%H%M%S)"
           BASENAME="${OUTPUT_BASENAME:-lookup.auto}"
           OUTPUT_FILE="lookup/${BASENAME}.${TS}.html"
-          echo "OUTPUT_FILE=${OUTPUT_FILE}" >> "$GITHUB_ENV"   # for later steps
-          export OUTPUT_FILE                                   # <-- needed for this step
+          echo "OUTPUT_FILE=${OUTPUT_FILE}" >> "$GITHUB_ENV"
+          export OUTPUT_FILE
           python .github/scripts/generate_lookup_copy.py
 
-      - name: Commit and push the new file
+      - name: Commit and push the new files
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore(lookup): add generated file with refreshed JSON"
-          file_pattern: "lookup/*.html"
+          commit_message: "chore(lookup): add generated HTML + JSON with refreshed data"
+          file_pattern: "lookup/*.html lookup/*.json"
