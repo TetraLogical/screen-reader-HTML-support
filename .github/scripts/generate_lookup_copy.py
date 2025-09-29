@@ -1,16 +1,15 @@
 #!/usr/bin/env python3
 """
-Builds the combined JSON bundle from the 5 support tables and injects it
-into the template's <script id="data" type="application/json">…</script>
-(or id="html-support-data"). Writes a *new* HTML file (does NOT overwrite
-lookup/lookup.html) and also writes a sibling .json for diffing.
+Builds the combined JSON from the 5 support tables and injects it into the
+template's <script id="data" type="application/json">…</script> (or id="html-support-data").
+Writes a *new* HTML file (does NOT overwrite lookup/lookup.html) and a sibling .json.
 
-Key points
-- Robust header selection: pick the header row that contains "Element".
-  If none is found, fail fast with a clear error (prevents broken JSON).
-- Preserves per-cell raw inner HTML under _html (lists, SVG, etc.)
-- Preserves per-cell links under _links as [{ "text", "href" }]
-- Normalizes header "Aural UI" to "AURAL UI" (your page already handles it)
+Fixes:
+- Robust header selection: require a header row that contains "Element".
+- Sanitise all text/HTML/link strings to strip disallowed control characters that break JSON.parse.
+- Preserve per-cell raw inner HTML under _html (lists, SVG, anchors).
+- Preserve per-cell links under _links [{text, href}].
+- Normalise "Aural UI" header to "AURAL UI".
 """
 
 from html.parser import HTMLParser
@@ -23,10 +22,21 @@ import re
 import sys
 
 
+# ---------- Utilities ----------
+
 def die(msg: str) -> None:
     print(f"::error::{msg}")
     sys.exit(1)
 
+def clean_text(s: str) -> str:
+    """Remove disallowed control chars (ASCII < 0x20) except \t \n \r."""
+    if not isinstance(s, str):
+        s = "" if s is None else str(s)
+    return "".join(ch for ch in s if (ord(ch) >= 0x20) or ch in "\t\n\r")
+
+def clean_html(s: str) -> str:
+    """Same sanitisation for innerHTML strings (keep markup, drop bad controls)."""
+    return clean_text(s)
 
 def get_env_list(name: str) -> list[Path]:
     raw = os.environ.get(name, "").strip()
@@ -38,7 +48,6 @@ def get_env_list(name: str) -> list[Path]:
             die(f"Missing input: {p}")
     return items
 
-
 def get_env_path(name: str) -> Path:
     val = os.environ.get(name, "").strip()
     if not val:
@@ -47,7 +56,6 @@ def get_env_path(name: str) -> Path:
     if name == "LOOKUP_TEMPLATE" and not p.exists():
         die(f"Template not found: {p}")
     return p
-
 
 def get_env_output_path() -> Path:
     val = os.environ.get("OUTPUT_FILE", "").strip()
@@ -60,6 +68,8 @@ def get_env_output_path() -> Path:
     p.parent.mkdir(parents=True, exist_ok=True)
     return p
 
+
+# ---------- HTML Table Grabber ----------
 
 class TableGrabber(HTMLParser):
     """
@@ -148,19 +158,19 @@ class TableGrabber(HTMLParser):
             text = unescape("".join(self.cell_text))
             lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
             text_norm = "\n".join(lines)
-            cell_html = "".join(self.cell_html)
+            text_norm = clean_text(text_norm)  # <-- sanitise
+            cell_html = clean_html("".join(self.cell_html))  # <-- sanitise
 
-            # collect links from the html we built
+            # collect links from the html we built (support both " and ' quotes)
             links = []
             for m in re.finditer(
-                r'<a\b[^>]*href="([^"]+)"[^>]*>(.*?)</a>',
+                r'<a\b[^>]*href=(["\'])(.*?)\1[^>]*>(.*?)</a>',
                 cell_html,
                 flags=re.I | re.S,
             ):
-                links.append({
-                    "href": m.group(1),
-                    "text": re.sub(r"\s+", " ", unescape(m.group(2))).strip()
-                })
+                href = clean_text(m.group(2))
+                label = clean_text(re.sub(r"\s+", " ", unescape(m.group(3))).strip())
+                links.append({"href": href, "text": label})
 
             self.tr_cells.append((text_norm, cell_html, links))
             self.in_cell = False
@@ -194,6 +204,8 @@ class TableGrabber(HTMLParser):
             self.caption_text.append(data)
 
 
+# ---------- Helpers for conversion ----------
+
 def normalize_headers(headers: list[str]) -> list[str]:
     out = []
     for h in headers:
@@ -203,11 +215,9 @@ def normalize_headers(headers: list[str]) -> list[str]:
         out.append(hh)
     return out
 
-
 def extract_year(s: str) -> str:
     m = re.search(r"\b(?:19|20)\d{2}\b", s or "")
     return m.group(0) if m else ""
-
 
 def choose_header(thead_rows, header_candidates) -> list[str]:
     """
@@ -216,28 +226,26 @@ def choose_header(thead_rows, header_candidates) -> list[str]:
     If none match exactly, accept any row that contains 'element' as a substring.
     """
     def rows_to_text(rows):
-        # Each row is a list of tuples: (text, html, links). We want the text.
         return [[cell[0] for cell in row] for row in rows]
 
-    # 1) Look in <thead> rows for an exact 'Element'
+    # 1) thead rows
     for row in rows_to_text(thead_rows):
         norm = normalize_headers(row)
         if any(h.lower() == "element" for h in norm):
             return norm
 
-    # 2) Look in header-candidate rows (those with only <th>)
+    # 2) header-candidate rows
     for row in rows_to_text(header_candidates):
         norm = normalize_headers(row)
         if any(h.lower() == "element" for h in norm):
             return norm
 
-    # 3) Softer fallback: a header containing 'element' anywhere
+    # 3) soft fallback: contains "element"
     for row in rows_to_text(thead_rows + header_candidates):
         norm = normalize_headers(row)
         if any("element" in h.lower() for h in norm):
             return norm
 
-    # Nothing suitable found
     return []
 
 
@@ -245,14 +253,13 @@ def convert(path: Path, sr_name: str) -> dict:
     grab = TableGrabber()
     grab.feed(path.read_text(encoding="utf-8", errors="ignore"))
 
-    caption = re.sub(r"\s+", " ", unescape("".join(grab.caption_text)).strip())
-    caption_links = grab.caption_links
+    caption = clean_text(re.sub(r"\s+", " ", unescape("".join(grab.caption_text)).strip()))
+    caption_links = [clean_text(u) for u in grab.caption_links]
 
     headers = choose_header(grab.thead_rows, grab.header_candidates)
     if not headers:
         die(f"{sr_name}: could not find a header row containing 'Element' in {path.name}.")
 
-    # Log chosen headers for diagnostic visibility in Actions
     print(f"{sr_name}: headers = {headers}")
 
     rows_out = []
@@ -265,11 +272,11 @@ def convert(path: Path, sr_name: str) -> dict:
         links_map = {}
         for i, h in enumerate(headers):
             txt, html, lks = cells[i]
-            obj[h] = txt
+            obj[h] = clean_text(txt)
             if html.strip():
-                html_map[h] = html
+                html_map[h] = clean_html(html)
             if lks:
-                links_map[h] = lks
+                links_map[h] = [{"text": clean_text(L.get("text", "")), "href": clean_text(L.get("href", ""))} for L in lks]
 
         if html_map:
             obj["_html"] = html_map
@@ -316,7 +323,10 @@ def inject_json(template_html: str, data: list[dict]) -> str:
     m = rx.search(template_html)
     if not m:
         die('Could not find a <script id="data" type="application/json">…</script> block in the template.')
-    payload = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+
+    payload = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
+    # Avoid closing the script tag accidentally
+    payload = payload.replace("</", "<\\/")
     return rx.sub(rf"\1{payload}\3", template_html)
 
 
