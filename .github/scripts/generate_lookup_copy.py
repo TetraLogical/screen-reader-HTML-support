@@ -1,15 +1,14 @@
 #!/usr/bin/env python3
 """
-Builds the combined JSON bundle from the 5 support tables and injects it
-into the template's <script id="data" type="application/json">…</script>.
-Writes a *new* HTML file (does NOT overwrite lookup/lookup.html) and also
-drops a sibling JSON file for easy diffs.
+Build the combined JSON from the 5 source tables and inject it into the
+template's <script id="data" type="application/json">…</script>.
+Writes a *new* HTML file (does NOT overwrite lookup/lookup.html) and
+also writes a sibling .json to compare outputs.
 
-Fixes:
-- Robust header selection: choose the header row that contains "Element"
-  (case-insensitive). If none, fail fast with a clear error.
-- Keeps _html (raw innerHTML) and _links [{text,href}] per cell.
-- Normalizes "Aural UI" header to "AURAL UI" (your page already handles it).
+Key fixes:
+- Robust header selection: pick the header row that *contains* "Element".
+- If no header row contains "Element", fail with a clear error.
+- Keep _html (raw innerHTML) and _links [{text,href}] per cell.
 """
 
 from html.parser import HTMLParser
@@ -54,12 +53,8 @@ def get_env_output_path() -> Path:
 
 class TableGrabber(HTMLParser):
     """
-    Extracts the *first* table:
-      - caption text + links
-      - all <tr>, distinguishing 'header candidates' (rows that contain <th>)
-        from 'data rows' (rows with any <td>).
-      - for each cell, capture (text, innerHTML, links[]).
-    We then choose the actual header row by *content* later.
+    Extract the first table's caption, header candidates (rows with <th>),
+    and data rows (rows with any <td>). For each cell, capture (text, html, links).
     """
     def __init__(self):
         super().__init__(convert_charrefs=False)
@@ -73,12 +68,15 @@ class TableGrabber(HTMLParser):
         self.in_anchor = False; self.anchor_href = ""; self.anchor_text = []
         self.header_candidates = []   # list[list[(text, html, links)]]
         self.data_rows = []           # list[list[(text, html, links)]]
+        self.seen_thead = False; self.in_thead = False; self.thead_rows = []
 
     def handle_starttag(self, tag, attrs):
         if tag == "table" and not self.table_seen:
             self.table_seen = True; self.in_table = True
         elif self.in_table and tag == "caption":
             self.in_caption = True
+        elif self.in_table and tag == "thead":
+            self.seen_thead = True; self.in_thead = True
         elif self.in_table and tag == "tr":
             self.in_tr = True; self.tr_cells = []
             self.tr_has_th = False; self.tr_has_td = False
@@ -93,7 +91,7 @@ class TableGrabber(HTMLParser):
                 if (k or "").lower() == "href" and v:
                     self.caption_links.append(v); break
 
-        # record inner HTML (not wrapping td/th themselves)
+        # record inner HTML (not wrapping td/th)
         if self.in_cell and tag not in ("td","th"):
             attrs_str = "".join([f' {k}="{v}"' for k,v in attrs if v is not None])
             if tag == "br":
@@ -101,7 +99,7 @@ class TableGrabber(HTMLParser):
             else:
                 self.cell_html.append(f"<{tag}{attrs_str}>")
 
-        # link tracking in cells
+        # link tracking
         if self.in_cell and tag == "a":
             for k,v in attrs:
                 if (k or "").lower() == "href" and v:
@@ -110,24 +108,16 @@ class TableGrabber(HTMLParser):
     def handle_endtag(self, tag):
         if tag == "caption" and self.in_caption:
             self.in_caption = False
-
+        elif tag == "thead" and self.in_thead:
+            self.in_thead = False
         elif tag in ("td","th") and self.in_cell:
             text = unescape("".join(self.cell_text))
             lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
             text_norm = "\n".join(lines)
             cell_html = "".join(self.cell_html)
 
-            # finalize <a>
-            if self.in_anchor:
-                label = unescape("".join(self.anchor_text)).strip()
-                # push the last link if any lingering (rare)
-                # but the link list is captured in handle_data/handle_endtag('a'), so no-op here
-                self.in_anchor = False; self.anchor_href = ""; self.anchor_text = []
-
-            # NOTE: we gather links in handle_endtag('a'); but to keep code simple,
-            # reuse a tiny parser: find anchors and collect href+text from the html we built
+            # collect links from the html we built
             links = []
-            # very small, safe scan (we already appended real <a> start and inner text)
             for m in re.finditer(r'<a\b[^>]*href="([^"]+)"[^>]*>(.*?)</a>', cell_html, flags=re.I|re.S):
                 links.append({"href": m.group(1), "text": re.sub(r"\s+", " ", unescape(m.group(2))).strip()})
 
@@ -137,7 +127,8 @@ class TableGrabber(HTMLParser):
         elif tag == "tr" and self.in_tr:
             if self.tr_cells:
                 if self.tr_has_th and not self.tr_has_td:
-                    self.header_candidates.append(self.tr_cells)
+                    # headerish row
+                    (self.thead_rows if self.in_thead else self.header_candidates).append(self.tr_cells)
                 else:
                     self.data_rows.append(self.tr_cells)
             self.in_tr = False; self.tr_cells = []; self.tr_has_th = False; self.tr_has_td = False
@@ -145,7 +136,6 @@ class TableGrabber(HTMLParser):
         elif tag == "table" and self.in_table:
             self.in_table = False
 
-        # close tags in cell_html when needed
         if self.in_cell and tag not in ("td","th","br"):
             self.cell_html.append(f"</{tag}>")
 
@@ -176,28 +166,35 @@ def extract_year(s):
     m = re.search(r"\b(?:19|20)\d{2}\b", s or "")
     return m.group(0) if m else ""
 
-def choose_header(candidates: list[list[tuple]]) -> list[str]:
+def choose_header(thead_rows, header_candidates):
     """
-    Pick the header row by content. Prefer a row whose headers include 'Element'
-    (case-insensitive). Else, if exactly one candidate exists, use it.
-    Else, fail—better to stop than emit broken JSON.
+    Prefer a thead row whose headers include 'Element'.
+    Else search header_candidates (rows with only <th>).
+    Else search the first 3 rows overall for a row with 'Element'.
     """
-    if not candidates:
-        return []
-    # Convert candidates to text lists
-    text_rows = [[c[0] for c in row] for row in candidates]  # c[0] = text
-    # Normalize and look for 'Element'
-    normalized = [normalize_headers(r) for r in text_rows]
-    for r in normalized:
-        if any(h.strip().lower() == "element" for h in r):
-            return r
-    if len(normalized) == 1:
-        return normalized[0]
-    # Try a softer match ('Element' appears as part of header like 'Element ')
-    for r in normalized:
-        if any("element" in h.lower() for h in r):
-            return r
-    # No suitable header row found
+    def rows_to_text(rows):
+        return [[c[0] for c in row] for row in rows]
+
+    # 1) thead rows
+    for r in normalize_headers.__func__(rows_to_text(thead_rows)[0:10]):  # type: ignore[attr-defined]
+        pass
+    for r in rows_to_text(thead_rows):
+        rr = normalize_headers(r)
+        if any(h.lower() == "element" for h in rr):
+            return rr
+
+    # 2) header candidates
+    for r in rows_to_text(header_candidates):
+        rr = normalize_headers(r)
+        if any(h.lower() == "element" for h in rr):
+            return rr
+
+    # 3) soft match: contains "element" substring
+    for r in rows_to_text(thead_rows + header_candidates):
+        rr = normalize_headers(r)
+        if any("element" in h.lower() for h in rr):
+            return rr
+
     return []
 
 def convert(path: Path, sr_name: str) -> dict:
@@ -206,13 +203,15 @@ def convert(path: Path, sr_name: str) -> dict:
 
     caption = re.sub(r"\s+"," ", unescape("".join(grab.caption_text)).strip())
     caption_links = grab.caption_links
-    headers = choose_header(grab.header_candidates)
+
+    headers = choose_header(grab.thead_rows, grab.header_candidates)
     if not headers:
-        die(f"{sr_name}: could not find a valid header row containing 'Element' in {path.name}.")
+        die(f"{sr_name}: could not find a header row containing 'Element' in {path.name}.")
+    # Log chosen header for diagnostics
+    print(f"{sr_name}: headers = {headers}")
 
     rows_out = []
     for row in grab.data_rows:
-        # pad/truncate to header count
         cells = row[:len(headers)] + [("", "", [])] * max(0, len(headers) - len(row))
         obj = {}; html_map = {}; links_map = {}
         for i, h in enumerate(headers):
@@ -222,6 +221,9 @@ def convert(path: Path, sr_name: str) -> dict:
             if lks: links_map[h] = lks
         if html_map: obj["_html"] = html_map
         if links_map: obj["_links"] = links_map
+        # Skip rows with no Element text
+        if not obj.get("Element", "").strip():
+            continue
         rows_out.append(obj)
 
     return {
@@ -233,7 +235,6 @@ def convert(path: Path, sr_name: str) -> dict:
     }
 
 def build_bundle(paths: list[Path]) -> list[dict]:
-    # Keep the display names stable for the first column in your table
     mapping = {
         "jaws.html": "JAWS",
         "nvda.html": "NVDA",
@@ -241,11 +242,7 @@ def build_bundle(paths: list[Path]) -> list[dict]:
         "vo-mac.html": "VoiceOver on Mac",
         "vo-ios.html": "VoiceOver on iOS",
     }
-    out = []
-    for p in paths:
-        name = mapping.get(p.name.lower(), p.stem)
-        out.append(convert(p, name))
-    return out
+    return [convert(p, mapping.get(p.name.lower(), p.stem)) for p in paths]
 
 def inject_json(template_html: str, data: list[dict]) -> str:
     rx = re.compile(
@@ -259,20 +256,19 @@ def inject_json(template_html: str, data: list[dict]) -> str:
     return rx.sub(rf"\1{payload}\3", template_html)
 
 def validate_for_lookup(data: list[dict]) -> None:
-    # Ensure every section has rows and that 'Element' exists on rows
     problems = []
     for sec in data:
         rows = sec.get("rows", [])
         if not rows:
             problems.append(f"{sec.get('screen_reader')}: no rows parsed.")
             continue
-        miss = sum(1 for r in rows if "Element" not in r)
+        miss = sum(1 for r in rows if "Element" not in r or not r["Element"].strip())
         if miss:
-            problems.append(f"{sec.get('screen_reader')}: {miss} row(s) missing 'Element'.")
+            problems.append(f"{sec.get('screen_reader')}: {miss} row(s) missing non-empty 'Element'.")
     if problems:
         for p in problems: print(f"::error::{p}")
         die("Validation failed for lookup JSON.")
-    print(f"Validation OK: {len(data)} sections.")
+    print(f"Validation OK: {len(data)} sections, all rows have 'Element'.")
 
 def main():
     inputs = get_env_list("INPUT_FILES")
@@ -286,7 +282,6 @@ def main():
     out_html.write_text(merged, encoding="utf-8")
     print(f"Wrote HTML: {out_html}")
 
-    # Also emit a sibling JSON file for diffing in PRs
     out_json = out_html.with_suffix(".json")
     out_json.write_text(json.dumps(bundle, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"Wrote JSON: {out_json}")
