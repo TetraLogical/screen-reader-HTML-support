@@ -1,20 +1,15 @@
-name: Update lookup.html data
+name: Generate lookup HTML (manual)
 
+on:
+  workflow_dispatch:
+    inputs:
+      output_basename:
+        description: "Base name for generated file in lookup/ (no extension)"
+        required: false
+        default: "lookup.auto"
 
-# on:
- # workflow_dispatch: {}
- # push:
-  #  branches: [ main ]
-  #  paths:
-   #   - "JAWS.html"
-    #  - "NVDA.html"
-    #  - "TalkBack-android.html"
-     # - "VO-ios.html"
-    #  - "VO-mac.html"
-   #   - "lookup/lookup.html"
- #     - ".github/workflows/Update-data.yml"
-#permissions:
-#  contents: write
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -30,12 +25,7 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install parser deps
-        run: |
-          python -m pip install --upgrade pip
-          pip install beautifulsoup4
-
-      - name: Rebuild embedded JSON and update lookup.html
+      - name: Generate new lookup HTML (timestamped copy)
         env:
           INPUT_FILES: |
             JAWS.html
@@ -43,12 +33,18 @@ jobs:
             TalkBack-android.html
             VO-ios.html
             VO-mac.html
-          LOOKUP_FILE: lookup/lookup.html
+          LOOKUP_TEMPLATE: lookup/lookup.html
+          OUTPUT_BASENAME: ${{ github.event.inputs.output_basename }}
         run: |
-          python .github/scripts/update_lookup.py
+          set -euo pipefail
+          TS="$(date -u +%Y%m%d-%H%M%S)"
+          BASENAME="${OUTPUT_BASENAME:-lookup.auto}"
+          OUTPUT_FILE="lookup/${BASENAME}.${TS}.html"
+          echo "OUTPUT_FILE=${OUTPUT_FILE}" >> $GITHUB_ENV
+          python .github/scripts/generate_lookup_copy.py
 
-      - name: Commit and push (if changed)
+      - name: Commit and push the new file
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore(lookup): auto-update embedded JSON from source tables [skip ci]"
-          file_pattern: "lookup/lookup.html"
+          commit_message: "chore(lookup): add generated file with refreshed JSON"
+          file_pattern: "lookup/*.html"
