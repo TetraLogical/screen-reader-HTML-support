@@ -229,13 +229,17 @@ this feature is supposed to convey to the user.</li>
 <tr>
   <th scope="row"> <a href="https://www.w3.org/TR/wai-aria-1.3/#aria-level"><code>aria-level</code></a> </th>
   <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/h7-h10.html">h7-h10 (role="heading"+aria-level=7-10)</a></td>
-  <td>?</td>
-  <td>?</td>
-  <td><ul>
-    </ul></td>
-  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="unknown" class="unknown"><use href="#unknown" /></svg>
-    <br></td>
-  <td>?</td>
+  <td>Announced as, <em>heading content</em> "heading, level" 7 to 10</td>
+  <td>Section heading</td>
+  <td>When headings is selected in the rotor, use up/down arrows to navigate through headings</td>
+  <td><svg viewBox="0 0 512 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg></td>
+  <td>Works as documented with MacOS version: Sequoia 15.6.1 Safari: 18.6
+ 
+  Some oddities noted with Chrome (Version 141.0.7390.123):
+<ul><li>With proper <code>&lt;h*></code> elements, it reports correctly up to level 9. After that it ignores the <code>aria-level</code> and reverts to what the real heading level would be if not overridden.
+<li>On the <code>div</code>'s example, after level 9 it reports all headings as level 2 in Chrome.
+<li>With <code>aria-label</code>, it ignores the <code>aria-level</code> (same as the first example without <code>aria-label</code> text, reverting back to the heading level that would have been exposed by default from the heading element. 
+</ul></td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/sections.html#the-article-element"><code>article</code></a>
