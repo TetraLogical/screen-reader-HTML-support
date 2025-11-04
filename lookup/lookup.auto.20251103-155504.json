@@ -12376,7 +12376,7 @@
         "Element": "aria-level",
         "Test Case": "h7-h10 (role=\"heading\"+aria-level=7-10)",
         "Represents": "Section heading",
-        "AURAL UI": "Announced as, heading content \"heading, level\" 7 to 10",
+        "AURAL UI": "Announced as, \"heading, level\" 7 to 10" heading content,
         "Interaction": "When headings is selected in the rotor, single flick downwards moves through headings",
         "Supported": "",
         "Notes": "Announces heading text, heading role and level",
