@@ -342,11 +342,11 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
               <p>Link role announced before link text/label.</p>
               <ul>
                 <li>
-                  By Default, Windows Narrator speaks the on screen text or aria-label of a link and not its title or description (if present).
+                  By default, Narrator speaks the accessible name of a link and not its title or description (if present).
                 </li>
-                <li>Descriptions (i.e. <code>aria-describedby</code> referenced content) are only announced if the "Read advanced details" checkbox is checked within Narrator settings.</li>
-                <li>Windows Narrator does <strong>not</strong> announce the link type.</li>
-                <li>The "Search links" window announces the total number of links on the page and lists them.</li>
+                <li>Descriptions (i.e. <code>aria-describedby</code>) are only announced if the "Read advanced details" checkbox is checked within Narrator settings.</li>
+                <li>Narrator does <strong>not</strong> announce the link type.</li>
+                <li>Narrator's "Search links" window announces the total number of links on the page and lists them.</li>
               </ul>
             </td>
           </tr>
@@ -357,13 +357,14 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
             <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/a-no-href.html"><code>a</code> without
                 <code>href</code> test</a></td>
             <td>An anchor</td>
-            <td>Announces as plain text</td>
+            <td><em>Element content</em></td>
             <td>No special commands</td>
             <td><svg aria-label="none expected" class="noneE" role="img" viewbox="0 0 448 512" width="20">
                 <use href="#noneE"></use>
               </svg></td>
             <td>
-              <p>Treated as regular text without any link functionality.</p>
+              <p>Treated as regular text.</p>
+              <br>
               <p>No semantics conveyed or expected as <code>&lt;a&gt;</code> has a <code>role="generic"</code></p>
             </td>
           </tr>
@@ -373,42 +374,51 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
             </th>
             <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/abbr.html"><code>abbr</code> test</a></td>
             <td>An abbreviation</td>
-            <td><p><strong>Default verbosity:</strong> <em>Element content</em> (abbreviation)</p>
-              <br/>
-              <p><strong>Verbosity level 4 and above:</strong> <code>title</code> or <code>aria-label</code> content (unabbreviated definition), group, <em>Element content</em> (abbreviation)</p>
+            <td>
+              <ul>
+                <li><strong>With <code>title</code> or <code>aria-label</code> attributes:</strong> <em>Expansion, group, Accronym</em></li>
+                <li><strong>Without <code>title</code> or <code>aria-label</code> attributes:</strong> <em>Accronym</em> only</li>
+              </ul>
             </td>
             <td>
               <p>No special commands</p>
-              <br/>
-              
             </td>
             <td>
-              <p>
-                <svg aria-label="none expected" class="noneE" role="img" viewbox="0 0 448 512" width="20">
-                  <use href="#noneE"></use>
-                </svg> By default
-              </p>
-              <br/>
               <p>
                 <svg aria-label="yes" class="yes" role="img" viewbox="0 0 448 512" width="20">
                   <use href="#yes"></use>
-                </svg> Via preference (and only if <code>title/aria-label</code> present)
+                </svg> If <code>aria-label</code> present
+              </p>
+              <br>
+              <p>
+                <svg aria-label="yes" class="yes" role="img" viewbox="0 0 448 512" width="20">
+                  <use href="#yes"></use>
+                </svg> If <code>title</code> present (not Firefox)
+              </p>
+              <br/>
+              <p>
+                <svg aria-label="no" class="no" role="img" viewbox="0 0 512 512" width="20">
+                  <use href="#no"></use>
+                </svg> in Firefox with the <code>title</code> attribute
               </p>
             </td>
             <td>
-              <p>No semantics conveyed by default</p>
-              <br/>
-              <p><strong>Increased verbosity:</strong></p>
               <ul>
-                <li>Windows Narrator will read definitions provided via the <code>title</code> or <code>aria-label</code> attributes only when verbosity has been increased within Narrator settings. This must be set to <strong>level "4 - Some text details"</strong> or higher.</li>
-                <li>Narrator Announces a role of "group" after the definition and before the abbreviation.</li>
-                <li>If both <code>title</code> and <code>aria-label</code> are included, the <code>aria-label</code> value will be announced and <code>title</code> ignored</li>
-                <li>Descriptions (i.e. <code>aria-describedby</code> referenced content) are only announced if the "Read advanced details" checkbox is checked within Narrator settings.</li>
+                <li>
+                  No semantics conveyed by default.
+                </li>
+                <li>
+                  Treated as a "group" and expansion announced when <code>title</code> or <code>aria-label</code> are present.
+                  <br/>
+                  Note, <code>aria-label</code> will "win" in Chrome or Firefox if both attributes are present. Both will be announced if they differ in Edge.
+                </li>
+                <li>Firefox <strong>only</strong> supports <code>abbr</code> with an <code>aria-label</code>. The <code>title</code> attribute is not supported.</li>
+                <li>
+                  Descriptions via <code>aria-describedby</code> are <strong>ignored</strong>.
+                </li>
               </ul>
-              <br/>
-              <p>Note that expansions are not announced by default and
-                that expansions provided using the <code>title</code> attribute are not available to keyboard only
-                users. Refer to <a href="https://www.paciellogroup.com/blog/2013/01/using-the-html-title-attribute-updated/">Using the HTML title attribute</a>.</p>
+              <br />
+              <p>Note, expansions are not announced by default and that expansions provided using the <code>title</code> attribute are not available to keyboard only users. Refer to <a href="https://www.paciellogroup.com/blog/2013/01/using-the-html-title-attribute-updated/">Using the HTML title attribute</a>.</p>
             </td>
           </tr>
           <tr>
@@ -419,24 +429,48 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
                 test</a></td>
             <td>Contact information for a page or <a
                 href="https://html.spec.whatwg.org/multipage/sections.html#the-article-element">article</a> element</td>
-            <td><em>Element content</em> when no accessible name
-              present. </td>
+            <td>
+              <ul>
+                <li>
+                  <strong>With accessible name:</strong> "Group",  <em>accessible name</em>, <em>element content</em>
+                </li>
+                <li>
+                  <strong>Without accessible name:</strong> <em>Element content</em>
+                </li>
+              </ul>
+            </td>
             <td>No special commands</td>
             <td>
-              <p>no accessible name
+              <p>
                 <svg aria-label="no" class="no" role="img" viewbox="0 0 512 512" width="20">
                   <use href="#no"></use>
-                </svg>
+                </svg> by default
               </p>
-              <p>With accessible name
+              <br>
+              <p>
                 <svg aria-label="yes" class="yes" role="img" viewbox="0 0 448 512" width="20">
                   <use href="#yes"></use>
-                </svg>
+                </svg> If <code>aria-label</code> present
+              </p>
+              <br>
+              <p>
+                <svg aria-label="no" class="no" role="img" viewbox="0 0 512 512" width="20">
+                  <use href="#no"></use>
+                </svg> in Firefox
               </p>
             </td>
-            <td>With accessible name <code>address</code> is announced
-              as a <code>group</code> Group - accessible name,
-              start/end.</td>
+            <td>
+              <ul>
+                <li>
+                  With accessible name <code>address</code> is announced as a <code>group</code> - accessible name grouping, followed by the content.
+                </li>
+                <li>
+                  Descriptions via <code>aria-describedby</code> are <strong>ignored</strong>.
+                </li>
+                <li>
+                  Firefox announces no special semantics. The <code>aria-label</code> is <strong>ignored</strong>
+                </li>
+            </td>
           </tr>
           <tr>
             <th scope="row"> <a
@@ -446,77 +480,116 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
                 test</a></td>
             <td>Hyperlink or dead area on an image map</td>
             <td>
-              <p>"graphic"<em>, alt content </em>(when navigated using
-                the <kbd>arrow</kbd> keys or the link navigation keys.)</p>
-              <p><em>alt content</em>, "image map" (when navigated using
-                the <code>tab</code> key.</p>
+              <p>"Image", <em>alt content</em>, "graphic", "link", "area", <em>alt content</em></p>
             </td>
             <td>
               <ul>
-                <li>List Links <kbd>Narrator+S twice (Popular links &amp; page summary)</kbd></li>
-                <li>Next Link <code><kbd>TAB</kbd></code></li>
-                <li>Prior Link <kbd>SHIFT+TAB</kbd></li>
-                <li>Next Visited <kbd>Link V</kbd></li>
-                <li>Prior Visited Link <kbd>SHIFT+V</kbd></li>
-                <li>Open Link <kbd>ENTER</kbd></li>
-                <li>Open Link in New Window <kbd>SHIFT+ENTER</kbd></li>
-                <li>Next Non Link Text <kbd>N</kbd></li>
-                <li>Prior Non Link Text <kbd>SHIFT+N</kbd></li>
+                <li>List all and search Links: <kbd>Narrator+ F7</kbd></li>
+                <li>Next Link: <kbd>K</kbd></li>
+                <li>Previous Link: <kbd>SHIFT+K</kbd></li>
+                <li>Open Link: <kbd>ENTER</kbd></li>
+                <li>Popular links &amp; page summary: <kbd>Narrator+SS</kbd></li>
               </ul>
             </td>
-            <td><svg aria-label="yes" class="yes" role="img" viewbox="0 0 448 512" width="20">
-                <use href="#yes"></use>
-              </svg>
-              <br />bb
+            <td>
+              <svg aria-label="yes" class="yes" role="img" viewbox="0 0 448 512" width="20">
+              <use href="#yes"></use></svg>
+              <br />
             </td>
-            <td>Although area elements are links they are not conveyed
-              as links aurally.</td>
+            <td>
+              <ul>
+                <li>
+                  Navigate through <code>area</code> elements using <code>Narrator + Arrow</code> or <code>Tab</code> keys. 
+                </li>
+                <li>
+                  In Firefox, link semantics are only announced when browsing interactive elements (i.e. using <code>Tab</code>) and not when using <code>Narrator + Arrow</code> keys
+                </li>
+              </ul>
+            </td>
           </tr>
           <tr>
             <th scope="row"> <a href="https://www.w3.org/TR/wai-aria-1.3/#aria-level"><code>aria-level</code></a> </th>
-            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/h7-h10.html">h7-h10
-                (role="heading"+aria-level=7-10)</a></td>
-            <td>heading levels greater than 6 </td>
-            <td>not supported, all <code>aria-level</code> reported as <code>h2</code><br /></td>
             <td>
+              <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/h7-h10.html">h7-h10 test</a> <br><br>(i.e.<code>role="heading"</code> and <code>aria-level="{7-10}"</code>)
+            </td>
+            <td>Heading levels greater than 6 </td>
+            <td>"Heading", <em>level number</em></td>
+            <td>
+              No special commands for <code>aria-level</code> specifically.
               <ul>
+                <li>Next heading (in scan mode) <code>H</code></li>
+                <li>Previous heading (in scan mode) <code>Shift+H</code></li>
+                <li>List all headings (levels not exposed) <code>Narrator+F6</code></li>
               </ul>
             </td>
-            <td><svg aria-label="no" class="no" role="img" viewbox="0 0 512 512" width="20">
+            <td>
+              <svg aria-label="yes" class="yes" role="img" viewbox="0 0 448 512" width="20">
+                <use href="#yes"></use>
+              </svg> For levels 1-9
+              <br>
+              <svg aria-label="no" class="no" role="img" viewbox="0 0 512 512" width="20">
                 <use href="#no"></use>
-              </svg>
+              </svg> For levels 10 or above
+              <br />
+              <svg aria-label="no" class="no" role="img" viewbox="0 0 512 512" width="20">
+                <use href="#no"></use>
+              </svg> In Firefox (all levels)
               <br />
             </td>
-            <td>Issue filed: <a href="https://github.com/FreedomScientific/standards-support/issues/814">Windows
-                Narrator
-
-
-                does not support aria-level on h1-h6</a></td>
+            <td>Related issues filed for JAWS:
+              <ul>
+                <li>
+                  <a href="https://github.com/FreedomScientific/standards-support/issues/814">JAWS does not support aria-level on h1-h6</a>
+                </li>
+                <li>
+                  <a href="https://github.com/FreedomScientific/standards-support/issues/301">Aria-level>6 is not output correctly for headings</a>
+                </li>
+              </ul> 
+            </td>
           </tr>
           <tr>
             <th scope="row"> <a
                 href="https://html.spec.whatwg.org/multipage/sections.html#the-article-element"><code>article</code></a>
             </th>
-            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/article.html"><code>article</code>
-                test</a></td>
+            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/article.html"><code>article</code> test</a></td>
             <td>Self-contained syndicatable or reusable composition</td>
-            <td>"article" <em>element content</em> "article end"</td>
             <td>
               <ul>
-                <li>Move to Next Article <kbd>O</kbd> <br />
+                <li>
+                  <strong>With accessible name:</strong> "Article", <em>accessible name</em>, <em>element content</em>
                 </li>
-                <li>Move to Previous Article <kbd>SHIFT+O</kbd> <br />
-                </li>
-                <li>Article List <kbd>INSERT+CTRL+O</kbd> <br />
+                <li>
+                  <strong>Without accessible name:</strong> <em>Element content</em>
                 </li>
               </ul>
             </td>
-            <td><svg aria-label="yes" class="yes" role="img" viewbox="0 0 448 512" width="20">
+            <td>
+              No special commands
+            </td>
+            <td>
+              <svg aria-label="yes" class="yes" role="img" viewbox="0 0 448 512" width="20">
                 <use href="#yes"></use>
-              </svg>
+              </svg> with accessible name
               <br />
             </td>
-            <td>Included as a navigable region &lt; Windows Narrator 2018</td>
+            <td>
+              You cannot focus on articles themselves, only content within them, as expected. Articles are ignored unless an accessible name is present.
+              <br><br>
+              <ul>
+                <li>
+                  Accessible names on <code>article</code> elements can be provided via <code>aria-label</code>, <code>aria-labelledby</code> or <code>title</code> attributes.
+                </li>
+                <li>
+                  All browsers except Firefox announce the <code>title</code> attribute content twice. 
+                </li>
+                <li>
+                  Windows Narrator offers no way to navigate between or list all articles like other screen readers
+                </li>
+                <li>
+                  Descriptions via <code>aria-describedby</code> are <strong>ignored</strong>.
+                </li>
+              </ul>
+            </td>
           </tr>
           <tr id="jaws-el-aside" tabindex="-1">
             <th scope="row"> <a
@@ -524,41 +597,61 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
             </th>
             <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/aside.html"><code>aside</code>
                 test</a></td>
-            <td>Sidebar for tangentially related content</td>
-            <td>"Complimentary information" <em>element content</em> "complimentary information end" </td>
+            <td>Landmark for tangentially related content</td>
+            <td>"Complimentary", <em>accessible name</em> (when present), <em>element content</em></td>
             <td>
-              <ul>
-                <li>Move to Next Region  <kbd>R</kbd> <br />
-                </li>
-                <li>Move to Previous Region <kbd>SHIFT+R</kbd> <br />
-                </li>
-                <li>Select a Region <kbd>INSERT+CTRL+R</kbd> <br />
-                </li>
-              </ul>
+              No special commands
             </td>
             <td><svg aria-label="yes" class="yes" role="img" viewbox="0 0 448 512" width="20">
                 <use href="#yes"></use>
               </svg>
               <br />
             </td>
-            <td>Included as a navigable region</td>
+            <td>
+              <ul>
+                <li>
+                  Can receive screen reader focus
+                </li>
+                <li>
+                  Announced as "complementary" whether or not an accessible name is provided, as expected for landmarks
+                </li>
+                <li>
+                  Descriptions via <code>aria-describedby</code> are <strong>ignored</strong>.
+                </li>
+              </ul>
+            </td>
           </tr>
           <tr>
             <th scope="row"> <a
                 href="https://html.spec.whatwg.org/multipage/media.html#the-audio-element"><code>audio</code></a> </th>
-            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/audio.html"><code>audio</code>
-                test</a></td>
+            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/audio.html"><code>audio</code> test</a></td>
             <td>Audio player</td>
-            <td>"audio" "group+<em>accessible name</em>" announces
-              controls as navigated.</td>
-            <td> If the audio element has a <code>controls</code> attribute the buttons in the UI are navigable using <a
-                href="#button-commands">button</a> commands. </td>
+            <td>
+              <ul>
+                <li>
+                  <strong>With accessible name:</strong> "Audio", <em>accessible name</em> (announces controls as navigated).
+                </li>
+                <li>
+                  <strong>Without accessible name:</strong> "Audio" (announces controls as navigated).
+                </li>
+              </ul> 
+            </td>
+            <td>The <code>audio</code> element is focusable with <code>Tab</code> by default.<br><br> If the audio element has a <code>controls</code> attribute the buttons in the UI are navigable using <a href="#button-commands">button</a> commands. </td>
             <td><svg aria-label="yes" class="yes" role="img" viewbox="0 0 448 512" width="20">
                 <use href="#yes"></use>
               </svg>
               <br />
             </td>
-            <td>Controls in the audio player are accessible.</td>
+            <td>Controls in the audio player are accessible.
+              <ul>
+                <li>
+                  <strong>Firefox</strong> announces audio elements with a "Group" role.
+                </li>
+                <li>
+                  Descriptions (i.e. <code>aria-describedby</code>) are only announced if the "Read advanced details" checkbox is checked within Narrator settings.
+                </li>
+              </ul>
+            </td>
           </tr>
           <tr id="toc-b">
             <th scope="row"> <a
@@ -582,10 +675,7 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
                 href="https://html.spec.whatwg.org/multipage/semantics.htmlthe-base-element"><code>base</code></a> </th>
             <td> No test </td>
             <td> Base URL and default target <a
-                href="https://html.spec.whatwg.org/multipage/document-sequences.html#browsing-context">browsing
-
-
-                context</a> for <a data-anolis-xref="attr-hyperlink-target"
+                href="https://html.spec.whatwg.org/multipage/document-sequences.html#browsing-context">browsing context</a> for <a data-anolis-xref="attr-hyperlink-target"
                 href="https://html.spec.whatwg.org/multipage/links.html#hyperlink">hyperlinks</a> and <a
                 data-anolis-xref="attr-fs-target"
                 href="https://html.spec.whatwg.org/multipage/form-elements.html#forms-form-submission">forms</a></td>
@@ -638,19 +728,30 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
                 href="https://stevefaulkner.github.io/AT-browser-tests/test-files/blockquote-cite.html"><code>blockquote</code>
                 test</a></td>
             <td>A section quoted from another source</td>
-            <td>"Blockquote" <em>element content</em> "blockquote end"</td>
             <td>
               <ul>
-                <li>List Block quotes <kbd>CTRL+INSERT+Q</kbd></li>
+                <li>
+                  <strong>With accessible name:</strong> "Blockquote" <em>element content</em>
+                </li>
+                <li>
+                  <strong>Without accessible name:</strong> <em>Element content</em>
+                </li>
               </ul>
+            </td>
+            <td>
+              No special commands
             </td>
             <td><svg aria-label="yes" class="yes" role="img" viewbox="0 0 448 512" width="20">
                 <use href="#yes"></use>
               </svg>
               <br />
             </td>
-            <td>Semantics conveyed via navigation and element name
-              announcement.</td>
+            <td>
+              Semantics conveyed only when <code>blockquote</code> has an accessible name.
+              <br>
+              <br>
+              <code>cite</code> content is not announced (as expected)
+            </td>
           </tr>
           <tr>
             <th scope="row"> <a
@@ -666,8 +767,7 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
               <br />
             </td>
             <td>
-              <p>No semantics conveyed</p>
-              <p>Is included in focus order in most browsers.</p>
+              <p>No semantics conveyed or expected</p>
             </td>
           </tr>
           <tr>
@@ -677,14 +777,16 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
             <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/br.html"><code>br</code> test</a>
             </td>
             <td>Line break, e.g. in poem or postal address</td>
-            <td> </td>
+            <td>"Space"</em></td>
             <td>No special commands</td>
             <td><svg aria-label="none expected" class="noneE" role="img" viewbox="0 0 448 512" width="20">
                 <use href="#noneE"></use>
               </svg>
               <br />
             </td>
-            <td><em>Line break</em></td>
+            <td>
+              <strong>Firefox</strong> ignores line breaks (no announcement)
+            </td>
           </tr>
           <tr>
             <th scope="row"> <a
