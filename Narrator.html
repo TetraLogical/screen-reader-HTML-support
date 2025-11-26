@@ -399,7 +399,7 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
               <p>
                 <svg aria-label="no" class="no" role="img" viewbox="0 0 512 512" width="20">
                   <use href="#no"></use>
-                </svg> in Firefox with the <code>title</code> attribute
+                </svg> In Firefox with the <code>title</code> attribute
               </p>
             </td>
             <td>
@@ -444,7 +444,7 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
               <p>
                 <svg aria-label="no" class="no" role="img" viewbox="0 0 512 512" width="20">
                   <use href="#no"></use>
-                </svg> by default
+                </svg> By default
               </p>
               <br>
               <p>
@@ -456,7 +456,7 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
               <p>
                 <svg aria-label="no" class="no" role="img" viewbox="0 0 512 512" width="20">
                   <use href="#no"></use>
-                </svg> in Firefox
+                </svg> In Firefox
               </p>
             </td>
             <td>
@@ -569,11 +569,11 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
             <td>
               <svg aria-label="yes" class="yes" role="img" viewbox="0 0 448 512" width="20">
                 <use href="#yes"></use>
-              </svg> with accessible name
+              </svg> With accessible name
               <br />
             </td>
             <td>
-              You cannot focus on articles themselves, only content within them, as expected. Articles are ignored unless an accessible name is present.
+              You cannot focus on articles themselves, only content within them, as expected. Article semantics are <strong>only</strong> exposed when an accessible name is present.
               <br><br>
               <ul>
                 <li>
@@ -729,28 +729,21 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
                 test</a></td>
             <td>A section quoted from another source</td>
             <td>
-              <ul>
-                <li>
-                  <strong>With accessible name:</strong> "Blockquote" <em>element content</em>
-                </li>
-                <li>
-                  <strong>Without accessible name:</strong> <em>Element content</em>
-                </li>
-              </ul>
+              <em>element content</em>
             </td>
             <td>
               No special commands
             </td>
-            <td><svg aria-label="yes" class="yes" role="img" viewbox="0 0 448 512" width="20">
-                <use href="#yes"></use>
+            <td><svg aria-label="no" class="no" role="img" viewbox="0 0 512 512" width="20">
+                <use href="#no"></use>
               </svg>
               <br />
             </td>
             <td>
-              Semantics conveyed only when <code>blockquote</code> has an accessible name.
+              The <code>blockquote</code> role is not exposed. When an accessible name is present, this is announced before the quote contents.
               <br>
               <br>
-              <code>cite</code> content is not announced (as expected)
+              <code>cite</code> attribute content is not announced (as expected)
             </td>
           </tr>
           <tr>
@@ -795,22 +788,48 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
             <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/button.html"><code>button</code>
                 test</a></td>
             <td>Button control</td>
-            <td><em>text label</em> "button"</td>
             <td>
+              <em>Accessible name</em>, "button"
+              <br/><br/>
+              <strong>With state:</strong>
+              <em>Accessible name</em>, "button", <em>state</em> <br/>(If <code>aria-disabled</code> or <code>aria-expanded</code> present)
+              <br/><br/>
+              <strong>Toggle button:</strong>
+              <em>Accessible name</em>, "toggle button", <em>On/Off</em> <br/>(If <code>aria-pressed</code> present)
+            </td>
+            <td>
+              <p><strong>In "scan" mode:</strong></p>
               <ul id="button-commands" tabindex="-1">
-                <li>List Buttons <kbd>CTRL+INSERT+B</kbd></li>
                 <li>Next Button <kbd>B</kbd></li>
-                <li>Previous button <kbd>B</kbd></li>
+                <li>Previous button <kbd>Shift + B</kbd></li>
               </ul>
             </td>
-            <td><svg aria-label="yes" class="yes" role="img" viewbox="0 0 448 512" width="20">
+            <td>
+              <svg aria-label="yes" class="yes" role="img" viewbox="0 0 448 512" width="20">
                 <use href="#yes"></use>
-              </svg>
-              <br />
+              </svg> For buttons, expando buttons and toggle buttons
+              <br /><br />
+              <svg aria-label="no" class="no" role="img" viewbox="0 0 512 512" width="20">
+                <use href="#no"></use>
+              </svg> For popup buttons
             </td>
-            <td>Semantics conveyed via navigation and element name. Announced as "toggle button" label and state
-              (pressed/unpressed) when button has <code>aria-pressed</code>.
-              announcement</td>
+            <td>
+              <p>Semantics always conveyed, whether or not accessible name is present (via content or <code>aria-label</code>).</p>
+              <ul>
+                <li>
+                  <strong>Supported attributes</strong>: <code>aria-disabled</code>, <code>aria-expanded</code>, <code>aria-pressed</code>
+                </li>
+                <li>
+                  <strong>Unsupported attributes</strong>: <code>aria-haspopup</code>
+                </li>
+                <li>
+                  There are duplicate announcements in <strong>Firefox</strong> when <code>aria-label</code> is used and browsing button-by-button in "scan" mode.
+                </li>
+                <li>
+                  <strong>Firefox</strong> announces "on/off" state with a "button" role (not "toggle button") when <code>aria-pressed</code> is used.
+                </li>
+              </ul>
+            </td>
           </tr>
           <tr id="toc-c">
             <th scope="row"> <a
@@ -819,17 +838,19 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
             <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/canvas.html"><code>canvas</code>
                 test</a></td>
             <td>Scriptable bitmap canvas</td>
-            <td><em>"graphic" element content</em></td>
+            <td>"Image" <em>element content</em></td>
             <td>No special commands</td>
             <td><svg aria-label="yes" class="yes" role="img" viewbox="0 0 448 512" width="20">
                 <use href="#yes"></use>
               </svg>
               <br />
             </td>
-            <td> The canvas is 'transparent' for screen reader users.
+            <td> 
+              The canvas is 'transparent' for screen reader users.
               HTML content included in the <a href="https://www.tpgi.com/html5-canvas-sub-dom/">HTML5
                 canvas sub DOM</a> is announced and navigable by screen
-              reader users and is navigable by keyboard users. <b>Note:</b> advised to add
+              reader users and is navigable by keyboard users.<br/><br/>
+              <b>Note:</b> advised to add
               <code>role=presentation</code> to <code>&lt;canvas&gt;</code> to avoid unecssary repetition of graphic
               role information.
             </td>
@@ -842,16 +863,19 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
                 href="https://stevefaulkner.github.io/AT-browser-tests/test-files/table-caption-thead-tbody-tfoot-tr-th-td.html"><code>caption</code>
                 test</a></td>
             <td>Table caption</td>
-            <td><em>Element content</em></td>
-            <td>No special commands</td>
+            <td><em>Element content</em>, "table", "[# rows] by [# columns]"</td>
+            <td>
+              Next table <kbd>T</kbd><br /><br />
+              Previous table <kbd>Shift + T</kbd>
+            </td>
             <td><svg aria-label="yes" class="yes" role="img" viewbox="0 0 448 512" width="20">
                 <use href="#yes"></use>
               </svg>
               <br />
             </td>
-            <td> Announced when a table is navigated to. Used as table
-              title in the table list (List Tables <kbd>CTRL+INSERT+T</kbd>)
-              dialog. </td>
+            <td>
+              Caption is announced when navigating to a table
+            </td>
           </tr>
           <tr>
             <th scope="row"> <a
@@ -949,18 +973,14 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
                 href="https://stevefaulkner.github.io/AT-browser-tests/test-files/datalist.html"><code>datalist</code>
                 test</a></td>
             <td> Container for options for <a data-anolis-xref="attr-input-list"
-                href="https://html.spec.whatwg.org/multipage/form-elements.html#the-list-attribute">combo
-
-
-                box control</a></td>
+                href="https://html.spec.whatwg.org/multipage/form-elements.html#the-list-attribute">combo box control</a></td>
             <td>
-              <p>"edit combo, to set the value use the arrow keys or type the value"</p>
+              <p><em>Label content</em>, "combo, edit, has popup, suggestion available."</p>
             </td>
             <td>
               <ul>
                 <li>Move To Next Combo Box <kbd>C</kbd></li>
-                <li>Move to Prior Combo Box <kbd>SHIFT+C </kbd></li>
-                <li>List of Combo boxes <kbd>CTRL+INSERT+C</kbd></li>
+                <li>Move to Prior Combo Box <kbd>SHIFT + C</kbd></li>
               </ul>
             </td>
             <td><svg aria-label="yes" class="yes" role="img" viewbox="0 0 448 512" width="20">
@@ -968,7 +988,10 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
               </svg>
               <br />
             </td>
-            <td> </td>
+            <td>
+              No <code>datalist</code> role announced (as expected), only options within it are announced on focus using <kbd>arrow</kbd> keys.<br/><br/>
+              <strong>Firefox</strong> announces "collapsed" whether or not suggestions are visible.
+            </td>
           </tr>
           <tr>
             <th scope="row"> <a
@@ -976,8 +999,8 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
             </th>
             <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dl-dt-dd.html"><code>dd</code>
                 test</a></td>
-            <td> Content for corresponding <a
-                href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dt-element">dt</a> element(s)
+            <td> Definition content for corresponding <a
+                href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dt-element">dt</a> (term) element
             </td>
             <td><em>Element content</em></td>
             <td>No special commands</td>
@@ -986,11 +1009,11 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
               </svg>
               <br />
             </td>
-            <td> Included as part of <code>dt</code> list item, user
-              must use <kbd>arrow down</kbd> for content to be
-              announced. If user navigates via list item navigation
-              (Next Item in a List <kbd>I</kbd>) from <code>dt</code> then <code>dd</code> content will not be
-              announced. </td>
+            <td> Included as part of <code>dt</code> list item. User
+              must use <kbd>ArrowDown</kbd> to announce definition content. If user navigates via list item navigation
+              (Next Item in a List <kbd>I</kbd>) from <code>dt</code> then <code>dd</code> content will not be announced. <br><br>
+              The "definition" role is not exposed unless the element has an accessible name (e.g. <code>aria-label</code>).
+            </td>
           </tr>
           <tr>
             <th scope="row"> <a
@@ -998,13 +1021,16 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
             <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/del-ins.html"><code>del</code>
                 test</a></td>
             <td>A removal from the document</td>
-            <td>voice change, deletion <em>Element content</em> end
-              deletion</td>
+            <td><em>Element content</em></td>
             <td>No special commands</td>
-            <td><svg aria-label="yes" class="yes" role="img" viewbox="0 0 448 512" width="20">
-                <use href="#yes"></use>
-              </svg></td>
-            <td>Refer to: <a href="https://www.tpgi.com/screen-readers-support-for-text-level-html-semantics/">Scree
+            <td>
+              <svg aria-label="no" class="no" role="img" viewbox="0 0 512 512" width="20">
+                <use href="#no"></use>
+              </svg>
+            </td>
+            <td>
+              There is no indication that text has been deleted. <br/><br/>
+              Refer to: <a href="https://www.tpgi.com/screen-readers-support-for-text-level-html-semantics/">Scree
                 Readers support for text level HTML semantics</a></td>
           </tr>
           <tr>
@@ -1015,8 +1041,9 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
                 href="https://stevefaulkner.github.io/AT-browser-tests/test-files/details-summary.html"><code>details</code>
                 test</a></td>
             <td>Disclosure widget container</td>
-            <td>When the details element has an accessible name it is
-              announced along with group start/end.</td>
+            <td>
+              None expected, unless accessible name is present:<br> <em>Accessible name</em>, "details" (followed by summary content)
+            </td>
             <td>No special commands</td>
             <td><svg aria-label="yes" class="yes" role="img" viewbox="0 0 448 512" width="20">
                 <use href="#yes"></use>
@@ -1037,9 +1064,10 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
               </svg>
               <br />
             </td>
-            <td>No semantics conveyed Refer to <a
-                href="https://github.com/FreedomScientific/standards-support/issues/821">Windows Narrator tracker Issue
-                821</a></td>
+            <td>No semantics conveyed<br><br>
+                Note intentional non-support in conclusion to <a
+                href="https://github.com/FreedomScientific/standards-support/issues/821">JAWS tracker Issue 821</a> due to perceived unnecessary additional verbosity.
+            </td>
           </tr>
           <tr>
             <th scope="row"> <a
