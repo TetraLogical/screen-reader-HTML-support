@@ -237,18 +237,16 @@
 
       <details aria-labelledby="narrator-quick-commands-h" id="narrator-quick-commands">
         <summary id="narrator-quick-commands-h">Windows Narrator: quick commands</summary>
-        <p><strong>Narrator key</strong>: Caps Lock (or Insert) by default.</p>
+        <p><strong>Narrator key</strong>: <kbd>Caps Lock</kbd> (or <kbd>Insert</kbd>) by default.</p>
         <ul>
-          <li><strong>Start/stop Narrator</strong>: Windows+Ctrl+Enter</li>
-          <li><strong>Toggle Scan mode</strong>: Narrator+Space</li>
-          <li><strong>Links</strong>: K (next), Shift+K (previous), Narrator+F7 (list all); <em>Popular links &amp; page summary</em>: Narrator+S twice</li>
-          <li><strong>Headings</strong>: H (next), Shift+H (previous); <em>Headings list</em>: Narrator+F6</li>
-          <li><strong>Landmarks/regions</strong>: <em>Landmarks list</em>: Narrator+F5</li>
-          <li><strong>Forms</strong>: E (next edit), Shift+E (previous). Press Space to turn Scan mode off when you need
-            to type; Tab to move between form fields</li>
-          <li><strong>Lists &amp; tables</strong>: I / Shift+I (next/previous list item); comma/period to jump to
-            start/end of long lists or tables</li>
-          <li><strong>Images/graphics</strong>: G / Shift+G to move between images</li>
+          <li><strong>Start/stop Narrator</strong>: <kbd>Windows + Ctrl + Enter</kbd></li>
+          <li><strong>Toggle Scan mode</strong>: <kbd>Narrator +   Space</kbd> <br>Scan mode must be turned <strong>on</strong> to use other keyboard shortcuts.</li>
+          <li><strong>Links</strong>: <kbd>K</kbd> (next), <kbd>Shift + K</kbd> (previous), <kbd>Narrator + F7</kbd> (list all); <em>Popular links &amp; page summary</em>: <kbd>Narrator + S</kbd> twice</li>
+          <li><strong>Headings</strong>: <kbd>H</kbd> (next), <kbd>Shift + H</kbd> (previous); <em>Headings list</em>: <kbd>Narrator + F6</kbd></li>
+          <li><strong>Landmarks/regions</strong>: <em>Landmarks list</em>: <kbd>Narrator + F5</kbd></li>
+          <li><strong>Forms</strong>: <kbd>E</kbd> (next edit), <kbd>Shift + E</kbd> (previous). Press <kbd>Space</kbd> to turn Scan mode off when you need to type; <kbd>Tab</kbd> to move between form fields</li>
+          <li><strong>Lists &amp; tables</strong>: <kbd>I</kbd> / <kbd>Shift + I</kbd> (next/previous list item); <kbd>,</kbd>/<kbd>.</kbd> to jump to start/end of long lists or tables</li>
+          <li><strong>Images/graphics</strong>: <kbd>G</kbd> / <kbd>Shift + G</kbd> to move between images</li>
         </ul>
       </details>
 
@@ -324,11 +322,11 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
             </td>
             <td>
               <ul>
-                <li>List all and search Links: <kbd>Narrator+ F7</kbd></li>
+                <li>List all and search Links: <kbd>Narrator + F7</kbd></li>
                 <li>Next Link: <kbd>K</kbd></li>
-                <li>Previous Link: <kbd>SHIFT+K</kbd></li>
+                <li>Previous Link: <kbd>SHIFT + K</kbd></li>
                 <li>Open Link: <kbd>ENTER</kbd></li>
-                <li>Popular links &amp; page summary: <kbd>Narrator+SS</kbd></li>
+                <li>Popular links and page summary: <kbd>Narrator + SS</kbd></li>
               </ul>
             </td>
             <td>
@@ -351,11 +349,11 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
             </td>
           </tr>
           <tr>
-            <th scope="row"><a
-                href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element"><code>a</code></a> 
-              without href</th>
-            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/a-no-href.html"><code>a</code> without
-                <code>href</code> test</a></td>
+            <th scope="row">
+              <a
+                href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element"><code>a</code></a> without href
+            </th>
+            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/a-no-href.html"><code>a</code> without <code>href</code> test</a></td>
             <td>An anchor</td>
             <td><em>Element content</em></td>
             <td>No special commands</td>
@@ -513,38 +511,59 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
               <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/h7-h10.html">h7-h10 test</a> <br><br>(i.e.<code>role="heading"</code> and <code>aria-level="{7-10}"</code>)
             </td>
             <td>Heading levels greater than 6 </td>
-            <td>"Heading", <em>level number</em></td>
             <td>
-              No special commands for <code>aria-level</code> specifically.
+              "Heading level&nbsp;[#]", <em>element content</em> at level&nbsp;#<br/><br/>
+              <strong>Firefox only</strong>: "Heading level [element level e.g. <code>&lt;h2&gt;</code>]" <em>Element content</em>, "at level&nbsp;[#]"
+            </td>
+            <td>
+              <p>No special commands for <code>aria-level</code>. General heading commands:</p>
               <ul>
-                <li>Next heading (in scan mode) <code>H</code></li>
-                <li>Previous heading (in scan mode) <code>Shift+H</code></li>
-                <li>List all headings (levels not exposed) <code>Narrator+F6</code></li>
+                <li>Next heading <code>H</code></li>
+                <li>Previous heading <code>Shift + H</code></li>
+                <li>List all headings (levels not exposed) <code>Narrator + F6</code></li>
               </ul>
             </td>
             <td>
               <svg aria-label="yes" class="yes" role="img" viewbox="0 0 448 512" width="20">
                 <use href="#yes"></use>
-              </svg> For levels 1-9
-              <br>
+              </svg> For levels 1-9 (Chrome and Edge)
+              <br /><br />
               <svg aria-label="no" class="no" role="img" viewbox="0 0 512 512" width="20">
                 <use href="#no"></use>
-              </svg> For levels 10 or above
-              <br />
+              </svg> For levels 10 or above (Chrome and Edge)
+              <br /><br />
               <svg aria-label="no" class="no" role="img" viewbox="0 0 512 512" width="20">
                 <use href="#no"></use>
-              </svg> In Firefox (all levels)
-              <br />
+              </svg> In Firefox
             </td>
-            <td>Related issues filed for JAWS:
+            <td>
+              In Chrome and Edge:
               <ul>
                 <li>
-                  <a href="https://github.com/FreedomScientific/standards-support/issues/814">JAWS does not support aria-level on h1-h6</a>
+                  Levels 1-9 are announced as expected.
                 </li>
                 <li>
-                  <a href="https://github.com/FreedomScientific/standards-support/issues/301">Aria-level>6 is not output correctly for headings</a>
+                  Levels 10 and above are announced as "heading" with the element heading level if a heading element is used. For example: <code>&lt;h4 aria-level="10"&gt;</code> is announced as "heading level 4".
                 </li>
-              </ul> 
+                <li>
+                  Levels 10 and above are announced as "heading level 2" if a non-heading element with a "heading" role is used. For example: <code>&lt;div role="heading" aria-level="10"&gt;</code> is announced as "heading level 2".
+                </li>
+              </ul><br/>
+              In Firefox:
+              <ul>
+                <li>
+                  Element levels are annouced in addition to <code>aria-level</code>.
+                </li>
+                <li>
+                  <code>aria-level</code> values of 10 and above are announced.
+                </li>
+                <li>
+                  All non-heading elements with a "heading" role are announced as "level 2".
+                </li>
+                <li>
+                  Labels provided using <code>aria-label</code> are <strong>ignored</strong>, and <code>aria-level</code> is not announced when <code>aria-label</code> is used.
+                </li>
+              </ul>
             </td>
           </tr>
           <tr>
@@ -729,7 +748,10 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
                 test</a></td>
             <td>A section quoted from another source</td>
             <td>
-              <em>element content</em>
+              <strong>With accessible name</strong>:<br/>
+              <em>Accessible name</em>, <em>element content</em><br /><br />
+              <strong>Without accessible name</strong>:<br/>
+              <em>Element content</em>
             </td>
             <td>
               No special commands
@@ -740,10 +762,8 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
               <br />
             </td>
             <td>
-              The <code>blockquote</code> role is not exposed. When an accessible name is present, this is announced before the quote contents.
-              <br>
-              <br>
-              <code>cite</code> attribute content is not announced (as expected)
+              The <code>blockquote</code> role is not announced.<br /><br />
+              The <code>cite</code> attribute content is not announced (as expected)
             </td>
           </tr>
           <tr>
@@ -798,16 +818,15 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
               <em>Accessible name</em>, "toggle button", <em>On/Off</em> <br/>(If <code>aria-pressed</code> present)
             </td>
             <td>
-              <p><strong>In "scan" mode:</strong></p>
               <ul id="button-commands" tabindex="-1">
-                <li>Next Button <kbd>B</kbd></li>
-                <li>Previous button <kbd>Shift + B</kbd></li>
+                <li>Next button <kbd>B</kbd></li>
+                <li>Previous button <kbd>SHIFT + B</kbd></li>
               </ul>
             </td>
             <td>
               <svg aria-label="yes" class="yes" role="img" viewbox="0 0 448 512" width="20">
                 <use href="#yes"></use>
-              </svg> For buttons, expando buttons and toggle buttons
+              </svg> For buttons, disclosure buttons and toggle buttons
               <br /><br />
               <svg aria-label="no" class="no" role="img" viewbox="0 0 512 512" width="20">
                 <use href="#no"></use>
@@ -823,7 +842,7 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
                   <strong>Unsupported attributes</strong>: <code>aria-haspopup</code>
                 </li>
                 <li>
-                  There are duplicate announcements in <strong>Firefox</strong> when <code>aria-label</code> is used and browsing button-by-button in "scan" mode.
+                  There are duplicate announcements in <strong>Firefox</strong> when <code>aria-label</code> is used and navigating button-by-button.
                 </li>
                 <li>
                   <strong>Firefox</strong> announces "on/off" state with a "button" role (not "toggle button") when <code>aria-pressed</code> is used.
@@ -846,13 +865,13 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
               <br />
             </td>
             <td> 
-              The canvas is 'transparent' for screen reader users.
+              <p>The canvas is 'transparent' for screen reader users.
               HTML content included in the <a href="https://www.tpgi.com/html5-canvas-sub-dom/">HTML5
                 canvas sub DOM</a> is announced and navigable by screen
-              reader users and is navigable by keyboard users.<br/><br/>
-              <b>Note:</b> advised to add
+              reader users and is navigable by keyboard users.</p><br/>
+              <p><b>Note:</b> advised to add
               <code>role=presentation</code> to <code>&lt;canvas&gt;</code> to avoid unecssary repetition of graphic
-              role information.
+              role information.</p>
             </td>
           </tr>
           <tr>
@@ -911,8 +930,7 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
               <br />
             </td>
             <td>
-              <p>No semantics conveyed or expected as <code>&lt;code&gt;</code> currently has a
-                <code>role="generic"</code>
+              <p>No semantics conveyed or expected as <code>&lt;code&gt;</code> currently has a <code>role="generic"</code>
               </p>
             </td>
           </tr>
@@ -989,8 +1007,8 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
               <br />
             </td>
             <td>
-              No <code>datalist</code> role announced (as expected), only options within it are announced on focus using <kbd>arrow</kbd> keys.<br/><br/>
-              <strong>Firefox</strong> announces "collapsed" whether or not suggestions are visible.
+              <p>No <code>datalist</code> role announced (as expected), only options within it are announced on focus using <kbd>arrow</kbd> keys.</p><br/>
+              <p><strong>Firefox</strong> announces "collapsed" whether or not suggestions are visible.</p>
             </td>
           </tr>
           <tr>
@@ -1009,10 +1027,12 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
               </svg>
               <br />
             </td>
-            <td> Included as part of <code>dt</code> list item. User
-              must use <kbd>ArrowDown</kbd> to announce definition content. If user navigates via list item navigation
-              (Next Item in a List <kbd>I</kbd>) from <code>dt</code> then <code>dd</code> content will not be announced. <br><br>
-              The "definition" role is not exposed unless the element has an accessible name (e.g. <code>aria-label</code>).
+            <td>
+              <p>Included as part of <code>&lt;dt&gt;</code> list item. User
+              must use <kbd>ArrowDown</kbd> to announce definition content.</p><br/>
+              <p>If user navigates via list item navigation
+              (For example, pressing <kbd>I</kbd> to go to the next item in a list) then <code>&lt;dd&gt;</code> content will be skipped.</p><br/>
+              <p>The "definition" role is not exposed unless the element has an accessible name (e.g. <code>aria-label</code>).</p>
             </td>
           </tr>
           <tr>
@@ -1074,19 +1094,25 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
                 href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-dialog-element"><code>dialog</code></a>
             </th>
             <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dialog.html">dialog test</a></td>
-            <td>The dialog element represents a transitory part of an application, in the form of a small window
-              ("dialog box")</td>
-            <td>dialog, accessible name if provided, accessible description if provided.</td>
-            <td>When the <code>dialog</code> opens focus is moved to first focusable element. <code>dialog</code> can be
-              closed with the <kbd>ESC</kbd> key. Upon closing focus moves back to the trigger control. While displayed
-              focus is contained within the <code>dialog</code>.</td>
+            <td>The dialog element represents a transitory part of an application, in the form of a small window ("dialog box")</td>
+            <td><em>Accessible name</em> (if present), "dialog", <em>First focusable element content and role</em></td>
+            <td>
+              <strong>Modal dialogs</strong>: <kbd>Esc</kbd> closes the dialog by default and returns focus to the triggering control<br/><br/>
+            </td>
             <td><svg aria-label="yes" class="yes" role="img" viewbox="0 0 448 512" width="20">
                 <use href="#yes"></use>
               </svg>
               <br />
             </td>
-            <td><b>Note:</b> Focus is contained within the <code>dialog</code>, but the browser address bar is included
-              within the focus order. This is a browser implemented behaviour.</td>
+            <td>
+              <ul>
+                <li>When the <code>dialog</code> opens, focus moves to first focusable element, if present, otherwise focus moves to the <code>dialog</code> element itself.</li>
+                <li>Focus is <strong>contained</strong> within modal <code>dialog</code> implementations, but the browser address bar is included within the focus order. This is browser implemented behaviour.</li>
+                <li>When the <code>dialog</code> closes, focus returns to the control that opened it.</li>
+                <li>If multiple modal dialogs are open, pressing the <kbd>Esc</kbd> only closes the last shown dialog. This is browser implemented behavior.</li>
+                <li>Non-modal dialogs do not close on <kbd>Esc</kbd> or "click outside" by default. Close behaviour can be managed via the <code>closedby</code> attribute. See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog">MDN: Dialog element</a> for more on close behaviours</li>
+              </ul>
+            </td>
           </tr>
           <tr>
             <th scope="row"> <a
@@ -1097,45 +1123,49 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
             <td>Generic flow container</td>
             <td><em>Element content</em></td>
             <td>
-              <ul>
-                <li>Move to Next Division <kbd>Z</kbd></li>
-                <li>Move to Prior Division <kbd>SHIFT+Z</kbd></li>
-                <li>List Divisions <kbd>CTRL+INSERT+Z</kbd></li>
-              </ul>
+              No special commands
             </td>
-            <td><svg aria-label="yes" class="yes" role="img" viewbox="0 0 448 512" width="20">
-                <use href="#yes"></use>
+            <td>
+              <svg aria-label="none expected" class="noneE" role="img" viewbox="0 0 448 512" width="20">
+                <use href="#noneE"></use>
               </svg>
-              <br />
             </td>
-            <td>No semantics conveyed</td>
+            <td>
+              No semantics conveyed (as expected).
+            </td>
           </tr>
           <tr>
             <th scope="row"> <a
                 href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dl-element"><code>dl</code></a>
             </th>
-            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dl-dt-dd.html"><code>dl</code>
-                test</a></td>
-            <td>Association list consisting of zero or more name-value
-              groups</td>
-            <td> </td>
+            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dl-dt-dd.html"><code>dl</code> test</a></td>
+            <td>Association list consisting of name-value groups</td>
+            <td>
+              <em>First</em> <code>&lt;dt&gt;</code> <em>element content</em>, "List of #"
+            </td>
             <td>
               <ul>
-                <li>List All Ordered, Unordered, and Definition Lists <kbd>CTRL+INSERT+L</kbd></li>
-                <li>Next List <kbd>L</kbd></li>
-                <li>Previous List <kbd>SHIFT+I</kbd></li>
-                <li> Next Item in a List <kbd>I</kbd></li>
-                <li>Previous item in a List <kbd>SHIFT+I</kbd></li>
+                <li>Next list <kbd>L</kbd></li>
+                <li>Previous list <kbd>SHIFT + L</kbd></li>
+                <li> Next item in a list <kbd>I</kbd></li>
+                <li>Previous item in a list <kbd>SHIFT + I</kbd></li>
               </ul>
             </td>
             <td><svg aria-label="yes" class="yes" role="img" viewbox="0 0 448 512" width="20">
                 <use href="#yes"></use>
-              </svg>
+              </svg> In Chrome and Edge<br />
               <br />
+              <svg aria-label="no" class="no" role="img" viewbox="0 0 512 512" width="20">
+                <use href="#no"></use> 
+              </svg> In Firefox
             </td>
-            <td> Refer to: <a
-                href="https://adrianroselli.com/2025/01/updated-brief-note-on-description-list-support.html#Windows Narrator">Adrian
-                Roselli: Updated Brief Note on Description List Support - Chrome 131 / Windows Narrator 2025.2412.50</a>
+            <td>
+              <p>
+                In Chrome and Edge, the <code>&lt;dl&gt;</code> is identified as a list and the number of <code>&lt;dt&gt;</code> items is announced.
+              </p><br/>
+              <p>
+                <strong>In Firefox</strong>, the <code>&lt;dl&gt;</code> is identified as a list with <strong>zero</strong> items. If a <code>&lt;dd&gt;</code> contains a link that is announced before its definition and other definitions are skipped. In continuous reading mode, all definitions are skipped.
+              </p>
             </td>
           </tr>
           <tr>
@@ -1151,15 +1181,25 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
             <td>
               <ul>
                 <li>Next Item in a List <kbd>I</kbd></li>
-                <li>Previous Item in a List <kbd>SHIFT+I</kbd></li>
+                <li>Previous Item in a List <kbd>SHIFT + I</kbd></li>
               </ul>
             </td>
-            <td><svg aria-label="yes" class="yes" role="img" viewbox="0 0 448 512" width="20">
+            <td>
+              <svg aria-label="yes" class="yes" role="img" viewbox="0 0 448 512" width="20">
                 <use href="#yes"></use>
-              </svg>
-              <br />
+              </svg> In Chrome and Edge<br /><br />
+              <svg aria-label="no" class="no" role="img" viewbox="0 0 512 512" width="20">
+                <use href="#no"></use>
+              </svg> In Firefox
             </td>
-            <td>Identified as a list item</td>
+            <td>
+              <p>In Chrome and Edge, the <code>&lt;dt&gt;</code> identified as a list item. The "definition" role is not exposed unless the element has an accessible name (e.g. <code>aria-label</code>).</p><br/>
+              <p>
+                <strong>In Firefox</strong>, definitions are not announced. If a
+                <code>&lt;dd&gt;</code> contains a link that is announced before its definition and other definitions are skipped. In
+                continuous reading mode, all definitions are skipped.
+              </p>
+            </td>
           </tr>
           <tr id="toc-e">
             <th scope="row"> <a
@@ -1174,8 +1214,7 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
                 <use href="#noneE"></use>
               </svg></td>
             <td>No semantics conveyed. Refer to: <a
-                href="https://www.tpgi.com/screen-readers-support-for-text-level-html-semantics/">Scree Readers support
-                for text level HTML semantics</a></td>
+                href="https://www.tpgi.com/screen-readers-support-for-text-level-html-semantics/">Scree Readers support for text level HTML semantics</a></td>
           </tr>
           <tr>
             <th scope="row"> <a
