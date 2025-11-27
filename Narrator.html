@@ -1230,7 +1230,7 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
               </svg>
               <br />
             </td>
-            <td> </td>
+            <td>Announcements will vary, depending on embedded content.</td>
           </tr>
           <tr id="toc-f">
             <th scope="row"> <a
@@ -1240,17 +1240,23 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
                 href="https://stevefaulkner.github.io/AT-browser-tests/test-files/fieldset-legend.html"><code>fieldset</code>
                 test</a></td>
             <td>Group of form controls</td>
-            <td>"Group start" legend content ... "Group end"</td>
-            <td>No special commands, fieldset presence and accessible
-              name announced when first control child is navigated to
-              using virtual keys navigation keys for the child control.</td>
+            <td>
+              <p><strong>Focusing on control inside</strong>: <em>Control label and role</em>, <em>legend content</em>, "Group"</p><br/>
+            </td>
+            <td>No special commands</td>
             <td><svg aria-label="yes" class="yes" role="img" viewbox="0 0 448 512" width="20">
                 <use href="#yes"></use>
               </svg>
               <br />
             </td>
-            <td>Only when <code>fieldset</code> has an accessible name
-              via <code>legend</code> or other method.</td>
+            <td>
+              <p>
+                Requires an accessible name via <code>&lt;legend&gt;</code>, <code>aria-label</code> or <code>aria-labelledby</code>. If no accessible name is provided, no group semantics are conveyed.
+              </p><br/>
+              <p>
+                Accessible name and "group" role is announced on initial focus inside the group (e.g. on focus of the first control child). The <code>&lt;fieldset&gt;</code> itself is not focusable.
+              </p>
+            </td>
           </tr>
           <tr>
             <th scope="row"> <a
@@ -1268,7 +1274,7 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
               </svg>
               <br />
             </td>
-            <td> </td>
+            <td></td>
           </tr>
           <tr>
             <th scope="row"> <a
