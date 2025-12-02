@@ -955,8 +955,8 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
             </td>
             <td>
               <ul>
-                <li>Move To Next Combo Box <kbd>C</kbd></li>
-                <li>Move to Prior Combo Box <kbd>SHIFT + C</kbd></li>
+                <li>Next Combo Box <kbd>C</kbd></li>
+                <li>Prior Combo Box <kbd>SHIFT + C</kbd></li>
               </ul>
             </td>
             <td>
@@ -1417,7 +1417,7 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
             </td>
             <td>
               <p>
-                "Verbosity Level 3 - All control details" (or higher) is required in Windows Narrator settings to hear the image role, "Graphic", announced. For verbosity level 2 and below, only the <code>alt</code> text is announced.
+                "Verbosity Level 3 - All control details" (or higher) is required in Windows Narrator settings to hear the image role, "Graphic", announced. For verbosity level 2 ("some control details") and lower, only the <code>alt</code> text is announced.
               </p><br/>
               <p>
                 If an <code>&lt;img&gt;</code> element is missing an alt attribute, Narrator will announce "To get missing image descriptions, open the context menu" in Edge and Chrome only.
@@ -1433,8 +1433,8 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
               <ul id="button-commands2" tabindex="-1">
                 <li>Next Button <kbd>B</kbd></li>
                 <li>Previous button <kbd>B</kbd></li>
-                <li>Move to Next Form element <kbd>F</kbd></li>
-                <li>Move to Prior Form element <kbd>SHIFT + F</kbd></li>
+                <li>Next form element <kbd>F</kbd></li>
+                <li>Prior form element <kbd>SHIFT + F</kbd></li>
               </ul>
             </td>
             <td>
@@ -1453,10 +1453,10 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
             <td><em>Label content</em>, "checkbox", <em>state</em> (when present)</td>
             <td>
               <ul>
-                <li>Move To Next Check Box <kbd>X </kbd></li>
-                <li>Move to Prior Check Box <kbd>SHIFT + X</kbd></li>
-                <li>Move to Next Form element <kbd>F</kbd></li>
-                <li>Move to Prior Form element <kbd>SHIFT + F</kbd></li>
+                <li>Next Check Box <kbd>X </kbd></li>
+                <li>Prior Check Box <kbd>SHIFT + X</kbd></li>
+                <li>Next form element <kbd>F</kbd></li>
+                <li>Prior form element <kbd>SHIFT + F</kbd></li>
               </ul>
             </td>
             <td>
@@ -1478,8 +1478,8 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
             <td><em>Label content / accessible name</em>, "Colour picker", [#]% red, [#]% green, [#]% blue</td>
             <td>
               <ul>
-                <li>Move to Next Form element <kbd>F</kbd></li>
-                <li>Move to Prior Form element <kbd>SHIFT + F</kbd></li>
+                <li>Next form element <kbd>F</kbd></li>
+                <li>Prior form element <kbd>SHIFT + F</kbd></li>
               </ul>
             </td>
             <td>
@@ -1499,15 +1499,32 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
           <tr>
             <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#date-state-typedate"><code>input [date]</code></a> </th>
             <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-date.html"><code>input [date]</code> test</a></td>
-            <td>date (day/month year) picker control</td>
-            <td> </td>
-            <td> </td>
+            <td>Date (day/month year) picker control</td>
+            <td>
+              <ul>
+                <li>
+                  <strong>Focused on the whole date input</strong>: <em>Accessible name/label</em>, "datepicker"
+                </li>
+                <li>
+                  <strong>Focused inside the date input</strong>: "Day", <em>Accessible name/label</em> (if present), "spin button", <em>value</em>
+                </li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li><kbd>SHIFT + E</kbd></li>
+                <li>Next form element <kbd>F</kbd></li>
+                <li>Prior form element <kbd>SHIFT + F</kbd></li>
+              </ul>
+            </td>
             <td>
               <svg aria-label="yes" class="yes" role="img" viewbox="0 0 448 512" width="20">
                 <use href="#yes"></use>
               </svg>
             </td>
-            <td> </td>
+            <td>
+              <p>The date input is a a composite of multiple spinners. It includes a button to open the browser's default datepicker dialog</p>
+            </td>
           </tr>
           <!--<tr>
 <th scope="row">
@@ -1522,21 +1539,18 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
 <td>&nbsp;</td>
 </tr>-->
           <tr>
-            <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#email-state-typeemail"><code>input
-    
-    
-    [email]</code></a> </th>
-            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-email.html"><code>input
-    
-    
-    [email]</code> test</a></td>
-            <td>text control for inputting email address</td>
-            <td> </td>
+            <th scope="row"><a href="https://html.spec.whatwg.org/multipage/form-elements.html#email-state-typeemail"><code>input [email]</code></a> </th>
+            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-email.html"><code>input [email]</code> test</a></td>
+            <td>Text control for inputting email address</td>
+            <td>
+              <em>Accessible name/label</em>, "Edit", <em>state</em> (if present)
+            </td>
             <td>
               <ul>
-                <li>List Edit Boxes <kbd>CTRL + Narrator + E</kbd></li>
-                <li>Move To Next Edit Box <kbd>E</kbd></li>
-                <li>Move to Prior Edit Box <kbd>SHIFT + E</kbd></li>
+                <li>Next edit control <kbd>E</kbd></li>
+                <li>Prior edit control <kbd>SHIFT + E</kbd></li>
+                <li>Next form element <kbd>F</kbd></li>
+                <li>Prior form element <kbd>SHIFT + F</kbd></li>
               </ul>
             </td>
             <td>
@@ -1544,31 +1558,31 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
                 <use href="#unknown"></use>
               </svg>
             </td>
-            <td>Announced as <em>edit</em> does not announce type of edit.
-              <br />
+            <td>
+              <p>Announced as <em>"Edit"</em>. Does not announce <em>type</em> of input.
+              </p>
             </td>
           </tr>
           <tr>
-            <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#file-upload-state-typefile"><code>input
-    
-    
-    [file]</code></a> </th>
-            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-file-upload.html"><code>input
-    
-    
-    [file]</code> test</a></td>
+            <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#file-upload-state-typefile"><code>input [file]</code></a> </th>
+            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-file-upload.html"><code>input [file]</code> test</a></td>
             <td>File chooser control</td>
-            <td> </td>
             <td>
               <ul>
-                <li>List Buttons <kbd>CTRL + Narrator + B</kbd></li>
-                <li>Next Button <kbd>B</kbd></li>
-                <li>Previous button <kbd>B</kbd></li>
+                <li>
+                  <strong>With accessible name</strong>: <em>Accessible name/label</em>, "no file chosen" (or file name), "button", "no file chosen" (or file name)
+                </li>
+                <li>
+                  <strong>Without accessible name</strong>: <em>Default button text</em> (e.g. "Choose file"), "no file chosen" (or file name), "button", "no file chosen" (or file name)
+                </li>
               </ul>
+            </td>
+            <td>
               <ul>
-                <li>List Edit Boxes <kbd>CTRL + Narrator + E</kbd></li>
-                <li>Move To Next Edit Box <kbd>E </kbd></li>
-                <li>Move to Prior Edit Box <kbd>SHIFT + E</kbd></li>
+                <li>Next button <kbd>B</kbd></li>
+                <li>Previous button <kbd>B</kbd></li>
+                <li>Next form element <kbd>F</kbd></li>
+                <li>Prior form element <kbd>SHIFT + F</kbd></li>
               </ul>
             </td>
             <td>
@@ -1576,16 +1590,20 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
                 <use href="#yes"></use>
               </svg>
             </td>
-            <td>As it's a composite control, it can be navigated to
-              using either button or edit commands.</td>
+            <td>
+              <p>
+                The <code>multiple</code> attribute is not announced, when present.
+              </p>
+              <p>
+                As this is a composite control, it can be navigated to
+                using either button or edit commands.
+              </p>
+            </td>
           </tr>
           <tr>
-            <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#hidden-state-typehidden"><code>input
-    
-    
-    [hidden]</code></a> </th>
-            <td> No test </td>
-            <td>hidden form control</td>
+            <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#hidden-state-typehidden"><code>input [hidden]</code></a> </th>
+            <td>No test</td>
+            <td>Hidden form control</td>
             <td>None expected</td>
             <td>No special commands</td>
             <td>
@@ -1596,21 +1614,18 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
             <td><strong>No UI</strong></td>
           </tr>
           <tr>
-            <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#image-button-state-typeimage"><code>input
-    
-    
-    [image]</code></a> </th>
-            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-image.html"><code>input
-    
-    
-    [image]</code> test</a></td>
+            <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#image-button-state-typeimage"><code>input [image]</code></a> </th>
+            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-image.html"><code>input [image]</code> test</a></td>
             <td>Button control</td>
-            <td> </td>
             <td>
+              <em>Accessible name/label</em>, "button", <em>state</em> (when present)
+            </td>
+            <td>sl
               <ul>
-                <li>List Buttons <kbd>CTRL + Narrator + B</kbd></li>
                 <li>Next Button <kbd>B</kbd></li>
                 <li>Previous button <kbd>B</kbd></li>
+                <li>Next form element <kbd>F</kbd></li>
+                <li>Prior form element <kbd>SHIFT + F</kbd></li>
               </ul>
             </td>
             <td>
@@ -1618,7 +1633,9 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
                 <use href="#yes"></use>
               </svg>
             </td>
-            <td> </td>
+            <td>
+              <p>Image inputs are "submit" buttons by default. Image inputs should be given an accessible name (e.g. via <code>alt</code> attribute). When present, this is announced instead of "Submit".</p>
+            </td>
           </tr>
           <!--<tr>
 <th scope="row">
@@ -1634,26 +1651,18 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
 <td>&nbsp;</td>
 </tr>-->
           <tr>
-            <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#number-state-typenumber"><code>input
-    
-    
-    [number]</code></a> </th>
-            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-number.html"><code>input
-    
-    
-    [number]</code> test</a></td>
+            <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#number-state-typenumber"><code>input [number]</code></a> </th>
+            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-number.html"><code>input [number]</code> test</a></td>
             <td>Spin box control</td>
             <td>
-              <p>"Edit, spin box" <em>label content</em></p>
-              <p> </p>
+              <em>Accessible name/label</em>, "spin button"
             </td>
             <td>
               <ul>
-                <li>List Edit Boxes <kbd>CTRL + Narrator + E</kbd></li>
-                <li>Move To Next Edit Box <kbd>E</kbd></li>
-                <li>Move to Prior Edit Box <kbd>SHIFT + E</kbd></li>
                 <li>Increase value <kbd>UP ARROW</kbd></li>
                 <li>Decrease value <kbd>DOWN ARROW</kbd></li>
+                <li>Next form element <kbd>F</kbd></li>
+                <li>Prior form element <kbd>SHIFT + F</kbd></li>
               </ul>
             </td>
             <td>
@@ -1662,32 +1671,21 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
               </svg>
             </td>
             <td>
-              <p><strong>Note:</strong> value in edit box announced as
-                changed increase/decreased using arrow keys.</p>
-              <p>spin buttons included in button commands.</p>
-              <ul>
-                <li>List Buttons <kbd>CTRL + Narrator + B</kbd></li>
-                <li>Next Button <kbd>B</kbd></li>
-                <li>Previous button <kbd>B</kbd></li>
-              </ul>
+              <p>The value is announced when changed via typing or using arrow keys to increase / decrease.</p><br/>
+              <p>If using form control navigation (scan mode), additional instructions of "Press space to edit" are announced on focus.</p>
             </td>
           </tr>
           <tr>
-            <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#password-state-typepassword"><code>input
-    
-    
-    [password]</code></a> </th>
-            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-password.html"><code>input
-    
-    
-    [password]</code> test</a></td>
+            <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#password-state-typepassword"><code>input [password]</code></a> </th>
+            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-password.html"><code>input [password]</code> test</a></td>
             <td>Text control for inputting a password</td>
-            <td><em>Label content</em> "password edit" </td>
+            <td><em>Accessible name/label</em>, "edit", <em>state</em> (if present)</td>
             <td>
               <ul>
-                <li>List Edit Boxes <kbd>CTRL + Narrator + E</kbd></li>
-                <li>Move To Next Edit Box <kbd>E </kbd></li>
-                <li>Move to Prior Edit Box <kbd>SHIFT + E</kbd></li>
+                <li>Next edit control <kbd>E </kbd></li>
+                <li>Prior edit control <kbd>SHIFT + E</kbd></li>
+                <li>Next form element <kbd>F</kbd></li>
+                <li>Prior form element <kbd>SHIFT + F</kbd></li>
               </ul>
             </td>
             <td>
@@ -1695,34 +1693,36 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
                 <use href="#yes"></use>
               </svg>
             </td>
-            <td><strong>Note:</strong> keyboard character input
-              announced as "star"</td>
+            <td>
+              <p><strong>Note:</strong> Keyboard character input is announced as "hidden".</p><br/>
+              <p> 
+                Placeholder text is only announced in Edge and Chrome when Narrator verbosity settings are set to level 3 ("All control details") or higher.
+              </p><br/>
+              <p>
+                If using form or edit control navigation (scan mode), additional instructions of "Press space to edit" are announced on focus.
+              </p>
+            </td>
           </tr>
           <tr>
-            <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#range-state-typerange"><code>input
-    
-    
-    [range]</code></a> </th>
-            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-range.html"><code>input
-    
-    
-    [range]</code> test</a></td>
+            <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#range-state-typerange"><code>input [range]</code></a> </th>
+            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-range.html"><code>input [range]</code> test</a></td>
             <td>slider control</td>
-            <td><em>Label content</em> "left, right slider to decrease
-              or increase use the arrow keys" <em>current value</em></td>
+            <td>
+              <p>
+                <em>Accessible name/label</em>, "slider at [#]"<br/>
+                &ndash;pause&ndash;<br/>
+                "Current value: <em>value</em>", "Minimum value: <em>min value</em>", "Maximum value: <em>max value</em>"
+              </p> 
+            </td>
             <td>
               <ul>
-                <li>List Edit Boxes <kbd>CTRL + Narrator + E</kbd></li>
-                <li>Move To Next Edit Box <kbd>E </kbd></li>
-                <li>Move to Prior Edit Box <kbd>SHIFT + E</kbd></li>
-              </ul>
+                <li>Next form element <kbd>F</kbd></li>
+                <li>Prior form element <kbd>SHIFT + F</kbd></li>
+              </ul><br/>
+              <p>When in edit mode (not scan mode):</p>
               <ul>
-                <li><kbd>RIGHT ARROW</kbd> and <kbd>UP ARROW</kbd> increase the value of the slider.</li>
-                <li><kbd>LEFT ARROW</kbd> and <kbd>DOWN ARROW</kbd> decrease the value of the slider.</li>
-                <li><kbd>HOME</kbd> and <kbd>END</kbd> move to the
-                  minimum and maximum values of the slider.</li>
-                <li><kbd>PAGE UP</kbd> and <kbd>PAGE DOWN</kbd> increment or decrement the slider by a given amount.
-                </li>
+                <li>Increase slider value <kbd>RIGHT ARROW</kbd> or <kbd>UP ARROW</kbd>.</li>
+                <li>Decrease slider value <kbd>LEFT ARROW</kbd> or <kbd>DOWN ARROW</kbd>.</li>
               </ul>
             </td>
             <td>
@@ -1731,35 +1731,29 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
               </svg>
             </td>
             <td>
-              <p><strong>Note:</strong> When slider has no accessible
-                name (label) or is disabled or readonly, it is
-                identified (incorrectly) as an edit box. - also depended
-                on how it is navigated to (arrow keys, tab key or
-                edit/form control navigation keys).</p>
-              <p>Slider value announced as it changes.</p>
+              <p>Slider value is announced as it changes.</p>
             </td>
           </tr>
           <tr>
-            <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#radio-button-state-typeradio"><code>input
-    
-    
-    [radio]</code></a> </th>
-            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-radio.html"><code>input
-    
-    
-    [radio]</code>, test</a></td>
+            <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#radio-button-state-typeradio"><code>input [radio]</code></a> </th>
+            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-radio.html"><code>input [radio]</code>, test</a></td>
             <td>single choice from a set of options</td>
-            <td>"radio button checked/not checked" <em>label content</em> "x of y" where x = position in radio group, y
-              = number of
-              radio buttons in group.</td>
+            <td>
+              <p>
+                <em>Label content</em>, "Radio button", selected/not selected", <em>state</em> (when present), <em>legend content / group accessible name</em>, "group" (when present)
+              </p>
+            </td>
             <td>
               <ul>
-                <li>List Radio Buttons  <kbd>CTRL + Narrator + A</kbd> <br />
-                </li>
-                <li>Move To Next Radio Button  <kbd>A</kbd> <br />
-                </li>
-                <li>Move to Prior Radio Button  <kbd>SHIFT + A</kbd> <br />
-                </li>
+                <li>Next radio <kbd>R</kbd></li>
+                <li>Prior radio <kbd>SHIFT + R</kbd></li>
+                <li>Next form element <kbd>F</kbd></li>
+                <li>Prior form element <kbd>SHIFT + F</kbd></li>
+              </ul><br/>
+              <p>When in edit mode (not scan mode):</p>
+              <ul>
+                <li>Focus and select next radio input <kbd>RIGHT ARROW</kbd> or <kbd>UP ARROW</kbd>.</li>
+                <li>Focus and select prior radio input <kbd>LEFT ARROW</kbd> or <kbd>DOWN ARROW</kbd>.</li>
               </ul>
             </td>
             <td>
@@ -1767,24 +1761,21 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
                 <use href="#yes"></use>
               </svg>
             </td>
-            <td> </td>
+            <td>
+              <p>Group name and role are announced when radios are wrapped in a <code>&lt;fieldset&gt;</code> element with <code>&lt;legend&gt;</code>, or a wrapper with <code>role="radiogroup"</code> and accessible name (e.g. <code>aria-label</code>).</p>
+            </td>
           </tr>
           <tr>
-            <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#reset-button-state-typereset"><code>input
-    
-    
-    [reset]</code></a> </th>
-            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-reset.html"><code>input
-    
-    
-    [reset]</code> test</a></td>
+            <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#reset-button-state-typereset"><code>input [reset]</code></a> </th>
+            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-reset.html"><code>input [reset]</code> test</a></td>
             <td>Button control for resetting a form</td>
-            <td> </td>
+            <td><em>Accessible name</em> (or "Reset"), "button", <em>state</em> (when present)</td>
             <td>
-              <ul>
-                <li>List Buttons <kbd>CTRL + Narrator + B</kbd></li>
+              <ul id="button-commands2" tabindex="-1">
                 <li>Next Button <kbd>B</kbd></li>
                 <li>Previous button <kbd>B</kbd></li>
+                <li>Next form element <kbd>F</kbd></li>
+                <li>Prior form element <kbd>SHIFT + F</kbd></li>
               </ul>
             </td>
             <td>
@@ -1792,24 +1783,21 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
                 <use href="#yes"></use>
               </svg>
             </td>
-            <td> </td>
+            <td></td>
           </tr>
           <tr>
-            <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#text-typetext-state-and-search-state-typesearch"><code>input
-    
-    
-    [search]</code></a> </th>
-            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-search.html"><code>input
-    
-    
-    [search]</code> test</a></td>
+            <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#text-typetext-state-and-search-state-typesearch"><code>input [search]</code></a> </th>
+            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-search.html"><code>input [search]</code> test</a></td>
             <td>Text control for inputting search terms</td>
-            <td> </td>
+            <td>
+              <p><em>Accessible name/label</em>, "Edit", <em>state</em> (if present)</p>
+            </td>
             <td>
               <ul>
-                <li>List Edit Boxes <kbd>CTRL + Narrator + E</kbd></li>
-                <li>Move To Next Edit Box <kbd>E </kbd></li>
-                <li>Move to Prior Edit Box <kbd>SHIFT + E</kbd></li>
+                <li>Next edit control <kbd>E</kbd></li>
+                <li>Prior edit control <kbd>SHIFT + E</kbd></li>
+                <li>Next form element <kbd>F</kbd></li>
+                <li>Prior form element <kbd>SHIFT + F</kbd></li>
               </ul>
             </td>
             <td>
@@ -1817,22 +1805,23 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
                 <use href="#unknown"></use>
               </svg>
             </td>
-            <td> </td>
+            <td>
+              <p>Announced as <em>"Edit"</em>. Does not announce <em>type</em> of input or "searchbox" role.
+              </p><br/>
+              <p>If using form control navigation (scan mode), additional instructions of "Press space to edit" are announced on focus.</p>
+            </td>
           </tr>
           <tr>
-            <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#submit-button-state-typesubmit"><code>input
-    [submit]</code></a> </th>
-            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-submit.html"><code>input
-    
-    
-    [submit]</code> test</a></td>
+            <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#submit-button-state-typesubmit"><code>input [submit]</code></a> </th>
+            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-submit.html"><code>input [submit]</code> test</a></td>
             <td>Button control for submitting a form</td>
-            <td> </td>
+            <td><em>Accessible name</em> (or "Submit"), "button", <em>state</em> (when present)</td>
             <td>
-              <ul>
-                <li>List Buttons <kbd>CTRL + Narrator + B</kbd></li>
+              <ul id="button-commands2" tabindex="-1">
                 <li>Next Button <kbd>B</kbd></li>
                 <li>Previous button <kbd>B</kbd></li>
+                <li>Next form element <kbd>F</kbd></li>
+                <li>Prior form element <kbd>SHIFT + F</kbd></li>
               </ul>
             </td>
             <td>
@@ -1840,24 +1829,23 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
                 <use href="#yes"></use>
               </svg>
             </td>
-            <td> </td>
+            <td>
+              <p><strong>Firefox</strong> uses "Submit query" as the default button text if no <code>value</code> attribute is provided.</p>
+            </td>
           </tr>
           <tr>
-            <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#telephone-state-typetel"><code>input
-    
-    
-    [tel]</code></a> </th>
-            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-tel.html"><code>input
-    
-    
-    [tel]</code> test</a></td>
-            <td>text box control for inputting a phone number</td>
-            <td> </td>
+            <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#telephone-state-typetel"><code>input [tel]</code></a> </th>
+            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-tel.html"><code>input [tel]</code> test</a></td>
+            <td>Text box control for inputting a phone number</td>
+            <td>
+              <em>Accessible name/label</em>, "Edit", <em>state</em> (if present)
+            </td>
             <td>
               <ul>
-                <li>List Edit Boxes <kbd>CTRL + Narrator + E</kbd></li>
-                <li>Move To Next Edit Box <kbd>E </kbd></li>
-                <li>Move to Prior Edit Box <kbd>SHIFT + E</kbd></li>
+                <li>Next edit control <kbd>E</kbd></li>
+                <li>Prior edit control <kbd>SHIFT + E</kbd></li>
+                <li>Next form element <kbd>F</kbd></li>
+                <li>Prior form element <kbd>SHIFT + F</kbd></li>
               </ul>
             </td>
             <td>
@@ -1865,24 +1853,25 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
                 <use href="#yes"></use>
               </svg>
             </td>
-            <td> </td>
+            <td>
+              <p>Announced as  <em>"Edit"</em>. Does not announce <em>type</em> of input.
+              </p><br />
+              <p>If using form control navigation (scan mode), additional instructions of "Press space to edit" are announced on focus.</p>
+            </td>
           </tr>
           <tr>
-            <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#text-typetext-state-and-search-state-typesearch"><code>input
-    
-    
-    [text]</code></a> </th>
-            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-text.html"><code>input
-    
-    
-    [text]</code> test</a></td>
-            <td>text box control</td>
-            <td> </td>
+            <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#text-typetext-state-and-search-state-typesearch"><code>input [text]</code></a> </th>
+            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-text.html"><code>input [text]</code> test</a></td>
+            <td>Text edit control</td>
+            <td>
+              <em>Accessible name/label</em>, "Edit", <em>state</em> (if present)
+            </td>
             <td>
               <ul>
-                <li>List Edit Boxes <kbd>CTRL + Narrator + E</kbd></li>
-                <li>Move To Next Edit Box <kbd>E </kbd></li>
-                <li>Move to Prior Edit Box <kbd>SHIFT + E</kbd></li>
+                <li>Next edit control <kbd>E</kbd></li>
+                <li>Prior edit control <kbd>SHIFT + E</kbd></li>
+                <li>Next form element <kbd>F</kbd></li>
+                <li>Prior form element <kbd>SHIFT + F</kbd></li>
               </ul>
             </td>
             <td>
@@ -1890,43 +1879,22 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
                 <use href="#yes"></use>
               </svg>
             </td>
-            <td> </td>
+            <td>
+              <p>Announced as <em>"Edit"</em>. Does not announce <em>type</em> of input.
+              </p><br />
+              <p>If using form control navigation (scan mode), additional instructions of "Press space to edit" are announced on focus.</p>
+            </td>
           </tr>
           <tr>
-            <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#time-state-typetime"><code>input
-    
-    
-    [time]</code></a> </th>
-            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-time.html"><code>input
-    
-    
-    [time]</code> test</a></td>
+            <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#time-state-typetime"><code>input [time]</code></a> </th>
+            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-time.html"><code>input [time]</code> test</a></td>
             <td>Control for setting a specific time.</td>
-            <td> </td>
-            <td> </td>
             <td>
-              <svg aria-label="yes" class="yes" role="img" viewbox="0 0 448 512" width="20">
-                <use href="#yes"></use>
-              </svg>
-            </td>
-            <td> </td>
-          </tr>
-          <tr>
-            <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#url-state-typeurl"><code>input
-    
-    
-    [url]</code></a> </th>
-            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-url.html"><code>input
-    
-    
-    [url]</code> test</a></td>
-            <td>Text control for inputting a URL</td>
-            <td> </td>
+              <p><strong>Focused inside the time input</strong>: "Hours", <em>Accessible name/label</em> (if present), "spin button", <em>value</em>, "timepicker"</p>
             <td>
               <ul>
-                <li>List Edit Boxes <kbd>CTRL + Narrator + E</kbd></li>
-                <li>Move To Next Edit Box <kbd>E </kbd></li>
-                <li>Move to Prior Edit Box <kbd>SHIFT + E</kbd></li>
+                <li>Next form element <kbd>F</kbd></li>
+                <li>Prior form element <kbd>SHIFT + F</kbd></li>
               </ul>
             </td>
             <td>
@@ -1934,7 +1902,36 @@ mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
                 <use href="#yes"></use>
               </svg>
             </td>
-            <td> </td>
+            <td>
+              <p>Hour/Minute values are announced as they change.</p>
+              <p>The time input is a a composite of multiple spinners. In Edge and Chrome, it includes a button to open the browser's default timepicker dialog</p>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#url-state-typeurl"><code>input [url]</code></a> </th>
+            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/input-url.html"><code>input [url]</code> test</a></td>
+            <td>Text control for inputting a URL</td>
+            <td>
+              <p><em>Accessible name/label</em>, "Edit", <em>state</em> (if present)</p>
+            </td>
+            <td>
+              <ul>
+                <li>Next edit control <kbd>E</kbd></li>
+                <li>Prior edit control <kbd>SHIFT + E</kbd></li>
+                <li>Next form element <kbd>F</kbd></li>
+                <li>Prior form element <kbd>SHIFT + F</kbd></li>
+              </ul>
+            </td>
+            <td>
+              <svg aria-label="yes" class="yes" role="img" viewbox="0 0 448 512" width="20">
+                <use href="#yes"></use>
+              </svg>
+            </td>
+            <td>
+              <p>Announced as <em>"Edit"</em>. Does not announce <em>type</em> of input or "searchbox" role.
+              </p><br />
+              <p>If using form control navigation (scan mode), additional instructions of "Press space to edit" are announced on focus.</p>
+            </td>
           </tr>
           <tr>
             <th scope="row"><a href="https://html.spec.whatwg.org/multipage/edits.html#the-ins-element"><code>ins</code></a></th>
@@ -2077,7 +2074,7 @@ No test
             <td> </td>
             <td>
               <ul>
-                <li>Move to Main landmark <kbd>Narrator + N</kbd></li>
+                <li>Main landmark <kbd>Narrator + N</kbd></li>
                 <li>List all landmarks <kbd>Narrator + F5</kbd></li>
               </ul> 
             </td>
@@ -2184,9 +2181,9 @@ No test
             <td> </td>
             <td>
               <ul>
-                <li>Move to Next Region  <kbd>R</kbd> <br />
+                <li>Next Region  <kbd>R</kbd> <br />
                 </li>
-                <li>Move to Previous Region <kbd>SHIFT + R</kbd> <br />
+                <li>Previous Region <kbd>SHIFT + R</kbd> <br />
                 </li>
                 <li>Select a Region <kbd>Narrator + CTRL + R</kbd> <br />
                 </li>
@@ -2553,8 +2550,8 @@ No test
             <td> </td>
             <td>
               <ul>
-                <li>Move To Next Combo Box <kbd>C</kbd></li>
-                <li>Move to Prior Combo Box <kbd>SHIFT + C </kbd></li>
+                <li>Next Combo Box <kbd>C</kbd></li>
+                <li>Prior Combo Box <kbd>SHIFT + C </kbd></li>
                 <li>List of Combo boxes <kbd>CTRL + Narrator + C</kbd></li>
               </ul>
             </td>
@@ -2748,12 +2745,12 @@ No test
                 <li>Return to Previous Cell <kbd>CTRL + SHIFT + WINDOWS
                     Key+J</kbd></li>
                 <li>Read current cell <kbd>CTRL + ALT+NUM PAD 5</kbd></li>
-                <li>Move to and Read Next Cell <kbd>CTRL + ALT+RIGHT
+                <li>and Read Next Cell <kbd>CTRL + ALT+RIGHT
                     ARROW</kbd></li>
-                <li>Move to and Read Prior Cell <kbd>CTRL + ALT+LEFT
+                <li>and Read Prior Cell <kbd>CTRL + ALT+LEFT
                     ARROW</kbd></li>
-                <li>Move to and Read Cell Above <kbd>CTRL + ALT+UP ARROW</kbd></li>
-                <li>Move to and Read Cell Below <kbd>CTRL + ALT+DOWN
+                <li>and Read Cell Above <kbd>CTRL + ALT+UP ARROW</kbd></li>
+                <li>and Read Cell Below <kbd>CTRL + ALT+DOWN
                     ARROW</kbd></li>
               </ul>
             </td>
@@ -2782,9 +2779,9 @@ No test
             <td>label(if present), role, indication if it contains text.</td>
             <td>
               <ul>
-                <li>List Edit Boxes <kbd>CTRL + Narrator + E</kbd></li>
-                <li>Move To Next Edit Box <kbd>E</kbd></li>
-                <li>Move to Prior Edit Box <kbd>SHIFT + E</kbd></li>
+                <li>List edit boxes <kbd>CTRL + Narrator + E</kbd></li>
+                <li>Next edit box <kbd>E</kbd></li>
+                <li>Prior edit box <kbd>SHIFT + E</kbd></li>
               </ul>
             </td>
             <td>
