@@ -3115,12 +3115,13 @@ No test
                 href="https://stevefaulkner.github.io/AT-browser-tests/test-files/details-summary.html"><code>summary</code>
                 test</a></td>
             <td>disclosure widget control/label</td>
-            <td>button <i>label text</i> expanded/collapsed</td>
+            <td>
+              <em>Summary content</em>, "disclosure triangle"/"button", <em>expanded/collapsed state</em> 
+            </td>
             <td>
               <ul tabindex="-1">
-                <li>List Buttons <kbd>CTRL&nbsp;+&nbsp;Narrator&nbsp;+&nbsp;B</kbd></li>
                 <li>Next Button <kbd>B</kbd></li>
-                <li>Previous button <kbd>B</kbd></li>
+                <li>Previous button <kbd>SHIFT&nbsp;+&nbsp;B</kbd></li>
               </ul>
             </td>
             <td>
@@ -3128,7 +3129,9 @@ No test
                 <use href="#yes"></use>
               </svg>
             </td>
-            <td></td>
+            <td>
+              <p>Chrome and Edge announce "disclosure triangle", whereas Firefox announces button".</p>
+            </td>
           </tr>
           <tr>
             <th scope="row"> <a
@@ -3152,15 +3155,19 @@ No test
             </th>
             <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/svg.html"><code>svg</code> test</a>
             </td>
-            <td></td>
-            <td></td>
+            <td>Scalable Vector Graphic</td>
+            <td>
+              <code>Title</code> <em>content</em> (if present)
+            </td>
             <td>No special commands</td>
             <td>
-              <svg aria-label="question mark" class="unknown" role="img" viewbox="0 0 512 512" width="20">
-                <use href="#unknown"></use>
+              <svg aria-label="no" class="no" role="img" viewbox="0 0 512 512" width="20">
+                <use href="#no"></use>
               </svg>
             </td>
-            <td> </td>
+            <td>
+              <p>No image/graphic semantics conveyed. All browsers will announce <code>&lt;title&gt;</code> content or other accessible name, if present. No browsers announce <code>&lt;desc&gt;</code> content with Windows Narrator</p>
+            </td>
           </tr>
           <tr id="toc-t">
             <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/tables.html#the-table-element">
