@@ -12376,7 +12376,7 @@
         "Element": "aria-level",
         "Test Case": "h7-h10 (role=\"heading\"+aria-level=7-10)",
         "Represents": "Section heading",
-        "AURAL UI": "Announced as, heading content \"heading, level\" 7 to 10",
+        "AURAL UI": "Announced as, \"heading, level\" 7 to 10" heading content,
         "Interaction": "When headings is selected in the rotor, single flick downwards moves through headings",
         "Supported": "",
         "Notes": "Announces heading text, heading role and level",
@@ -16400,19 +16400,19 @@
       {
         "Element": "aria-level",
         "Test Case": "h7-h10 (role=\"heading\"+aria-level=7-10)",
-        "Represents": "?",
-        "AURAL UI": "?",
-        "Interaction": "",
+        "Represents": "Section heading",
+        "AURAL UI": "Announced as, heading content \"heading, level\" 7 to 10",
+        "Interaction": "When headings is selected in the rotor, use up/down arrows to navigate through headings",
         "Supported": "",
-        "Notes": "?",
+        "Notes": "Works as documented with MacOS version: Sequoia 15.6.1 Safari: 18.6\nSome oddities noted with Chrome (Version 141.0.7390.123):\nWith proper h*> elements, it reports correctly up to level 9. After that it ignores the aria-level and reverts to what the real heading level would be if not overridden.\nOn the div's example, after level 9 it reports all headings as level 2 in Chrome.\nWith aria-label, it ignores the aria-level (same as the first example without aria-label text, reverting back to the heading level that would have been exposed by default from the heading element.",
         "_html": {
           "Element": " <a href=\"https://www.w3.org/TR/wai-aria-1.3/#aria-level\"><code>aria-level</code></a> ",
           "Test Case": "<a href=\"https://stevefaulkner.github.io/AT-browser-tests/test-files/h7-h10.html\">h7-h10 (role=\"heading\"+aria-level=7-10)</a>",
-          "Represents": "?",
-          "AURAL UI": "?",
-          "Interaction": "<ul>\n    </ul>",
-          "Supported": "<svg viewbox=\"0 0 512 512\" width=\"20\" role=\"img\" aria-label=\"unknown\" class=\"unknown\"><use href=\"#unknown\"></use></svg>\n    <br>",
-          "Notes": "?"
+          "Represents": "Section heading",
+          "AURAL UI": "Announced as, <em>heading content</em> \"heading, level\" 7 to 10",
+          "Interaction": "When headings is selected in the rotor, use up/down arrows to navigate through headings",
+          "Supported": "<svg viewbox=\"0 0 512 512\" width=\"20\" role=\"img\" aria-label=\"yes\" class=\"yes\"><use href=\"#yes\"></use></svg>",
+          "Notes": "Works as documented with MacOS version: Sequoia 15.6.1 Safari: 18.6\n \n  Some oddities noted with Chrome (Version 141.0.7390.123):\n<ul><li>With proper <code>h*></code> elements, it reports correctly up to level 9. After that it ignores the <code>aria-level</code> and reverts to what the real heading level would be if not overridden.\n<li>On the <code>div</code>'s example, after level 9 it reports all headings as level 2 in Chrome.\n<li>With <code>aria-label</code>, it ignores the <code>aria-level</code> (same as the first example without <code>aria-label</code> text, reverting back to the heading level that would have been exposed by default from the heading element. \n</ul>"
         },
         "_links": {
           "Element": [
