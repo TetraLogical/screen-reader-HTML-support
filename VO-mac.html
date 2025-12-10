@@ -90,8 +90,8 @@ body {background-color:white}
   </div>
 </header><div class="region wrapper prose flow">
 <h1>VoiceOver on Mac HTML Support</h1>
-<p> A Work <em>in progress</em>: Last updated 03 November 2025. </p>
-<p><strong>Editors:</strong> Catriona Morrison, Steve Faulkner</p>
+<p> A Work <em>in progress</em>: Last updated 9 December 2025. </p>
+<p><strong>Editors:</strong> Catriona Morrison, Steve Faulkner, Grace Snow</p>
 <p><strong>GitHub Repo:</strong> <a href="https://github.com/TetraLogical/screen-reader-HTML-support">screen-reader-HTML-support</a>
 </p>
 <p>Found a bug? Please <a href="https://github.com/TetraLogical/screen-reader-HTML-support/issues">report it</a>. </p>
@@ -573,16 +573,29 @@ Support is inconsistent across browsers and "deletion" is only ever announced wh
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-dialog-element"><code>dialog</code></a></th>
     <td> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dialog.html">dialog test</a> </td>
-    <td>Modal dialog</td>
-    <td><ul>
+    <td>Modal/Non-modal dialog: Represents a transitory part of an application, in the form of a small window ("dialog box")</td>
+    <td>
+      <ul>
         <li>On button that invokes a dialog: announces as label + "button", or "dialog pop-up, button" if element has an <code>aria-haspopup="dialog"</code> attribute</li>
         <li>On dialog: announces "dialog" on Chrome or "web dialog" on Safari, followed by the auto focused control on dialog</li>
-    </ul></td>
-    <td>Focus moved to dialog when opened</td>
+      </ul>
+    </td>
+    <td>
+      <p><strong>Modal dialogs</strong>: <kbd>Esc</kbd> closes the dialog by default and returns focus to the triggering control</p><br />
+      <p><strong>Non-modal dialogs</strong>: No special commands by default.</p>
+    </td>
     <td>
         <svg viewBox="0 0 448 512" width="20" role="img" aria-label="yes" class="yes"><use href="#yes" /></svg>
     </td>
-    <td>Recognizes and traps focus within modal dialog</td>
+    <td>
+      <ul>
+        <li>When the <code>dialog</code> opens, focus moves to first focusable element, if present, otherwise focus moves to the <code>dialog</code> element itself.</li>
+        <li>Focus is <strong>contained</strong> within modal <code>dialog</code> implementations, but the browser address bar is included within the focus order. This is browser implemented behaviour.</li>
+        <li>When the <code>dialog</code> closes, focus returns to the control that opened it.</li>
+        <li>If multiple modal dialogs are open, pressing the <kbd>Esc</kbd> only closes the last shown dialog. This is browser implemented behavior.</li>
+        <li>Non-modal dialogs do not close on <kbd>Esc</kbd> or "click outside" by default. Close behaviour can be managed via the <code>closedby</code> attribute. See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog">MDN: Dialog element</a> for more on close behaviours</li>
+      </ul>
+    </td>
 </tr>
 <tr>
     <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element"><code>div</code></a></th>
