@@ -30,6 +30,7 @@ jobs:
           INPUT_FILES: |
             JAWS.html
             NVDA.html
+            Narrator.html
             TalkBack-android.html
             VO-ios.html
             VO-mac.html
