@@ -1,0 +1,14 @@
+# Ignore log files
+*.log
+
+# Ignore temp folders
+temp/ 
+
+# Ignore DS_Store files
+.DS_Store
+
+# Ignore node_modules
+node_modules/
+
+# Ignore local vscode settings
+.vscode/
