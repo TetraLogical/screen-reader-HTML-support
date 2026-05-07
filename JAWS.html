@@ -231,6 +231,8 @@
       <dd>Last updated 7 May 2026. </dd>
       <dt>Editor:</dt>
       <dd>Steve Faulkner</dd>
+      <dt>Co-editor:</dt>
+      <dd>Graeme Coleman</dd>
       <dt>GitHub Repo:</dt>
       <dd><a href="https://github.com/TetraLogical/screen-reader-HTML-support">screen-reader-HTML-support</a></dd>
       <dt>Found a bug?</dt>
@@ -434,10 +436,64 @@
               <p>&nbsp;</p>
             </td>
             <td>
-              <p> <strong>With <code>href</code>:</strong> <em>element
+              <p> <strong>With <code>href</code>:</strong></p>
+              <ul>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/a-href.html#a-001">
+                    Test A-001: anchor with <code>href</code>
+                  </a>:
+                  <ul>
+                    <li><kbd>Tab</kbd> key navigation:<br> <em>visible link text</em>, link, to activate press Enter</li>
+                    <li><kbd>Arrow</kbd> key navigation:<br> [Visited] link, <em>visible link text</em></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/a-href.html#a-002">
+                    Test A-002: anchor with <code>href</code> & <code>title</code> attribute
+                  </a>:
+                  <ul>
+                    <li><kbd>Tab</kbd> key navigation:<br> <em>visible link text</em>, link, <em><code>title</code> text</em>, to activate press Enter</li>
+                    <li><kbd>Arrow</kbd> key navigation:<br> [Visited] link, <em>visible link text</em>, <em><code>title</code> text</em></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/a-href.html#a-003">
+                    Test A-003: anchor with <code>href</code> and <code>aria-label</code> attribute
+                  </a>:
+                  <ul>
+                    <li><kbd>Tab</kbd> key navigation:<br> <em>aria-label text</em>, link, to activate press Enter</li>
+                    <li><kbd>Arrow</kbd> key navigation:<br> [Visited] link, <em>aria-label text</em></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/a-href.html#a-004">
+                    Test A-004: anchor with <code>href</code>, <code>aria-label</code> and <code>aria-describedby</code> attributes
+                  </a>:
+                  <ul>
+                    <li><kbd>Tab</kbd> key navigation:<br> <em>aria-label text</em>, link, <em>text referenced by the <code>aria-describedby</code> attribute</em>, to activate press Enter</li>
+                    <li><kbd>Arrow</kbd> key navigation:<br> [Visited] link, <em>aria-label text</em></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/a-href.html#a-005">
+                    Test A-005: anchor with visible text, <code>href</code>, <code>title</code>, <code>aria-label</code> and <code>aria-describedby</code> attributes
+                  </a>:
+                  <ul>
+                    <li><kbd>Tab</kbd> key navigation:<br> <em>aria-label text</em>, link, <em>text referenced by the <code>aria-describedby</code> attribute</em>, to activate press Enter</li>
+                    <li><kbd>Arrow</kbd> key navigation:<br> [Visited] link, <em>aria-label text</em></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/a-href.html#a-006">
+                    Test A-006: anchor with an <code>href</code> attribute, with visible text, <code>title</code>, and <code>aria-label</code> attributes that all have the same values
+                  </a>:
+                  <ul>
+                    <li><kbd>Tab</kbd> key navigation:<br> <em>visible link text</em>, link, <em><code>title</code> text</em>, to activate press Enter</li>
+                    <li><kbd>Arrow</kbd> key navigation:<br> [Visited] link, <em>visible link text</em></li>
+                  </ul>
+                </li>
+              </ul>
 
-
-                  content</em> "link" </p>
               <p>&nbsp;</p>
             </td>
             <td>
@@ -469,21 +525,21 @@
             </td>
             <td>
               <p> <strong>With <code>href</code>:</strong> </p>
-              <p>Link role announced before link text when cursored to,
-                after via tab. </p>
               <ul>
-                <li><b>Note:</b> the following from the JAWS help documentation does not appear to work and is not required:
-                "By Default, JAWS speaks the on screen text of a
-                  link, but you can set JAWS to instead speak Title
-                  text, assigned by the page author within the HTML
-                  code. Title text normally provides supplemental
-                  information about the link".</li>
-                <li>By default, JAWS announces the link type, but you
-                  can disable this, so JAWS announces same page links,
-                  send mail links, and FTP links as "link," or "Visited
-                  Link."</li>
+                <li>The link role is announced <em>before</em> the link label when using reading keys like
+                  the <kbd>Arrow</kbd> keys, but <em>after</em> the link label when using the <kbd>Tab</kbd> key</li>
+                <li>JAWS announces instructions for activating the link when the link receives focus via the
+                  <kbd>Tab</kbd> key, but not when the link receives focus via the <kbd>Arrow</kbd> keys
+                </li>
+                <li>When a link has both visible text and a <code>title</code>
+                attribute (but no other attributes), JAWS announces both together</li>
+                <li>JAWS announces the value of the <code>aria-label</code> attribute when it is
+                applied to the <code>&lt;a&gt;</code> element, not the visible text, which is as expected</li>
+                <li>IN PROGRESS</li>
               </ul>
-              <p>JAWS announces the type of link as follows:</p>
+              <br>
+              <p> <strong>Link types:</strong> </p>      
+
               <ul>
                 <li><strong>Link:</strong> This indicates a link that
                   has not been visited.</li>
@@ -500,6 +556,24 @@
                 <li><strong>FTP Link:</strong> This indicates a link
                   that points to a FTP (File Transfer Protocol) server.</li>
               </ul>
+              <br>
+
+              <p><strong>Additional notes:</strong></p>
+
+              <ul>
+                <li>[TO BE CHECKED] The following from the JAWS help documentation does not appear to work and is not required:
+                "By Default, JAWS speaks the on screen text of a
+                  link, but you can set JAWS to instead speak Title
+                  text, assigned by the page author within the HTML
+                  code. Title text normally provides supplemental
+                  information about the link".</li>
+                <li>By default, JAWS announces the link type, but you
+                  can disable this, so JAWS announces same page links,
+                  send mail links, and FTP links as "link," or "Visited
+                  Link."</li>
+              </ul>
+             
+              
               <p>&nbsp;</p>
               <p>&nbsp;</p>
             </td>
