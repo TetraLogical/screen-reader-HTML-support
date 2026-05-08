@@ -488,7 +488,7 @@
                     Test A-006: anchor with an <code>href</code> attribute, with visible text, <code>title</code>, and <code>aria-label</code> attributes that all have the same values
                   </a>:
                   <ul>
-                    <li><kbd>Tab</kbd> key navigation:<br> <em>visible link text</em>, link, <em><code>title</code> text</em>, to activate press Enter</li>
+                    <li><kbd>Tab</kbd> key navigation:<br> <em>visible link text</em>, link, to activate press Enter</li>
                     <li><kbd>Arrow</kbd> key navigation:<br> [Visited] link, <em>visible link text</em></li>
                   </ul>
                 </li>
@@ -526,16 +526,26 @@
             <td>
               <p> <strong>With <code>href</code>:</strong> </p>
               <ul>
-                <li>The link role is announced <em>before</em> the link label when using reading keys like
+                <li>In all cases, JAWS announces the link role</li>
+                <li>In all cases, JAWS announces the link role <em>before</em> the link label when using reading keys like
                   the <kbd>Arrow</kbd> keys, but <em>after</em> the link label when using the <kbd>Tab</kbd> key</li>
-                <li>JAWS announces instructions for activating the link when the link receives focus via the
+                <li>In all cases, JAWS announces instructions for activating the link when the link receives focus via the
                   <kbd>Tab</kbd> key, but not when the link receives focus via the <kbd>Arrow</kbd> keys
                 </li>
                 <li>When a link has both visible text and a <code>title</code>
-                attribute (but no other attributes), JAWS announces both together</li>
-                <li>JAWS announces the value of the <code>aria-label</code> attribute when it is
-                applied to the <code>&lt;a&gt;</code> element, not the visible text, which is as expected</li>
-                <li>IN PROGRESS</li>
+                attribute (but no other attributes), JAWS announces the contents of both together</li>
+                <li>JAWS announces the contents of the <code>aria-label</code> attribute when it is
+                applied to the <code>&lt;a&gt;</code> element, not the visible text</li>
+                <li>JAWS announces the content referenced using the <code>aria-describedby</code> 
+                attribute when the link receives focus via the <kbd>Tab</kbd> key, but not when
+                the link receives focus via the <kbd>Arrow</kbd> keys</li>
+                <li>When a link has different visible text, <code>title</code> text, <code>aria-label</code>
+                text, and content referenced via the <code>aria-describedby</code> attribute, JAWS only
+                announces the content of the <code>aria-label</code> attribute and the content referenced
+                using the <code>aria-describedby</code> attribute; the visible text is not announced,
+                nor is the content within the <code>title</code> attribute</li>
+                <li>When a link has the same visible text, <code>title</code> text, and
+                <code>aria-label</code> text, JAWS only announces the visible link text</li>
               </ul>
               <br>
               <p> <strong>Link types:</strong> </p>      
@@ -558,7 +568,7 @@
               </ul>
               <br>
 
-              <p><strong>Additional notes [TO BE CHECKED]:</strong></p>
+              <p><strong>Additional notes:</strong></p>
 
               <ul>
                 <li>The following from the JAWS help documentation does not appear to work and is not required:
