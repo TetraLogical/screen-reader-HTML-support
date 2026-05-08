@@ -594,7 +594,27 @@
             <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/a-no-href.html"><code>a</code> with
                 no <code>href</code> test</a></td>
             <td>An anchor</td>
-            <td>Announces as plain text</td>
+            <td>
+               <ul>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/a-no-href.html#a-001">
+                    Test A-001: anchor with no <code>href</code></a>: <em>visible text</em>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/a-no-href.html#a-002">
+                    Test A-002: anchor with no <code>href</code> and with <code>aria-label</code> attribute</a>: <em>visible text</em>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/a-no-href.html#a-003">
+                    Test A-003: anchor with no <code>href</code> and with no accessible name</a>: anchor is skipped altogether
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/a-no-href.html#a-004">
+                    Test A-004: anchor with no <code>href</code> and <code>tabindex="0"</code></a>: <em>visible text</em>
+                </li>
+              </ul>
+
+            </td>
             <td>No special commands</td>
             <td><svg viewBox="0 0 448 512"
                    width="20"
@@ -614,14 +634,81 @@
             <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/abbr.html"><code>abbr</code>
                 test</a></td>
             <td>An abbreviation</td>
-            <td><em>Element content</em></td>
+            <td>
+              <ul>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/abbr.html#abb-001">
+                    Test ABB-001: <code>abbr</code> element with <code>title</code> attribute</a>: 
+                  <ul>
+                    <li>By default: <em>visible text</em>, <em>title text</em></li>
+                    <li>Via preference: <em>title text</em></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/abbr.html#abb-002">
+                    Test ABB-002: <code>abbr</code> element without <code>title</code> attribute</a>:
+                  <ul>
+                    <li>By default: <em>visible text</em></li>
+                    <li>Via preference: <em>visible text</em></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/abbr.html#abb-003">
+                    Test ABB-003: <code>abbr</code> element with <code>aria-label</code> attribute</a>:
+                  <ul>
+                    <li>By default: <em>visible text</em></li>
+                    <li>Via preference: <em>visible text</em></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/abbr.html#abb-004">
+                    Test ABB-004: <code>abbr</code> element with <code>aria-label</code> attribute and <code>aria-describedby</code> attribute</a>:
+                  <ul>
+                    <li>By default: <em>visible text</em></li>
+                    <li>Via preference: <em>visible text</em></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/abbr.html#abb-005">
+                    Test ABB-005: <code>abbr</code> element with <code>aria-label</code> and <code>title</code> attributes</a>:
+                  <ul>
+                    <li>By default: <em>visible text</em>, <em>title text</em></li>
+                    <li>Via preference: <em>title text</em></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/abbr.html#abb-006">
+                    Test ABB-006: <code>abbr</code> element with <code>aria-label</code> and <code>title</code> attributes</a> with differing values:
+                  <ul>
+                    <li>By default: <em>visible text</em>, <em>title text</em></li>
+                    <li>Via preference: <em>title text</em></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/abbr.html#abb-007">
+                    Test ABB-007: <code>abbr</code> element with <code>title</code> and <code>tabindex="0"</code> attributes</a>:
+                  <ul>
+                    <li>By default: <em>visible text</em>, <em>title text</em></li>
+                    <li>Via preference: <em>title text</em></li>
+                  </ul>
+                </li>
+              </ul>
+            </td>
             <td>
               <p>No special commands</p>
+              <p>&nbsp;</p>
               <p>JAWS can read <code>title</code> text associated with
-                abbreviations on web pages. <br>
-                To enable this feature, open Settings Center and expand
-                the Web/HTML/PDFs group. Next, expand the Reading group
-                and use the abbreviation and acronym options</p>
+                abbreviations and acronyms on web pages.<br>To enable this feature:</p>
+                <ol>
+                  <li>Open the <strong>Utilities</strong> menu</li>
+                  <li>Select <strong>Settings Center</strong></li>
+                  <li>Expand the <strong>Web/HTML/PDFs</strong> group</li>
+                  <li>Expand the <strong>Reading</strong> group</li>
+                  <li>Navigate to the Expand Abbreviations option and press <kbd>Space</kbd>
+                  to check its checkbox</li>
+                  <li>Navigate to the Expand Acronyms option and press <kbd>Space</kbd>
+                  to check its checkbox</li>
+                </ol>
             </td>
             <td>
               <p>By default
@@ -645,13 +732,11 @@
             </td>
             <td>
               <p>No semantics conveyed by default</p>
+              <p>&nbsp;</p>
               <p>Note that expansions are not announced by default and
                 that expansions provided using the <code>title</code> attribute are not available to keyboard only
                 users.
-                Refer to <a href="https://www.paciellogroup.com/blog/2013/01/using-the-html-title-attribute-updated/">Using
-
-
-                  the HTML title attribute</a>.</p>
+                Refer to <a href="https://www.paciellogroup.com/blog/2013/01/using-the-html-title-attribute-updated/">Using the HTML title attribute</a>.</p>
             </td>
           </tr>
           <tr>
@@ -660,8 +745,28 @@
             <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/address.html"><code>address</code>
                 test</a></td>
             <td>Contact information for a page or <a href="https://html.spec.whatwg.org/multipage/sections.html#the-article-element">article</a> element</td>
-            <td><em>Element content</em> when no accessible name
-              present. </td>
+            <td>
+              <ul>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/address.html#add-001">
+                    Test ADD-001: <code>address</code> element</a>: <em>visible text</em>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/address.html#add-002">
+                    Test ADD-002: <code>address</code> element with <code>aria-label</code></a>: <strong>Group start</strong> <em>aria-label text</em>, <em>visible text</em>, <strong>Group end</strong> <em>aria-label text</em> 
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/address.html#add-003">
+                    Test ADD-003: <code>address</code> element with <code>aria-label</code> and <code>aria-describedby</code></a>: <strong>Group start</strong> <em>aria-label text</em>, <em>visible text</em>, <strong>Group end</strong> <em>aria-label text</em> 
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/address.html#add-004">
+                    Test ADD-004: <code>address</code> element with <code>tabindex="0"</code></a>: <em>visible text</em>
+                </li>
+              </ul>
+
+
+            </td>
             <td>No special commands</td>
             <td>
               <p>no accessible name
@@ -683,9 +788,14 @@
                 </svg>
               </p>
             </td>
-            <td>With accessible name <code>address</code> is announced
-              as a <code>group</code> Group - accessible name,
-              start/end.</td>
+            <td>
+              With an explicit accessible name provided using (for example) the
+              <code>aria-label</code> attribute, <code>address</code> is
+              announced as a <code>group</code>.
+              <p>&nbsp;</p>
+              Without an explicit accessible name provided using (for example) the
+              <code>aria-label</code> attribute, the <code>group</code> role
+              is not announced, nor is any other role.
           </tr>
           <tr>
             <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element"><code>area</code></a>
@@ -694,10 +804,48 @@
                 test</a></td>
             <td>Hyperlink or dead area on an image map</td>
             <td>
-              <p>"graphic"<em>, alt content </em>(when navigated using
-                the <kbd>arrow</kbd> keys or the link navigation keys.)</p>
-              <p><em>alt content</em>, "image map" (when navigated using
-                the <code>tab</code> key.</p>
+              <ul>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/area.html#area-001">
+                    Test AREA-001: <code>area</code> element</a>:
+                  <ul>
+                    <li>
+                      <kbd>Tab</kbd> key navigation:
+                      <ul>
+                        <li>When navigating into the map from above / below: <em>contents of the <code>alt</code> attribute on the <code>&lt;img&gt;</code> element</em>, image map, <em>contents of the <code>alt</code> attribute on the <code>&lt;area&gt;</code> element</em>, image map, link, graphic, to activate press Enter</li>
+                        <li>When navigating to individual items within the map: <em>contents of the <code>alt</code> attribute on the <code>&lt;area&gt;</code> element</em>, image map, link, graphic, to activate press Enter</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <ul>
+                        <li>When navigating into the map from above / below: Image map, link, graphic, <em>contents of the <code>alt</code> attribute on the <code>&lt;area&gt;</code> element</em></li>
+                        <li>When navigating to individual items within the map: Image map, link, graphic, <em>contents of the <code>alt</code> attribute on the <code>&lt;area&gt;</code> element</em></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/area.html#area-002">
+                    Test AREA-002: <code>area</code> element with <code>aria-label</code> instead of <code>alt</code></a>:
+                  <ul>
+                    <li>
+                      <kbd>Tab</kbd> key navigation:
+                      <ul>
+                        <li>When navigating into the map from above / below: <em>contents of the <code>alt</code> attribute on the <code>&lt;img&gt;</code> element</em>, image map, <em>contents of the <code>aria-label</code> attribute on the <code>&lt;area&gt;</code> element</em>, image map, link, graphic, to activate press Enter</li>
+                        <li>When navigating to individual items within the map: <em>contents of the <code>aria-label</code> attribute on the <code>&lt;area&gt;</code> element</em>, image map, link, graphic, to activate press Enter</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <ul>
+                        <li>When navigating into the map from above / below: Image map, link, graphic, <em>contents of the <code>aria-label</code> attribute on the <code>&lt;area&gt;</code> element</em></li>
+                        <li>When navigating to non-start / non-end squares within the map: Image map, link, graphic, <em>contents of the <code>aria-label</code> attribute on the <code>&lt;area&gt;</code> element</em></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
             </td>
             <td>
               <ul>
@@ -721,17 +869,104 @@
               </svg>
               <br>
             </td>
-            <td>Although area elements are links they are not conveyed
-              as links aurally.</td>
+            <td>
+              <p>When navigating into the image map for the first time using the <kbd>Tab</kbd> key,
+              JAWS announces the contents of the <code>alt</code> attribute applied to the associated
+              <code>&lt;img&gt;</code> element. However, it does not announce the contents of this
+              <code>alt</code> attribute when navigating into the image map using the <kbd>Arrow</kbd>
+              keys.</p>
+              <p>&nbsp;</p>
+              <p>When navigating into the image map for the first time using the <kbd>Tab</kbd> key,
+              JAWS announces the term <em>image map</em> twice: the first time in relation to the
+              associated <code>&lt;img&gt;</code> element, and a second time in relation to the associated
+              <code>&lt;map&gt;</code> element. However, it only announces the term <em>image map</em>
+              once when navigating into the map using the <kbd>Arrow</kbd> keys.</p>
+              <p>&nbsp;</p>
+              <p>When navigating through individual images in the map using the <kbd>Tab</kbd> key, 
+              JAWS announces the contents of the <code>alt</code> or <code>aria-label</code> attribute on
+              the <code>&lt;area&gt;</code> element first, and then announces the element's role and
+              instructions. When navigating through individual images in the map using the <kbd>Arrow</kbd>
+              keys, JAWS announces the contents of the element's role and instructions first, and then
+              announces the contents of the <code>alt</code> or <code>aria-label</code> attribute on
+              the <code>&lt;area&gt;</code> element.</p>
+              <p>&nbsp;</p>
+              <p>From an aural point of view, there is no difference to using the <code>aria-label</code>
+              attribute as opposed to the <code>alt</code> attribute on the <code>&lt;area&gt;</code> element.
+              JAWS announces both in the same way.</p>
+            </td>
           </tr>
           <tr>
             <th scope="row"> <a href="https://www.w3.org/TR/wai-aria-1.3/#aria-level"><code>aria-level</code></a> </th>
-            <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/h7-h10.html">h7-h10
-                (role="heading"+aria-level=7-10)</a></td>
+            <td>
+              <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/h7-h10.html"><code>h7</code>-<code>h9</code> via <code>aria-level</code> elements</a>
+            </td>
             <td>heading levels greater than 6 </td>
-            <td>not supported, all <code>aria-level</code> reported as <code>h2</code><br></td>
             <td>
               <ul>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/h7-h10.html#hd-001">
+                    Test HD-001: <code>h7</code>-<code>h9 elements</code> element</a>:
+                    <p>
+                      <strong>Not supported:</strong> all <code>aria-level</code> examples reported as <code>h2</code>,
+                       except for <code>&lt;h4 id="hd-04" aria-level="10"&gt;</code> which is reported as <code>h4</code>. 
+                    </p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/h7-h10.html#hd-002">
+                    Test HD-002: <code>h1</code> element, with <code>role="heading"</code> &amp; <code>aria-level="7"</code></a>: <em>TO DO</em>
+                    <p>
+                      <strong>Not supported:</strong> the <code>aria-level</code> example is reported as <code>h2</code>.
+                    </p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/h7-h10.html#hd-003">
+                    Test HD-003: <code>h2</code> element, with <code>aria-level="8"</code></a>:
+                    <p>
+                      <strong>Not supported:</strong> the <code>aria-level</code> example is reported as <code>h2</code>.
+                    </p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/h7-h10.html#hd-004">
+                    Test HD-004: <code>h1</code>-<code>h6</code> + <code>aria-level</code> 7-12 elements with no content</a>:
+                    <p>
+                      <strong>Not applicable:</strong> there is no example to test
+                    </p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/h7-h10.html#hd-005">
+                    Test HD-005: <code>h7</code>-<code>h12</code> (<code>aria-level</code> 7-12) elements with <code>aria-label</code></a>:
+                    <p>
+                      <strong>Not supported:</strong> all <code>aria-level</code> examples reported as <code>h2</code>,
+                       except for:
+                    </p>
+                    <ul>
+                      <li><code>&lt;h4 id="hda-040" aria-label="Belton" aria-level="10"&gt;</code> which is reported as <code>h4</code></li>
+                      <li><code>&lt;h4 id="hda-050" aria-label="Adrain" aria-level="11"&gt;</code> which is reported as <code>h5</code> </li>
+                      <li><code>&lt;h4 id="hda-060" aria-label="Leonie" aria-level="12"&gt;</code> which is reported as <code>h6</code></li>
+                    </ul>
+                    <p>Note that JAWS announces the <code>aria-label</code> text in place of the visible heading text.</p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/h7-h10.html#hd-006">
+                    Test HD-006: <code>role="heading"</code> + (<code>aria-level</code> 7-12) on <code>div</code> elements</a>:
+                  <p>
+                      <strong>Not supported:</strong> all <code>aria-level</code> examples reported as <code>h2</code>. 
+                    </p>
+                </li>
+              </ul>
+
+            </td>
+            <td>
+              <ul>
+                <li>List Headings <kbd>INSERT</kbd>+<kbd>F6</kbd></li>
+                <li>Next Heading <kbd>H</kbd></li>
+                <li>Prior Heading <kbd>SHIFT+H</kbd></li>
+                <li>First Heading <kbd>ALT+INSERT+HOME</kbd></li>
+                <li>Last Heading <kbd>ALT+INSERT+END </kbd></li>
+                <li>Next Heading at Level - number keys <kbd>1</kbd> through <kbd>6</kbd></li>
+                <li>Prior Heading at Level <kbd>SHIFT+1</kbd> through <kbd>6 </kbd></li>
+                <li>First Heading at Level <kbd>ALT+CTRL+INSERT+1</kbd> through <kbd>6</kbd></li>
+                <li>Last Heading at Level <kbd>ALT+CTRL+INSERT+ SHIFT+1</kbd> through <kbd>6</kbd></li>
               </ul>
             </td>
             <td><svg viewBox="0 0 512 512"
@@ -743,10 +978,7 @@
               </svg>
               <br>
             </td>
-            <td>Issue filed: <a href="https://github.com/FreedomScientific/standards-support/issues/814">JAWS
-
-
-                does not support aria-level on h1-h6</a></td>
+            <td>Issue filed: <a href="https://github.com/FreedomScientific/standards-support/issues/814">JAWS does not support aria-level on h1-h6</a></td>
           </tr>
           <tr>
             <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/sections.html#the-article-element"><code>article</code></a>
@@ -754,7 +986,84 @@
             <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/article.html"><code>article</code>
                 test</a></td>
             <td>Self-contained syndicatable or reusable composition</td>
-            <td>"article" <em>element content</em> "article end"</td>
+            <td>
+              <ul>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/article.html#ar-001">
+                    Test AR-001: Plain <code>article</code></a>: 
+                    <p>Article, <em>article contents</em>, article end</p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/article.html#ar-002">
+                    Test AR-002: <code>article</code> with <code>&lt;h1&gt;</code></a>: 
+                    <p>Article, <em>article contents</em>, article end</p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/article.html#ar-003">
+                    Test AR-003: <code>article</code> with <code>aria-label</code></a>: 
+                    <p>
+                      <em>Contents of the <code>aria-label</code> attribute on the <code>&lt;article&gt;</code> element</em>,
+                      article, <em>article contents</em>, 
+                      <em>contents of the <code>aria-label</code> attribute on the <code>&lt;article&gt;</code> element</em>, 
+                      article end
+                    </p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/article.html#ar-004">
+                    Test AR-004: <code>article</code> with <code>aria-labelledby</code></a>:
+                    <p>
+                      <em>Content referred to from the <code>aria-labelledby</code> attribute
+                        on the <code>&lt;article&gt;</code> element</em>, 
+                        article, <em>article contents</em>, 
+                      <em>Content referred to from the <code>aria-labelledby</code> attribute
+                        on the <code>&lt;article&gt;</code> element</em>, article end
+                    </p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/article.html#ar-005">
+                    Test AR-005: <code>article</code> with <code>title</code> attribute</a>:
+                    <p>
+                      <em>Contents of the <code>title</code> attribute on the <code>&lt;article&gt;</code> element</em>,
+                      article, <em>article contents</em>, 
+                      <em>contents of the <code>title</code> attribute on the <code>&lt;article&gt;</code> element</em>, 
+                      article end
+                    </p>
+                    <p><strong>Note:</strong> the contents of the <code>title</code> attribute are 
+                    announced after the first word in the body of the article contents is announced, 
+                    rather than alongside the <code>article</code> role when navigating into the article.</p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/article.html#ar-006">
+                    Test AR-006: <code>article</code> with <code>aria-describedby</code></a>:
+                    <p>
+                      Article, <em>article contents</em>, article end
+                    </p>
+                    <p><strong>Note:</strong> the referenced contents of the <code>aria-describedby</code> attribute
+                    are not announced when navigating into the article.</p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/article.html#ar-007">
+                    Test AR-007: <code>article</code> with <code>aria-label</code> and <code>title</code> attributes</a>:
+                    <p>
+                      <em>Contents of the <code>aria-label</code> attribute on the <code>&lt;article&gt;</code> element</em>,
+                      article, <em>article contents</em>, 
+                      <em>contents of the <code>aria-label</code> attribute on the <code>&lt;article&gt;</code> element</em>, 
+                      article end
+                    </p>
+                    <p><strong>Note:</strong> the contents of the <code>title</code> attribute are 
+                    announced after the first word in the body of the article contents is announced, 
+                    rather than alongside the <code>article</code> role when navigating into the article.</p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/article.html#ar-008">
+                    Test AR-008: <code>article</code> with <code>tabindex="0"</code></a>:
+                    <ul>
+                      <li><kbd>Tab</kbd> key navigation: <em>article contents</em>, article region</li>
+                      <li><kbd>Arrow</kbd> key navigation: Article, <em>article contents</em>, article end</li>
+                    </ul>
+                </li>
+              </ul>
+            </td>
             <td>
               <ul>
                 <li>Move to Next Article <kbd>O</kbd> <br>
@@ -774,7 +1083,14 @@
               </svg>
               <br>
             </td>
-            <td>Included as a navigable region &lt; JAWS 2018</td>
+            <td>
+              Included as a navigable region &lt; JAWS 2018
+              <p>&nbsp;</p>
+              <p><strong>Possible bug:</strong> when the <code>title</code> attribute is
+              applied to the <code>&lt;article&gt;</code> element, JAWS does not announce the
+              contents of this attribute when navigating into the article. Instead, it announces the
+              contents of this attribute immediately after announcing the first item inside the article.</p>
+            </td>
           </tr>
           <tr id="jaws-el-aside"
               tabindex="-1">
@@ -803,7 +1119,9 @@
               </svg>
               <br>
             </td>
-            <td>Included as a navigable region</td>
+            <td>
+              Included as a navigable region
+            </td>
           </tr>
           <tr>
             <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/media.html#the-audio-element"><code>audio</code></a> </th>
