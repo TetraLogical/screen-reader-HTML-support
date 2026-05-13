@@ -488,8 +488,8 @@
                     Test A-006: anchor with an <code>href</code> attribute, with visible text, <code>title</code>, and <code>aria-label</code> attributes that all have the same values
                   </a>:
                   <ul>
-                    <li><kbd>Tab</kbd> key navigation:<br> <em>visible link text</em>, link, to activate press Enter</li>
-                    <li><kbd>Arrow</kbd> key navigation:<br> [Visited] link, <em>visible link text</em></li>
+                    <li><kbd>Tab</kbd> key navigation:<br> <em><code>aria-label</code> text</em>, link, to activate press Enter</li>
+                    <li><kbd>Arrow</kbd> key navigation:<br> [Visited] link, <em><code>aria-label</code> text</em></li>
                   </ul>
                 </li>
               </ul>
@@ -545,7 +545,7 @@
                 using the <code>aria-describedby</code> attribute; the visible text is not announced,
                 nor is the content within the <code>title</code> attribute</li>
                 <li>When a link has the same visible text, <code>title</code> text, and
-                <code>aria-label</code> text, JAWS only announces the visible link text</li>
+                <code>aria-label</code> text, JAWS only announces the <code>aria-label</code> text</li>
               </ul>
               <br>
               <p> <strong>Link types:</strong> </p>      
