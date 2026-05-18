@@ -228,7 +228,7 @@
     <h1>JAWS HTML Support</h1>
     <dl>
       <dt>A Work <em>in progress</em>:</dt>
-      <dd>Last updated 12 May 2026. </dd>
+      <dd>Last updated 15 May 2026. </dd>
       <dt>Editor:</dt>
       <dd>Steve Faulkner</dd>
       <dt>Co-editor:</dt>
@@ -488,8 +488,8 @@
                     Test A-006: anchor with an <code>href</code> attribute, with visible text, <code>title</code>, and <code>aria-label</code> attributes that all have the same values
                   </a>:
                   <ul>
-                    <li><kbd>Tab</kbd> key navigation:<br> <em>visible link text</em>, link, to activate press Enter</li>
-                    <li><kbd>Arrow</kbd> key navigation:<br> [Visited] link, <em>visible link text</em></li>
+                    <li><kbd>Tab</kbd> key navigation:<br> <em><code>aria-label</code> text</em>, link, to activate press Enter</li>
+                    <li><kbd>Arrow</kbd> key navigation:<br> [Visited] link, <em><code>aria-label</code> text</em></li>
                   </ul>
                 </li>
               </ul>
@@ -545,7 +545,7 @@
                 using the <code>aria-describedby</code> attribute; the visible text is not announced,
                 nor is the content within the <code>title</code> attribute</li>
                 <li>When a link has the same visible text, <code>title</code> text, and
-                <code>aria-label</code> text, JAWS only announces the visible link text</li>
+                <code>aria-label</code> text, JAWS only announces the <code>aria-label</code> text</li>
               </ul>
               <br>
               <p> <strong>Link types:</strong> </p>      
@@ -852,7 +852,7 @@
                 <li>List Links <kbd>Insert</kbd> + <kbd>F7</kbd></li>
                 <li>Next Link <code><kbd>Tab</kbd></code></li>
                 <li>Prior Link <kbd>Shift</kbd> + <kbd>Tab</kbd></li>
-                <li>Next Visited <kbd>Link V</kbd></li>
+                <li>Next Visited Link <kbd>V</kbd></li>
                 <li>Prior Visited Link <kbd>Shift</kbd> + <kbd>V</kbd></li>
                 <li>Open Link <kbd>Enter</kbd></li>
                 <li>Open Link in New Window <kbd>Shift</kbd> + <kbd>Enter</kbd></li>
@@ -913,7 +913,7 @@
                 </li>
                 <li>
                   <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/h7-h10.html#hd-002">
-                    Test HD-002: <code>h1</code> element, with <code>role="heading"</code> &amp; <code>aria-level="7"</code></a>: <em>TO DO</em>
+                    Test HD-002: <code>h1</code> element, with <code>role="heading"</code> &amp; <code>aria-level="7"</code></a>:
                     <p>
                       <strong>Not supported:</strong> the <code>aria-level</code> example is reported as <code>h2</code>.
                     </p>
@@ -948,9 +948,14 @@
                 </li>
                 <li>
                   <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/h7-h10.html#hd-006">
-                    Test HD-006: <code>role="heading"</code> + (<code>aria-level</code> 7-12) on <code>div</code> elements</a>:
+                    Test HD-006: <code>role="heading"</code> + (<code>aria-level</code> 1-12) on <code>div</code> elements</a>:
                   <p>
-                      <strong>Not supported:</strong> all <code>aria-level</code> examples reported as <code>h2</code>. 
+                      <strong>Only partially supported:</strong>
+                      The correct heading level is announced when the <code>aria-level</code>
+                      attribute is set to <code>aria-level="1"</code> through
+                      <code>aria-level="6"</code>, but all <code>aria-level</code>
+                      examples are reported as level 2 headings from <code>aria-level="7"</code>
+                      to <code>aria-level="12"</code>. 
                     </p>
                 </li>
               </ul>
@@ -2109,7 +2114,10 @@
             <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/data.html"><code>data</code>
                 test</a></td>
             <td>Machine-readable equivalent</td>
-            <td><em>Element content</em></td>
+            <td>
+              <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/data.html#da-001">Test DA-001: <code>data</code> element</a>:
+              <p><em>visible text</em></p>
+            </td>
             <td>No special commands</td>
             <td><svg viewBox="0 0 448 512"
                    width="20"
@@ -2130,20 +2138,22 @@
             <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/datalist.html"><code>datalist</code>
                 test</a></td>
             <td> Container for options for <a data-anolis-xref="attr-input-list"
-                 href="https://html.spec.whatwg.org/multipage/form-elements.html#the-list-attribute">combo
-
-
-                box control</a></td>
-            <td>
-              <p>"edit combo, to set the value use the arrow keys or type the value"</p>
-            </td>
+                 href="https://html.spec.whatwg.org/multipage/form-elements.html#the-list-attribute">combobox control</a></td>
             <td>
               <ul>
-                <li>Move To Next Combo Box <kbd>C</kbd></li>
-                <li>Move to Prior Combo Box <kbd>Shift+C </kbd></li>
-                <li>List of Combo boxes <kbd>Ctrl</kbd> + <kbd>Insert</kbd> + <kbd>C</kbd></li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/datalist.html#di-001">Test DI-001: <code>datalist</code> with <code>input</code></a>:
+                  (when data list is expanded and focus moves to the first option using the <kbd>Down</kbd> arrow key):
+                  autofill list box expanded, <em>visible option text</em> 1 of N, to move to an item press the arrow keys                   
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/datalist.html#di-002">Test DI-002: <code>datalist</code> with <code>input</code> and <code>aria-label</code></a>:
+                  (when data list is expanded and focus moves to the first option using the <kbd>Down</kbd> arrow key):
+                  autofill list box expanded, <em>visible option text</em> 1 of N, to move to an item press the arrow keys                   
+                </li>
               </ul>
             </td>
+            <td>No special commands</td>
             <td><svg viewBox="0 0 448 512"
                    width="20"
                    role="img"
@@ -2153,7 +2163,11 @@
               </svg>
               <br>
             </td>
-            <td>&nbsp;</td>
+            <td>JAWS announces "autofill list box expanded" when navigating into content marked
+              up using the <code>datalist</code> element. The application of the <code>aria-label</code>
+              attribute on the <code>datalist</code> element has no effect; JAWS does not announce
+              the contents of the <code>aria-label</code> attribute as the list's accessible name.
+            </td>
           </tr>
           <tr>
             <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dd-element"><code>dd</code></a>
@@ -2162,7 +2176,55 @@
                 test</a></td>
             <td> Content for corresponding <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dt-element">dt</a> element(s)
             </td>
-            <td><em>Element content</em></td>
+            <td>
+              <ul>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dl-dt-dd.html#dl-001">Test DL-001: <code>dl</code>, <code>dd</code>, and <code>dt</code> elements</a>:
+                  <p><em>element content</em></p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dl-dt-dd.html#dl-002">Test DL-002: <code>dl</code>, <code>dt</code>, and multiple <code>dd</code> elements</a>:
+                  <p><em>element content</em></p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dl-dt-dd.html#dl-003">Test DL-003: <code>dl</code>, <code>dt</code>, and multiple <code>dd</code> elements with <code>aria-label</code></a>:
+                  <p>
+                    Group start, <em>contents of the <code>aria-label</code> attribute</em>, 
+                    <em>element content</em>, Group end, 
+                    <em>contents of the <code>aria-label</code> attribute</em></p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dl-dt-dd.html#dl-004">Test DL-004: <code>dl</code> element with <code>tabindex="0"</code>, <code>dd</code>, and <code>dt</code> elements</code></a>:
+                  <ul>
+                    <li>
+                        <kbd>Arrow</kbd> key navigation:
+                        <p><em>element content</em></p>
+                    </li>
+                    <li>
+                        <kbd>Tab</kbd> key navigation:
+                        <p>
+                          Due to the application of <code>tabindex="0"</code> on the container
+                          <code>dl</code> element, the entire list contents - included the contents of
+                          <code>dd</code> elements in the list - are announced as a single block.
+                        </p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dl-dt-dd.html#dl-005">Test DL-005: <code>dl</code> element, <code>dd</code>, and <code>dt</code> elements with <code>tabindex="0"</code></a>:
+                  <ul>
+                    <li>
+                        <kbd>Arrow</kbd> key navigation:
+                        <p><em>element content</em></p>
+                    </li>
+                    <li>
+                        <kbd>Tab</kbd> key navigation:
+                        <p><em>element content</em></p>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </td>
             <td>No special commands</td>
             <td><svg viewBox="0 0 448 512"
                    width="20"
@@ -2184,8 +2246,35 @@
             <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/del-ins.html"><code>del</code>
                 test</a></td>
             <td>A removal from the document</td>
-            <td>voice change, deletion <em>Element content</em> end
-              deletion</td>
+            <td>
+              <ul>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/del-ins.html#del-001">Test DEL-001: <code>del</code> element</a>:
+                  <p>Strikethrough deletion (in a raised voice), <em>element content</em>, end strikethrough deletion (in a raised voice)</p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/del-ins.html#del-002">Test DEL-002: <code>del</code> element with <code>datetime</code> attribute</a>:
+                  <p>Strikethrough deletion (in a raised voice), <em>element content</em>, end strikethrough deletion (in a raised voice)</p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/del-ins.html#del-003">Test DEL-003: <code>del</code> element with <code>cite</code> attribute</a>:
+                  <p>Strikethrough deletion (in a raised voice), <em>element content</em>, end strikethrough deletion (in a raised voice)</p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/del-ins.html#del-004">Test DEL-004: <code>del</code> element with <code>tabindex="0"</code></a>:
+                  <ul>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p>Strikethrough deletion (in a raised voice), <em>element content</em>, end strikethrough deletion (in a raised voice)</p>
+                    </li>
+                    <li>
+                      <kbd>Tab</kbd> key navigation:
+                      <p>Strikethrough deletion (in a raised voice), <em>element content</em>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </td>
             <td>No special commands</td>
             <td><svg viewBox="0 0 448 512"
                    width="20"
@@ -2194,8 +2283,25 @@
                    class="yes">
                 <use href="#yes" />
               </svg></td>
-            <td>Refer to: <a href="https://www.tpgi.com/screen-readers-support-for-text-level-html-semantics/">Scree
-                Readers support for text level HTML semantics</a></td>
+            <td>
+              Refer to: <a href="https://www.tpgi.com/screen-readers-support-for-text-level-html-semantics/">Screen
+                Readers support for text level HTML semantics</a>
+              <ul>
+                <li>JAWS does not announce the contents of the <code>datetime</code> attribute when it is applied to the <code>del</code> element</li>
+                <li>JAWS does not announce any information associated with the <code>cite</code> attribute when it is applied to the <code>del</code> element</li>
+                <li>
+                  When <code>tabindex="0"</code> is applied to the <code>del</code> element:
+                  <ul>
+                    <li>
+                      JAWS announces both "strikethrough deletion" and "end strikethrough deletion" when it receives <kbd>Arrow</kbd> key focus
+                    </li>
+                    <li>
+                      JAWS only announces "strikethrough deletion" when it receives <kbd>Tab</kbd> key focus
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              </td>
           </tr>
           <tr>
             <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-details-element"><code>details</code></a>
@@ -2203,8 +2309,24 @@
             <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/details-summary.html"><code>details</code>
                 test</a></td>
             <td>Disclosure widget container</td>
-            <td>When the details element has an accessible name it is
-              announced along with group start/end.</td>
+            <td>
+              <p><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/details-summary.html#ds-010">Test DS-010: <code>details</code> element with <code>aria-label</code></a>:</p>
+              <ul>
+                <li>
+                  <kbd>Arrow</kbd> key navigation:
+                  <ul>
+                    <li>[When navigating into the group] Group, start, <em>contents of the <code>aria-label</code> attribute</em></li>
+                    <li>[When navigating out of the group] Group, end, <em>contents of the <code>aria-label</code> attribute</em></li>
+                  </ul>
+                </li>
+                 <li>
+                  <kbd>Tab</kbd> key navigation:
+                  <p>
+                    <em>contents of the <code>aria-label</code> attribute</em>, group
+                  </p>
+                </li>
+              </ul>
+            </td>
             <td>No special commands</td>
             <td><svg viewBox="0 0 448 512"
                    width="20"
@@ -2213,7 +2335,13 @@
                    class="yes">
                 <use href="#yes" />
               </svg></td>
-            <td>Refer to <a href="#el-summary"><code>summary</code></a> element</td>
+            <td>
+              <p>JAWS makes no special announcement when the <code>details</code> element receives focus
+              (either using reading keys or the <kbd>Tab</kbd> key) <i>unless</i> the element includes an
+              accessible name.</p>
+              <p>&nbsp;</p>
+              <p>Also refer to the <a href="#el-summary"><code>summary</code></a> element.</p>
+            </td>
           </tr>
           <tr>
             <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element"><code>dfn</code></a>
@@ -2221,7 +2349,31 @@
             <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dfn.html"><code>dfn</code> test</a>
             </td>
             <td>Defining instance of a term</td>
-            <td><em>Element content</em></td>
+            <td>
+              <ul>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dfn.html#dfn-001">Test DFN-001: <code>dfn</code> element</a>:
+                  <p><em>element contents</em></p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dfn.html#dfn-002">Test DFN-002: <code>dfn</code> element with <code>aria-label</code></a>:
+                  <p><em>element contents</em></p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dfn.html#dfn-003">Test DFN-003: <code>dfn</code> element with <code>tabindex="0"</code></a>:
+                  <ul>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p><em>element contents</em></p>
+                    </li>
+                    <li>
+                      <kbd>Tab</kbd> key navigation:
+                      <p><em>element contents and surrounding block content</em></p>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </td>
             <td>No special commands</td>
             <td><svg viewBox="0 0 512 512"
                    width="20"
@@ -2240,10 +2392,35 @@
             <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dialog.html">dialog test</a></td>
             <td>The dialog element represents a transitory part of an application, in the form of a small window
               ("dialog box")</td>
-            <td>dialog, accessible name if provided, accessible description if provided.</td>
-            <td>When the <code>dialog</code> opens focus is moved to first focusable element. <code>dialog</code> can be
+            <td>
+              <ul>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dialog.html#dialog-001">Test DIALOG-001: <code>dialog</code> element with <code>aria-haspopup="dialog"</code> on <code>button</code></a>:
+                  <p>Modal dialog, <em>dialog contents, including the role and accessible name of the control that has received keyboard focus</em></p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dialog.html#dialog-002">Test DIALOG-002: <code>dialog</code> element with <code>aria-label="Test Dialog 2"</code></a>:
+                  <p><em>Contents of the <code>aria-label</code> attribute</em>, modal dialog, <em>dialog contents, including the role and accessible name of the control that has received keyboard focus</em></p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dialog.html#dialog-003">Test DIALOG-003: <code>dialog</code> element with <code>aria-label="Test Dialog 3"</code> and <code>tabindex="-1"</code></a>:
+                  <p><em>dialog contents</em></p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dialog.html#dialog-004">Test DIALOG-004: <code>dialog</code> element with <code>aria-label="Test Dialog 4"</code> and structured text content</a>:
+                  <p><em>Contents of the <code>aria-label</code> attribute</em>, modal dialog, <em>Dialog heading, first paragraph, and the role and accessible name of the control that has received keyboard focus</em></p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dialog.html#dialog-005">Test DIALOG-005: <code>dialog</code> element with <code>aria-labelledby</code> and <code>aria-describedby</code></a>:
+                  <p><em>Contents referred to from the <code>aria-labelledby</code> attribute</em>, modal dialog, <em>contents referred to from the <code>aria-describedby</code> attribute, and the role and accessible name of the control that has received keyboard focus</em></p>
+                </li>
+              </ul>
+            </td>
+            <td>
+              When the <code>dialog</code> opens focus is moved to first focusable element. <code>dialog</code> can be
               closed with the <kbd>ESC</kbd> key. Upon closing focus moves back to the trigger control. While displayed
-              focus is contained within the <code>dialog</code>.</td>
+              focus is contained within the <code>dialog</code>.
+            </td>
             <td><svg viewBox="0 0 448 512"
                    width="20"
                    role="img"
@@ -2253,8 +2430,18 @@
               </svg>
               <br>
             </td>
-            <td><b>Note:</b> Focus is contained within the <code>dialog</code>, but the browser address bar is included
-              within the focus order. This is a browser implemented behaviour.</td>
+            <td>
+              <p>
+                <strong>Note:</strong> focus is contained within the <code>dialog</code>, but the browser address bar is included
+              within the focus order. This is a browser implemented behaviour.
+              </p>
+              <p>&nbsp;</p>
+              <p>
+                <strong>Possible bug</strong>: when <code>tabindex="-1"</code> is applied to the
+                <code>dialog</code> element, JAWS does not announce the dialog's role or accessible
+                name (if provided). JAWS only announces the contents of the dialog.
+              </p>
+            </td>
           </tr>
           <tr>
             <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element"><code>div</code></a>
@@ -2262,7 +2449,70 @@
             <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/div.html"><code>div</code> test</a>
             </td>
             <td>Generic flow container</td>
-            <td><em>Element content</em></td>
+            <td>
+              <ul>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/div.html#div-001">Test DIV-001: <code>div</code> element</a>:
+                  <ul>
+                    <li>
+                      <kbd>Z</kbd> / <kbd>Shift</kbd> + <kbd>Z</kbd> key navigation:
+                      <p><em>element contents</em></p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p><em>element contents</em></p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/div.html#div-002">Test DIV-002: <code>div</code> element with <code>aria-label="ARIA label text"</code></a>:
+                  <ul>
+                    <li>
+                      <kbd>Z</kbd> / <kbd>Shift</kbd> + <kbd>Z</kbd> key navigation:
+                      <p><em>element contents</em></p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p><em>element contents</em></p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/div.html#div-003">Test DIV-003: <code>div</code> element with <code>tabindex="0"</code></a>:
+                  <ul>
+                    <li>
+                      <kbd>Z</kbd> / <kbd>Shift</kbd> + <kbd>Z</kbd> key navigation:
+                      <p><em>element contents</em></p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p><em>element contents</em></p>
+                    </li>
+                    <li>
+                      <kbd>Tab</kbd> key navigation:
+                      <p><em>element contents</em></p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/div.html#div-004">Test DIV-004: <code>div</code> element with <code>aria-label="ARIA label text"</code> and <code>tabindex="0"</code></a>:
+                  <ul>
+                    <li>
+                      <kbd>Z</kbd> / <kbd>Shift</kbd> + <kbd>Z</kbd> key navigation:
+                      <p><em>element contents</em></p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p><em>element contents</em></p>
+                    </li>
+                    <li>
+                      <kbd>Tab</kbd> key navigation:
+                      <p><em>element contents</em></p>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </td>
             <td>
               <ul>
                 <li>Move to Next Division <kbd>Z</kbd></li>
@@ -2279,7 +2529,14 @@
               </svg>
               <br>
             </td>
-            <td>No semantics conveyed</td>
+            <td>
+              <p>
+                No semantics conveyed.
+              </p>
+              <p>&nbsp;</p>
+              <p>As expected, the contents of an <code>aria-label</code> attribute applied to
+              a <code>div</code> element are not announced.</p>
+            </td>
           </tr>
           <tr>
             <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dl-element"><code>dl</code></a>
@@ -2288,7 +2545,85 @@
                 test</a></td>
             <td>Association list consisting of zero or more name-value
               groups</td>
-            <td>&nbsp;</td>
+            <td>
+               <ul>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dl-dt-dd.html#dl-001">Test DL-001: <code>dl</code>, <code>dd</code>, and <code>dt</code> elements</a>:
+                  <ul>
+                    <li>
+                      <kbd>L</kbd> / <kbd>Shift</kbd> + <kbd>L</kbd> key navigation:
+                      <p>Definition list of <em>N</em> items</p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p>Definition list of <em>N</em> items</p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dl-dt-dd.html#dl-002">Test DL-002: <code>dl</code>, <code>dt</code>, and multiple <code>dd</code> elements</a>:
+                  <ul>
+                    <li>
+                      <kbd>L</kbd> / <kbd>Shift</kbd> + <kbd>L</kbd> key navigation:
+                      <p>Definition list of <em>N</em> items</p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p>Definition list of <em>N</em> items</p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dl-dt-dd.html#dl-003">Test DL-003: <code>dl</code>, <code>dt</code>, and multiple <code>dd</code> elements with <code>aria-label</code></a>:
+                  <ul>
+                    <li>
+                      <kbd>L</kbd> / <kbd>Shift</kbd> + <kbd>L</kbd> key navigation:
+                      <p><em>Contents of the <code>aria-label</code> attribute</em>, definition list of <em>N</em> items</p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p><em>Contents of the <code>aria-label</code> attribute</em>, definition list of <em>N</em> items</p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dl-dt-dd.html#dl-004">Test DL-004: <code>dl</code> element with <code>tabindex="0"</code>, <code>dd</code>, and <code>dt</code> elements</code></a>:
+                  <ul>
+                    <li>
+                      <kbd>L</kbd> / <kbd>Shift</kbd> + <kbd>L</kbd> key navigation:
+                      <p>Definition list of <em>N</em> items</p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p>Definition list of <em>N</em> items</p>
+                    </li>
+                    <li>
+                      <kbd>Tab</kbd> key navigation:
+                      <p><em>Entire contents of the list</em></p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dl-dt-dd.html#dl-005">Test DL-005: <code>dl</code> element, <code>dd</code>, and <code>dt</code> elements with <code>tabindex="0"</code></a>:
+                  <ul>
+                    <li>
+                      <kbd>L</kbd> / <kbd>Shift</kbd> + <kbd>L</kbd> key navigation:
+                      <p>Definition list of <em>N</em> items</p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p>Definition list of <em>N</em> items</p>
+                    </li>
+                    <li>
+                        <kbd>Tab</kbd> key navigation:
+                        <p>N/A - in this example, <code>tabindex="0"</code> is only applied to the
+                        nested <code>dt</code> and <code>dd</code> elements, not the container
+                        <code>dl</code> element.</p>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </td>
             <td>
               <ul>
                 <li>List All Ordered, Unordered, and Definition Lists <kbd>Ctrl</kbd> + <kbd>Insert</kbd> + <kbd>L</kbd></li>
@@ -2307,8 +2642,15 @@
               </svg>
               <br>
             </td>
-            <td> Refer to: <a href="https://adrianroselli.com/2025/01/updated-brief-note-on-description-list-support.html#JAWS">Adrian
-                Roselli: Updated Brief Note on Description List Support - Chrome 131 / JAWS 2025.2412.50</a></td>
+            <td>
+              <p>
+                Refer to: <a href="https://adrianroselli.com/2025/01/updated-brief-note-on-description-list-support.html#JAWS">Adrian
+                Roselli: Updated Brief Note on Description List Support - Chrome 131 / JAWS 2025.2412.50</a>
+              </p>
+              <p>&nbsp;</p>
+              <p><strong>Note:</strong> JAWS will announce <em>definition list of N items</em> (plural), even
+              when the list only includes a single item.</p>
+            </td>
           </tr>
           <tr>
             <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dt-element"><code>dt</code></a>
@@ -2317,7 +2659,52 @@
                 test</a></td>
             <td> Legend for corresponding <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dd-element">dd</a> element(s)
             </td>
-            <td><em>Element content</em></td>
+            <td>
+              <ul>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dl-dt-dd.html#dl-001">Test DL-001: <code>dl</code>, <code>dd</code>, and <code>dt</code> elements</a>:
+                  <p><em>element contents</em></p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dl-dt-dd.html#dl-002">Test DL-002: <code>dl</code>, <code>dt</code>, and multiple <code>dd</code> elements</a>:
+                  <p><em>element contents</em></p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dl-dt-dd.html#dl-003">Test DL-003: <code>dl</code>, <code>dt</code>, and multiple <code>dd</code> elements with <code>aria-label</code></a>:
+                  <p><em>element contents</em></p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dl-dt-dd.html#dl-004">Test DL-004: <code>dl</code> element with <code>tabindex="0"</code>, <code>dd</code>, and <code>dt</code> elements</code></a>:
+                  <ul>
+                    <li>
+                        <kbd>Arrow</kbd> key navigation:
+                        <p><em>element contents</em></p>
+                    </li>
+                    <li>
+                        <kbd>Tab</kbd> key navigation:
+                        <p>
+                          Due to the application of <code>tabindex="0"</code> on the container
+                          <code>dl</code> element, the entire list contents - included the contents of
+                          <code>dt</code> elements in the list - are announced as a single block.
+                        </p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/dl-dt-dd.html#dl-005">Test DL-005: <code>dl</code> element, <code>dd</code>, and <code>dt</code> elements with <code>tabindex="0"</code></a>:
+                  <ul>
+                    <li>
+                        <kbd>Arrow</kbd> key navigation:
+                        <p><em>element contents</em></p>
+                    </li>
+                    <li>
+                        <kbd>Tab</kbd> key navigation:
+                        <p><em>element contents</em></p>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </td>
             <td>
               <ul>
                 <li>Next Item in a List <kbd>I</kbd></li>
@@ -2341,7 +2728,18 @@
             <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/em.html"><code>em</code> test</a>
             </td>
             <td>Stress emphasis</td>
-            <td><em>Element content</em></td>
+            <td>
+              <ul>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/em.html#em-001">Test EM-001: <code>em</code> element</a>:
+                  <p><em>element contents</em> (no change in voice)</p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/em.html#em-002">Test EM-002: <code>em</code> element, with <code>font-style:normal;</code></a>:
+                  <p><em>element contents</em> (no change in voice)</p>
+                </li>
+              </ul>
+            </td>
             <td>No special commands</td>
             <td><svg viewBox="0 0 448 512"
                    width="20"
@@ -2378,7 +2776,108 @@
             <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/fieldset-legend.html"><code>fieldset</code>
                 test</a></td>
             <td>Group of form controls</td>
-            <td>"Group start" legend content ... "Group end"</td>
+            <td>
+              <ul>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/fieldset-legend.html#flgnd-001">Test FLGND-001: <code>fieldset</code> element with <code>legend</code> element</a>:
+                  <ul>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation to and from <code>fieldset</code> container:
+                      <p>Group start, <em><code>legend</code> element text</em>, <em>group contents</em>, group end, <em><legend>legend</legend> element text</em></p>
+                    </li>
+                    <li>
+                      <kbd>Tab</kbd> key navigation into <code>fieldset</code> contents:
+                      <p>
+                        <em>JAWS' instructions for operating form controls inside the <code>fieldset</code></em>,
+                        <em>legend element text</em>, group, 
+                        <em>role, name, state, and any further instructions associated with the
+                          first element in the <code>fieldset</code> that receives keyboard focus 
+                        </em>
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/fieldset-legend.html#flgnd-002">Test FLGND-002: <code>fieldset</code> element with <code>legend</code> element containing a <code>h2</code> element</a>:
+                  <ul>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation to and from <code>fieldset</code> container:
+                      <p>Group start, heading level [heading level], <em><code>legend</code> element text</em>, <em>group contents</em>, group end</p>
+                    </li>
+                    <li>
+                      <kbd>Tab</kbd> key navigation into <code>fieldset</code> contents:
+                      <p>
+                        <em>JAWS' instructions for operating form controls inside the <code>fieldset</code></em>,
+                        <em>legend element text</em>, group, 
+                        <em>role, name, state, and any further instructions associated with the
+                          first element in the <code>fieldset</code> that receives keyboard focus 
+                        </em>
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/fieldset-legend.html#flgnd-003">Test FLGND-003: <code>fieldset</code> element with <code>aria-labelledby</code>, with <code>legend</code> element</a>:
+                  <ul>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation to and from <code>fieldset</code> container:
+                      <p>Group start, <em><code>legend</code> element text</em>, <em>group contents</em>, group end</p>
+                    </li>
+                    <li>
+                      <kbd>Tab</kbd> key navigation into <code>fieldset</code> contents:
+                      <p>
+                        <em>JAWS' instructions for operating form controls inside the <code>fieldset</code></em>,
+                        <em>contents of the element referenced by the <code>aria-labelledby</code> attribute
+                        on the <code>fieldset</code> element</em>, group,
+                        <em>role, name, state, and any further instructions associated with the
+                          first element in the <code>fieldset</code> that receives keyboard focus 
+                        </em>
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/fieldset-legend.html#flgnd-004">Test FLGND-004: <code>fieldset</code> element, <code>legend</code> element with <code>aria-label</code></a>:
+                  <ul>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation to and from <code>fieldset</code> container:
+                      <p>
+                        Group start, <em>contents of the <code>aria-label</code> attribute</em>,
+                        <em>group contents</em>,
+                        Group end, <em>contents of the <code>aria-label</code> attribute</em>
+                      </p>
+                    </li>
+                    <li>
+                      <kbd>Tab</kbd> key navigation into <code>fieldset</code> contents:
+                      <p>
+                        <em>JAWS' instructions for operating form controls inside the <code>fieldset</code></em>,
+                        <em>contents of the <code>aria-label</code> attribute</em>, group,
+                        <em>role, name, state, and any further instructions associated with the
+                          first element in the <code>fieldset</code> that receives keyboard focus 
+                        </em>
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/fieldset-legend.html#flgnd-005">Test FLGND-005: <code>fieldset</code> element, no <code>legend</code> element</a>:
+                  <ul>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation to and from <code>fieldset</code> container:
+                      <p><em>group contents</em></p>
+                    </li>
+                    <li>
+                      <kbd>Tab</kbd> key navigation into <code>fieldset</code> contents:
+                      <p>
+                        <em>role, name, state, and any further instructions associated with the
+                          first element in the <code>fieldset</code> that receives keyboard focus 
+                        </em>
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </td>
             <td>No special commands, fieldset presence and accessible
               name announced when first control child is navigated to
               using virtual keys navigation keys for the child control.</td>
@@ -2391,8 +2890,45 @@
               </svg>
               <br>
             </td>
-            <td>Only when <code>fieldset</code> has an accessible name
-              via <code>legend</code> or other method.</td>
+            <td>
+              <ul>
+                <li>
+                  When a <code>fieldset</code> includes a <code>legend</code> that does <em>not</em>
+                  include additional markup (such as a heading), JAWS announces the
+                  group role and the <code>legend</code> text as a single string when navigating into 
+                  the <code>fieldset</code> using the <kbd>Down</kbd> arrow key (<a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/fieldset-legend.html#flgnd-001">Test FLGND-001</a>) 
+                </li>
+                <li>
+                  When a <code>fieldset</code> includes a <code>legend</code> that <em>does</em>
+                  include additional markup (such as a heading (<a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/fieldset-legend.html#flgnd-002">Test FLGND-002</a>)
+                  or an <code>aria-labelledby</code> attribute (<a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/fieldset-legend.html#flgnd-003">Test FLGND-003</a>)), JAWS only announce the group role when navigating
+                  into the <code>fieldset</code> using the <kbd>Down</kbd> arrow key; the user must press the <kbd>Down</kbd>
+                  arrow key a second time to hear the <code>legend</code> text       
+                </li>
+                <li>
+                  When using the <kbd>Down</kbd> arrow key to navigate into a <code>fieldset</code> that includes an <code>aria-labelledby</code> that
+                  references content outside of the associated <code>legend</code>, JAWS prioritises and announces the <code>legend</code> text in place of the
+                  <code>aria-labelledby</code> referenced text (<a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/fieldset-legend.html#flgnd-003">Test FLGND-003</a>) 
+                </li>
+                <li>
+                  When using the <kbd>Tab</kbd> key to navigate into a <code>fieldset</code> that includes an <code>aria-labelledby</code> that
+                  references content outside of the associated <code>legend</code>,
+                  JAWS prioritises and announces the <code>aria-labelledby</code> referenced text in place of
+                  the <code>legend</code> text (<a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/fieldset-legend.html#flgnd-003">Test FLGND-003</a>) 
+                </li>
+                <li>
+                  When the <code>aria-label</code> attribute is applied to the <code>legend</code> element,
+                  JAWS announces the contents of the <code>aria-label</code> rather than the visible
+                  <code>legend</code> text. (<a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/fieldset-legend.html#flgnd-004">Test FLGND-004</a>) 
+                </li>
+                <li>
+                  When a <code>fieldset</code> is missing an accessible name entirely (either via the
+                  <code>legend</code> element or a suitable equivalent, such as the <code>aria-label</code>
+                  or <code>aria-labelledby</code> attributes to provide an accessible name), no
+                  semantics are conveyed by JAWS (<a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/fieldset-legend.html#flgnd-005">Test FLGND-005</a>) 
+                </li>
+              </ul>
+            </td>
           </tr>
           <tr>
             <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figcaption-element"><code>figcaption</code></a>
@@ -2400,7 +2936,12 @@
             <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/figure-figcaption.html"><code>figcaption</code>
                 test</a></td>
             <td> Caption for <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element">figure</a></td>
-            <td><em>Element content</em></td>
+            <td>
+              <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/figure-figcaption.html#FC-001">Test FC-001: <code>figure</code> with <code>figcaption</code> element</a>:
+              <p>
+                <em>element contents</em>
+              </p>
+            </td>
             <td>No special commands</td>
             <td><svg viewBox="0 0 448 512"
                    width="20"
@@ -2419,8 +2960,50 @@
             <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/figure.html"><code>figure</code>
                 test</a></td>
             <td>Figure with optional caption</td>
-            <td>"Figure start" <em>figcaption content, element
-                content, figcaption content "Figure end"</em></td>
+            <td>
+              <ul>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/figure.html#fg-001">Test FG-001: <code>figure</code> element</a>:
+                  <p><em>element contents</em></p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/figure.html#fg-002">Test FG-002: <code>figure</code> with <code>aria-label</code></a>:
+                  <p>
+                    Group start, <em><code>aria-label</code> contents</em>, <em>element contents</em>, group end, <em><code>aria-label</code> contents</em> 
+                  </p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/figure.html#fg-003">Test FG-003: <code>figure</code> with <code>aria-labelledby</code></a>:
+                  <p>
+                    Group start, <em>contents referenced by the <code>aria-labelledby</code> attribute</em>, 
+                    <em>element contents</em>, group start, <em>contents referenced by the <code>aria-labelledby</code> attribute</em>
+                  </p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/figure.html#fg-004">Test FG-004: <code>figure</code> with <code>title</code> attribute</a>:
+                  <p>
+                    Group start, <em><code>title</code> contents</em>, <em>element contents</em>,
+                    group start, <em><code>title</code> contents</em> 
+                  </p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/figure.html#fg-005">Test FG-005: <code>figure</code> with <code>figcaption</code> attribute</a>:
+                  <p>
+                    <em>element contents, including <code>figcaption</code> contents</em>
+                  </p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/figure.html#fg-006">Test FG-006: <code>figure</code> with <code>aria-describedby</code></a>:
+                  <p>
+                    <em>element contents</em>
+                  </p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/figure.html#fg-007">Test FG-007: <code>figure</code> with <code>figcaption</code> element and <code>title</code> attribute</a>:
+                  <p>Group start, <em><code>title</code> contents</em>, <em>element contents</em></p>
+                </li>
+              </ul>
+            </td>
             <td>No special commands</td>
             <td><svg viewBox="0 0 448 512"
                    width="20"
@@ -2431,7 +3014,30 @@
               </svg>
               <br>
             </td>
-            <td>&nbsp;</td>
+            <td>
+              <ul>
+                <li>
+                  When the <code>figure</code> receives focus via the <kbd>Down</kbd> arrow key, JAWS announces the group role when the 
+                  <code>aria-label</code> (<a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/figure.html#fg-002">Test FG-002</a>), 
+                  <code>aria-labelledby</code> (<a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/figure.html#fg-002">Test FG-003</a>)
+                  or <code>title</code> (<a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/figure.html#fg-004">Test FG-004</a>
+                  and <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/figure.html#fg-007">Test FG-007</a>)
+                  attributes are used to provide an accessible name for the <code>figure</code>
+                </li>
+                <li>
+                  When the <code>figure</code> receives focus via the <kbd>Down</kbd> arrow key, JAWS does not announce the group role if only the <code>figcaption</code> element is
+                  present (<a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/figure.html#fg-005">Test FG-005</a>),
+                  and does not announce the group role if the <code>figure</code> element is missing an accessible name
+                  altogether
+                </li>
+                <li>
+                  When the <code>figure</code> receives focus via the <kbd>Down</kbd> arrow key,
+                  JAWS does not announce the contents referenced by the <code>aria-describedby</code>
+                  attribute; the user must navigate to this content separately
+                  (<a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/figure.html#fg-006">Test FG-006</a>)
+                </li>
+              </ul>
+            </td>
           </tr>
           <tr>
             <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/sections.html#the-footer-element"><code>footer</code></a>
@@ -2439,8 +3045,105 @@
             <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/footer.html"><code>footer</code>
                 test</a></td>
             <td>Footer for a page or section</td>
-            <td>"Content information" <em>element content</em> "content
-              information end"</td>
+            <td>
+              <ul>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/footer.html#ft-001">Test FT-001: <code>footer</code> element, sectioning content / root is <code>body</code></a>:
+                  <ul>
+                    <li>
+                      <kbd>R</kbd> / <kbd>Shift</kbd> + <kbd>R</kbd> key navigation:
+                      <p><em>element contents</em>, content information</p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p><em>element contents</em></p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/footer.html#ft-002">Test FT-002: <code>footer</code> element, sectioning content / root is <em>not</em> <code>body</code></a>:
+                  <ul>
+                    <li>
+                      <kbd>R</kbd> / <kbd>Shift</kbd> + <kbd>R</kbd> key navigation:
+                      <p>Not announced or reachable using the above keystrokes</p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p><em>element contents</em></p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/footer.html#ft-003">Test FT-003: <code>footer</code> with <code>aria-label</code></a>:
+                  <ul>
+                    <li>
+                      <kbd>R</kbd> / <kbd>Shift</kbd> + <kbd>R</kbd> key navigation:
+                      <p>Not announced or reachable using the above keystrokes</p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p><em>element contents</em></p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/footer.html#ft-004">Test FT-004: <code>footer</code> with <code>aria-labelledby</code></a>:
+                  <ul>
+                    <li>
+                      <kbd>R</kbd> / <kbd>Shift</kbd> + <kbd>R</kbd> key navigation:
+                      <p>Not announced or reachable using the above keystrokes</p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p><em>element contents</em></p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/footer.html#ft-005">Test FT-005: <code>footer</code> with <code>title</code> attribute</a>:
+                  <ul>
+                    <li>
+                      <kbd>R</kbd> / <kbd>Shift</kbd> + <kbd>R</kbd> key navigation:
+                      <p>Not announced or reachable using the above keystrokes</p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p><em><code>title</code> contents</em>, <em>element contents</em></p>
+                      <p><strong>Note:</strong> the contents of the <code>title</code> attribute are announced
+                      after the first word in the footer is announced.</p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/footer.html#ft-006">Test FT-006: <code>footer</code> with <code>aria-describedby</code></a>:
+                  <ul>
+                    <li>
+                      <kbd>R</kbd> / <kbd>Shift</kbd> + <kbd>R</kbd> key navigation:
+                      <p>Not announced or reachable using the above keystrokes</p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p><em>element contents</em></p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/footer.html#ft-007">Test FT-007: <code>footer</code> with <code>aria-label</code> and <code>title</code> attributes</a>:
+                  <ul>
+                    <li>
+                      <kbd>R</kbd> / <kbd>Shift</kbd> + <kbd>R</kbd> key navigation:
+                      <p>Not announced or reachable using the above keystrokes</p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p><em><code>title</code> contents</em>, <em>element contents</em></p>
+                      <p><strong>Note:</strong> the contents of the <code>title</code> attribute are announced
+                      after the first word in footer is announced.</p>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </td>
             <td>
               <ul>
                 <li>Move to Next Region&nbsp; <kbd>R</kbd> <br>
@@ -2460,7 +3163,52 @@
               </svg>
               <br>
             </td>
-            <td>&nbsp;</td>
+            <td>
+              <ul>
+                <li>
+                  When the <code>body</code> element represents the sectioning content / root 
+                  of the <code>footer</code> element (<a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/footer.html#ft-001">Test FT-001</a>):
+                  <ul>
+                    <li>Users can navigate to the region using JAWS' region navigation keys, JAWS 
+                      announces the <code>footer</code> role ("content information"), and
+                     JAWS announces the accessible name and / or accessible description provided for 
+                      the <code>footer</code> using an appropriate method, such as <code>aria-label</code>,
+                      <code>aria-labelledby</code>, or <code>aria-describedby</code>
+                    </li>
+                    <li><strong>Possible bug:</strong> JAWS does not announce the role of the 
+                      <code>footer</code>
+                    when navigating into it using the <kbd>Down</kbd> arrow key, nor does it
+                    announce the accessible name and / or accessible description provided for the
+                    <code>footer</code> using an appropriate method, such as <code>aria-label</code>,
+                      <code>aria-labelledby</code>, or <code>aria-describedby</code></li>
+                  </ul> 
+                </li>
+                <li>
+                  When the <code>body</code> element is <em>not</em> the sectioning / root
+                  of the <code>footer</code> element (all other tests):
+                  <ul>
+                    <li>Users can <em>not</em> navigate to the region using JAWS' region navigation keys</li>
+                    <li>JAWS does <em>not</em> announce the <code>footer</code> role; it only announces the <code>footer</code> element's contents</li>
+                    <li>JAWS does <em>not</em> announce the accessible name and / or accessible description 
+                        provided for 
+                      the <code>footer</code> using an appropriate method, such as <code>aria-label</code>,
+                      <code>aria-labelledby</code>, or <code>aria-describedby</code>, when navigating into
+                      the <code>footer</code> using the <kbd>Down</kbd> arrow key
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Possible bug</strong>: when the <code>title</code> attribute is applied to 
+                  the <code>footer</code> element, JAWS does not announce the contents of this 
+                  attribute when navigating into the <code>footer</code>. Instead, it announces the 
+                  contents of this attribute immediately after announcing the first word inside the 
+                  footer. This is possibly because, in the examples used, we have nested the
+                  <code>footer</code> inside an <code>article</code> element, and this issue also
+                  arises when the <code>title</code> attribute is also applied to the <code>article</code>
+                  element (refer to findings related to the <code>article</code> element for further information) 
+                </li>
+              </ul>
+            </td>
           </tr>
           <tr>
             <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-form-element"><code>form</code></a>
@@ -2468,11 +3216,90 @@
             <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/form.html"><code>form</code>
                 test</a></td>
             <td>User-submittable form</td>
-            <td>With accessible name announced as <i>accessible name</i>, form, element content. <i>accessible name</i>,
-              form end.</td>
             <td>
-              <p>Without accessible name: ignored. </p>
-              <p>With accessible name: </p>
+              <ul>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/form.html#form-001">Test FORM-001: <code>form</code> element</a>:
+                  <ul>
+                    <li>
+                      <kbd>R</kbd> / <kbd>Shift</kbd> + <kbd>R</kbd> key navigation:
+                      <p>
+                        Not announced or reachable using the above contents, as the
+                        <code>form</code> does not have an accessible name
+                      </p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p><em>element contents</em></p>
+                    </li>
+                    <li>
+                      <kbd>Tab</kbd> key navigation:
+                      <p><em>element contents</em></p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/form.html#form-002">Test FORM-002: <code>form</code> element with <code>required</code> attribute on <code>input type="text"</code></a>:
+                  <ul>
+                    <li>
+                      <kbd>R</kbd> / <kbd>Shift</kbd> + <kbd>R</kbd> key navigation:
+                      <p>
+                        Not announced or reachable using the above contents, as the
+                        <code>form</code> does not have an accessible name
+                      </p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p><em>element contents</em></p>
+                    </li>
+                    <li>
+                      <kbd>Tab</kbd> key navigation:
+                      <p><em>element contents</em></p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/form.html#form-003">Test FORM-003: <code>form</code> element with <code>novalidate</code> attribute and <code>required</code> attribute on <code>input type="text"</code></a>:
+                  <ul>
+                    <li>
+                      <kbd>R</kbd> / <kbd>Shift</kbd> + <kbd>R</kbd> key navigation:
+                      <p>
+                        Not announced or reachable using the above contents, as the
+                        <code>form</code> does not have an accessible name
+                      </p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p><em>element contents</em></p>
+                    </li>
+                    <li>
+                      <kbd>Tab</kbd> key navigation:
+                      <p><em>element contents</em></p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/form.html#form-004">Test FORM-004: <code>form</code> element with <code>aria-label</code> attribute</a>:
+                  <ul>
+                    <li>
+                      <kbd>R</kbd> / <kbd>Shift</kbd> + <kbd>R</kbd> key navigation:
+                      <p>
+                        <em>First label in the <code>form</code> contents</em>, <em>aria-label contents</em>, form
+                      </p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p><em>element contents</em></p>
+                    </li>
+                    <li>
+                      <kbd>Tab</kbd> key navigation:
+                      <p><em><code>aria-label</code> contents</em>, form, region, <em>element contents</em></p>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </td>
+            <td>
               <ul>
                 <li>Move to Next Region&nbsp; <kbd>R</kbd> <br>
                 </li>
@@ -2501,7 +3328,75 @@
     
     - h6</code> test</a></td>
             <td>Section heading</td>
-            <td>&nbsp;</td>
+            <td>
+              <ul>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/h1-h6.html#hd-001">Test HD-001: <code>h1</code> - <code>h6</code> elements</a>:
+                  <ul>
+                    <li>
+                      <kbd>H</kbd> / <kbd>Shift</kbd> + <kbd>H</kbd> key navigation:
+                      <p><em>element contents</em>, heading level <em>N</em></p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p>heading level <em>N</em>, <em>element contents</em></p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/h1-h6.html#hd-002">Test HD-002: <code>span</code> element, with <code>role="heading"</code> and <code>aria-level="1"</code></a>:
+                  <ul>
+                    <li>
+                      <kbd>H</kbd> / <kbd>Shift</kbd> + <kbd>H</kbd> key navigation:
+                      <p><em>element contents</em>, heading level <em>N</em></p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p>heading level <em>N</em>, <em>element contents</em></p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/h1-h6.html#hd-003">Test HD-003: <code>h2</code> element, with <code>aria-level="1"</code></a>:
+                  <ul>
+                    <li>
+                      <kbd>H</kbd> / <kbd>Shift</kbd> + <kbd>H</kbd> key navigation:
+                      <p><em>element contents</em>, heading level <em>N</em></p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p>heading level <em>N</em>, <em>element contents</em></p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/h1-h6.html#hd-004">Test HD-004: <code>h1</code> - <code>h6</code> elements with no content</a>:
+                  <ul>
+                    <li>
+                      <kbd>H</kbd> / <kbd>Shift</kbd> + <kbd>H</kbd> key navigation:
+                      <p>Content skipped entirely, as expected</p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p>Content skipped entirely, as expected</p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/h1-h6.html#hd-005">Test HD-005: <code>h1</code> - <code>h6</code> elements with <code>aria-level</code></a>:
+                  <ul>
+                    <li>
+                      <kbd>H</kbd> / <kbd>Shift</kbd> + <kbd>H</kbd> key navigation:
+                      <p><em><code>aria-label</code> contents</em>, heading level <em>N</em></p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p>heading level <em>N</em>, <em>element contents</em></p>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </td>
             <td>
               <ul>
                 <li>List Headings <kbd>Insert</kbd> + <kbd>F6</kbd></li>
@@ -2524,7 +3419,13 @@
               </svg>
               <br>
             </td>
-            <td>&nbsp;</td>
+            <td>
+              When navigating through content using JAWS keyboard shortcuts (such as the <kbd>H</kbd> / <kbd>Shift</kbd> + <kbd>H</kbd> keys),
+              JAWS announces the heading contents followed by the heading level.
+              <p>&nbsp;</p>
+              When navigating through content using the <kbd>Down</kbd> arrow key,
+              JAWS announces the heading level followed by the heading contents.
+            </td>
           </tr>
           <tr>
             <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/semantics.htmlthe-head-element"><code>head</code></a> </th>
@@ -2547,7 +3448,101 @@
             <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/header.html"><code>header</code>
                 test</a></td>
             <td>Introductory or navigational aids for a page or section</td>
-            <td>"banner" element content "banner end"</td>
+            <td>
+              <ul>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/header.html#hd-001">Test HD-001: <code>header</code> element, sectioning content / root is <code>body</code></a>:
+                  <ul>
+                    <li>
+                      <kbd>R</kbd> / <kbd>Shift</kbd> + <kbd>R</kbd> key navigation:
+                      <p><em>element contents</em>, banner</p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p><em>element contents</em></p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/header.html#hd-002">Test HD-002: <code>header</code> element, sectioning content / root is <em>not</em> <code>body</code></a>:
+                  <ul>
+                    <li>
+                      <kbd>R</kbd> / <kbd>Shift</kbd> + <kbd>R</kbd> key navigation:
+                      <p>Not announced or reachable using the above keystrokes</p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p><em>element contents</em></p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/header.html#hd-003">Test HD-003: <code>header</code> with <code>aria-label</code></a>:
+                  <ul>
+                    <li>
+                      <kbd>R</kbd> / <kbd>Shift</kbd> + <kbd>R</kbd> key navigation:
+                      <p>Not announced or reachable using the above keystrokes</p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p><em>element contents</em></p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/header.html#hd-004">Test HD-004: <code>header</code> with <code>aria-labelledby</code></a>:
+                  <ul>
+                    <li>
+                      <kbd>R</kbd> / <kbd>Shift</kbd> + <kbd>R</kbd> key navigation:
+                      <p>Not announced or reachable using the above keystrokes</p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p><em>element contents</em></p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/header.html#hd-005">Test HD-005: <code>header</code> with <code>title</code> attribute</a>:
+                  <ul>
+                    <li>
+                      <kbd>R</kbd> / <kbd>Shift</kbd> + <kbd>R</kbd> key navigation:
+                      <p>Not announced or reachable using the above keystrokes</p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p><em>element contents</em></p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/header.html#hd-006">Test HD-006: <code>header</code> with <code>aria-describedby</code></a>:
+                  <ul>
+                    <li>
+                      <kbd>R</kbd> / <kbd>Shift</kbd> + <kbd>R</kbd> key navigation:
+                      <p>Not announced or reachable using the above keystrokes</p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p><em>element contents</em></p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/header.html#hd-007">Test HD-007: <code>header</code> with <code>aria-label</code> &amp; <code>title</code> attributes</a>:
+                  <ul>
+                    <li>
+                      <kbd>R</kbd> / <kbd>Shift</kbd> + <kbd>R</kbd> key navigation:
+                      <p>Not announced or reachable using the above keystrokes</p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p><em>element contents</em></p>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </td>
             <td>
               <ul>
                 <li>Move to Next Region <kbd>R</kbd> <br>
@@ -2567,7 +3562,55 @@
               </svg>
               <br>
             </td>
-            <td>&nbsp;</td>
+            <td>
+              <ul>
+                <li>
+                  When the <code>body</code> element represents the sectioning content / rooter
+                  of the <code>header</code> element
+                  (<a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/header.html#hd-001">Test HD-001</a>):
+                  <ul>
+                    <li>Users can navigate to the region using JAWS' region navigation keys, JAWS 
+                      announces the <code>header</code> role ("banner"), and JAWS 
+                      announces the accessible name and / or accessible description provided for
+                      the <code>header</code> using an appropriate method, such as <code>aria-label</code>,
+                      <code>aria-labelledby</code>, or <code>aria-describedby</code>
+                    </li>
+                    <li><strong>Possible bug</strong>: JAWS does not announce the role of the <code>header</code>
+                    when navigating into it using the <kbd>Down</kbd> arrow key, nor does 
+                    it announce the accessible name and / or accessible description  provided for
+                      the <code>header</code> using an appropriate method, such as <code>aria-label</code>,
+                      <code>aria-labelledby</code>, or <code>aria-describedby</code></li>
+                  </ul>
+                </li>
+                <li>
+                  When the <code>body</code> element is <em>not</em> 
+                  the sectioning / root of the <code>header</code> element (all other tests):
+                  <ul>
+                    <li>Users can <em>not</em> navigate to the region using JAWS' region navigation
+                    keys</li>
+                    <li>JAWS does <em>not</em> announce the <code>header</code> role; it only announces the
+                    <code>header</code> element's contents</li>
+                    <li>JAWS does <em>not</em> announce the accessible name and / or accessible
+                    description provided for the <code>header</code> using an appropriate method,
+                    such as <code>aria-label</code>, <code>aria-labelledby</code>, or
+                    <code>aria-describedby</code>, when navigating into the <code>header</code>
+                    using the <kbd>Down</kbd> arrow key
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Possible bug</strong>: when the <code>title</code> attribute is
+                  applied to the <code>header</code> element, JAWS does not announce the contents of this
+                  attribute when navigating into the <code>header</code>. Instead, it announces
+                  the contents of this attribute immediately after announcing the first word inside
+                  header. This is possibly because, in the examples used, we have nested the
+                  <code>footer</code> inside an <code>article</code> element, and this issue also
+                  arises when the <code>title</code> attribute is applied to the <code>title</code>
+                  attribute (refer to findings related to the <code>article</code> element for
+                  further information)
+                </li>
+              </ul>
+            </td>
           </tr>
           <tr>
             <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-hr-element"><code>hr</code></a>
@@ -2575,11 +3618,65 @@
             <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/hr.html"><code>hr</code> test</a>
             </td>
             <td>Thematic break</td>
-            <td>"separator"</td>
             <td>
               <ul>
-                <li>Move to Next Separator <kbd>DASH</kbd></li>
-                <li>Move to Prior Separator <kbd>Shift</kbd> + <kbd>DASH</kbd></li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/hr.html#hr-001">Test HR-001: <code>hr</code> element</a>:
+                  <ul>
+                    <li>
+                      <kbd>-</kbd> / <kbd>Shift</kbd> + <kbd>-</kbd> key navigation:
+                      <p>Dash, dash, dash, separator</p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p>separator</p>
+                    </li>
+                    <li>
+                      <kbd>Tab</kbd> key navigation:
+                      <p>Not applicable</p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/hr.html#hr-002">Test HR-002: <code>hr</code> element with <code>aria-label</code></a>:
+                  <ul>
+                    <li>
+                      <kbd>-</kbd> / <kbd>Shift</kbd> + <kbd>-</kbd> key navigation:
+                      <p><em><code>aria-label</code> contents</em>, separator</p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p><em><code>aria-label</code> contents</em>, separator</p>
+                    </li>
+                    <li>
+                      <kbd>Tab</kbd> key navigation:
+                      <p>Not applicable</p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/hr.html#hr-003">Test HR-003: <code>hr</code> element with <code>tabindex="0"</code> and <code>aria-label</code></a>:
+                  <ul>
+                    <li>
+                      <kbd>-</kbd> / <kbd>Shift</kbd> + <kbd>-</kbd> key navigation:
+                      <p><em><code>aria-label</code> contents</em>, separator, min zero, max one hundred</p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p><em><code>aria-label</code> contents</em>, separator</p>
+                    </li>
+                    <li>
+                      <kbd>Tab</kbd> key navigation:
+                      <p><em><code>aria-label</code> contents</em>, separator, min zero, max one hundred</p>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>Move to Next Separator <kbd>-</kbd></li>
+                <li>Move to Prior Separator <kbd>Shift</kbd> + <kbd>-</kbd></li>
               </ul>
             </td>
             <td><svg viewBox="0 0 448 512"
@@ -2591,7 +3688,26 @@
               </svg>
               <br>
             </td>
-            <td>&nbsp;</td>
+            <td>
+              <ul>
+                <li>
+                  If the <code>hr</code> element is missing an accessible name, JAWS will announce
+                  the item as "separator" when navigating through page content using the <kbd>Arrow</kbd>
+                   keys, or "dash, dash, dash, separator" when between separators using the
+                  <kbd>-</kbd> / <kbd>Shift</kbd> + <kbd>-</kbd> keys 
+                </li>
+                <li>
+                  If the <code>hr</code> element has an explicit accessible name, JAWS will announce
+                  the accessible name, followed by "separator", regardless of the way that the
+                  user navigated to the element
+                </li>
+                <li>
+                  <strong>Possible bug:</strong> If the <code>hr</code> element includes <code>tabindex="0"</code>, JAWS will
+                  erroneously announce "min zero, max 100" alongside the element's role and (where
+                  available) accessible name when the element receives keyboard focus
+                </li>
+              </ul>
+            </td>
           </tr>
           <tr>
             <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-html-element"><code>html</code></a>
@@ -2615,7 +3731,18 @@
             <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/i.html"><code>i</code> test</a>
             </td>
             <td>Alternate voice</td>
-            <td><em>Element content</em></td>
+            <td>
+              <ul>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/i.html#i-001">Test I-001: <code>i</code> element</a>:
+                  <p><em>element contents</em> (no change in voice)</p>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/i.html#i-002">Test I-002: <code>i</code> element with <code>style="font-style: normal;"</code></a>:
+                  <p><em>element contents</em> (no change in voice)</p>
+                </li>
+              </ul>
+            </td>
             <td>No special commands</td>
             <td><svg viewBox="0 0 448 512"
                    width="20"
@@ -2633,13 +3760,183 @@
               <p> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/iframe.html"><code>iframe</code>
                   test</a> </p>
               <p> <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/iframe-title.html"><code>iframe</code>
-                  with title test</a> </p>
+                  with <code>title</code> test</a> </p>
             </td>
             <td><a href="https://html.spec.whatwg.org/multipage/browsers.html#sec-nested-browsing-contexts">Nested
-
-
                 browsing context</a></td>
-            <td>&nbsp;</td>
+            <td>
+              <p>
+                <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/iframe.html"><code>iframe</code>
+                  test</a>:
+              </p>
+              <ul>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/iframe.html#if-001">Test IF-001: <code>iframe</code> element no <code>title</code> attribute</a>:
+                  <ul>
+                    <li>
+                      <kbd>M</kbd> / <kbd>Shift</kbd> + <kbd>M</kbd> key navigation:
+                      <p><em>First item in the <code>iframe</code>, including its role</em></p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p><em>First item in the <code>iframe</code>, including its role</em></p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/iframe.html#if-002">Test IF-002: <code>iframe</code> element with <code>title</code> attribute</a>:
+                  <ul>
+                    <li>
+                      <kbd>M</kbd> / <kbd>Shift</kbd> + <kbd>M</kbd> key navigation:
+                      <p>
+                        <em>First item in the <code>iframe</code>, including its role</em>,
+                        <em><code>title</code> attribute contents</em>
+                      </p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p>
+                        <em>First item in the <code>iframe</code>, including its role</em>,
+                        <em><code>title</code> attribute contents</em>
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/iframe.html#if-003">Test IF-003: <code>iframe</code> element with no <code>title</code> attribute and <code>title</code> element in <code>iframe</code> document</a>:
+                  <ul>
+                    <li>
+                      <kbd>M</kbd> / <kbd>Shift</kbd> + <kbd>M</kbd> key navigation:
+                      <p><em>First item in the <code>iframe</code>, including its role</em></p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p><em>First item in the <code>iframe</code>, including its role</em></p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/iframe.html#if-004">Test IF-004: <code>iframe</code> element with <code>role="presentation"</code> attribute and no <code>title</code> attribute</a>:
+                  <ul>
+                    <li>
+                      <kbd>M</kbd> / <kbd>Shift</kbd> + <kbd>M</kbd> key navigation:
+                      <p><em>Not announced - skipped entirely</em></p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p><em>First item in the <code>iframe</code>, including its role</em></p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/iframe.html#if-005">Test IF-005: <code>iframe</code> element with <code>role="presentation"</code> attribute and <code>title</code> attribute</a>:
+                  <ul>
+                    <li>
+                      <kbd>M</kbd> / <kbd>Shift</kbd> + <kbd>M</kbd> key navigation:
+                      <p><em>Not announced - skipped entirely</em></p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p>
+                        <em>First item in the <code>iframe</code>, including its role</em>,
+                        <em><code>title</code> attribute contents</em>
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/iframe.html#if-006">Test IF-006: <code>iframe</code> element with broken source, no <code>title</code> attribute</a>:
+                  <ul>
+                    <li>
+                      <kbd>M</kbd> / <kbd>Shift</kbd> + <kbd>M</kbd> key navigation:
+                      <p><em>First item in the <code>iframe</code>, including its role</em></p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p><em>First item in the <code>iframe</code>, including its role</em></p>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <p>&nbsp;</p>
+              <p>
+                 <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/iframe-title.html"><code>iframe</code>
+                  with <code>title</code> test</a>:
+              </p>
+              <ul>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/iframe-title.html#if-003">Test IF-003: <code>iframe</code> element with <code>title</code> attribute</a>:
+                  <ul>
+                    <li>
+                      <kbd>M</kbd> / <kbd>Shift</kbd> + <kbd>M</kbd> key navigation:
+                      <p>
+                        <em>First item in the <code>iframe</code>, including its role</em>,
+                        <em><code>title</code> attribute contents</em>
+                      </p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p>
+                        <em>First item in the <code>iframe</code>, including its role</em>,
+                        <em><code>title</code> attribute contents</em>
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/iframe-title.html#if-004">Test IF-004: <code>iframe</code> element with <code>title=""</code> attribute</a>:
+                  <ul>
+                    <li>
+                      <kbd>M</kbd> / <kbd>Shift</kbd> + <kbd>M</kbd> key navigation:
+                      <p><em>First item in the <code>iframe</code>, including its role</em></p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p><em>First item in the <code>iframe</code>, including its role</em></p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/iframe-title.html#if-005">Test IF-005: <code>iframe</code> element with <code>title=""</code> and <code>role="none"</code> attribute</a>:
+                  <ul>
+                    <li>
+                      <kbd>M</kbd> / <kbd>Shift</kbd> + <kbd>M</kbd> key navigation:
+                      <p><em>Not announced - skipped entirely</em></p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p>Group start, <em>contents of the <code>title</code> element in the embedded HTML file</em></p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/iframe-title.html#if-006">Test IF-006: <code>iframe</code> element with <code>title=""</code>, <code>role="none"</code> and <code>tabindex="-1"</code> attribute</a>:
+                  <ul>
+                    <li>
+                      <kbd>M</kbd> / <kbd>Shift</kbd> + <kbd>M</kbd> key navigation:
+                      <p><em>Not announced - skipped entirely</em></p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p>Group start, <em>contents of the <code>title</code> element in the embedded HTML file</em></p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/iframe-title.html#if-007">Test IF-007: <code>iframe</code> element with <code>title=""</code>, <code>role="none"</code>, <code>aria-roledescription=" "</code> and <code>tabindex="-1"</code> attribute</a>:
+                  <ul>
+                    <li>
+                      <kbd>M</kbd> / <kbd>Shift</kbd> + <kbd>M</kbd> key navigation:
+                      <p><em>Not announced - skipped entirely</em></p>
+                    </li>
+                    <li>
+                      <kbd>Arrow</kbd> key navigation:
+                      <p><em>Not announced - skipped entirely</em></p>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </td>
             <td>
               <ul>
                 <li>List of Frames <kbd>Insert</kbd> + <kbd>F9</kbd></li>
@@ -2656,7 +3953,42 @@
               </svg>
               <br>
             </td>
-            <td>&nbsp;</td>
+            <td>
+              <ul>
+                <li>JAWS does not announce a role for the <code>iframe</code> when navigating into
+                its contents using either the <kbd>M</kbd> / <kbd>Shift</kbd> + <kbd>M</kbd> or
+                <kbd>Down</kbd> arrow keys</li>
+                <li>If the <code>title</code> attribute is present on the <code>iframe</code>
+                  element and is set to a non-null value, and no other attributes providing
+                  semantics are included, JAWS will announce the contents of
+                  the <code>title</code> attribute alongside the role and name of the first user
+                  interface element inside the embedded <code>iframe</code>
+                </li>
+                <li>If the <code>title</code> attribute is not present on the <code>iframe</code>
+                  element, or is present and set to null (<code>title=""</code>), and no other
+                  attributes providing semantics are included, JAWS will only
+                  announce the role and name of the first user interface element inside the embedded
+                  <code>iframe</code>
+                </li>
+                <li>If an <code>iframe</code> includes <code>role="presentation"</code> or
+                <code>role="none"</code>, JAWS will skip its contents when navigating through the
+                page using the <kbd>M</kbd> / <kbd>Shift</kbd> + <kbd>M</kbd> keys, but may 
+                announce its contents when navigating through the page using the <kbd>Down</kbd> 
+                arrow key, as indicated below</li>
+                <li>If an <code>iframe</code> does not include a <code>title</code> attribute,
+                or if the attribute is set to null (<code>title=""</code>), <strong>and</strong>
+                <code>role="none"</code> is applied to the <code>iframe</code> (but not 
+                <code>aria-roledescription=" "</code>), JAWS will announce the contents of the
+                <code>title</code> element included in the embedded HTML file (where available) when
+                navigating into it using the <kbd>Down</kbd> arrow key</li>
+                <li>If an <code>iframe</code> does not include a <code>title</code> attribute,
+                or if the attribute is set to null (<code>title=""</code>), <code>role="none"</code>
+                is applied to the <code>iframe</code> <strong>and</strong> 
+                <code>aria-roledescription=" "</code> is included on the <code>iframe</code>, 
+                JAWS will skip the <code>iframe</code> entirely when the user attempts to navigate
+                into it using the <kbd>Down</kbd> arrow key</li>
+              </ul>
+            </td>
           </tr>
           <tr>
             <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-img-element"><code>img</code></a>
@@ -2664,7 +3996,140 @@
             <td><a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/img-alt.html"><code>img</code>
                 test</a></td>
             <td>Image</td>
-            <td>"graphic" <em>alt attribute content</em></td>
+            <td>
+              <ul>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/img-alt.html#img-001">Test IMG-001: <code>img</code> element with <code>alt</code> attribute</a>:
+                  <ul>
+                    <li>
+                      <kbd>G</kbd> / <kbd>Shift</kbd> + <kbd>G</kbd> key navigation:
+                      <p><em><code>alt</code> attribute contents</em>, graphic</p>
+                    </li>
+                    <li>
+                      <kbd>Down</kbd> arrow key navigation:
+                      <p><em><code>alt</code> attribute contents</em>, graphic</p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/img-alt.html#img-002">Test IMG-002: <code>img</code> element with no <code>alt</code> attribute</a>:
+                  <ul>
+                    <li>
+                      <kbd>G</kbd> / <kbd>Shift</kbd> + <kbd>G</kbd> key navigation:
+                      <p>To get missing image descriptions open the context menu, unlabelled, graphic</p>
+                    </li>
+                    <li>
+                      <kbd>Down</kbd> arrow key navigation:
+                      <p>To get missing image descriptions open the context menu, unlabelled, graphic</p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/img-alt.html#img-003">Test IMG-003: <code>img</code> element with <code>alt</code> and <code>aria-label</code> attributes</a>:
+                  <ul>
+                    <li>
+                      <kbd>G</kbd> / <kbd>Shift</kbd> + <kbd>G</kbd> key navigation:
+                      <p><em><code>aria-label</code> attribute contents</em>, graphic</p>
+                    </li>
+                    <li>
+                      <kbd>Down</kbd> arrow key navigation:
+                      <p><em><code>aria-label</code> attribute contents</em>, graphic</p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/img-alt.html#img-004">Test IMG-004: <code>img</code> element with <code>alt</code>, <code>title</code> and <code>aria-label</code> attributes</a>:
+                  <ul>
+                    <li>
+                      <kbd>G</kbd> / <kbd>Shift</kbd> + <kbd>G</kbd> key navigation:
+                      <p><em><code>aria-label</code> attribute contents</em>, <em><code>title</code> attribute contents</em>, graphic</p>
+                    </li>
+                    <li>
+                      <kbd>Down</kbd> arrow key navigation:
+                      <p><em><code>aria-label</code> attribute contents</em>, <em><code>title</code> attribute contents</em>, graphic</p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/img-alt.html#img-005">Test IMG-005: <code>img</code> element with <code>alt</code>, and <code>title</code> attributes</a>:
+                  <ul>
+                    <li>
+                      <kbd>G</kbd> / <kbd>Shift</kbd> + <kbd>G</kbd> key navigation:
+                      <p><em><code>alt</code> attribute contents</em>, <em><code>title</code> attribute contents</em>, graphic</p>
+                    </li>
+                    <li>
+                      <kbd>Down</kbd> arrow key navigation:
+                      <p><em><code>alt</code> attribute contents</em>, <em><code>title</code> attribute contents</em>, graphic</p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/img-alt.html#img-006">Test IMG-006: <code>img</code> element with <code>title</code>, and empty <code>alt</code> attribute</a>:
+                  <ul>
+                    <li>
+                      <kbd>G</kbd> / <kbd>Shift</kbd> + <kbd>G</kbd> key navigation:
+                      <p><em><code>title</code> attribute contents</em>, unlabelled, graphic</p>
+                    </li>
+                    <li>
+                      <kbd>Down</kbd> arrow key navigation:
+                      <p><em><code>title</code> attribute contents</em>, unlabelled, graphic</p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/img-alt.html#img-007">Test IMG-007: <code>img</code> element with <code>title</code> attribute, and no <code>alt</code> attribute</a>:
+                  <ul>
+                    <li>
+                      <kbd>G</kbd> / <kbd>Shift</kbd> + <kbd>G</kbd> key navigation:
+                      <p><em><code>title</code> attribute contents</em>, graphic</p>
+                    </li>
+                    <li>
+                      <kbd>Down</kbd> arrow key navigation:
+                      <p><em><code>title</code> attribute contents</em>, graphic</p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/img-alt.html#img-008">Test IMG-008: <code>img</code> element with just whitespace in the <code>alt</code> attribute</a>:
+                  <ul>
+                    <li>
+                      <kbd>G</kbd> / <kbd>Shift</kbd> + <kbd>G</kbd> key navigation:
+                      <p><em>Not announced - skipped entirely</em></p>
+                    </li>
+                    <li>
+                      <kbd>Down</kbd> arrow key navigation:
+                      <p><em>Not announced - skipped entirely</em></p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/img-alt.html#img-009">Test IMG-009: <code>img</code> element with empty <code>alt</code> attribute</a>:
+                  <ul>
+                    <li>
+                      <kbd>G</kbd> / <kbd>Shift</kbd> + <kbd>G</kbd> key navigation:
+                      <p><em>Not announced - skipped entirely</em></p>
+                    </li>
+                    <li>
+                      <kbd>Down</kbd> arrow key navigation:
+                      <p><em>Not announced - skipped entirely</em></p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/img-alt.html#img-010">Test IMG-010: <code>img</code> element with <code>alt</code> and <code>title</code> attributes with same text</a>:
+                  <ul>
+                    <li>
+                      <kbd>G</kbd> / <kbd>Shift</kbd> + <kbd>G</kbd> key navigation:
+                      <p><em><code>alt</code> / <code>title</code> attribute contents</em>, graphic</p>
+                    </li>
+                    <li>
+                      <kbd>Down</kbd> arrow key navigation:
+                      <p><em><code>alt</code> / <code>title</code> attribute contents</em>, graphic</p>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </td>
             <td>
               <ul>
                 <li>List of Graphics <kbd>Ctrl</kbd> + <kbd>Insert</kbd> + <kbd>G</kbd></li>
@@ -2681,7 +4146,56 @@
               </svg>
               <br>
             </td>
-            <td>&nbsp;</td>
+            <td>
+              <ul>
+                <li>Unlike for many other HTML elements in this table, JAWS consistently announces
+                  the same content when it encounters an <code>img</code> element, whether via
+                  the <kbd>G</kbd> / <kbd>Shift</kbd> + <kbd>G</kbd> keys or via <kbd>Arrow</kbd>
+                  key navigation (all tests)
+                </li>
+                <li>Unless the image is skipped (because, for example, it includes <code>alt=""</code>),
+                JAWS will always announce the image's role ("graphic") (all tests)</li>
+                <li>If an <code>img</code> element is missing an <code>alt</code> attribute, JAWS will announce the
+                image as "unlabelled" (<a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/img-alt.html#img-002">Test IMG-002</a>)</li>
+                <li>If an image has an <code>alt</code> attribute set to null (<code>alt=""</code>) but also includes a non-null
+                non-null <code>title</code> attribute, JAWS will announce the contents of the <code>title</code>
+                attribute but will still announce the image as "unlabelled"
+                (<a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/img-alt.html#img-006">Test IMG-006</a>)
+                </li>
+                <li>If an <code>img</code> element includes both an <code>alt</code> attribute and an
+                <code>aria-label</code> attribute, JAWS will announce the contents of the <code>aria-label</code>
+                attribute, but not the contents of the <code>alt</code> attribute
+                 (<a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/img-alt.html#img-003">Test IMG-003</a>, 
+                 <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/img-alt.html#img-004">Test IMG-004</a>)
+                </li>
+                <li>If an <code>img</code> element includes both an <code>alt</code> attribute and a
+                <code>title</code> attribute, JAWS will announce the contents of both attributes together
+                (<a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/img-alt.html#img-005">Test IMG-005</a>)
+                </li>
+                <li>If an <code>img</code> element is missing an <code>alt</code> attribute <strong>but</strong>
+                  it includes a non-null <code>title</code> attribute,
+                  JAWS will announce the contents of this`
+                  attribute in lieu of the missing <code>alt</code> attribute
+                  (<a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/img-alt.html#img-007">Test IMG-007</a>); 
+                  note that this behaviour occurs when a non-null <code>aria-label</code> attribute is included
+                  instead of a non-null <code>title</code> attribute</li>
+                
+                <li>JAWS treats <code>img</code> elements that include <code>alt</code> attributes set to
+                null (<code>alt=""</code>) <strong>and</strong> <code>alt</code> attributes that contain whitespace 
+                (<code>alt="  "</code>) as decorative images, and (in the absence of any other attributes) will
+                skip the image entirely
+                (<a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/img-alt.html#img-008">Test IMG-008</a>,
+                <a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/img-alt.html#img-009">Test IMG-009</a>)
+                </li>
+                <li>When the contents of both the <code>alt</code> and <code>title</code> attributes are the
+                same, JAWS will only announce the contents of one of these attributes
+                (<a href="https://stevefaulkner.github.io/AT-browser-tests/test-files/img-alt.html#img-010">Test IMG-010</a>)</li>
+                <li>If an <code>img</code> element is missing an <code>alt</code> attribute
+                  <strong>but</strong> it includes a <code>title</code>
+                or <code>aria-label</code> attribute set to null (<code>title=""</code> or <code>aria-label=""</code>), 
+                JAWS will announce the image as "unlabelled"</li>
+              </ul>
+            </td>
           </tr>
           <tr>
             <th scope="row"> <a href="https://html.spec.whatwg.org/multipage/form-elements.html#button-state-typebutton"><code>input
