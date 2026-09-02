@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title> Test file: video + track element</title>
+		<link rel="stylesheet" href="../style/styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	</head>
+	<body>
+		<h1>
+			<code>video</code> + <code>track</code> element test
+		</h1>
+		<div class="meta">
+			<div class="criteria">
+				<h2>
+					Pass Criteria
+				</h2>
+				<ul id="criteria-list">
+					<li id="basic-criteria">#1: Elements are supported</li>
+					<li>#2: Elements have correct HTML and Core Accessibility API mappings</li>
+					<li>#3: At least one subtitle format is supported (WebVTT or TTML)</li>
+					<li>#4: Controls are keyboard accessible:
+						<ul>
+							<li>#4.1: Controls MUST be focusable</li>
+							<li>#4.2: MUST be able to activate controls, including any child menu/controls</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+			<div class="reference">
+				<h2>
+					Reference
+				</h2>
+				<ul>
+					<li>
+						<a href="https://html.spec.whatwg.org/multipage/media.html#the-video-element">HTML <code>video</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#el-video">HTML Accessibility API Mappings for <code>video</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html/semantics-embedded-content.html#the-track-element">HTML <code>track</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#el-track">HTML Accessibility API Mappings for <code>track</code> element</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="vd-001">
+				Test vd-001: <code>video</code> &amp; <code>track</code> elements with WebVTT subtitles
+			</h2>
+
+			<div class="test-case">
+<video id="video1" controls width="800">
+	<source src="../video/ElephantsDream.mp4" type="video/mp4">
+	<source src="../video/ElephantsDream.webm" type="video/webm">
+	<track id="track1" kind="captions" srclang="en" src="../video/subtitles-en.vtt" label="English" default>
+</video>
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="vd-002">
+				Test vd-002: <code>video</code> &amp; <code>track</code> elements with TTML subtitles
+			</h2>
+
+			<div class="test-case">
+<video id="video2" controls width="800">
+	<source src="../video/ElephantsDream.mp4" type="video/mp4">
+	<source src="../video/ElephantsDream.webm" type="video/webm">
+	<track id="track2" kind="captions" srclang="en" src="../video/subtitles-en.ttml" label="English" default>
+</video>
+			</div>
+
+		</div>
+		
+				<div class="test">
+			<h2 class="test-title" id="vd-003">
+				Test vd-003: <code>video</code> &amp; <code>track</code> elements with TTML subtitles and <code>aria-label</code> on <code>video</code> element
+			</h2>
+
+			<div class="test-case">
+<video id="video3" controls width="800" aria-label="test video 3">
+	<source src="../video/ElephantsDream.mp4" type="video/mp4">
+	<source src="../video/ElephantsDream.webm" type="video/webm">
+	<track id="track2" kind="captions" srclang="en" src="../video/subtitles-en.ttml" label="English" default>
+</video>
+			</div>
+
+		</div>
+		
+				<div class="test">
+			<h2 class="test-title" id="vd-004">
+				Test vd-004: <code>video</code> &amp; <code>track</code> elements with WebVTT subtitles and <code>title</code> attribute
+			</h2>
+
+			<div class="test-case">
+<video id="video4" controls width="800" title="An elephant dreams">
+	<source src="../video/ElephantsDream.mp4" type="video/mp4">
+	<source src="../video/ElephantsDream.webm" type="video/webm">
+	<track id="track1" kind="captions" srclang="en" src="../video/subtitles-en.vtt" label="English" default>
+</video>
+			</div>
+		</div>
+
+		<script src="../scripts/test-scripts.js"></script>
+		<script>
+			var test = [];
+			var el = document.getElementById('video1');
+			var isSupported = (typeof HTMLVideoElement != 'undefined'
+				               && el instanceof HTMLVideoElement && !!el.canPlayType);
+
+			el = document.getElementById('track1'),
+			isSupported = isSupported && (typeof HTMLTrackElement != 'undefined'
+				           && el instanceof HTMLTrackElement && 'src' in el);
+
+			test.push({id: "basic-criteria", pass: isSupported});
+			displaySupportResults(test);
+		</script>
+	</body>
+</html>

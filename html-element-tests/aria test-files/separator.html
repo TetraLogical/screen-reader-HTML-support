@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>test file: separator role</title>
+    <link rel="stylesheet" href="../style/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        [tabindex="0"]:focus {
+            outline: 2px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <code>separator</code> role
+    </h1>
+
+    <div class="meta">
+        <div class="criteria">
+            <h2>
+                Pass Criteria
+            </h2>
+            <ul id="criteria-list">
+                <li id="basic-criteria">#1: Element is supported</li>
+                <li>#2: Correct HTML and Core Accessibility API mappings</li>
+                <li>#3: Correct Accessible Name &amp; Description Calculation</li>
+            </ul>
+        </div>
+
+        <div class="reference">
+            <h2>
+                Reference
+            </h2>
+            <ul>
+                <li>
+                    <a href="https://www.w3.org/TR/wai-aria-1.1/#separator">WAI-ARIA <code>separator</code> role</a>
+                </li>
+                <li>
+                    <a href="https://w3c.github.io/aria-practices/#separator">ARIA Authoring Practices for <code>separator</code> role</a>
+                </li>
+                <li>
+                    <a href="https://www.w3.org/TR/core-aam-1.1/#role-map-separator">Core Accessibility API Mappings for <code>separator</code> role</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    
+<div class="test">
+    <h2 class="test-title" id="separator-001">
+        Test separator-001: <code>separator</code> role, with allowed attribute aria-orientation
+    </h2>
+    <div class="test-case">
+        <div role="separator" id="separator-01" aria-orientation="horizontal" tabindex="0">separator-01: horizontal</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="separator-002">
+        Test separator-002: <code>separator</code> role, basic test for separator
+    </h2>
+    <div class="test-case">
+        <div role="separator" id="separator-02" tabindex="0">separator-02: </div>
+    </div>
+</div>
+
+
+    <script src="../scripts/test-scripts.js"></script>
+    <script>
+        var test = [];
+        var el = document.getElementById('separator-01');
+        var isSupported = (el instanceof HTMLElement && !(el instanceof HTMLUnknownElement));
+
+        test.push({id: "basic-criteria", pass: isSupported});
+        displaySupportResults(test);
+        
+        // Script to cycle through multiple values for states and properties
+        var elements = document.querySelectorAll('[id^=separator]');
+        elements.forEach(function(el) {
+            el.addEventListener('click', function() {
+                
+var currentVal = el.getAttribute('aria-orientation');
+var values = ['horizontal', 'vertical'];
+var nextVal = values[(values.indexOf(currentVal) + 1) % values.length];
+el.setAttribute('aria-orientation', nextVal);
+el.textContent = el.id + ': ' + nextVal;
+
+            });
+            el.addEventListener('keypress', function(event) {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    
+var currentVal = el.getAttribute('aria-orientation');
+var values = ['horizontal', 'vertical'];
+var nextVal = values[(values.indexOf(currentVal) + 1) % values.length];
+el.setAttribute('aria-orientation', nextVal);
+el.textContent = el.id + ': ' + nextVal;
+
+                }
+            });
+        });
+    </script>
+</body>
+</html>

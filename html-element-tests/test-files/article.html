@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>test file: article element</title>
+		<link rel="stylesheet" href="../style/styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	</head>
+	<body>
+		<h1><code>article</code> element test</h1>
+		<div class="meta">
+			<div class="criteria">
+				<h2>Pass Criteria</h2>
+				<ul id="criteria-list">
+					<li id="basic-criteria">#1: Element is supported</li>
+					<li>#2: Correct HTML and Core Accessibility API mappings</li>
+					<li>#3: Correct Accessible Name &amp; Description Calculation</li>
+				</ul>
+			</div>
+
+			<div class="reference">
+				<h2>Reference</h2>
+				<ul>
+					<li>
+						<a href="https://html.spec.whatwg.org/multipage/sections.html#the-article-element">HTML <code>article</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#el-article">HTML Accessibility API Mappings for <code>article</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/aria/core-aam/core-aam.html#role-map-article">Core Accessibility API Mappings for <code>article</code> role</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#section-and-grouping-element-accessible-name-calculation">Accessible Name Calculation</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#section-and-grouping-element-accessible-description-calculation">Accessible Description Calculation</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="ar-001">
+				Test ar-001: Plain <code>article</code>
+			</h2>
+
+			<div class="test-case">
+<article id="article1">Lorem ipsum...</article>
+			</div>
+
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="ar-002">
+				Test ar-002: <code>article</code>
+				with <code>&lt;h1></code>
+			</h2>
+
+			<div class="test-case">
+<article>
+	<h1>Once upon a time</h1>
+	Lorem ipsum…
+</article>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="ar-003">
+				Test ar-003: <code>article</code>
+				with <code>aria-label</code>
+			</h2>
+
+			<div class="test-case">
+<article aria-label="aria-label attribute">
+	<p>
+		<code>aria-label</code> should be used as accessible name.
+	</p>
+	<p>No accessible description.</p>
+</article>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="ar-004">
+				Test ar-004: <code>article</code>
+				with <code>aria-labelledby</code>
+			</h2>
+
+			<div class="test-case">
+<article aria-labelledby="ar-004-labelledby">
+	<h1 id="ar-004-labelledby">
+		<code>h1</code> referenced by <code>aria-labelledby</code>
+	</h1>
+	<p>
+		<code>aria-labelledby</code> should be used as accessible name.
+	</p>
+	<p>No accessible description.</p>
+</article>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="ar-005">
+				Test ar-005: <code>article</code>
+				with <code>title</code> attribute
+			</h2>
+
+			<div class="test-case">
+<article title="title attribute">
+	<p>
+		<code>title</code> should be used as accessible name.
+	</p>
+	<p>No accessible description.</p>
+</article>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="ar-006">
+				Test ar-006: <code>article</code>
+				with <code>aria-describedby</code>
+			</h2>
+
+			<div class="test-case">
+<article aria-describedby="ar-006-describedby">
+	<h1 id="ar-006-describedby">
+		<code>h1</code> referenced by <code>aria-describedby</code>
+	</h1>
+	<p>
+		<code>aria-describedby</code> should be used as accessible description.
+	</p>
+	<p>No accessible name.</p>
+</article>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="ar-007">
+				Test ar-007: <code>article</code>
+				with <code>aria-label</code> &amp; <code>title</code> attributes
+			</h2>
+
+			<div class="test-case">
+<article aria-label="aria-label attribute" title="title attribute">
+	<p><code>aria-label</code> should be used as accessible name.</p>
+	<p><code>title</code> should be used as accessible description.</p>
+</article>
+			</div>
+		</div>
+		
+		<div class="test">
+			<h2 class="test-title" id="ar-008">
+				Test ar-008: Plain <code>article</code> with <code>tabindex="0"</code>
+			</h2>
+
+			<div class="test-case">
+<article id="article8" tabindex="0">Lorem ipsum...</article>
+			</div>
+
+		</div>
+
+		<script src="../scripts/test-scripts.js"></script>
+		<script>
+			var test = [];
+			var el = document.getElementById('article1');
+			var isSupported = (el instanceof HTMLElement && !(el instanceof HTMLUnknownElement));
+
+			test.push({id: "basic-criteria", pass: isSupported});
+			displaySupportResults(test);
+		</script>
+
+	</body>
+</html>

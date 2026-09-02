@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>test file: menu element with type=toolbar</title>
+		<link rel="stylesheet" href="../style/styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	</head>
+	<body>
+		<h1><code>menu type="toolbar"</code> element</h1>
+		<div class="meta">
+			<div class="criteria">
+				<h2>Pass Criteria</h2>
+				<ul id="criteria-list">
+					<li id="basic-criteria">#1: Element is supported</li>
+					<li>#2: Element has correct HTML and Core Accessibility API mappings</li>
+				</ul>
+			</div>
+
+			<div class="reference">
+				<h2>Reference</h2>
+				<ul>
+					<li><a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-menu-element">HTML menu element</a></li>
+					<li><a href="https://w3c.github.io/html-aam/#el-menu-toolbar">HTML Accessibility API Mappings for menu element with toolbar state</a></li>
+					<li><a href="https://w3c.github.io/aria/core-aam/core-aam.html#role-map-toolbar">Core Accessibility API Mappings for toolbar role</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="mt-001">Test mt-001: Menu element with type="toolbar"</h2>
+
+			<div class="test-case">
+<button type="menu" value="File" menu="filemenu">
+	popup menu
+</button>
+<menu id="filemenu" type="context">
+  <menuitem onclick="fnew()" label="New..."></menuitem>
+  <menuitem onclick="fopen()" label="Open..."></menuitem>
+  <menuitem onclick="fsave()" label="Save"></menuitem>
+  <menuitem onclick="fsaveas()" label="Save as..."></menuitem>
+</menu>
+			</div>
+		</div>
+
+		<script src="../scripts/test-scripts.js"></script>
+		<script>
+			var test = [],
+				el = document.getElementById('menu1'),
+			    isSupported = (typeof HTMLMenuElement != 'undefined' && el instanceof HTMLMenuElement
+				               && 'type' in el && el.type === 'toolbar');
+
+			test.push({id: "basic-criteria", pass: isSupported});
+			displaySupportResults(test);
+		</script>
+	</body>
+</html>

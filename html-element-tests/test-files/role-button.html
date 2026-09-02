@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>test file: role=button</title>
+    <link rel="stylesheet" href="../style/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  </head>
+  <body>
+    <h1>
+      <code>role=&quot;button&quot;</code>
+    </h1>
+
+    <div class="meta">
+      <div class="criteria">
+        <h2>
+          Pass Criteria
+        </h2>
+        <ul id="criteria-list">
+          <li id="basic-criteria">#1: Element is supported</li>
+          <li>#2: Correct HTML and Core Accessibility API mappings</li>
+          <li>#3: Correct Accessible Name &amp; Description Calculation</li>
+        </ul>
+      </div>
+
+      <div class="reference">
+        <h2>
+          Reference
+        </h2>
+        <ul>
+          <li>
+            <a href="https://www.w3.org/TR/wai-aria-1.2/#button">WAI-ARIA <code>button</code> role</a>
+          </li>
+          <li>
+            <a href="https://www.w3.org/TR/core-aam-1.2/#role-map-button">Core Accessibility API Mappings for <code>button</code> role</a>
+          </li>
+          <li>
+            <a href="https://www.w3.org/WAI/ARIA/apg/patterns/button/">ARIA Authoring Practices: Button Pattern</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="test">
+      <h2 class="test-title" id="button-001">
+        Test button-001: <code>div</code> with <code>role=&quot;button&quot;</code> and visible text
+      </h2>
+
+      <div class="test-case">
+        <p>
+          <div role="button" id="btn1" tabindex="0">ARIA Button</div>
+        </p>
+      </div>
+    </div>
+
+    <div class="test">
+      <h2 class="test-title" id="button-002">
+        Test button-002: <code>span</code> with <code>role=&quot;button&quot;</code> and <code>title</code> attribute
+      </h2>
+
+      <div class="test-case">
+        <p>
+          <span role="button" id="btn2" tabindex="0" title="Custom button title">ARIA Button</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="test">
+      <h2 class="test-title" id="button-003">
+        Test button-003: <code>div</code> with <code>role=&quot;button&quot;</code> and <code>aria-label</code> attribute (no visible text)
+      </h2>
+
+      <div class="test-case">
+          <div role="button" id="btn3" tabindex="0" aria-label="ARIA label test" aria-describedby="desc3"></div>
+        <p id="desc3">describedby test (button-003)</p>
+      </div>
+    </div>
+
+    <div class="test">
+      <h2 class="test-title" id="button-004">
+        Test button-004: <code>div</code> with <code>role=&quot;button&quot;</code>, <code>aria-label</code> and <code>aria-describedby</code> attributes
+      </h2>
+
+      <div class="test-case">
+          <div role="button" id="btn4" tabindex="0" aria-label="ARIA label test" aria-describedby="desc4">...</div>
+        <p id="desc4">describedby test (button-004)</p>
+      </div>
+    </div>
+
+    <div class="test">
+      <h2 class="test-title" id="button-005">
+        Test button-005: <code>div</code> with visible text, <code>role=&quot;button&quot;</code>, <code>title</code>, <code>aria-label</code> and <code>aria-describedby</code> attributes
+      </h2>
+
+      <div class="test-case">
+          <div role="button" id="btn5" tabindex="0"
+               title="Title text"
+               aria-label="ARIA label test"
+               aria-describedby="desc5">Visible text</div>
+        <p id="desc5">describedby test (button-005)</p>
+      </div>
+    </div>
+
+    <div class="test">
+      <h2 class="test-title" id="button-006">
+        Test button-006: <code>div</code> with <code>role=&quot;button&quot;</code>, visible text, <code>title</code> and <code>aria-label</code> that all have the same value
+      </h2>
+
+      <div class="test-case">
+      
+          <div role="button" id="btn6" tabindex="0"
+               title="Button label"
+               aria-label="Button label">Button label</div>
+      </div>
+    </div>
+
+    <script src="../scripts/test-scripts.js"></script>
+    <script>
+      var test = [];
+      var el = document.getElementById('btn1');
+      var isSupported = (el instanceof HTMLElement && !(el instanceof HTMLUnknownElement));
+      test.push({id: "basic-criteria", pass: isSupported});
+      displaySupportResults(test);
+    </script>
+  </body>
+</html>

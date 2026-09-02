@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>test file: fieldset element with legend element</title>
+		<link rel="stylesheet" href="../style/styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	</head>
+	<body>
+		<h1>
+			<code>fieldset</code> element with <code>legend</code> element
+		</h1>
+
+		<div class="meta">
+			<div class="criteria">
+				<h2>
+					Pass Criteria
+				</h2>
+				<ul id="criteria-list">
+					<li id="basic-criteria">#1: Element is supported</li>
+					<li>#2: Correct HTML and Core Accessibility API mappings</li>
+					<li>#3: Correct Accessible Name &amp; Description Calculation</li>
+				</ul>
+			</div>
+
+			<div class="reference">
+				<h2>
+					Reference
+				</h2>
+				<ul>
+					<li>
+						<a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-fieldset-element">HTML <code>fieldset</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#el-fieldset">HTML Accessibility API Mappings for <code>fieldset</code> element</a>
+					</li>
+					<li>
+						<a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-legend-element">HTML <code>legend</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#el-legend">HTML Accessibility API Mappings for <code>legend</code> element</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="flgnd-001">
+				Test flgnd-001: <code>fieldset</code> element with
+				<code>legend</code> element
+			</h2>
+
+			<div class="test-case">
+<form>
+	<fieldset id="fieldset-01">
+		<legend id="legend-01">
+			Which version of HTML do you use?
+		</legend>
+		<input type="radio" name="html" id="html4" value="html4">
+		<label for="html4">HTML4</label>
+		<br>
+		<input type="radio" name="html" id="HTML" value="HTML">
+		<label for="HTML">HTML</label>
+	</fieldset>
+</form>
+			</div>
+		</div>
+        
+        <div class="test">
+			<h2 class="test-title" id="flgnd-002">
+				Test flgnd-002: <code>fieldset</code> element with
+			<code>legend</code> element containing a <code>h2</code> element </h2>
+
+			<div class="test-case">
+<form>
+	<fieldset id="fieldset-02">	
+		  <legend id="legend-02">
+		    <h2>Which version of HTML do you use?</h2>
+	      </legend>
+<input type="radio" name="html" id="html41" value="html4">
+		<label for="html41">HTML4</label>
+		<br>
+		<input type="radio" name="html" id="html51" value="HTML">
+		<label for="html51">HTML</label>
+	</fieldset>
+</form>
+			</div>
+		</div>
+<div class="test">
+			<h2 class="test-title" id="flgnd-003">
+				Test flgnd-003: <code>fieldset</code> element with <code>aria-labelledby</code>, with <code>legend</code> element
+			</h2>
+
+			<div class="test-case">
+<form>
+	<fieldset id="fieldset-03" aria-labelledby="instruction">
+		<legend id="legend-03">
+			Which version of HTML do you use?
+		</legend>
+        <p id="instruction"> some important text</p>
+		<input type="radio" name="html" id="html43" value="html4">
+		<label for="html43">HTML4</label>
+		<br>
+		<input type="radio" name="html" id="html53" value="HTML">
+		<label for="html53">HTML</label>
+	</fieldset>
+</form>
+			</div>
+	</div>
+	
+	<div class="test">
+			<h2 class="test-title" id="flgnd-004">
+				Test flgnd-004: <code>fieldset</code> element, <code>legend</code> element with <code>aria-label</code>
+			</h2>
+
+			<div class="test-case">
+<form>
+	<fieldset id="fieldset-04">
+		<legend id="legend-04" aria-label="a question:">
+			Which version of HTML do you use?
+		</legend>
+        <p id="instruction"> some important text</p>
+		<input type="radio" name="html" id="html431" value="html4">
+		<label for="html431">HTML4</label>
+		<br>
+		<input type="radio" name="html" id="html531" value="HTML">
+		<label for="html531">HTML</label>
+	</fieldset>
+</form>
+			</div>
+	</div>
+	
+	<div class="test">
+			<h2 class="test-title" id="flgnd-005">
+				Test flgnd-005: <code>fieldset</code> element, no <code>legend</code> element</code>
+			</h2>
+
+			<div class="test-case">
+<form>
+	<fieldset id="fieldset-05">
+		
+			<p>Which version of HTML do you use?</p>
+        <p id="instruction"> some important text</p>
+		<input type="radio" name="html" id="html5431" value="html4">
+		<label for="html5431">HTML4</label>
+		<br>
+		<input type="radio" name="html" id="html5531" value="HTML">
+		<label for="html5531">HTML</label>
+	</fieldset>
+</form>
+			</div>
+	</div>
+	
+	<div class="test">
+			<h2 class="test-title" id="flgnd-006">
+				Test flgnd-006: <code>fieldset</code> element with <code>tabindex=0</code>
+				+ <code>legend</code> element
+			</h2>
+
+			<div class="test-case">
+<form>
+	<fieldset id="fieldset-06" tabindex="0">
+		<legend id="legend-06">
+			Which version of HTML do you use?
+		</legend>
+		<input type="radio" name="html" id="html46" value="html4">
+		<label for="html4">HTML4</label>
+		<br>
+		<input type="radio" name="html" id="HTML6" value="HTML">
+		<label for="HTML">HTML</label>
+	</fieldset>
+</form>
+			</div>
+		</div>
+		
+		<div class="test">
+			<h2 class="test-title" id="flgnd-007">
+				Test flgnd-007: <code>fieldset</code>element 
+				+ <code>legend</code> element with <code>tabindex=0</code>
+			</h2> 
+		
+		<div class="test-case">
+<form>
+	<fieldset id="fieldset-07">
+		<legend id="legend-7" tabindex="0">
+			Which version of HTML do you use?
+		</legend>
+		<input type="radio" name="html" id="html47" value="html4">
+		<label for="html4">HTML4</label>
+		<br>
+		<input type="radio" name="html" id="HTML7" value="HTML">
+		<label for="HTML">HTML</label>
+	</fieldset>
+</form>
+			</div>
+		</div>
+
+		<script src="../scripts/test-scripts.js"></script>
+		<script>
+			var test = [];
+			var el = document.getElementById('fieldset-01');
+			var isSupported = (el instanceof HTMLElement && !(el instanceof HTMLUnknownElement));
+
+			test.push({id: "basic-criteria", pass: isSupported});
+			displaySupportResults(test);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>test file: tab role</title>
+    <link rel="stylesheet" href="../style/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        [tabindex="0"]:focus {
+            outline: 2px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <code>tab</code> role
+    </h1>
+
+    <div class="meta">
+        <div class="criteria">
+            <h2>
+                Pass Criteria
+            </h2>
+            <ul id="criteria-list">
+                <li id="basic-criteria">#1: Element is supported</li>
+                <li>#2: Correct HTML and Core Accessibility API mappings</li>
+                <li>#3: Correct Accessible Name &amp; Description Calculation</li>
+            </ul>
+        </div>
+
+        <div class="reference">
+            <h2>
+                Reference
+            </h2>
+            <ul>
+                <li>
+                    <a href="https://www.w3.org/TR/wai-aria-1.1/#tab">WAI-ARIA <code>tab</code> role</a>
+                </li>
+                <li>
+                    <a href="https://w3c.github.io/aria-practices/#tab">ARIA Authoring Practices for <code>tab</code> role</a>
+                </li>
+                <li>
+                    <a href="https://www.w3.org/TR/core-aam-1.1/#role-map-tab">Core Accessibility API Mappings for <code>tab</code> role</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    
+<div class="test">
+    <h2 class="test-title" id="tab-001">
+        Test tab-001: <code>tab</code> role, with allowed attribute aria-disabled
+    </h2>
+    <div class="test-case">
+        <div role="tab" id="tab-01" aria-disabled="true" tabindex="0">tab-01: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="tab-002">
+        Test tab-002: <code>tab</code> role, with allowed attribute aria-expanded
+    </h2>
+    <div class="test-case">
+        <div role="tab" id="tab-02" aria-expanded="true" tabindex="0">tab-02: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="tab-003">
+        Test tab-003: <code>tab</code> role, with allowed attribute aria-posinset
+    </h2>
+    <div class="test-case">
+        <div role="tab" id="tab-03" aria-posinset="true" tabindex="0">tab-03: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="tab-004">
+        Test tab-004: <code>tab</code> role, with allowed attribute aria-selected
+    </h2>
+    <div class="test-case">
+        <div role="tab" id="tab-04" aria-selected="true" tabindex="0">tab-04: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="tab-005">
+        Test tab-005: <code>tab</code> role, with allowed attribute aria-setsize
+    </h2>
+    <div class="test-case">
+        <div role="tab" id="tab-05" aria-setsize="true" tabindex="0">tab-05: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="tab-006">
+        Test tab-006: <code>tab</code> role, basic test for tab
+    </h2>
+    <div class="test-case">
+        <div role="tab" id="tab-06" tabindex="0">tab-06: </div>
+    </div>
+</div>
+
+
+    <script src="../scripts/test-scripts.js"></script>
+    <script>
+        var test = [];
+        var el = document.getElementById('tab-01');
+        var isSupported = (el instanceof HTMLElement && !(el instanceof HTMLUnknownElement));
+
+        test.push({id: "basic-criteria", pass: isSupported});
+        displaySupportResults(test);
+        
+        // Script to cycle through multiple values for states and properties
+        var elements = document.querySelectorAll('[id^=tab]');
+        elements.forEach(function(el) {
+            el.addEventListener('click', function() {
+                
+var currentVal = el.getAttribute('aria-expanded');
+var values = ['true', 'false'];
+var nextVal = values[(values.indexOf(currentVal) + 1) % values.length];
+el.setAttribute('aria-expanded', nextVal);
+el.textContent = el.id + ': ' + nextVal;
+
+
+var currentVal = el.getAttribute('aria-selected');
+var values = ['true', 'false'];
+var nextVal = values[(values.indexOf(currentVal) + 1) % values.length];
+el.setAttribute('aria-selected', nextVal);
+el.textContent = el.id + ': ' + nextVal;
+
+            });
+            el.addEventListener('keypress', function(event) {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    
+var currentVal = el.getAttribute('aria-expanded');
+var values = ['true', 'false'];
+var nextVal = values[(values.indexOf(currentVal) + 1) % values.length];
+el.setAttribute('aria-expanded', nextVal);
+el.textContent = el.id + ': ' + nextVal;
+
+
+var currentVal = el.getAttribute('aria-selected');
+var values = ['true', 'false'];
+var nextVal = values[(values.indexOf(currentVal) + 1) % values.length];
+el.setAttribute('aria-selected', nextVal);
+el.textContent = el.id + ': ' + nextVal;
+
+                }
+            });
+        });
+    </script>
+</body>
+</html>

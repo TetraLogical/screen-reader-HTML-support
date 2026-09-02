@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>test file: details element with summary element</title>
+		<link rel="stylesheet" href="../style/styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	</head>
+	<body>
+		<h1><code>details</code> element with <code>summary</code> element</h1>
+		<div class="meta">
+			<div class="criteria">
+				<h2>Pass Criteria</h2>
+				<ul id="criteria-list">
+					<li id="basic-criteria">#1: Elements are supported</li>
+					<li>#2: Correct HTML and Core Accessibility API mappings</li>
+					<li>#3: <code>summary</code> has correct Accessible Name &amp; Description Calculation</li>
+					<li>#4: Control is keyboard accessible:
+						<ul>
+							<li>#4.1: <code>summary</code> MUST be focusable</li>
+							<li>#4.2: MUST be able to expand and collapse control</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+			<div class="reference">
+				<h2>Reference</h2>
+				<ul>
+					<li>
+						<a href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-details-element">HTML <code>details</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#el-details">HTML Accessibility API Mappings for <code>details</code> element</a>
+					</li>
+					<li>
+						<a href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-summary-element">HTML <code>summary</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#el-summary">HTML Accessibility API Mappings for <code>summary</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#summary-element-accessible-name-calculation">Accessible Name Calculation for <code>summary</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#summary-element-accessible-description-calculation">Accessible Description Calculation for <code>summary</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#att-open-details">HTML Accessibility API Mappings for <code>open</code> attribute</a> [Test: DS-002]
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="ds-001">Test ds-001: <code>Details</code> and <code>Summary</code> elements</h2>
+
+			<div class="test-case">
+<details id="details1">
+	<summary>Summary text</summary>
+	<p>Summary subtree should be used as accessible name</p>
+	<p>No accessible description.</p>
+</details>
+			</div>
+
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="ds-002">Test ds-002: Details element with open attribute</h2>
+
+			<div class="test-case">
+<details id="details2" open>
+	<summary>Am I open?</summary>
+	<p>This should be expanded by default</p>
+</details>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="ds-003">Test ds-003: Summary element with aria-label attribute</h2>
+
+			<div class="test-case">
+<details id="details3">
+	<summary aria-label="aria-label attribute">Summary text</summary>
+	<p>Aria-label should be used as accessible name</p>
+	<p>Summary subtree should be used as accessible description</p>
+</details>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="ds-004">Test ds-004: Summary element with aria-labelledby attribute</h2>
+
+			<div class="test-case">
+<details id="details4">
+	<summary aria-labelledby="ds-004-labelledby">Summary text</summary>
+	<p id="ds-004-labelledby">p referenced by aria-labelledby</p>
+	<p>Aria-labelledby should be used as accessible name</p>
+	<p>Summary subtree should be used as accessible description</p>
+</details>
+			</div>
+
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="ds-005">Test ds-005: Summary element with title attribute</h2>
+
+			<div class="test-case">
+<details id="details5">
+	<summary title="title text">Summary text</summary>
+	<p>Summary subtree should be used as accessible name</p>
+	<p>Title attribute should be used as accessible description</p>
+</details>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="ds-006">Test ds-006: Empty Summary element with title attribute</h2>
+
+			<div class="test-case">
+<details id="details6">
+	<summary title="title text"></summary>
+	<p>Title attribute should be used as accessible name</p>
+	<p>No accessible description.</p>
+</details>
+			</div>
+
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="ds-007">Test ds-007: Empty Summary element without title attribute</h2>
+
+			<div class="test-case">
+<details id="details7">
+	<summary></summary>
+	<p>User-Agent should provide own text string as accessible name</p>
+	<p>No accessible description.</p>
+</details>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="ds-008">Test ds-008: Summary element with aria-describedby attribute</h2>
+
+			<div class="test-case">
+<details id="details8">
+	<summary aria-describedby="ds-008-describedby">Summary text</summary>
+	<p id="ds-008-describedby">p referenced by aria-describedby</p>
+	<p>Aria-describedby should be used as accessible description</p>
+	<p>Summary subtree should be used as accessible name</p>
+</details>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="ds-009">Test ds-009: Summary element containing a heading</h2>
+
+			<div class="test-case">
+<details id="details9">
+	<summary><h3>Summary text</h3></summary>
+	<p>A single heading element is allowable as the content of a summary element.</p>
+	<p>See the <a href="https://www.w3.org/TR/html51/interactive-elements.html#the-summary-element">HTML 5.1 specification for summary</a>.</p>
+</details>
+			</div>
+		</div>
+		
+<div class="test">
+			<h2 class="test-title" id="ds-010">Test ds-010: <code>details</code> element with <code>aria-label</code></h2>
+
+			<div class="test-case">
+<details id="details10" aria-label="ARIA devil is in the details">
+	<summary>Summary text</summary>
+	<p>Does <code>aria-label</code> get announced when on a <code>details</code> element?</p>
+	
+</details>
+			</div>
+		</div>
+
+		<script src="../scripts/test-scripts.js"></script>
+		<script>
+			var test = [];
+			var el = document.getElementById('details1');
+			var isSupported = (el instanceof HTMLElement && !(el instanceof HTMLUnknownElement));
+
+			test.push({id: "basic-criteria", pass: isSupported});
+			displaySupportResults(test);
+		</script>
+	</body>
+</html>

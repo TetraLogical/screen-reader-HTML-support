@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>test file: menu role</title>
+    <link rel="stylesheet" href="../style/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        [tabindex="0"]:focus {
+            outline: 2px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <code>menu</code> role
+    </h1>
+
+    <div class="meta">
+        <div class="criteria">
+            <h2>
+                Pass Criteria
+            </h2>
+            <ul id="criteria-list">
+                <li id="basic-criteria">#1: Element is supported</li>
+                <li>#2: Correct HTML and Core Accessibility API mappings</li>
+                <li>#3: Correct Accessible Name &amp; Description Calculation</li>
+            </ul>
+        </div>
+
+        <div class="reference">
+            <h2>
+                Reference
+            </h2>
+            <ul>
+                <li>
+                    <a href="https://www.w3.org/TR/wai-aria-1.1/#menu">WAI-ARIA <code>menu</code> role</a>
+                </li>
+                <li>
+                    <a href="https://w3c.github.io/aria-practices/#menu">ARIA Authoring Practices for <code>menu</code> role</a>
+                </li>
+                <li>
+                    <a href="https://www.w3.org/TR/core-aam-1.1/#role-map-menu">Core Accessibility API Mappings for <code>menu</code> role</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    
+<div class="test">
+    <h2 class="test-title" id="menu-001">
+        Test menu-001: <code>menu</code> role, with allowed attribute aria-activedescendant
+    </h2>
+    <div class="test-case">
+        <div role="menu" id="menu-01" aria-activedescendant="true" tabindex="0">menu-01: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="menu-002">
+        Test menu-002: <code>menu</code> role, with allowed attribute aria-disabled
+    </h2>
+    <div class="test-case">
+        <div role="menu" id="menu-02" aria-disabled="true" tabindex="0">menu-02: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="menu-003">
+        Test menu-003: <code>menu</code> role, with allowed attribute aria-expanded
+    </h2>
+    <div class="test-case">
+        <div role="menu" id="menu-03" aria-expanded="true" tabindex="0">menu-03: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="menu-004">
+        Test menu-004: <code>menu</code> role, with allowed attribute aria-haspopup
+    </h2>
+    <div class="test-case">
+        <div role="menu" id="menu-04" aria-haspopup="true" tabindex="0">menu-04: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="menu-005">
+        Test menu-005: <code>menu</code> role, with allowed attribute aria-orientation
+    </h2>
+    <div class="test-case">
+        <div role="menu" id="menu-05" aria-orientation="horizontal" tabindex="0">menu-05: horizontal</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="menu-006">
+        Test menu-006: <code>menu</code> role, basic test for menu
+    </h2>
+    <div class="test-case">
+        <div role="menu" id="menu-06" tabindex="0">menu-06: </div>
+    </div>
+</div>
+
+
+    <script src="../scripts/test-scripts.js"></script>
+    <script>
+        var test = [];
+        var el = document.getElementById('menu-01');
+        var isSupported = (el instanceof HTMLElement && !(el instanceof HTMLUnknownElement));
+
+        test.push({id: "basic-criteria", pass: isSupported});
+        displaySupportResults(test);
+        
+        // Script to cycle through multiple values for states and properties
+        var elements = document.querySelectorAll('[id^=menu]');
+        elements.forEach(function(el) {
+            el.addEventListener('click', function() {
+                
+var currentVal = el.getAttribute('aria-expanded');
+var values = ['true', 'false'];
+var nextVal = values[(values.indexOf(currentVal) + 1) % values.length];
+el.setAttribute('aria-expanded', nextVal);
+el.textContent = el.id + ': ' + nextVal;
+
+
+var currentVal = el.getAttribute('aria-orientation');
+var values = ['horizontal', 'vertical'];
+var nextVal = values[(values.indexOf(currentVal) + 1) % values.length];
+el.setAttribute('aria-orientation', nextVal);
+el.textContent = el.id + ': ' + nextVal;
+
+            });
+            el.addEventListener('keypress', function(event) {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    
+var currentVal = el.getAttribute('aria-expanded');
+var values = ['true', 'false'];
+var nextVal = values[(values.indexOf(currentVal) + 1) % values.length];
+el.setAttribute('aria-expanded', nextVal);
+el.textContent = el.id + ': ' + nextVal;
+
+
+var currentVal = el.getAttribute('aria-orientation');
+var values = ['horizontal', 'vertical'];
+var nextVal = values[(values.indexOf(currentVal) + 1) % values.length];
+el.setAttribute('aria-orientation', nextVal);
+el.textContent = el.id + ': ' + nextVal;
+
+                }
+            });
+        });
+    </script>
+</body>
+</html>

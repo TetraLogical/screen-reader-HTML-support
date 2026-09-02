@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>test file: figure element</title>
+		<link rel="stylesheet" href="../style/styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	</head>
+	<body>
+		<h1><code>figure</code> element test</h1>
+		<div class="meta">
+			<div class="criteria">
+				<h2>Pass Criteria</h2>
+				<ul id="criteria-list">
+					<li id="basic-criteria">#1: Element is supported</li>
+					<li>#2: Correct HTML and Core Accessibility API mappings</li>
+					<li>#3: Correct Accessible Name &amp; Description Calculation</li>
+				</ul>
+			</div>
+
+			<div class="reference">
+				<h2>Reference</h2>
+				<ul>
+					<li>
+						<a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element">HTML figure element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#el-figure">HTML Accessibility API Mappings for figure element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#figure-element-accessible-name-calculation">Accessible Name Calculation</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#figure-element-accessible-description-calculation">Accessible Description Calculation</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="fg-001">
+				Test fg-001: <code>figure</code> element
+			</h2>
+
+			<div class="test-case">
+<figure id="figure1">
+	<img src="../images/HTML5_Logo.png" alt="HTML logo" width="128" height="128" />
+</figure>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="fg-002">
+				Test fg-002: <code>figure</code>
+				with <code>aria-label</code>
+			</h2>
+
+			<div class="test-case">
+<figure aria-label="aria-label attribute">
+	<img src="../images/HTML5_Logo.png" alt="HTML logo" width="128" height="128" />
+</figure>
+</div>
+			<div class="test-notes">
+<p><code>aria-label</code> should be used for accessible name.</p>
+<p>No accessible description.</p>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="fg-003">
+				Test fg-003: <code>figure</code>
+				with <code>aria-labelledby</code>
+			</h2>
+
+			<div class="test-case">
+<figure aria-labelledby="fg-003-labelledby">
+	<img src="../images/HTML5_Logo.png" alt="HTML logo" width="128" height="128" />
+	<p id="fg-003-labelledby">
+		<code>p</code> referenced by
+		<code>aria-labelledby</code>
+	</p>
+</figure>
+</div>
+			<div class="test-notes">
+				<p><code>aria-labelledby</code> should be used for accessible name.</p>
+				<p>No accessible description.</p>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="fg-004">
+				Test fg-004: <code>figure</code> with <code>title</code> attribute
+			</h2>
+
+			<div class="test-case">
+<figure title="title attribute">
+	<img src="../images/HTML5_Logo.png" alt="HTML logo" width="128" height="128" />
+</figure>
+<p><code>Title</code> attribute should be used for accessible name.</p>
+<p>No accessible description.</p>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="fg-005">
+				Test fg-005: <code>figure</code>
+				with <code>figcaption</code> element
+			</h2>
+
+			<div class="test-case">
+<figure>
+	<img src="../images/HTML5_Logo.png" alt="HTML logo" width="128" height="128" />
+	<figcaption>Figcaption element</figcaption>
+</figure>
+</div>
+			<div class="test-notes">
+<p><code>figcaption</code> should be used for accessible name.</p>
+<p>No accessible description.</p>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="fg-006">
+				Test fg-006: <code>figure</code>
+				with <code>aria-describedby</code>
+			</h2>
+
+			<div class="test-case">
+<figure aria-describedby="fg-006-describedby">
+	<img src="../images/HTML5_Logo.png" alt="HTML logo" width="128" height="128" />
+	<p id="fg-006-describedby">p referenced by aria-describedby</p>
+</figure>
+</div>
+			<div class="test-notes">
+				<p><code>aria-describedby</code> should be used for accessible description.</p>
+				<p>No accessible name.</p>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="fg-007">
+				Test fg-007: <code>figure</code>
+				with <code>figcaption</code> element and <code>title</code> attribute
+			</h2>
+
+			<div class="test-case">
+<figure title="title attribute">
+	<img src="../images/HTML5_Logo.png" alt="HTML logo" width="128" height="128" />
+	<figcaption>Figcaption element</figcaption>
+</figure>
+</div>
+			<div class="test-notes">
+				<p><code>figcaption</code> should be used for accessible name.</p>
+				<p><code>title</code> should be used for accessible description.</p>
+			</div>
+		</div>
+		
+		
+	<div class="test">
+			<h2 class="test-title" id="fg-008">
+				Test fg-008: <code>figure</code> element with <code>tabindex=0</code>
+			</h2>
+
+			<div class="test-case">
+<figure id="figure8" tabindex="0">
+	<img src="../images/HTML5_Logo.png" alt="HTML logo" width="128" height="128" />
+</figure>
+			</div>
+		</div>
+	
+<div class="test">
+			<h2 class="test-title" id="fg-009">
+				Test fg-009: <code>figure</code> element and <code>figcaption</code> with <code>tabindex=0</code>
+			</h2>
+
+			<div class="test-case">
+<figure id="figure9">
+<figcaption tabindex="0">WORLD WIDE poot logo</figcaption>
+	<img src="../images/HTML5_Logo.png" alt="HTML logo" width="128" height="128" />
+</figure>
+			</div>
+		</div>
+		<script src="../scripts/test-scripts.js"></script>
+		<script>
+			var test = [];
+			var el = document.getElementById('figure1');
+			var isSupported = (el instanceof HTMLElement && !(el instanceof HTMLUnknownElement));
+
+			test.push({id: "basic-criteria", pass: isSupported});
+			displaySupportResults(test);
+		</script>
+	</body>
+</html>

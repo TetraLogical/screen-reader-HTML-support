@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>test file: address element</title>
+		<link rel="stylesheet" href="../style/styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	</head>
+	<body>
+		<h1>
+			<code>address</code> element
+		</h1>
+
+		<div class="meta">
+			<div class="criteria">
+				<h2>
+					Pass Criteria
+				</h2>
+				<ul id="criteria-list">
+					<li id="basic-criteria">#1: Element is supported</li>
+					<li>#2: Correct HTML and Core Accessibility API mappings</li>
+					<li>#3: Correct Accessible Name &amp; Description Calculation</li>
+				</ul>
+			</div>
+
+			<div class="reference">
+				<h2>
+					Reference
+				</h2>
+				<ul>
+					<li>
+						<a href="https://html.spec.whatwg.org/multipage/sections.html#the-address-element">HTML <code>address</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#el-address">HTML Accessibility API Mappings for <code>address</code> element</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="add-001">
+				Test add-001: <code>address</code> element
+			</h2>
+
+			<div class="test-case">
+<address id="add-01">49 Piecemeal Road</address>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="add-002">
+			Test add-002: <code>address</code> element with <code>aria-label</code> </h2>
+
+			<div class="test-case">
+<address id="add-02" aria-label="home address">49 Piecemeal Road</address>
+			</div>
+		</div>
+
+<div class="test">
+			<h2 class="test-title" id="add-003">
+				Test add-003: <code>address</code> element with <code>aria-label</code> and <code>aria-describedby</code>
+			</h2>
+
+			<div class="test-case">
+<address id="add-03" aria-label="home address" aria-describedby="desc1">49 Piecemeal Road</address>
+<p id="desc1">Note: this address is made up.</p>
+			</div>
+	</div>
+	
+	<div class="test">
+			<h2 class="test-title" id="add-004">
+				Test add-004: <code>address</code> element with <code>tabindex=0</code>
+			</h2>
+
+			<div class="test-case">
+<address id="add-04" tabindex="0">49 Piecemeal Road</address>
+			</div>
+		</div>
+
+
+		<script src="../scripts/test-scripts.js"></script>
+		<script>
+			var test = [];
+			var el = document.getElementById('add-01');
+			var isSupported = (el instanceof HTMLElement && !(el instanceof HTMLUnknownElement));
+
+			test.push({id: "basic-criteria", pass: isSupported});
+			displaySupportResults(test);
+		</script>
+	</body>
+</html>

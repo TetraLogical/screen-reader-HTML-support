@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>test file: checkbox role</title>
+    <link rel="stylesheet" href="../style/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+    <h1>
+        <code>checkbox</code> role
+    </h1>
+
+    <div class="meta">
+        <div class="criteria">
+            <h2>
+                Pass Criteria
+            </h2>
+            <ul id="criteria-list">
+                <li id="basic-criteria">#1: Element is supported</li>
+                <li>#2: Correct HTML and Core Accessibility API mappings</li>
+                <li>#3: Correct Accessible Name &amp; Description Calculation</li>
+            </ul>
+        </div>
+
+        <div class="reference">
+            <h2>
+                Reference
+            </h2>
+            <ul>
+                <li>
+                    <a href="https://www.w3.org/TR/wai-aria-1.1/#checkbox">WAI-ARIA <code>checkbox</code> role</a>
+                </li>
+                <li>
+                    <a href="https://w3c.github.io/aria-practices/#checkbox">ARIA Authoring Practices for <code>checkbox</code> role</a>
+                </li>
+                <li>
+                    <a href="https://www.w3.org/TR/core-aam-1.1/#role-map-checkbox">Core Accessibility API Mappings for <code>checkbox</code> role</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    
+<div class="test">
+    <h2 class="test-title" id="checkbox-001">
+        Test checkbox-001: <code>checkbox</code> role, with required attribute aria-checked
+    </h2>
+    <div class="test-case">
+        <div role="checkbox" id="checkbox-01" aria-checked="true" tabindex="0"></div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="checkbox-002">
+        Test checkbox-002: <code>checkbox</code> role, with allowed attribute aria-checked
+    </h2>
+    <div class="test-case">
+        <div role="checkbox" id="checkbox-02" aria-checked="true" tabindex="0"></div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="checkbox-003">
+        Test checkbox-003: <code>checkbox</code> role, with allowed attribute aria-disabled
+    </h2>
+    <div class="test-case">
+        <div role="checkbox" id="checkbox-03" aria-disabled="true" tabindex="0"></div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="checkbox-004">
+        Test checkbox-004: <code>checkbox</code> role, with allowed attribute aria-readonly
+    </h2>
+    <div class="test-case">
+        <div role="checkbox" id="checkbox-04" aria-readonly="true" tabindex="0"></div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="checkbox-005">
+        Test checkbox-005: <code>checkbox</code> role, with allowed attribute aria-required
+    </h2>
+    <div class="test-case">
+        <div role="checkbox" id="checkbox-05" aria-required="true" tabindex="0"></div>
+    </div>
+</div>
+
+
+    <script src="../scripts/test-scripts.js"></script>
+    <script>
+        var test = [];
+        var el = document.getElementById('checkbox-01');
+        var isSupported = (el instanceof HTMLElement && !(el instanceof HTMLUnknownElement));
+
+        test.push({id: "basic-criteria", pass: isSupported});
+        displaySupportResults(test);
+    </script>
+</body>
+</html>

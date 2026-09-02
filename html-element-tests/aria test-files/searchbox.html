@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>test file: searchbox role</title>
+    <link rel="stylesheet" href="../style/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        [tabindex="0"]:focus {
+            outline: 2px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <code>searchbox</code> role
+    </h1>
+
+    <div class="meta">
+        <div class="criteria">
+            <h2>
+                Pass Criteria
+            </h2>
+            <ul id="criteria-list">
+                <li id="basic-criteria">#1: Element is supported</li>
+                <li>#2: Correct HTML and Core Accessibility API mappings</li>
+                <li>#3: Correct Accessible Name &amp; Description Calculation</li>
+            </ul>
+        </div>
+
+        <div class="reference">
+            <h2>
+                Reference
+            </h2>
+            <ul>
+                <li>
+                    <a href="https://www.w3.org/TR/wai-aria-1.1/#searchbox">WAI-ARIA <code>searchbox</code> role</a>
+                </li>
+                <li>
+                    <a href="https://w3c.github.io/aria-practices/#searchbox">ARIA Authoring Practices for <code>searchbox</code> role</a>
+                </li>
+                <li>
+                    <a href="https://www.w3.org/TR/core-aam-1.1/#role-map-searchbox">Core Accessibility API Mappings for <code>searchbox</code> role</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    
+<div class="test">
+    <h2 class="test-title" id="searchbox-001">
+        Test searchbox-001: <code>searchbox</code> role, with allowed attribute aria-activedescendant
+    </h2>
+    <div class="test-case">
+        <div role="searchbox" id="searchbox-01" aria-activedescendant="true" tabindex="0">searchbox-01: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="searchbox-002">
+        Test searchbox-002: <code>searchbox</code> role, with allowed attribute aria-autocomplete
+    </h2>
+    <div class="test-case">
+        <div role="searchbox" id="searchbox-02" aria-autocomplete="both" tabindex="0">searchbox-02: both</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="searchbox-003">
+        Test searchbox-003: <code>searchbox</code> role, with allowed attribute aria-disabled
+    </h2>
+    <div class="test-case">
+        <div role="searchbox" id="searchbox-03" aria-disabled="true" tabindex="0">searchbox-03: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="searchbox-004">
+        Test searchbox-004: <code>searchbox</code> role, with allowed attribute aria-expanded
+    </h2>
+    <div class="test-case">
+        <div role="searchbox" id="searchbox-04" aria-expanded="true" tabindex="0">searchbox-04: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="searchbox-005">
+        Test searchbox-005: <code>searchbox</code> role, with allowed attribute aria-haspopup
+    </h2>
+    <div class="test-case">
+        <div role="searchbox" id="searchbox-05" aria-haspopup="true" tabindex="0">searchbox-05: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="searchbox-006">
+        Test searchbox-006: <code>searchbox</code> role, with allowed attribute aria-multiline
+    </h2>
+    <div class="test-case">
+        <div role="searchbox" id="searchbox-06" aria-multiline="true" tabindex="0">searchbox-06: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="searchbox-007">
+        Test searchbox-007: <code>searchbox</code> role, with allowed attribute aria-placeholder
+    </h2>
+    <div class="test-case">
+        <div role="searchbox" id="searchbox-07" aria-placeholder="true" tabindex="0">searchbox-07: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="searchbox-008">
+        Test searchbox-008: <code>searchbox</code> role, with allowed attribute aria-readonly
+    </h2>
+    <div class="test-case">
+        <div role="searchbox" id="searchbox-08" aria-readonly="true" tabindex="0">searchbox-08: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="searchbox-009">
+        Test searchbox-009: <code>searchbox</code> role, with allowed attribute aria-required
+    </h2>
+    <div class="test-case">
+        <div role="searchbox" id="searchbox-09" aria-required="true" tabindex="0">searchbox-09: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="searchbox-010">
+        Test searchbox-010: <code>searchbox</code> role, basic test for searchbox
+    </h2>
+    <div class="test-case">
+        <div role="searchbox" id="searchbox-10" tabindex="0">searchbox-10: </div>
+    </div>
+</div>
+
+
+    <script src="../scripts/test-scripts.js"></script>
+    <script>
+        var test = [];
+        var el = document.getElementById('searchbox-01');
+        var isSupported = (el instanceof HTMLElement && !(el instanceof HTMLUnknownElement));
+
+        test.push({id: "basic-criteria", pass: isSupported});
+        displaySupportResults(test);
+        
+        // Script to cycle through multiple values for states and properties
+        var elements = document.querySelectorAll('[id^=searchbox]');
+        elements.forEach(function(el) {
+            el.addEventListener('click', function() {
+                
+var currentVal = el.getAttribute('aria-autocomplete');
+var values = ['both', 'inline', 'list', 'none'];
+var nextVal = values[(values.indexOf(currentVal) + 1) % values.length];
+el.setAttribute('aria-autocomplete', nextVal);
+el.textContent = el.id + ': ' + nextVal;
+
+
+var currentVal = el.getAttribute('aria-expanded');
+var values = ['true', 'false'];
+var nextVal = values[(values.indexOf(currentVal) + 1) % values.length];
+el.setAttribute('aria-expanded', nextVal);
+el.textContent = el.id + ': ' + nextVal;
+
+            });
+            el.addEventListener('keypress', function(event) {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    
+var currentVal = el.getAttribute('aria-autocomplete');
+var values = ['both', 'inline', 'list', 'none'];
+var nextVal = values[(values.indexOf(currentVal) + 1) % values.length];
+el.setAttribute('aria-autocomplete', nextVal);
+el.textContent = el.id + ': ' + nextVal;
+
+
+var currentVal = el.getAttribute('aria-expanded');
+var values = ['true', 'false'];
+var nextVal = values[(values.indexOf(currentVal) + 1) % values.length];
+el.setAttribute('aria-expanded', nextVal);
+el.textContent = el.id + ': ' + nextVal;
+
+                }
+            });
+        });
+    </script>
+</body>
+</html>

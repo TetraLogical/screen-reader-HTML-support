@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>test file: a element with href</title>
+		<link rel="stylesheet" href="../style/styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	</head>
+	<body>
+		<h1>
+			<code>a</code> element with <code>href</code>
+		</h1>
+
+		<div class="meta">
+			<div class="criteria">
+				<h2>
+					Pass Criteria
+				</h2>
+				<ul id="criteria-list">
+					<li id="basic-criteria">#1: Element is supported</li>
+					<li>#2: Correct HTML and Core Accessibility API mappings</li>
+					<li>#3: Correct Accessible Name &amp; Description Calculation</li>
+				</ul>
+			</div>
+
+			<div class="reference">
+				<h2>
+					Reference
+				</h2>
+				<ul>
+					<li>
+						<a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">HTML <code>a</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#el-a">HTML Accessibility API Mappings for <code>a</code> element</a>
+					</li>
+					<li>
+						<a href="https://www.w3.org/TR/core-aam-1.1/#role-map-link">Core Accessibility API Mappings for <code>link</code> role</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="a-001">
+				Test a-001: Anchor with <code>href</code>
+			</h2>
+
+			<div class="test-case">
+<p>
+	<a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element" id="a1">
+		HTML <code>a</code> element
+	</a>
+</p>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="a-002">
+				Test a-002: Anchor with <code>href</code>
+				&amp; <code>title</code> attribute
+			</h2>
+
+			<div class="test-case">
+<p>
+	<a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element" id="a3"
+	title="HTML anchor element">HTML <code>a</code> element</a>
+</p>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="a-003">
+				Test a-003: Anchor with <code>href</code> and <code>aria-label</code> attribute
+			</h2>
+
+			<div class="test-case">
+<p>
+	<a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element" id="a3"
+	aria-label="ARIA label test">...</a>
+</p>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="a-004">
+				Test a-004: Anchor with <code>href</code>, <code>aria-label</code> and <code>aria-describedby</code> attributes.
+			</h2>
+
+			<div class="test-case">
+<p>
+	<a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element" id="a4"
+	aria-label="ARIA label test" aria-describedby="desc1">...</a>
+</p>
+<p id="desc1">describedby test</p>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="a-005">
+				Test a-005: Anchor with visible text, <code>href</code>, <code>title</code>, <code>aria-label</code> and <code>aria-describedby</code> attributes.
+			</h2>
+
+			<div class="test-case">
+<p>
+	<a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element" id="a5"
+	title="Title text"
+	aria-label="ARIA label test" aria-describedby="desc1">Visible text</a>
+</p>
+<p id="desc1">describedby test</p>
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="a-006">
+				Test a-006: Anchor with an <code>href</code> attribute, with visible text, <code>title</code>, and <code>aria-label</code> attributes that all have the same values.
+			</h2>
+
+			<div class="test-case">
+<p>
+	<a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element" id="a6"
+	title="Link label"
+	aria-label="Link label">Link label</a>
+</p>
+			</div>
+		</div>
+
+		<script src="../scripts/test-scripts.js"></script>
+		<script>
+			var test = [];
+			var el = document.getElementById('a1');
+			var isSupported = (el instanceof HTMLElement && !(el instanceof HTMLUnknownElement));
+
+			test.push({id: "basic-criteria", pass: isSupported});
+			displaySupportResults(test);
+		</script>
+
+	</body>
+</html>

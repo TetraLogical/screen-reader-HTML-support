@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>test file: role=checkbox</title>
+    <link rel="stylesheet" href="../style/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+      [role="checkbox"]{
+        display:inline-flex;
+        align-items:center;
+        gap:.5rem;
+        user-select:none;
+        cursor:pointer;
+        border:1px solid currentColor;
+        padding:.25rem .5rem;
+        border-radius:.375rem;
+      }
+      [role="checkbox"]:focus{outline:2px solid currentColor;outline-offset:2px}
+
+      .icon{display:inline-block;width:1.1em;height:1.1em;pointer-events:none}
+      .icon svg{display:block;width:100%;height:100%}
+
+      [role="checkbox"][aria-checked="true"]{ background-color: rgba(0,0,0,.04); }
+      [role="checkbox"][aria-checked="mixed"]{ background-color: rgba(0,0,0,.03); }
+
+      .demo-controls { margin:.75rem 0; }
+      .demo-output { white-space:pre; border:1px dashed currentColor; padding:.5rem; border-radius:.25rem; min-height:2.5rem; }
+      .visually-hidden{position:absolute!important;clip:rect(1px,1px,1px,1px);padding:0!important;border:0!important;height:1px!important;width:1px!important;overflow:hidden}
+    </style>
+  </head>
+  <body>
+    <h1>
+      <code>role=&quot;checkbox&quot;</code>
+    </h1>
+
+        <div class="meta">
+      <div class="criteria">
+        <h2>Pass Criteria</h2>
+        <ul id="criteria-list">
+          <li id="basic-criteria">#1: Element is supported</li>
+          <li>#2: Correct HTML and Core Accessibility API mappings</li>
+          <li>#3: Correct Accessible Name &amp; Description Calculation</li>
+          <li>#4: <code>aria-checked</code> states supported: <code>true</code>, <code>false</code>, <code>mixed</code></li>
+          <li>#5: Toggle works with mouse click and keyboard (<kbd>Space</kbd>/<kbd>Enter</kbd>)</li>
+          <li>#6: State icon updates correctly on click/keypress</li>
+          <li>#7: State is synced to a native checkbox for form submission</li>
+        </ul>
+      </div>
+
+    
+      <div class="reference">
+        <h2>Reference</h2>
+        <ul>
+          <li><a href="https://www.w3.org/TR/wai-aria-1.2/#checkbox">WAI-ARIA <code>checkbox</code> role</a></li>
+          <li><a href="https://www.w3.org/TR/core-aam-1.2/#role-map-checkbox">Core AAM: <code>checkbox</code> role</a></li>
+          <li><a href="https://www.w3.org/WAI/ARIA/apg/patterns/checkbox/">ARIA APG: Checkbox Pattern</a></li>
+        </ul>
+      </div>
+    </div>
+	
+<div class="demo-controls">
+      <button type="button" id="show-values">Show native values</button>
+    </div>
+<pre id="values" class="demo-output" aria-live="polite"></pre>
+
+    <div class="test">
+      <h2 class="test-title" id="checkbox-001">
+        Test checkbox-001: <code>div</code> with <code>role=&quot;checkbox&quot;</code> (unchecked) and visible text
+      </h2>
+      <div class="test-case">
+          <div role="checkbox" id="cb1" tabindex="0" aria-checked="false">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 16 16" focusable="false" aria-hidden="true">
+                <rect x="1.5" y="1.5" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                <g class="mark-check" style="display:none">
+                  <path d="M4 8.5l3 3 5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <g class="mark-minus" style="display:none">
+                  <path d="M4 8h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </g>
+              </svg>
+            </span>
+            updates
+            <input id="cb1-native" class="visually-hidden" name="cb1" type="checkbox" value="on">
+          </div>
+      </div>
+    </div>
+
+    <div class="test">
+      <h2 class="test-title" id="checkbox-002">
+        Test checkbox-002: <code>span</code> with <code>role=&quot;checkbox&quot;</code> (checked) and <code>title</code>
+      </h2>
+      <div class="test-case">
+        <p>
+          <span role="checkbox" id="cb2" tabindex="0" aria-checked="true" title="Subscribe to newsletter">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 16 16" focusable="false" aria-hidden="true">
+                <rect x="1.5" y="1.5" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                <g class="mark-check" style="display:none">
+                  <path d="M4 8.5l3 3 5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <g class="mark-minus" style="display:none">
+                  <path d="M4 8h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </g>
+              </svg>
+            </span>
+            Subscribe
+            <input id="cb2-native" class="visually-hidden" name="cb2" type="checkbox" value="on">
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <div class="test">
+      <h2 class="test-title" id="checkbox-003">
+        Test checkbox-003: <code>div</code> with <code>role=&quot;checkbox&quot;</code> and <code>aria-label</code> (no visible text)
+      </h2>
+      <div class="test-case">
+          <div role="checkbox" id="cb3" tabindex="0" aria-checked="false" aria-label="Enable experimental features" aria-describedby="cb3d">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 16 16" focusable="false" aria-hidden="true">
+                <rect x="1.5" y="1.5" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                <g class="mark-check" style="display:none">
+                  <path d="M4 8.5l3 3 5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <g class="mark-minus" style="display:none">
+                  <path d="M4 8h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </g>
+              </svg>
+            </span>
+            <input id="cb3-native" class="visually-hidden" name="cb3" type="checkbox" value="on">
+          </div>
+        <p id="cb3d">describedby test (checkbox-003)</p>
+      </div>
+    </div>
+
+    <div class="test">
+      <h2 class="test-title" id="checkbox-004">
+        Test checkbox-004: Indeterminate state using <code>aria-checked=&quot;mixed&quot;</code>
+      </h2>
+      <div class="test-case">
+          <div role="checkbox" id="cb4" tabindex="0" aria-checked="mixed" aria-describedby="cb4d">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 16 16" focusable="false" aria-hidden="true">
+                <rect x="1.5" y="1.5" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                <g class="mark-check" style="display:none">
+                  <path d="M4 8.5l3 3 5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <g class="mark-minus" style="display:none">
+                  <path d="M4 8h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </g>
+              </svg>
+            </span>
+            Select all
+            <input id="cb4-native" class="visually-hidden" name="cb4" type="checkbox" value="on">
+          </div>
+        <p id="cb4d">describedby test (checkbox-004)</p>
+      </div>
+    </div>
+
+    <div class="test">
+      <h2 class="test-title" id="checkbox-005">
+        Test checkbox-005: Visible text plus <code>title</code>, <code>aria-label</code>, and <code>aria-describedby</code>
+      </h2>
+      <div class="test-case">
+          <div role="checkbox" id="cb5" tabindex="0"
+               aria-checked="false"
+               title="Title text"
+               aria-label="ARIA label test"
+               aria-describedby="cb5d">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 16 16" focusable="false" aria-hidden="true">
+                <rect x="1.5" y="1.5" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                <g class="mark-check" style="display:none">
+                  <path d="M4 8.5l3 3 5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <g class="mark-minus" style="display:none">
+                  <path d="M4 8h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </g>
+              </svg>
+            </span>
+            Visible text
+            <input id="cb5-native" class="visually-hidden" name="cb5" type="checkbox" value="on">
+          </div>
+        <p id="cb5d">describedby test (checkbox-005)</p>
+      </div>
+    </div>
+
+    <div class="test">
+      <h2 class="test-title" id="checkbox-006">
+        Test checkbox-006: Label association via <code>aria-labelledby</code>
+      </h2>
+      <div class="test-case">
+        <p id="cb6l">Marketing emails</p>
+          <div role="checkbox" id="cb6" tabindex="0" aria-checked="false" aria-labelledby="cb6l">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 16 16" focusable="false" aria-hidden="true">
+                <rect x="1.5" y="1.5" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                <g class="mark-check" style="display:none">
+                  <path d="M4 8.5l3 3 5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <g class="mark-minus" style="display:none">
+                  <path d="M4 8h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </g>
+              </svg>
+            </span>
+            <input id="cb6-native" class="visually-hidden" name="cb6" type="checkbox" value="on">
+          </div>
+
+      </div>
+    </div>
+
+    <script src="../scripts/test-scripts.js"></script>
+    <script>
+      (function () {
+        // Safe support check
+        var test = [];
+        var el = document.getElementById('cb1');
+        var supported = (el instanceof HTMLElement && !(el instanceof HTMLUnknownElement));
+        test.push({id: "basic-criteria", pass: supported});
+        try { if (typeof displaySupportResults === 'function') displaySupportResults(test); } catch(e) {}
+
+        function setIcon(roleEl){
+          var svg = roleEl.querySelector('.icon svg');
+          if (!svg) return;
+          var check = svg.querySelector('.mark-check');
+          var minus = svg.querySelector('.mark-minus');
+          if (check) check.style.display = 'none';
+          if (minus) minus.style.display = 'none';
+
+          var state = roleEl.getAttribute('aria-checked') || 'false';
+          if (state === 'true' && check) check.style.display = 'inline';
+          else if (state === 'mixed' && minus) minus.style.display = 'inline';
+        }
+
+        function syncToNative(roleEl){
+          var native = roleEl.querySelector('input[type="checkbox"]');
+          if (!native) return;
+          var aria = roleEl.getAttribute('aria-checked');
+          if (aria === 'mixed') {
+            native.indeterminate = true;
+            native.checked = false;
+          } else {
+            native.indeterminate = false;
+            native.checked = (aria === 'true');
+          }
+          var ev = new Event('change', { bubbles: true });
+          native.dispatchEvent(ev);
+        }
+
+        function nextState(current) {
+          if (current === 'mixed') return 'true';
+          return current === 'true' ? 'false' : 'true';
+        }
+
+        function onActivate(e) {
+          if (e.type === 'keydown') {
+            var key = e.key || e.code;
+            if (key !== ' ' && key !== 'Enter' && key !== 'Spacebar') return;
+            e.preventDefault();
+          }
+          var state = this.getAttribute('aria-checked') || 'false';
+          var newState = nextState(state);
+          this.setAttribute('aria-checked', newState);
+          setIcon(this);
+          syncToNative(this);
+        }
+
+        function init(el){
+          if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '0');
+          var native = el.querySelector('input[type="checkbox"]');
+          if (!native) {
+            native = document.createElement('input');
+            native.type = 'checkbox';
+            native.className = 'visually-hidden';
+            el.appendChild(native);
+          }
+          setIcon(el);
+          syncToNative(el);
+
+          native.addEventListener('change', function(){
+            if (native.indeterminate) {
+              el.setAttribute('aria-checked', 'mixed');
+            } else {
+              el.setAttribute('aria-checked', native.checked ? 'true' : 'false');
+            }
+            setIcon(el);
+          });
+
+          el.addEventListener('click', onActivate);
+          el.addEventListener('keydown', onActivate);
+        }
+
+        Array.prototype.forEach.call(document.querySelectorAll('[role="checkbox"]'), init);
+
+        document.getElementById('show-values').addEventListener('click', function () {
+          var ids = ['cb1','cb2','cb3','cb4','cb5','cb6'];
+          var lines = ids.map(function(id){
+            var n = document.getElementById(id + '-native');
+            if (!n) return id + ': (no native input)';
+            var val = n.indeterminate ? 'mixed' : (n.checked ? 'true' : 'false');
+            return id + ': ' + val;
+          });
+          document.getElementById('values').textContent = lines.join('\n');
+        });
+      }());
+    </script>
+  </body>
+</html>

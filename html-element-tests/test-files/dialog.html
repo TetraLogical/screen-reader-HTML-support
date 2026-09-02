@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>test file: dialog element</title>
+		<link rel="stylesheet" href="../style/styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style>
+    dialog {
+      border: 1px solid #ccc;
+      padding: 1em;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    button {
+      margin-top: 1em;
+    }  
+    
+    dialog:focus { outline: 2px solid blue; }
+  </style>
+  </head>
+  
+	<body>
+		<h1>
+			<code>dialog</code> element
+		</h1>
+
+		<div class="meta">
+			<div class="criteria">
+				<h2>
+					Pass Criteria
+				</h2>
+				<ul id="criteria-list">
+					<li id="basic-criteria">#1: Element is supported</li>
+					<li>#2: Correct HTML and Core Accessibility API mappings</li>
+					<li>#3: Correct Accessible Name &amp; Description Calculation</li>
+				</ul>
+			</div>
+
+			<div class="reference">
+				<h2>
+					Reference
+				</h2>
+				<ul>
+					<li>
+						<a href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-dialog-element">HTML <code>dialog</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#el-dialog">HTML Accessibility API Mappings for <code>dialog</code> element</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="dialog-001">
+				Test dialog-001: <code>dialog</code> element with <code>aria-haspopup="dialog"</code> on <code>button</code>
+			</h2>
+
+			<div class="test-case">
+<div id="div-01">
+    <button id="openDialogButton1" aria-haspopup="dialog">Open Dialog 1</button>
+    <dialog id="testDialog1">
+      <form method="dialog">
+        <p>Dialog content goes here.</p>
+        <p>
+          <button value="cancel">Cancel</button>
+          <button id="confirmButton1" value="confirm">Confirm</button>
+        </p>
+      </form>
+    </dialog>
+  </div>
+</div>
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="dialog-002">
+				Test dialog-002: <code>dialog</code> element
+				with <code>aria-label="Test Dialog 2"</code>
+			</h2>
+
+			<div class="test-case">
+      <button id="openDialogButton2">Open Dialog 2</button>
+    <dialog id="testDialog2" aria-label="Test Dialog 2">
+      <form method="dialog">
+        <p>Dialog content goes here.</p>
+        <p>
+          <button value="cancel">Cancel</button>
+          <button id="confirmButton2" value="confirm">Confirm</button>
+        </p>
+      </form>
+    </dialog>
+			</div>
+		</div>
+
+   <div class="test">
+			<h2 class="test-title" id="dialog-003">
+				Test dialog-003: <code>dialog</code> element
+				with <code>aria-label="Test Dialog 3" and <code>tabindex="-1"</code></code>
+			</h2>
+
+			<div class="test-case">
+      <button id="openDialogButton3">Open Dialog 3</button>
+    <dialog id="testDialog3" aria-label="Test Dialog 3" tabindex="-1">
+      <form method="dialog">
+        <p>Dialog content goes here.</p>
+        <p>
+          <button value="cancel">Cancel</button>
+          <button id="confirmButton3" value="confirm">Confirm</button>
+        </p>
+      </form>
+    </dialog>
+			</div>   
+		</div> 
+    
+    <div class="test">
+			<h2 class="test-title" id="dialog-004">
+				Test dialog-004: <code>dialog</code> element
+				with <code>aria-label="Test Dialog 4"</code> and structured text content.
+			</h2>
+
+			<div class="test-case">
+        <button id="openDialogButton4">Open Dialog 4</button>
+    <dialog id="testDialog4" aria-label="Test Dialog 4">
+      <form method="dialog">
+        <h3>Dialog Heading</h3>
+        <p>Some introductory text.</p>
+        <ul>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+        </ul>
+        <p>
+          <button value="cancel">Cancel</button>
+          <button id="confirmButton4" value="confirm">Confirm</button>
+        </p>
+      </form>
+    </dialog>
+			</div>
+		</div>  
+    
+    <div class="test">
+			<h2 class="test-title" id="dialog-005">
+				Test dialog-005: <code>dialog</code> element
+				with <code>aria-labelledby</code> and <code>aria-describedby</code>
+			</h2>
+
+			<div class="test-case">
+       <button id="openDialogButton5">Open Dialog 5</button>
+    <dialog id="testDialog5" aria-labelledby="dialogTitle" aria-describedby="dialogDesc">
+      <form method="dialog">
+        <h3 id="dialogTitle">Dialog Title</h3>
+        <p id="dialogDesc">This dialog has both aria-labelledby and aria-describedby attributes.</p>
+        <p>
+          <button value="cancel">Cancel</button>
+          <button id="confirmButton5" value="confirm">Confirm</button>
+        </p>
+      </form>
+    </dialog>
+			</div>
+		</div>
+		
+    
+    <script src="../scripts/test-scripts.js"></script>
+		<script>
+			var test = [];
+			var el = document.getElementById('div-01');
+			var isSupported = (el instanceof HTMLElement && !(el instanceof HTMLUnknownElement));
+
+			test.push({id: "basic-criteria", pass: isSupported});
+			displaySupportResults(test);
+		</script>    
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const dialogs = [
+        { button: 'openDialogButton1', dialog: 'testDialog1', confirm: 'confirmButton1' },
+        { button: 'openDialogButton2', dialog: 'testDialog2', confirm: 'confirmButton2' },
+        { button: 'openDialogButton3', dialog: 'testDialog3', confirm: 'confirmButton3' },
+        { button: 'openDialogButton4', dialog: 'testDialog4', confirm: 'confirmButton4' },
+        { button: 'openDialogButton5', dialog: 'testDialog5', confirm: 'confirmButton5' }
+      ];
+
+      dialogs.forEach(({ button, dialog, confirm }) => {
+        const openButton = document.getElementById(button);
+        const dialogElement = document.getElementById(dialog);
+        const confirmButton = document.getElementById(confirm);
+
+        openButton.addEventListener('click', () => {
+          dialogElement.showModal();
+          if (button === 'openDialogButton3') {
+            dialogElement.focus();
+          }
+        });
+
+        confirmButton.addEventListener('click', () => {
+          alert('Confirmed!');
+          dialogElement.close();
+        });
+
+        dialogElement.addEventListener('click', (event) => {
+          if (event.target === dialogElement) {
+            dialogElement.close('cancel');
+          }
+        });
+      });
+    });
+  </script>
+	</body>
+</html>

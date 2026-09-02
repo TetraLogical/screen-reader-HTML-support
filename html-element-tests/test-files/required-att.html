@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>test file: required attribute</title>
+		<link rel="stylesheet" href="../style/styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	</head>
+	<body>
+		<h1><code>required</code> attribute test</h1>
+		<div class="meta">
+			<div class="criteria">
+				<h2>Pass Criteria</h2>
+				<ul id="criteria-list">
+					<li id="basic-criteria">#1: Attribute is supported</li>
+					<li>#2: Attribute has correct HTML and Core Accessibility API mappings</li>
+					<li>#3: Validation error message is presented to the user</li>
+				</ul>
+			</div>
+
+			<div class="reference">
+				<h2>Reference</h2>
+				<ul>
+					<li>
+						<a href="https://html.spec.whatwg.org/multipage/input.html#the-required-attribute">HTML <code>required</code> attribute</a>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#att-required">HTML Accessibility API Mappings for <code>required</code> attribute</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="rq-001">
+				Test rq-001: <code>required</code> attribute
+			</h2>
+
+			<div class="test-case">
+<form>
+	<label for="input1">
+		Submit without entering value to trigger required attribute:
+	</label>
+	<input id="input1" type="text" required>
+	<button>Submit</button>
+</form>
+			</div>
+		</div>
+
+		<script src="../scripts/test-scripts.js"></script>
+		<script>
+			var test = [];
+			var el = document.getElementById('input1');
+			var isSupported = (typeof HTMLInputElement != 'undefined'
+											&& el instanceof HTMLInputElement && 'required' in el);
+
+			test.push({
+				id: "basic-criteria", pass: isSupported
+			});
+			displaySupportResults(test);
+		</script>
+	</body>
+</html>

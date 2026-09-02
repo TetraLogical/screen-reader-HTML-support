@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>test file: form element</title>
+		<link rel="stylesheet" href="../style/styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	</head>
+	<body>
+		<h1>
+			<code>form</code> element
+		</h1>
+
+		<div class="meta">
+			<div class="criteria">
+				<h2>
+					Pass Criteria
+				</h2>
+				<ul id="criteria-list">
+					<li id="basic-criteria">#1: Element is supported</li>
+					<li>#2: Correct HTML and Core Accessibility API mappings</li>
+					<li>#3: Correct Accessible Name &amp; Description Calculation</li>
+				</ul>
+			</div>
+
+			<div class="reference">
+				<h2>
+					Reference
+				</h2>
+				<ul>
+					<li>
+						<a href="https://html.spec.whatwg.org/multipage/forms.html#the-form-element">HTML <code>form</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#el-form">HTML Accessibility API Mappings for <code>form</code> element</a>
+					</li>
+					<li>
+						<a href="https://www.w3.org/TR/core-aam-1.1/#role-map-form">Core Accessibility API Mappings for <code>form</code> role</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="form-001">
+				Test form-001: <code>form</code> element
+			</h2>
+
+			<div class="test-case">
+<form>
+	<label for="name">Name</label>
+	<input type="text" id="name" size="25">
+	<input type="submit" value="submit">
+</form>
+			</div>
+		</div>
+		
+		<div class="test">
+			<h2 class="test-title" id="form-002">
+				Test form-002: <code>form</code> element with <code>required</code> attribute on <code>input type="text"</code>.
+			</h2>
+
+			<div class="test-case">
+<form>
+	<label for="name1">Name</label>
+	<input type="text" id="name1" size="25" required>
+	<input type="submit" value="submit">
+</form>
+			</div>
+		</div>
+		
+		<div class="test">
+			<h2 class="test-title" id="form-003">
+				Test form-003: <code>form</code> element with <code>novalidate</code> attribute and <code>required</code> attribute on <code>input type="text"</code>.
+			</h2>
+
+			<div class="test-case">
+<form novalidate>
+	<label for="name2">Name</label>
+	<input type="text" id="name2" size="25" required>
+	<input type="submit" value="submit">
+</form>
+			</div>
+		</div>
+<div class="test">
+			<h2 class="test-title" id="form-004">
+				Test form-004: <code>form</code> element with <code>aria-label</code> attribute.
+			</h2>
+
+			<div class="test-case">
+<form aria-label="pooter">
+	<label for="name4">Name</label>
+	<input type="text" id="name4" size="25" required>
+	<input type="submit" value="submit">
+</form>
+			</div>
+		</div>
+		<script src="../scripts/test-scripts.js"></script>
+		<script>
+			var test = [];
+			var el = document.getElementById('form-001');
+			var isSupported = (el instanceof HTMLElement && !(el instanceof HTMLUnknownElement));
+
+			test.push({id: "basic-criteria", pass: isSupported});
+			displaySupportResults(test);
+		</script>
+	</body>
+</html>

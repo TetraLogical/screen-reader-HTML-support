@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>test file: role=textbox</title>
+    <link rel="stylesheet" href="../style/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+      [role="textbox"]{display:inline-block;min-width:14ch;min-height:1.75rem;border:1px solid currentColor;border-radius:.375rem;padding:.25rem .5rem}
+      [role="textbox"][aria-readonly="true"]{background:transparent}
+      [role="textbox"]:focus{outline:2px solid currentColor;outline-offset:2px}
+      .hint{font-size:.875rem;opacity:.8}
+      .row{margin:.5rem 0}
+    </style>
+  </head>
+  <body>
+    <h1>
+      <code>role=&quot;textbox&quot;</code>
+    </h1>
+
+    <div class="meta">
+      <div class="criteria">
+        <h2>Pass Criteria</h2>
+        <ul id="criteria-list">
+          <li id="basic-criteria">#1: Element is supported</li>
+          <li>#2: Correct HTML and Core Accessibility API mappings</li>
+          <li>#3: Correct Accessible Name &amp; Description Calculation</li>
+          <li>#4: Keyboard text entry operable (single- and multi-line)</li>
+        </ul>
+      </div>
+
+      <div class="reference">
+        <h2>Reference</h2>
+        <ul>
+          <li><a href="https://www.w3.org/TR/wai-aria-1.2/#textbox">WAI-ARIA <code>textbox</code> role</a></li>
+          <li><a href="https://www.w3.org/TR/core-aam-1.2/#role-map-textbox">Core AAM: <code>textbox</code> role</a></li>
+          <li><a href="https://www.w3.org/WAI/ARIA/apg/patterns/datepicker/examples/textbox-spinbutton/">APG examples using textbox</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="test">
+      <h2 class="test-title" id="textbox-001">
+        Test textbox-001: Single-line <code>div</code> with <code>role=&quot;textbox&quot;</code> and visible text
+      </h2>
+      <div class="test-case">
+        <p class="hint">Becomes editable when focused. Press Enter does not insert a newline.</p>
+        <p class="row">
+          <div role="textbox" id="tb1" tabindex="0" aria-readonly="true" aria-label="Single line input">Type here</div>
+        </p>
+      </div>
+    </div>
+
+    <div class="test">
+      <h2 class="test-title" id="textbox-002">
+        Test textbox-002: Single-line <code>span</code> with <code>role=&quot;textbox&quot;</code> and <code>title</code>
+      </h2>
+      <div class="test-case">
+        <p class="hint">Editable on focus; Enter prevented.</p>
+        <p class="row">
+          <span role="textbox" id="tb2" tabindex="0" aria-readonly="true" title="Name input">Your name</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="test">
+      <h2 class="test-title" id="textbox-003">
+        Test textbox-003: No visible text, labelled by <code>aria-label</code>
+      </h2>
+      <div class="test-case">
+        <p class="row">
+          <div role="textbox" id="tb3" tabindex="0" aria-readonly="true" aria-label="Search query"></div>
+        </p>
+      </div>
+    </div>
+
+    <div class="test">
+      <h2 class="test-title" id="textbox-004">
+        Test textbox-004: Multi-line via <code>aria-multiline=&quot;true&quot;</code>
+      </h2>
+      <div class="test-case">
+        <p class="hint">Editable on focus; Enter inserts a newline.</p>
+        <p class="row">
+          <div role="textbox" id="tb4" tabindex="0" aria-readonly="true" aria-multiline="true" aria-label="Multi-line notes">Line 1</div>
+        </p>
+      </div>
+    </div>
+
+    <div class="test">
+      <h2 class="test-title" id="textbox-005">
+        Test textbox-005: Label association via <code>aria-labelledby</code>
+      </h2>
+      <div class="test-case">
+        <p id="tb5l">Comments</p>
+        <p class="row">
+          <div role="textbox" id="tb5" tabindex="0" aria-readonly="true" aria-labelledby="tb5l">Some text…</div>
+        </p>
+      </div>
+    </div>
+
+    <script src="../scripts/test-scripts.js"></script>
+    <script>
+      (function () {
+        // Support check
+        var test = [];
+        var el = document.getElementById('tb1');
+        var supported = (el instanceof HTMLElement && !(el instanceof HTMLUnknownElement));
+        test.push({id: "basic-criteria", pass: supported});
+        displaySupportResults(test);
+
+        // Interactivity: make textbox editable on focus, readonly on blur
+        function applyTextboxBehavior(tb){
+          if (!tb.hasAttribute('tabindex')) tb.setAttribute('tabindex', '0');
+          if (!tb.hasAttribute('aria-readonly')) tb.setAttribute('aria-readonly', 'true');
+
+          tb.addEventListener('focus', function(){
+            tb.setAttribute('contenteditable', 'true');
+            tb.setAttribute('aria-readonly', 'false');
+          });
+          tb.addEventListener('blur', function(){
+            tb.removeAttribute('contenteditable');
+            tb.setAttribute('aria-readonly', 'true');
+          });
+          tb.addEventListener('keydown', function(e){
+            var isMultiline = tb.getAttribute('aria-multiline') === 'true';
+            if (!isMultiline && (e.key === 'Enter')) {
+              e.preventDefault();
+            }
+          });
+        }
+
+        Array.prototype.forEach.call(document.querySelectorAll('[role="textbox"]'), applyTextboxBehavior);
+      }());
+    </script>
+  </body>
+</html>

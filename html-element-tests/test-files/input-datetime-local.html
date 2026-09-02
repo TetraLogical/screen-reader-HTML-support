@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>test file: input typedate-local element</title>
+		<link rel="stylesheet" href="../style/styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	</head>
+	<body>
+		<h1><code>input type=datetime-local</code> element test</h1>
+		<div class="meta">
+			<div class="criteria">
+				<h2>Pass Criteria</h2>
+				<ul id="criteria-list">
+					<li id="basic-criteria">#1: Element is supported</li>
+					<li>#2: Correct HTML and Core Accessibility API mappings</li>
+					<li>#3: Correct Accessible Name &amp; Description Calculation</li>
+					<li>#4: Control is keyboard accessible:
+						<ul>
+							<li>#4.1: Control MUST be focusable</li>
+							<li>#4.2: MUST be able to open date control and select a date/time</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+			<div class="reference">
+				<h2>Reference</h2>
+				<ul>
+					<li><a href="https://html.spec.whatwg.org/multipage/input.html#local-date-and-time-state-(type=datetime-local)">HTML input type=datetime-local element</a>
+					<li><a href="https://w3c.github.io/html-aam/#el-input-dateandtime">HTML Accessibility API Mappings for input type=datetime-local element</a></li>
+					<li><a href="https://w3c.github.io/html-aam/#other-form-elements-accessible-name-calculation">Accessible Name Calculation</a></li>
+					<li><a href="https://w3c.github.io/html-aam/#other-form-elements-accessible-description-calculation">Accessible Description Calculation</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="dli-001">Test dli-001: Unlabelled input type="datetime-local"</h2>
+
+			<div class="test-case">
+				<input id="input1" type="datetime-local" />
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="dli-002">Test dli-002: Input type="datetime-local" with <code>aria-label</code></h2>
+
+			<div class="test-case">
+				<input id="input2" type="datetime-local" aria-label="aria-label attribute" />
+</div>
+			<div class="test-notes">
+				<p>Aria-label should be used as accessible name</p>
+				<p>No accessible description.</p>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="dli-003">Test dli-003: Input type="datetime-local" with <code>aria-labelledby</code></h2>
+
+			<div class="test-case">
+<p id="dli-003-labelledby">p referenced by aria-labelledby</p>
+<input id="input3" type="datetime-local" aria-labelledby="dli-003-labelledby" />
+</div>
+			<div class="test-notes">
+				<p>Aria-labelledby should be used as accessible name</p>
+				<p>No accessible description.</p>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="dli-004">Test dli-004: Input type="datetime-local" with label</h2>
+
+			<div class="test-case">
+<label>
+	label wrapping input
+	<input id="input4" type="datetime-local" />
+</label>
+</div>
+			<div class="test-notes">
+				<p>Label should be used as accessible name</p>
+				<p>No accessible description.</p>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="dli-005">Test dli-005: Input type="datetime-local" with <code>title</code> attribute</h2>
+
+			<div class="test-case">
+				<input id="input5" type="datetime-local" title="title attribute" />
+</div>
+			<div class="test-notes">
+				<p>Title should be used as accessible name</p>
+				<p>No accessible description.</p>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="dli-006">Test dli-006: Input type="datetime-local" with <code>aria-describedby</code></h2>
+
+			<div class="test-case">
+<input id="input6" type="datetime-local" aria-describedby="dli-006-describedby" />
+<p id="dli-006-describedby">p referenced by aria-describedby</p>
+</div>
+			<div class="test-notes">
+				<p>Aria-describedby should be used as accessible description</p>
+				<p>No accessible name.</p>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="dli-007">Test dli-007: Input type="datetime-local" with <code>label</code> element &amp; <code>title</code> attribute</h2>
+
+			<div class="test-case">
+<label for="input7">label referenced by for/id attributes</label>
+<input id="input7" type="datetime-local" title="title attribute" />
+</div>
+			<div class="test-notes">
+				<p>Label should be used as accessible name</p>
+				<p>Title should be used as accessible description</p>
+			</div>
+		</div>
+
+		<script src="../scripts/test-scripts.js"></script>
+		<script>
+			var test = [],
+				el = document.getElementById('input1'),
+			    isSupported = (el.type === 'datetime-local');
+
+			test.push({id: "basic-criteria", pass: isSupported});
+			displaySupportResults(test);
+		</script>
+	</body>
+</html>

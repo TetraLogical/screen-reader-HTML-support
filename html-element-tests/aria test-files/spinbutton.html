@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>test file: spinbutton role</title>
+    <link rel="stylesheet" href="../style/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        [tabindex="0"]:focus {
+            outline: 2px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <code>spinbutton</code> role
+    </h1>
+
+    <div class="meta">
+        <div class="criteria">
+            <h2>
+                Pass Criteria
+            </h2>
+            <ul id="criteria-list">
+                <li id="basic-criteria">#1: Element is supported</li>
+                <li>#2: Correct HTML and Core Accessibility API mappings</li>
+                <li>#3: Correct Accessible Name &amp; Description Calculation</li>
+            </ul>
+        </div>
+
+        <div class="reference">
+            <h2>
+                Reference
+            </h2>
+            <ul>
+                <li>
+                    <a href="https://www.w3.org/TR/wai-aria-1.1/#spinbutton">WAI-ARIA <code>spinbutton</code> role</a>
+                </li>
+                <li>
+                    <a href="https://w3c.github.io/aria-practices/#spinbutton">ARIA Authoring Practices for <code>spinbutton</code> role</a>
+                </li>
+                <li>
+                    <a href="https://www.w3.org/TR/core-aam-1.1/#role-map-spinbutton">Core Accessibility API Mappings for <code>spinbutton</code> role</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    
+<div class="test">
+    <h2 class="test-title" id="spinbutton-001">
+        Test spinbutton-001: <code>spinbutton</code> role, with required attribute aria-valuemax
+    </h2>
+    <div class="test-case">
+        <div role="spinbutton" id="spinbutton-01" aria-valuemax="true" tabindex="0">spinbutton-01: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="spinbutton-002">
+        Test spinbutton-002: <code>spinbutton</code> role, with required attribute aria-valuemin
+    </h2>
+    <div class="test-case">
+        <div role="spinbutton" id="spinbutton-02" aria-valuemin="true" tabindex="0">spinbutton-02: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="spinbutton-003">
+        Test spinbutton-003: <code>spinbutton</code> role, with required attribute aria-valuenow
+    </h2>
+    <div class="test-case">
+        <div role="spinbutton" id="spinbutton-03" aria-valuenow="true" tabindex="0">spinbutton-03: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="spinbutton-004">
+        Test spinbutton-004: <code>spinbutton</code> role, with allowed attribute aria-valuemax
+    </h2>
+    <div class="test-case">
+        <div role="spinbutton" id="spinbutton-04" aria-valuemax="true" tabindex="0">spinbutton-04: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="spinbutton-005">
+        Test spinbutton-005: <code>spinbutton</code> role, with allowed attribute aria-valuemin
+    </h2>
+    <div class="test-case">
+        <div role="spinbutton" id="spinbutton-05" aria-valuemin="true" tabindex="0">spinbutton-05: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="spinbutton-006">
+        Test spinbutton-006: <code>spinbutton</code> role, with allowed attribute aria-valuenow
+    </h2>
+    <div class="test-case">
+        <div role="spinbutton" id="spinbutton-06" aria-valuenow="true" tabindex="0">spinbutton-06: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="spinbutton-007">
+        Test spinbutton-007: <code>spinbutton</code> role, with allowed attribute aria-valuetext
+    </h2>
+    <div class="test-case">
+        <div role="spinbutton" id="spinbutton-07" aria-valuetext="true" tabindex="0">spinbutton-07: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="spinbutton-008">
+        Test spinbutton-008: <code>spinbutton</code> role, with allowed attribute aria-required
+    </h2>
+    <div class="test-case">
+        <div role="spinbutton" id="spinbutton-08" aria-required="true" tabindex="0">spinbutton-08: true</div>
+    </div>
+</div>
+
+
+    <script src="../scripts/test-scripts.js"></script>
+    <script>
+        var test = [];
+        var el = document.getElementById('spinbutton-01');
+        var isSupported = (el instanceof HTMLElement && !(el instanceof HTMLUnknownElement));
+
+        test.push({id: "basic-criteria", pass: isSupported});
+        displaySupportResults(test);
+        
+        // Script to cycle through multiple values for states and properties
+        var elements = document.querySelectorAll('[id^=spinbutton]');
+        elements.forEach(function(el) {
+            el.addEventListener('click', function() {
+                
+            });
+            el.addEventListener('keypress', function(event) {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    
+                }
+            });
+        });
+    </script>
+</body>
+</html>

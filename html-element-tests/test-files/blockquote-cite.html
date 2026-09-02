@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>test file: blockquote + cite elements</title>
+		<link rel="stylesheet" href="../style/styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	</head>
+	<body>
+		<h1>
+			<code>blockquote</code> + <code>cite</code> elements
+		</h1>
+
+		<div class="meta">
+			<div class="criteria">
+				<h2>
+					Pass Criteria
+				</h2>
+				<ul id="criteria-list">
+					<li id="basic-criteria">#1: Element is supported</li>
+					<li>#2: Correct HTML and Core Accessibility API mappings</li>
+					<li>#3: Correct Accessible Name &amp; Description Calculation</li>
+				</ul>
+			</div>
+
+			<div class="reference">
+				<h2>
+					Reference
+				</h2>
+				<ul>
+					<li>
+						<a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-blockquote-element">HTML <code>blockquote</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#el-blockquote">HTML Accessibility API Mappings for <code>blockquote</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html/textlevel-semantics.html#the-cite-element">HTML <code>cite</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#el-cite">HTML Accessibility API Mappings for <code>cite</code> element</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="blk-001">
+				Test blk-001: <code>blockquote</code> + <code>cite</code> elements
+			</h2>
+
+			<div class="test-case">
+<blockquote id="blk-01">
+	The people recognize themselves in their commodities;
+	they find their soul in their automobile, hi-fi set,
+	split-level home, kitchen equipment.
+</blockquote>
+<p>
+	— <cite id="cte-01"><a href="http://en.wikipedia.org/wiki/Herbert_Marcuse">Herbert Marcuse</a></cite>
+</p>
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="blk-002">
+				Test blk-002: <code>blockquote</code> element with <code>cite</code> attribute
+			</h2>
+
+			<div class="test-case">
+<blockquote cite="http://www.worldwildlife.org/who/index.html">
+	For 50 years, WWF has been protecting the future of nature. The world's leading conservation organization, WWF works in 100 countries and is supported
+by 1.2 million members in the United States and close to 5 million globally.
+</blockquote>
+			</div>
+		</div>
+		
+	<div class="test">
+			<h2 class="test-title" id="blk-003">
+				Test blk-003: <code>blockquote</code> element with <code>aria-label</code> attribute
+			</h2>
+
+			<div class="test-case">
+<blockquote aria-label="wildlife">
+	For 50 years, WWF has been protecting the future of nature. The world's leading conservation organization, WWF works in 100 countries and is supported
+by 1.2 million members in the United States and close to 5 million globally.
+</blockquote>
+			</div>
+		</div>
+	<div class="test">
+			<h2 class="test-title" id="blk-004">
+				Test blk-004: <code>blockquote</code> element with <code>tabindex="0"</code>
+			</h2>
+
+			<div class="test-case">
+<blockquote tabindex="0">
+	For 50 years, WWF has been protecting the future of nature. The world's leading conservation organization, WWF works in 100 countries and is supported
+by 1.2 million members in the United States and close to 5 million globally.
+</blockquote>
+			</div>
+		</div>
+	
+
+
+		<script src="../scripts/test-scripts.js"></script>
+		<script>
+			var test = [];
+			var el = document.getElementById('cte-01');
+			var isSupported = (el instanceof HTMLElement && !(el instanceof HTMLUnknownElement));
+
+			test.push({id: "basic-criteria", pass: isSupported});
+			displaySupportResults(test);
+		</script>
+	</body>
+</html>

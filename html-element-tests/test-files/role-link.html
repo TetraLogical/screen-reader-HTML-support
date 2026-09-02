@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>test file: role=link</title>
+    <link rel="stylesheet" href="../style/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  </head>
+  <body>
+    <h1>
+      <code>role=&quot;link&quot;</code>
+    </h1>
+
+    <div class="meta">
+      <div class="criteria">
+        <h2>
+          Pass Criteria
+        </h2>
+        <ul id="criteria-list">
+          <li id="basic-criteria">#1: Element is supported</li>
+          <li>#2: Correct HTML and Core Accessibility API mappings</li>
+          <li>#3: Correct Accessible Name &amp; Description Calculation</li>
+        </ul>
+      </div>
+
+      <div class="reference">
+        <h2>
+          Reference
+        </h2>
+        <ul>
+          <li>
+            <a href="https://www.w3.org/TR/wai-aria-1.2/#link">WAI-ARIA <code>link</code> role</a>
+          </li>
+          <li>
+            <a href="https://www.w3.org/TR/core-aam-1.2/#role-map-link">Core Accessibility API Mappings for <code>link</code> role</a>
+          </li>
+          <li>
+            <a href="https://www.w3.org/WAI/ARIA/apg/patterns/link/">ARIA Authoring Practices: Link Pattern</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="test">
+      <h2 class="test-title" id="link-001">
+        Test link-001: <code>span</code> with <code>role=&quot;link&quot;</code> and visible text
+      </h2>
+
+      <div class="test-case">
+        <p>
+          <span role="link" id="lnk1" tabindex="0">ARIA Link</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="test">
+      <h2 class="test-title" id="link-002">
+        Test link-002: <code>span</code> with <code>role=&quot;link&quot;</code> and <code>title</code> attribute
+      </h2>
+
+      <div class="test-case">
+        <p>
+          <span role="link" id="lnk2" tabindex="0" title="Custom link title">ARIA Link</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="test">
+      <h2 class="test-title" id="link-003">
+        Test link-003: <code>div</code> with <code>role=&quot;link&quot;</code> and <code>aria-label</code> attribute (no visible text)
+      </h2>
+
+      <div class="test-case">
+        <p>
+          <div role="link" id="lnk3" tabindex="0" aria-label="ARIA label test" aria-describedby="desc3"></div>
+        </p>
+        <p id="desc3">describedby test (link-003)</p>
+      </div>
+    </div>
+
+    <div class="test">
+      <h2 class="test-title" id="link-004">
+        Test link-004: <code>div</code> with <code>role=&quot;link&quot;</code>, <code>aria-label</code> and <code>aria-describedby</code> attributes
+      </h2>
+
+      <div class="test-case">
+        <p>
+          <div role="link" id="lnk4" tabindex="0" aria-label="ARIA label test" aria-describedby="desc4">...</div>
+        </p>
+        <p id="desc4">describedby test (link-004)</p>
+      </div>
+    </div>
+
+    <div class="test">
+      <h2 class="test-title" id="link-005">
+        Test link-005: <code>div</code> with visible text, <code>role=&quot;link&quot;</code>, <code>title</code>, <code>aria-label</code> and <code>aria-describedby</code> attributes
+      </h2>
+
+      <div class="test-case">
+        <p>
+          <div role="link" id="lnk5" tabindex="0"
+               title="Title text"
+               aria-label="ARIA label test"
+               aria-describedby="desc5">Visible text</div>
+        </p>
+        <p id="desc5">describedby test (link-005)</p>
+      </div>
+    </div>
+
+    <div class="test">
+      <h2 class="test-title" id="link-006">
+        Test link-006: <code>div</code> with <code>role=&quot;link&quot;</code>, visible text, <code>title</code> and <code>aria-label</code> that all have the same value
+      </h2>
+
+      <div class="test-case">
+        <p>
+          <div role="link" id="lnk6" tabindex="0"
+               title="Link label"
+               aria-label="Link label">Link label</div>
+        </p>
+      </div>
+    </div>
+
+    <script src="../scripts/test-scripts.js"></script>
+    <script>
+      var test = [];
+      var el = document.getElementById('lnk1');
+      var isSupported = (el instanceof HTMLElement && !(el instanceof HTMLUnknownElement));
+      test.push({id: "basic-criteria", pass: isSupported});
+      displaySupportResults(test);
+    </script>
+  </body>
+</html>
