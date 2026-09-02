@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>test file: placeholder attribute</title>
+		<link rel="stylesheet" href="../style/styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	</head>
+	<body>
+		<h1><code>placeholder</code> attribute test</h1>
+		<div class="meta">
+			<div class="criteria">
+				<h2>Pass Criteria</h2>
+				<ul id="criteria-list">
+					<li id="basic-criteria">#1: Attribute is supported</li>
+					<li>#2: Correct HTML and Core Accessibility API mappings</li>
+				</ul>
+			</div>
+
+			<div class="reference">
+				<h2>Reference</h2>
+				<ul>
+					<li>
+						<a href="https://html.spec.whatwg.org/multipage/input.html#the-placeholder-attribute">HTML placeholder attribute</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#att-placeholder">HTML Accessibility API Mappings for placeholder attribute</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="ph-001">
+				Test ph-001: <code>placeholder</code>
+			</h2>
+
+			<div class="test-case">
+<input id="input1" type="text" placeholder="placeholder text">
+<p>
+	<code>placeholder</code> should be used in accessibility mapping.
+</p>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="ph-002">
+				Test ph-002: <code>placeholder</code>
+				with <code>aria-placeholder</code>
+			</h2>
+
+			<div class="test-case">
+<input id="input2" type="text" placeholder="placeholder text"
+                               aria-placeholder="aria-placeholder text" />
+<p>
+	<code>placeholder</code> should be used in accessibility mapping.
+</p>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="ph-003">
+				Test ph-003: Empty <code>placeholder</code>
+				with <code>aria-placeholder</code>
+			</h2>
+
+			<div class="test-case">
+<input id="input3"
+	type="text" placeholder=""
+	aria-placeholder="aria-placeholder text" />
+<p>
+	<code>aria-placeholder</code> should be used in accessibility mapping.
+</p>
+			</div>
+		</div>
+
+		<script src="../scripts/test-scripts.js"></script>
+		<script>
+			var test = [];
+			var el = document.getElementById('input1');
+			var isSupported = (typeof HTMLInputElement != 'undefined'
+				               && el instanceof HTMLInputElement && 'placeholder' in el);
+
+			test.push({id: "basic-criteria", pass: isSupported});
+			displaySupportResults(test);
+		</script>
+	</body>
+</html>

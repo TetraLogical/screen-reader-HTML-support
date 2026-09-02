@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>test file: input type=button element</title>
+		<link rel="stylesheet" href="../style/styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	</head>
+	<body>
+		<h1>
+			<code>input type=button</code> element
+		</h1>
+
+		<div class="meta">
+			<div class="criteria">
+				<h2>
+					Pass Criteria
+				</h2>
+				<ul id="criteria-list">
+					<li id="basic-criteria">#1: Element is supported</li>
+					<li>#2: Correct HTML and Core Accessibility API mappings</li>
+					<li>#3: Correct Accessible Name &amp; Description Calculation</li>
+				</ul>
+			</div>
+
+			<div class="reference">
+				<h2>
+					Reference
+				</h2>
+				<ul>
+					<li>
+						<a href="https://html.spec.whatwg.org/multipage/input.html#button-state-(type=button)">HTML <code>input type=button</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#el-input-button">HTML Accessibility API Mappings for <code>input type=button</code> element</a>
+					</li>
+					<li>
+						<a href="https://www.w3.org/TR/core-aam-1.1/#role-map-button">Core Accessibility API Mappings for <code>button</code> role</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="ibtn-001">
+				Test ibtn-001: <code>input type=button</code> element
+			</h2>
+
+			<div class="test-case">
+<input id="ibtn-01" type="button">
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="ibtn-002">
+				Test ibtn-002: <code>input type=button</code> element
+				with <code>value="test"</code>
+			</h2>
+
+			<div class="test-case">
+<input id="ibtn-02" type="button" value="test">
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="ibtn-003">
+				Test ibtn-003: <code>input type=button</code> element
+				with <code>value="test"</code>
+				&amp; <code>disabled</code> attribute
+			</h2>
+
+			<div class="test-case">
+<input id="ibtn-03" type="button" value="test" disabled>
+			</div>
+		</div>
+		
+		<div class="test">
+			<h2 class="test-title" id="ibtn-004">
+				Test ibtn-004: <code>input type=button</code> element
+				with <code>value="test"</code> and <code>title="desc"</code>
+			</h2>
+
+			<div class="test-case">
+<input id="ibtn-04" type="button" value="test" title="desc">
+			</div>
+		</div>
+		
+		<div class="test">
+			<h2 class="test-title" id="ibtn-005">
+				Test ibtn-005: <code>input type=button</code> element
+				with <code>title="bar"</code> and <code>label/for</code> wrapped.
+			</h2>
+
+			<div class="test-case">
+			<label for="ibtn-05">foo <input id="ibtn-05" type="button" name="test" title="bar"> baz</label>
+			</div>
+		</div>
+		
+		<div class="test">
+			<h2 class="test-title" id="ibtn-006">
+				Test ibtn-006: <code>input type=button</code> element
+				with <code>title="bar"</code> and <code>label</code> wrapped no <code>for</code>.
+			</h2>
+
+			<div class="test-case">
+			<label>foo <input id="ibtn-06" type="button" name="test" title="bar"> baz</label>
+			</div>
+		</div>
+        <div class="test">
+			<h2 class="test-title" id="ibtn-007">
+				Test ibtn-007: <code>input type=button</code> element
+				with <code>title="bar"</code> and <code>label/for</code> not wrapped.
+			</h2>
+
+			<div class="test-case">
+			<label for="ibtn-07">foo baz</label> <input id="ibtn-07" type="button" name="test" title="bar"> 
+			</div>
+		</div>
+		 <div class="test">
+			<h2 class="test-title" id="ibtn-008">
+				Test ibtn-008: <code>input type=button</code> element
+				with <code>aria-label="boom"</code>, <code>title="bar"</code> and <code>label/for</code> not wrapped.
+			</h2>
+
+			<div class="test-case">
+			<label for="ibtn-08">foo baz</label> <input id="ibtn-08" type="button" name="test" aria-label="boom" title="bar"> 
+			</div>
+		</div>
+		<div class="test">
+			<h2 class="test-title" id="ibtn-009">
+				Test ibtn-009: <code>input type=button</code> element
+				with <code>value="boom"</code>, <code>title="bar"</code> and <code>label/for</code> wrapped.
+			</h2>
+
+			<div class="test-case">
+			<label for="ibtn-09">foo <input id="ibtn-09" type="button" name="test" value="boom" title="bar"> baz</label>
+			</div>
+		</div>
+		<div class="test">
+			<h2 class="test-title" id="ibtn-010">
+				Test ibtn-010: <code>input type=button</code> element
+				with <code>aria-label="boom"</code>, <code>title="bar"</code> and <code>label/for</code> wrapped.
+			</h2>
+
+			<div class="test-case">
+			<label for="ibtn-10">foo <input id="ibtn-10" type="button" name="test" aria-label="boom" title="bar"> baz</label>
+			</div>
+		</div>
+		<script src="../scripts/test-scripts.js"></script>
+		<script>
+			var test = [];
+			var el = document.getElementById('ibtn-01');
+			var isSupported = (el instanceof HTMLElement && !(el instanceof HTMLUnknownElement));
+
+			test.push({id: "basic-criteria", pass: isSupported});
+			displaySupportResults(test);
+		</script>
+	</body>
+</html>

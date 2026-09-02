@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>test file: input element + datalist element</title>
+		<link rel="stylesheet" href="../style/styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	</head>
+	<body>
+		<h1>
+			<code>input</code> element + <code>datalist</code> element
+		</h1>
+		<div class="meta">
+			<div class="criteria">
+				<h2>Pass Criteria</h2>
+				<ul id="criteria-list">
+					<li id="basic-criteria">#1: Element is supported</li>
+					<li>#2: Correct HTML and Core Accessibility API mappings</li>
+					<li>#3: Control is keyboard accessible:
+						<ul>
+							<li>#4.1: MUST be able to select item from list</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+			<div class="reference">
+				<h2>Reference</h2>
+				<ul>
+					<li>
+						<a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-datalist-element">HTML <code>datalist</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#el-datalist">HTML Accessibility API Mappings for <code>datalist</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/aria/core-aam/core-aam.html#role-map-listbox">Core Accessibility API Mappings for <code>listbox</code> role</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/aria/core-aam/core-aam.html#ariaMultiselectableFalse">Core Accessibility API Mappings for <code>aria-multiselectable="false"</code></a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#el-input-textetc-autocomplete">HTML Accessibility API Mappings for <code>input type=text, search, tel, url or email</code> element with <code>list</code> attribute</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/aria/core-aam/core-aam.html#role-map-combobox">Core Accessibility API Mappings for <code>combobox</code> role</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/aria/core-aam/core-aam.html#ariaOwns">Core Accessibility API Mappings for <code>aria-owns</code> property</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="di-001">
+				Test di-001: <code>dataList</code> with <code>input</code>
+			</h2>
+
+			<div class="test-case">
+<label>
+	Sites <input id="input1" type="text" list="datalist1"></label>
+<datalist id="datalist1">
+	<option value="https://www.google.com/" label="Google">Google</option>
+	<option value="https://www.reddit.com/" label="Reddit">Reddit</option>
+</datalist>
+			</div>
+		</div>
+		
+		<div class="test">
+			<h2 class="test-title" id="di-002">
+				Test di-002: <code>dataList</code> with <code>input</code> and <code>aria-label</code>
+			</h2>
+
+			<div class="test-case">
+<label>
+	Sites <input id="input2" type="text" list="datalist2"></label>
+<datalist id="datalist2" aria-label="label on data list">
+	<option value="https://www.google.com/" label="Google">Google</option>
+	<option value="https://www.reddit.com/" label="Reddit">Reddit</option>
+</datalist>
+			</div>
+		</div>
+
+		<script src="../scripts/test-scripts.js"></script>
+		<script>
+			var test = [];
+			var el = document.getElementById('datalist1');
+			var isSupported = (typeof HTMLDataListElement != 'undefined'
+                         && el instanceof HTMLDataListElement && 'options' in el);
+
+			test.push({id: "basic-criteria", pass: isSupported});
+			displaySupportResults(test);
+		</script>
+
+	</body>
+</html>

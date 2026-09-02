@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>test file: iframe element with title attribute</title>
+		<link rel="stylesheet" href="../style/styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	</head>
+	<body>
+		<h1>
+			<code>iframe</code> element with title attribute
+		</h1>
+
+		<div class="meta">
+			<div class="criteria">
+				<h2>
+					Pass Criteria
+				</h2>
+				<ul id="criteria-list">
+					<li id="basic-criteria">#1: Element is supported</li>
+					<li>#2: Correct HTML and Core Accessibility API mappings</li>
+					<li>#3: Correct Accessible Name &amp; Description Calculation</li>
+				</ul>
+			</div>
+
+			<div class="reference">
+				<h2>
+					Reference
+				</h2>
+				<ul>
+					<li>
+						<a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-iframe-element">HTML <code>iframe</code> element
+					</a>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#el-iframe">HTML Accessibility API Mappings for <code>iframe</code> element</a>
+					</li>
+					<li>
+						<a href="http://www.w3.org/TR/html/dom.html#attr-title">HTML <code>title</code> attribute</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="if-003">
+				Test if-003: <code>iframe</code> element
+				with <code>title</code> attribute
+			</h2>
+
+			<div class="test-case">
+<iframe id="if-03" title="TPG web site"
+	style="max-width: 100%; width: 100%; height: 20em;" src="https://paciellogroup.com"></iframe>
+			</div>
+		</div>
+        <div class="test">
+			<h2 class="test-title" id="if-004">
+				Test if-004: <code>iframe</code> element
+				with <code>title=""</code> attribute
+			</h2>
+ <div class="test-case">
+<iframe id="if-04" title=""
+	style="max-width: 100%; width: 100%; height: 20em;" src="https://paciellogroup.com"></iframe>
+			</div> 
+		</div>
+      
+        <div class="test">
+			<h2 class="test-title" id="if-005">
+				Test if-005: <code>iframe</code> element
+				with <code>title=""</code> and <code>role="none"</code> attribute
+			</h2>
+ <div class="test-case">
+<iframe id="if-05" title="" role="none"
+	style="max-width: 100%; width: 100%; height: 20em;" src="https://paciellogroup.com"></iframe>
+			</div> 
+		</div>
+ <div class="test">
+			<h2 class="test-title" id="if-006">
+				Test if-006: <code>iframe</code> element
+				with <code>title=""</code>, <code>role="none"</code> and <code>tabindex="-1"</code> attribute
+			</h2>
+ <div class="test-case">
+<iframe id="if-06" title="" role="none" tabindex="-1" 
+style="max-width: 100%; width: 100%; height: 20em;" src="https://paciellogroup.com"></iframe>
+			</div> 
+		</div>
+        
+         <div class="test">
+			<h2 class="test-title" id="if-007">
+				Test if-007: <code>iframe</code> element
+				with <code>title=""</code>, <code>role="none"</code>, <code>aria-roledescription=" "</code> and <code>tabindex="-1"</code> attribute
+			</h2>
+ <div class="test-case">
+<iframe id="if-07" title="" role="section" tabindex="-1" aria-hidden="true" aria-roledescription=" "
+style="max-width: 100%; width: 100%; height: 20em;" src="https://paciellogroup.com"></iframe>
+		   </div> 
+		</div>
+
+		<script src="../scripts/test-scripts.js"></script>
+		<script>
+			var test = [];
+			var el = document.getElementById('if-03');
+			var isSupported = (el instanceof HTMLElement && !(el instanceof HTMLUnknownElement));
+
+			test.push({id: "basic-criteria", pass: isSupported});
+			displaySupportResults(test);
+		</script>
+	</body>
+</html>

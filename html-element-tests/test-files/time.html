@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>test file: time element</title>
+		<link rel="stylesheet" href="../style/styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	</head>
+	<body>
+		<h1><code>time</code> element test</h1>
+		<div class="meta">
+			<div class="criteria">
+				<h2>Pass Criteria</h2>
+				<ul id="criteria-list">
+					<li id="basic-criteria">#1: Element is supported</li>
+					<li>#2: Correct HTML and Core Accessibility API mappings</li>
+					<li>#3: Correct Accessible Name &amp; Description Calculation</li>
+				</ul>
+			</div>
+
+			<div class="reference">
+				<h2>Reference</h2>
+				<ul>
+					<li>
+						<a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-time-element">HTML <code>time</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#el-time">HTML Accessibility API Mappings for <code>time</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#att-datetime-time">HTML Accessibility API Mappings for <code>datetime</code> attribute</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#text-level-element-accessible-name-calculation">Accessible Name Calculation</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#text-level-element-accessible-description-calculation">Accessible Description Calculation</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="tm-001">
+				Test tm-001: <code>time</code> element
+			</h2>
+
+			<div class="test-case">
+<p>
+	HTML, published on <time id="time1" datetime="2015-10-28">October 28 2015</time>, has really good accessibility.
+</p>
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="tm-002">
+				Test tm-002: <code>time</code> element
+				with <code>aria-label</code>
+			</h2>
+
+			<div class="test-case">
+<p>
+	HTML, published on <time aria-label="aria-label attribute" datetime="2015-10-28">October 28 2015</time>, has really good accessibility.
+</p>
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="tm-003">
+				Test tm-003: <code>time</code> element
+				with <code>aria-labelledby</code>
+			</h2>
+
+			<div class="test-case">
+<p>
+	HTML, published on
+	<time aria-labelledby="tm-003-labelledby" datetime="2015-10-28">October 28 2015</time>,
+	has really good accessibility.
+</p>
+<span id="tm-003-labelledby">
+	Element referenced by <code>aria-labelledby</code> attribute.
+</span>
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="tm-004">
+				Test tm-004: <code>time</code> element
+				with <code>title</code> attribute
+			</h2>
+
+			<div class="test-case">
+<p>
+	HTML, published on
+	<time title="title attribute" datetime="2015-10-28">October 28 2015</time>,
+	has really good accessibility.
+</p>
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="tm-005">
+				Test tm-005: <code>time</code> element
+				with <code>aria-describedby</code>
+			</h2>
+
+			<div class="test-case">
+<p>
+	HTML, published on
+	<time aria-describedby="tm-005-describedby" datetime="2015-10-28">October 28 2015</time>,
+	has really good accessibility.
+</p>
+<span id="tm-005-describedby">
+	Element referenced by <code>aria-describedby</code> attribute.
+</span>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="tm-006">
+				Test tm-006: <code>time</code> element
+				with <code>aria-label</code>
+				&amp; <code>title</code> attributes
+			</h2>
+
+			<div class="test-case">
+<p>
+	HTML, published on
+	<time aria-label="aria-label attribute" title="title attribute" datetime="2015-10-28">October 28 2015</time>,
+	has really good accessibility.
+</p>
+			</div>
+		</div>
+
+		<script src="../scripts/test-scripts.js"></script>
+		<script>
+			var test = [];
+			var el = document.getElementById('time1');
+			var isSupported = (typeof HTMLTimeElement != 'undefined'
+								&& el instanceof HTMLTimeElement && 'dateTime' in el);
+
+			test.push({id: "basic-criteria", pass: isSupported});
+			displaySupportResults(test);
+		</script>
+	</body>
+</html>

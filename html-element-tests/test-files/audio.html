@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title> Test file: audio element</title>
+		<link rel="stylesheet" href="../style/styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	</head>
+	<body>
+		<h1><code>audio</code> element test</h1>
+		<div class="meta">
+			<div class="criteria">
+				<h2>Pass Criteria</h2>
+				<ul id="criteria-list">
+					<li id="basic-criteria">#1: Element is supported</li>
+					<li>#2: Element has correct HTML and Core Accessibility API mappings</li>
+					<li>#3: Controls are keyboard accessible:
+						<ul>
+							<li>#3.1: Controls MUST be focusable</li>
+							<li>#3.2: MUST be able to activate controls, including any child menu/controls</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+			<div class="reference">
+				<h2>Reference</h2>
+				<ul>
+					<li>
+						<a href="https://html.spec.whatwg.org/multipage/media.html#the-audio-element">HTML <code>audio</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#el-audio">HTML Accessibility API Mappings for <code>audio</code> element</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="au-001">
+				Test au-001: <code>audio</code> element
+			</h2>
+
+			<div class="test-case">
+<audio id="audio1" controls>
+	<source src="../audio/jeffbob.mp3" type="audio/mpeg" />
+	<source src="../audio/jeffbob.ogg" type="audio/ogg" />
+</audio>
+			</div>
+		</div>
+<div class="test">
+			<h2 class="test-title" id="au-002">
+			Test au-002: <code>audio</code> element with <code>aria-label</code> </h2>
+
+			<div class="test-case">
+<audio id="audio1" controls aria-label="label text">
+	<source src="../audio/jeffbob.mp3" type="audio/mpeg" />
+	<source src="../audio/jeffbob.ogg" type="audio/ogg" />
+</audio>
+			</div>
+	</div>
+    <div class="test">
+			<h2 class="test-title" id="au-003">
+			Test au-003: <code>audio</code> element with <code>aria-label</code> and <code>aria-describedby</code></h2>
+
+			<div class="test-case">
+<audio id="audio1" controls aria-label="label text" aria-describedby="description">
+	<source src="../audio/jeffbob.mp3" type="audio/mpeg" />
+	<source src="../audio/jeffbob.ogg" type="audio/ogg" />
+</audio>
+			</div>
+	</div>
+		<small id="description">Audio file: <a href="https://archive.org/details/Jeffbob">Spam call: Bob hangs up 7 mins into his survey</a> by Bruce Lawson</small>
+
+		<script src="../scripts/test-scripts.js"></script>
+		<script>
+			var test = [];
+			var el = document.getElementById('audio1');
+			var isSupported = (typeof HTMLAudioElement != 'undefined'
+				               && el instanceof HTMLAudioElement && !!el.canPlayType);
+
+			test.push({id: "basic-criteria", pass: isSupported});
+			displaySupportResults(test);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>test file: switch role (interactive, styled + On/Off mirror)</title>
+  <link rel="stylesheet" href="../style/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <style>
+    :root{
+      --switch-w: 2.75rem;
+      --switch-h: 1.5rem;
+      --thumb: 1.2rem;
+      --pad: 0.15rem;
+    }
+    [role="switch"]{
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      user-select:none;
+      cursor:pointer;
+      line-height:1.2;
+    }
+    [role="switch"][aria-disabled="true"],
+    [role="switch"][aria-readonly="true"]{
+      cursor:not-allowed;
+      opacity:.6;
+    }
+    /* Focus ring */
+    [role="switch"][tabindex="0"]:focus{
+      outline:2px solid currentColor;
+      outline-offset:3px;
+      border-radius:.5rem;
+    }
+    /* Visual switch */
+    .ui-switch{
+      position:relative;
+      width:var(--switch-w);
+      height:var(--switch-h);
+      border-radius:var(--switch-h);
+      background:rgba(0,0,0,.25);
+      transition:background .2s ease;
+      flex:0 0 auto;
+    }
+    [role="switch"][aria-checked="true"] .ui-switch{
+      background:rgba(0,0,0,.55);
+    }
+    .ui-switch::before{ /* thumb */
+      content:"";
+      position:absolute;
+      top:50%;
+      left:var(--pad);
+      width:var(--thumb);
+      height:var(--thumb);
+      border-radius:50%;
+      background:#fff;
+      border:1px solid rgba(0,0,0,.5);
+      transform:translate(0,-50%);
+      transition:transform .18s ease;
+      box-shadow:0 1px 1px rgba(0,0,0,.2);
+    }
+    [role="switch"][aria-checked="true"] .ui-switch::before{
+      transform:translate(calc(var(--switch-w) - var(--thumb) - var(--pad) * 2), -50%);
+    }
+    /* Visual state mirror for sighted users only */
+    .state-text[aria-hidden="true"]{
+      min-width:2.5ch;
+      text-transform:uppercase;
+      font-size:.8rem;
+      letter-spacing:.03em;
+      opacity:.8;
+    }
+    /* Optional descriptive label */
+    .vis-label{
+      font-size:.9rem;
+      opacity:.85;
+    }
+  </style>
+</head>
+<body>
+  <h1><code>switch</code> role</h1>
+
+  <div class="meta">
+    <div class="criteria">
+      <h2>Pass Criteria</h2>
+      <ul id="criteria-list">
+        <li id="basic-criteria">#1: Element is supported</li>
+        <li>#2: Correct HTML and Core Accessibility API mappings</li>
+        <li>#3: Correct Accessible Name &amp; Description Calculation</li>
+        <li>#4: Switch toggles with mouse and keyboard, respecting <code>aria-disabled</code>/<code>aria-readonly</code></li>
+        <li>#5: Sighted mirror text shows <code>On</code>/<code>Off</code> and updates with state (hidden from AT)</li>
+      </ul>
+    </div>
+
+    <div class="reference">
+      <h2>Reference</h2>
+      <ul>
+        <li><a href="https://www.w3.org/TR/wai-aria-1.2/#switch">WAI-ARIA <code>switch</code> role</a></li>
+        <li><a href="https://www.w3.org/WAI/ARIA/apg/patterns/switch/">ARIA Authoring Practices for <code>switch</code></a></li>
+        <li><a href="https://www.w3.org/TR/core-aam-1.2/#role-map-switch">Core AAM for <code>switch</code></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="test">
+    <h2 class="test-title" id="switch-001">Test switch-001: <code>aria-checked</code> ON</h2>
+    <div class="test-case">
+      <div role="switch" id="switch-01" aria-checked="true" tabindex="0">
+        <span class="ui-switch" aria-hidden="true"></span>
+        <span class="state-text" aria-hidden="true"></span>
+        <span class="vis-label">switch-01</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="test">
+    <h2 class="test-title" id="switch-002">Test switch-002: <code>aria-checked</code> off</h2>
+    <div class="test-case">
+      <div role="switch" id="switch-02" aria-checked="false" tabindex="0">
+        <span class="ui-switch" aria-hidden="true"></span>
+        <span class="state-text" aria-hidden="true"></span>
+        <span class="vis-label">switch-02</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="test">
+    <h2 class="test-title" id="switch-003">Test switch-003: <code>aria-disabled</code></h2>
+    <div class="test-case">
+      <div role="switch" id="switch-03" aria-checked="false" aria-disabled="true" tabindex="0">
+        <span class="ui-switch" aria-hidden="true"></span>
+        <span class="state-text" aria-hidden="true"></span>
+        <span class="vis-label">switch-03 (disabled)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="test">
+    <h2 class="test-title" id="switch-004">Test switch-004: <code>aria-readonly</code></h2>
+    <div class="test-case">
+      <div role="switch" id="switch-04" aria-checked="true" aria-readonly="true" tabindex="0">
+        <span class="ui-switch" aria-hidden="true"></span>
+        <span class="state-text" aria-hidden="true"></span>
+        <span class="vis-label">switch-04 (readonly)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="test">
+    <h2 class="test-title" id="switch-005">Test switch-005: <code>aria-required</code></h2>
+    <div class="test-case">
+      <div role="switch" id="switch-05" aria-checked="false" aria-required="true" tabindex="0">
+        <span class="ui-switch" aria-hidden="true"></span>
+        <span class="state-text" aria-hidden="true"></span>
+        <span class="vis-label">switch-05 (required)</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="../scripts/test-scripts.js"></script>
+  <script>
+    (function () {
+      // Safe support check
+      var test = [];
+      var el = document.getElementById('switch-01');
+      var isSupported = (el instanceof HTMLElement && !(el instanceof HTMLUnknownElement));
+      test.push({id: "basic-criteria", pass: isSupported});
+      try { if (typeof displaySupportResults === 'function') displaySupportResults(test); } catch(e) {}
+
+      function canToggle(node){
+        return node.getAttribute('aria-disabled') !== 'true' &&
+               node.getAttribute('aria-readonly') !== 'true';
+      }
+
+      function renderMirror(node){
+        var txt = node.querySelector('.state-text');
+        if (!txt){
+          txt = document.createElement('span');
+          txt.className = 'state-text';
+          txt.setAttribute('aria-hidden','true');
+          var track = node.querySelector('.ui-switch');
+          if (track && track.nextSibling){
+            node.insertBefore(txt, track.nextSibling);
+          } else {
+            node.appendChild(txt);
+          }
+        }
+        var on = node.getAttribute('aria-checked') === 'true';
+        txt.textContent = on ? 'On' : 'Off';
+      }
+
+      function toggle(node){
+        if (!canToggle(node)) return;
+        var state = node.getAttribute('aria-checked');
+        if (state !== 'true' && state !== 'false') state = 'false';
+        var next = (state === 'true') ? 'false' : 'true';
+        node.setAttribute('aria-checked', next);
+        renderMirror(node);
+      }
+
+      function onKeydown(e){
+        var key = e.key || e.code;
+        if (key === ' ' || key === 'Spacebar' || key === 'Enter'){
+          e.preventDefault();
+          toggle(this);
+        }
+      }
+
+      // Init all switches
+      Array.prototype.forEach.call(document.querySelectorAll('[role="switch"]'), function(sw){
+        if (!sw.hasAttribute('aria-checked')) sw.setAttribute('aria-checked','false');
+        if (!sw.hasAttribute('tabindex')) sw.setAttribute('tabindex','0');
+        renderMirror(sw);
+        sw.addEventListener('click', function(){ toggle(sw); });
+        sw.addEventListener('keydown', onKeydown);
+
+        // If aria-checked changes externally, keep mirror up to date
+        new MutationObserver(function(muts){
+          muts.forEach(function(m){
+            if (m.attributeName === 'aria-checked') renderMirror(sw);
+          });
+        }).observe(sw, { attributes:true });
+      });
+    }());
+  </script>
+</body>
+</html>

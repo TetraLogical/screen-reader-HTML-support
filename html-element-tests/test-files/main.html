@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>test file: <code>main</code> element</title>
+		<link rel="stylesheet" href="../style/styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	</head>
+	<body>
+		<h1>
+			<code>main</code> element test
+		</h1>
+		<div class="meta">
+			<div class="criteria">
+				<h2>Pass Criteria</h2>
+				<ul id="criteria-list">
+					<li id="basic-criteria">#1: Element is supported</li>
+					<li>#2: Correct HTML and Core Accessibility API mappings</li>
+					<li>#3: Correct Accessible Name &amp; Description Calculation</li>
+				</ul>
+			</div>
+
+			<div class="reference">
+				<h2>Reference</h2>
+				<ul>
+					<li>
+						<a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-main-element">HTML <code>main</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#el-main">HTML Accessibility API Mappings for <code>main</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/aria/core-aam/core-aam.html#role-map-main">Core Accessibility API Mappings for <code>main</code> role</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#section-and-grouping-element-accessible-name-calculation">Accessible Name Calculation</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#section-and-grouping-element-accessible-description-calculation">Accessible Description Calculation</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="ma-001">
+				Test ma-001: <code>main</code> element
+			</h2>
+
+			<div class="test-case">
+<main id="main1">
+	<h2>Skateboards</h2>
+	<p>The skateboard is the way cool kids get around</p>
+
+	<h3>Longboards</h3>
+	<p>Longboards are a type of skateboard with a longer
+	wheelbase and larger, softer wheels.</p>
+
+	<h3>Electric Skateboards</h3>
+	<p>These no longer require the propelling of the skateboard
+	by means of the feet; rather an electric motor propels the board,
+	fed by an electric battery.</p>
+</main>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="ma-002">
+				Test ma-002: <code>main</code>
+				with <code>aria-label</code>
+			</h2>
+
+			<div class="test-case">
+<main aria-label="aria-label attribute">
+	<p><code>aria-label</code> should be used as accessible name.</p>
+	<p>No accessible description.</p>
+</main>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="ma-003">
+				Test ma-003: <code>main</code>
+				with <code>aria-labelledby</code>
+			</h2>
+
+			<div class="test-case">
+<main aria-labelledby="ma-003-labelledby">
+	<h1 id="ma-003-labelledby">
+		<code>h1</code> referenced by <code>aria-labelledby</code>
+	</h1>
+	<p><code>aria-labelledby</code> should be used as accessible name.</p>
+	<p>No accessible description.</p>
+</main>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="ma-004">
+				Test ma-004: <code>main</code>
+				with <code>title</code> attribute
+			</h2>
+
+			<div class="test-case">
+<main title="title attribute">
+	<p><code>title</code> should be used as accessible name.</p>
+	<p>No accessible description.</p>
+</main>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="ma-005">
+				Test ma-005: <code>main</code>
+				with <code>aria-describedby</code>
+			</h2>
+
+			<div class="test-case">
+<main aria-describedby="ma-005-describedby">
+	<h1 id="ma-005-describedby">
+		<code>h1</code> referenced by <code>aria-describedby</code>
+	</h1>
+	<p>
+		<code>aria-describedby</code>
+		should be used as accessible description.
+	</p>
+	<p>No accessible name.</p>
+</main>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="ma-006">
+				Test ma-006: <code>main</code>
+				with <code>aria-label</code> &amp; <code>title</code> attributes
+			</h2>
+
+			<div class="test-case">
+<main aria-label="aria-label attribute" title="title attribute">
+	<p><code>aria-label</code> should be used as accessible name.</p>
+	<p><code>title</code> should be used as accessible description.</p>
+</main>
+			</div>
+		</div>
+
+		<script src="../scripts/test-scripts.js"></script>
+		<script>
+			var test = [];
+			var el = document.getElementById('main1');
+			var isSupported = (el instanceof HTMLElement && !(el instanceof HTMLUnknownElement));
+
+			test.push({id: "basic-criteria", pass: isSupported});
+			displaySupportResults(test);
+		</script>
+	</body>
+</html>

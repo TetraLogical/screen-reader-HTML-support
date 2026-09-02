@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>test file: scrollbar role</title>
+    <link rel="stylesheet" href="../style/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        [tabindex="0"]:focus {
+            outline: 2px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <code>scrollbar</code> role
+    </h1>
+
+    <div class="meta">
+        <div class="criteria">
+            <h2>
+                Pass Criteria
+            </h2>
+            <ul id="criteria-list">
+                <li id="basic-criteria">#1: Element is supported</li>
+                <li>#2: Correct HTML and Core Accessibility API mappings</li>
+                <li>#3: Correct Accessible Name &amp; Description Calculation</li>
+            </ul>
+        </div>
+
+        <div class="reference">
+            <h2>
+                Reference
+            </h2>
+            <ul>
+                <li>
+                    <a href="https://www.w3.org/TR/wai-aria-1.1/#scrollbar">WAI-ARIA <code>scrollbar</code> role</a>
+                </li>
+                <li>
+                    <a href="https://w3c.github.io/aria-practices/#scrollbar">ARIA Authoring Practices for <code>scrollbar</code> role</a>
+                </li>
+                <li>
+                    <a href="https://www.w3.org/TR/core-aam-1.1/#role-map-scrollbar">Core Accessibility API Mappings for <code>scrollbar</code> role</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    
+<div class="test">
+    <h2 class="test-title" id="scrollbar-001">
+        Test scrollbar-001: <code>scrollbar</code> role, with required attribute aria-valuemax
+    </h2>
+    <div class="test-case">
+        <div role="scrollbar" id="scrollbar-01" aria-valuemax="true" tabindex="0">scrollbar-01: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="scrollbar-002">
+        Test scrollbar-002: <code>scrollbar</code> role, with required attribute aria-valuemin
+    </h2>
+    <div class="test-case">
+        <div role="scrollbar" id="scrollbar-02" aria-valuemin="true" tabindex="0">scrollbar-02: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="scrollbar-003">
+        Test scrollbar-003: <code>scrollbar</code> role, with required attribute aria-valuenow
+    </h2>
+    <div class="test-case">
+        <div role="scrollbar" id="scrollbar-03" aria-valuenow="true" tabindex="0">scrollbar-03: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="scrollbar-004">
+        Test scrollbar-004: <code>scrollbar</code> role, with allowed attribute aria-orientation
+    </h2>
+    <div class="test-case">
+        <div role="scrollbar" id="scrollbar-04" aria-orientation="horizontal" tabindex="0">scrollbar-04: horizontal</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="scrollbar-005">
+        Test scrollbar-005: <code>scrollbar</code> role, with allowed attribute aria-valuemax
+    </h2>
+    <div class="test-case">
+        <div role="scrollbar" id="scrollbar-05" aria-valuemax="true" tabindex="0">scrollbar-05: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="scrollbar-006">
+        Test scrollbar-006: <code>scrollbar</code> role, with allowed attribute aria-valuemin
+    </h2>
+    <div class="test-case">
+        <div role="scrollbar" id="scrollbar-06" aria-valuemin="true" tabindex="0">scrollbar-06: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="scrollbar-007">
+        Test scrollbar-007: <code>scrollbar</code> role, with allowed attribute aria-valuenow
+    </h2>
+    <div class="test-case">
+        <div role="scrollbar" id="scrollbar-07" aria-valuenow="true" tabindex="0">scrollbar-07: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="scrollbar-008">
+        Test scrollbar-008: <code>scrollbar</code> role, with allowed attribute aria-valuetext
+    </h2>
+    <div class="test-case">
+        <div role="scrollbar" id="scrollbar-08" aria-valuetext="true" tabindex="0">scrollbar-08: true</div>
+    </div>
+</div>
+
+
+    <script src="../scripts/test-scripts.js"></script>
+    <script>
+        var test = [];
+        var el = document.getElementById('scrollbar-01');
+        var isSupported = (el instanceof HTMLElement && !(el instanceof HTMLUnknownElement));
+
+        test.push({id: "basic-criteria", pass: isSupported});
+        displaySupportResults(test);
+        
+        // Script to cycle through multiple values for states and properties
+        var elements = document.querySelectorAll('[id^=scrollbar]');
+        elements.forEach(function(el) {
+            el.addEventListener('click', function() {
+                
+var currentVal = el.getAttribute('aria-orientation');
+var values = ['horizontal', 'vertical'];
+var nextVal = values[(values.indexOf(currentVal) + 1) % values.length];
+el.setAttribute('aria-orientation', nextVal);
+el.textContent = el.id + ': ' + nextVal;
+
+            });
+            el.addEventListener('keypress', function(event) {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    
+var currentVal = el.getAttribute('aria-orientation');
+var values = ['horizontal', 'vertical'];
+var nextVal = values[(values.indexOf(currentVal) + 1) % values.length];
+el.setAttribute('aria-orientation', nextVal);
+el.textContent = el.id + ': ' + nextVal;
+
+                }
+            });
+        });
+    </script>
+</body>
+</html>

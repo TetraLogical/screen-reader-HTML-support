@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>test file: input type=text element</title>
+		<link rel="stylesheet" href="../style/styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	</head>
+	<body>
+		<h1>
+			<code>input type=text</code> element
+		</h1>
+
+		<div class="meta">
+			<div class="criteria">
+				<h2>
+					Pass Criteria
+				</h2>
+				<ul id="criteria-list">
+					<li id="basic-criteria">#1: Element is supported</li>
+					<li>#2: Correct HTML and Core Accessibility API mappings</li>
+					<li>#3: Correct Accessible Name &amp; Description Calculation</li>
+				</ul>
+			</div>
+
+			<div class="reference">
+				<h2>
+					Reference
+				</h2>
+				<ul>
+					<li>
+						<a href="https://html.spec.whatwg.org/multipage/input.html#text-(type=text)-state-and-search-state-(type=search)">HTML <code>input type=text</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#el-input-text">HTML Accessibility API Mappings for <code>input type=text</code> element without list attribute</a>
+					</li>
+					<li>
+						<a href="https://www.w3.org/TR/core-aam-1.1/#role-map-textbox">Core Accessibility API Mappings for <code>textbox</code> role</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#el-input-textetc-autocomplete">HTML Accessibility API Mappings for <code>input type=text</code> element with list attribute</a>
+					</li>
+					<li>
+						<a href="https://www.w3.org/TR/core-aam-1.1/#role-map-combobox">Core Accessibility API Mappings for <code>combobox</code> role</a>
+					</li>
+					<li>
+						<a href="https://www.w3.org/TR/core-aam-1.1/#ariaOwns">Core Accessibility API Mappings for <code>aria-owns</code> property</a>
+					</li>
+                    <li>
+						<a href="https://w3c.github.io/core-aam/#details-id-99">Core Accessibility API Mappings for <code>aria-autocomplete</code> property</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<form action="#itext-001">
+			<div class="test">
+				<h2 class="test-title" id="itext-001">
+					Test itext-001: <code>input type=text</code> element
+				</h2>
+
+				<div class="test-case">
+<input id="itext-01" type="text">
+				</div>
+				<input type="submit" value="Test Form Submission">
+			</div>
+		</form>
+
+		<form action="#itext-002">
+			<div class="test">
+				<h2 class="test-title" id="itext-002">
+					Test itext-002: <code>input</code> element without
+					a set <code>type</code> attribute
+				</h2>
+
+				<div class="test-case">
+<input id="itext-02">
+				</div>
+				<input type="submit" value="Test Form Submission">
+			</div>
+		</form>
+
+		<form action="#itext-003">
+			<div class="test">
+				<h2 class="test-title" id="itext-003">
+					Test itext-003: <code>input</code> element
+					with implicit <code>label</code>
+				</h2>
+
+				<div class="test-case">
+<label>
+	Name
+	<input id="itext-03" type="text">
+</label>
+				</div>
+				<input type="submit" value="Test Form Submission">
+			</div>
+		</form>
+
+		<form action="#itext-004">
+			<div class="test">
+				<h2 class="test-title" id="itext-004">
+					Test itext-004: <code>input</code> element
+					with explicit <code>label</code>
+				</h2>
+
+				<div class="test-case">
+<label for="itext-04">
+	Name
+</label>
+<input id="itext-04" type="text">
+				</div>
+				<input type="submit" value="Test Form Submission">
+			</div>
+		</form>
+
+		<form action="#itext-005">
+			<div class="test">
+				<h2 class="test-title" id="itext-005">
+					Test itext-005: <code>input</code> element
+					with explicit <code>label</code>
+					&amp; <code>placeholder</code>
+				</h2>
+
+				<div class="test-case">
+<label for="itext-05">
+	Name
+</label>
+<input id="itext-05" type="text" placeholder="First Name">
+				</div>
+				<input type="submit" value="Test Form Submission">
+			</div>
+		</form>
+
+
+		<form action="#itext-006">
+			<div class="test">
+				<h2 class="test-title" id="itext-007">
+					Test itext-006: <code>input</code> element
+					with explicit <code>label</code>,
+					<code>placeholder</code>,
+					&amp; <code>required</code> attribute
+				</h2>
+
+				<div class="test-case">
+<label for="itext-06">
+	Name
+</label>
+<input id="itext-06" type="text" placeholder="First Name" required>
+				</div>
+				<input type="submit" value="Test Form Submission">
+			</div>
+		</form>
+
+
+		<form action="#itext-007">
+			<div class="test">
+				<h2 class="test-title" id="itext-007">
+					Test itext-007: <code>input</code> element
+					with explicit <code>label</code>,
+					<code>placeholder</code>,
+					&amp; <code>readonly</code> attribute
+				</h2>
+
+				<div class="test-case">
+<label for="itext-07">
+	Name
+</label>
+<input id="itext-07" type="text" placeholder="First Name" readonly>
+				</div>
+				<input type="submit" value="Test Form Submission">
+			</div>
+		</form>
+
+
+		<form action="#itext-008">
+			<div class="test">
+				<h2 class="test-title" id="itext-008">
+					Test itext-008: <code>input</code> element
+					with explicit <code>label</code>,
+					<code>placeholder</code>,
+					&amp; <code>disabled</code> attribute
+				</h2>
+
+				<div class="test-case">
+<label for="itext-08">
+	Name
+</label>
+<input id="itext-08" type="text" placeholder="First Name" disabled>
+				</div>
+				<input type="submit" value="Test Form Submission">
+			</div>
+		</form>
+
+
+		<form action="#itext-009">
+			<div class="test">
+				<h2 class="test-title" id="itext-009">
+					Test itext-009: <code>input</code> element
+					with only <code>placeholder</code> attribute
+				</h2>
+
+				<div class="test-case">
+<input type="text" placeholder="First Name">
+				</div>
+				<input type="submit" value="Test Form Submission">
+			</div>
+		</form>
+
+
+		<form action="#itext-010">
+			<div class="test">
+				<h2 class="test-title" id="itext-010">
+					Test itext-010: <code>input</code> element
+					with <code>aria-label</code>
+				</h2>
+
+				<div class="test-case">
+<input id="itext-10" type="text" aria-label="Name">
+				</div>
+				<input type="submit" value="Test Form Submission">
+			</div>
+		</form>
+
+
+		<form action="#itext-011">
+			<div class="test">
+				<h2 class="test-title" id="itext-011">
+					Test itext-011: <code>input</code> element
+					with <code>aria-labelledby</code>
+				</h2>
+
+				<div class="test-case">
+<span id="itext-011-label">
+	Name
+</span>
+<input id="itext-11" type="text" aria-labelledby="itext-011-label">
+				</div>
+				<input type="submit" value="Test Form Submission">
+			</div>
+</form>
+
+	<form action="#itext-12">
+			<div class="test">
+				<h2 class="test-title" id="itext-012">
+					Test itext-012: <code>input</code> element
+					with <code>pattern</code> attribute
+				</h2>
+
+				<div class="test-case">
+<label for="itext-12">
+	3 letter pattern
+</label>
+<input id="itext-12" type="text" pattern="[A-Za-z]{3}">
+				</div>
+				<input type="submit" value="Test Form Submission">
+			</div>
+		</form>
+
+
+		<form action="#itext-13">
+			<div class="test">
+				<h2 class="test-title" id="itext-013">
+					Test itext-013: <code>input</code> element
+					with <code>size</code> attribute
+				</h2>
+
+				<div class="test-case">
+<label for="itext-13">
+	Size=3 input
+</label>
+<input id="itext-13" type="text" size="3">
+				</div>
+				<input type="submit" value="Test Form Submission">
+			</div>
+		</form>
+
+
+<form action="#itext-14">
+			<div class="test">
+				<h2 class="test-title" id="itext-014">
+					Test itext-014: <code>input</code> element
+					with <code>aria-autocomplete=list</code> attribute
+				</h2>
+
+				<div class="test-case">
+<label for="itext-14">
+aria-autocomplete=list
+</label>
+<input id="itext-14" type="text" aria-autocomplete="list">
+				</div>
+				<input type="submit" value="Test Form Submission">
+			</div>
+		</form>
+
+        <form action="#itext-15">
+			<div class="test">
+				<h2 class="test-title" id="itext-015">
+					Test itext-015: <code>input</code> element
+					with <code>aria-autocomplete=inline</code> attribute
+				</h2>
+
+				<div class="test-case">
+<label for="itext-15">
+	aria-autocomplete=inline
+</label>
+<input id="itext-15" type="text" aria-autocomplete="inline">
+				</div>
+				<input type="submit" value="Test Form Submission">
+			</div>
+		</form>
+
+
+   <form action="#itext-16">
+			<div class="test">
+				<h2 class="test-title" id="itext-016">
+					Test itext-016: <code>input</code> element
+					with <code>aria-autocomplete=both</code> attribute
+				</h2>
+
+				<div class="test-case">
+<label for="itext-16">
+	aria-autocomplete=both
+</label>
+<input id="itext-16" type="text" aria-autocomplete="both">
+				</div>
+				<input type="submit" value="Test Form Submission">
+			</div>
+		</form>
+
+
+    <form action="#itext-17">
+			<div class="test">
+				<h2 class="test-title" id="itext-017">
+					Test itext-017: <code>input</code> element
+					with <code>aria-autocomplete=none</code> attribute
+				</h2>
+
+				<div class="test-case">
+<label for="itext-17">
+	aria-autocomplete=none
+</label>
+<input id="itext-17" type="text" aria-autocomplete="none">
+				</div>
+				<input type="submit" value="Test Form Submission">
+			</div>
+		</form>
+
+    <form action="#itext-18">
+			<div class="test">
+				<h2 class="test-title" id="itext-018">
+					Test itext-018: <code>input</code> element
+					with <code>aria-autocomplete=none</code> and <code>autocomplete=off</code> attributes
+				</h2>
+
+				<div class="test-case">
+<label for="itext-18">
+	aria-autocomplete=none
+</label>
+<input id="itext-18" type="text" aria-autocomplete="none" autocomplete="off">
+				</div>
+				<input type="submit" value="Test Form Submission">
+			</div>
+		</form>
+		<script src="../scripts/test-scripts.js"></script>
+		<script>
+			var test = [];
+			var el = document.getElementById('itext-01');
+			var isSupported = (el instanceof HTMLElement && !(el instanceof HTMLUnknownElement));
+
+			test.push({id: "basic-criteria", pass: isSupported});
+			displaySupportResults(test);
+		</script>
+	</body>
+</html>

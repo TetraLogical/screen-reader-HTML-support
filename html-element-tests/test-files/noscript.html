@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>test file: &lt;noscript&gt; element</title>
+    <link rel="stylesheet" href="../style/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+      /* Helper styles so testers can see what's rendered when JS is enabled vs disabled */
+      .js-state {
+        padding: .5rem .75rem;
+        border: 1px solid currentColor;
+        border-radius: .5rem;
+        display: inline-block;
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      <code>&lt;noscript&gt;</code> element
+    </h1>
+
+    <p class="js-state" id="js-enabled-banner" role="status" aria-live="polite">
+      JavaScript is <strong>enabled</strong>. Fallback content inside <code>&lt;noscript&gt;</code> should not be rendered.
+    </p>
+
+    <div class="meta">
+      <div class="criteria">
+        <h2>
+          Pass Criteria
+        </h2>
+        <ul id="criteria-list">
+          <li id="basic-criteria">#1: Element is parsed and present in the DOM</li>
+          <li>#2: When JavaScript is <em>enabled</em>, content inside <code>&lt;noscript&gt;</code> is not rendered</li>
+          <li>#3: When JavaScript is <em>disabled</em>, the fallback content is rendered and operable</li>
+        </ul>
+      </div>
+
+      <div class="reference">
+        <h2>
+          Reference
+        </h2>
+        <ul>
+          <li>
+            <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-noscript-element">HTML Standard: <code>noscript</code> element</a>
+          </li>
+          <li>
+            <a href="https://developer.mozilla.org/docs/Web/HTML/Element/noscript">MDN Web Docs: <code>&lt;noscript&gt;</code></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="test">
+      <h2 class="test-title" id="noscript-001">
+        Test noscript-001: <code>&lt;noscript&gt;</code> with plain text fallback
+      </h2>
+      <div class="test-case">
+        <p>
+          <!-- This text should only appear when JS is disabled -->
+          <noscript>
+            <span id="ns1">JavaScript is disabled: plain text fallback.</span>
+          </noscript>
+        </p>
+      </div>
+    </div>
+
+    <div class="test">
+      <h2 class="test-title" id="noscript-002">
+        Test noscript-002: <code>&lt;noscript&gt;</code> with an interactive fallback link
+      </h2>
+      <div class="test-case">
+        <p>
+          <noscript>
+            <a id="ns2" href="a-href.html">JavaScript is disabled: go to the non-script version</a>
+          </noscript>
+        </p>
+      </div>
+    </div>
+
+    <div class="test">
+      <h2 class="test-title" id="noscript-003">
+        Test noscript-003: <code>&lt;noscript&gt;</code> with a form control fallback
+      </h2>
+      <div class="test-case">
+        <p>
+          <noscript>
+            <form id="ns3" action="#" method="get">
+              <label for="q">Search (no JS):</label>
+              <input id="q" name="q" type="search">
+              <button type="submit">Submit</button>
+            </form>
+          </noscript>
+        </p>
+      </div>
+    </div>
+
+    <div class="test">
+      <h2 class="test-title" id="noscript-004">
+        Test noscript-004: <code>&lt;noscript&gt;</code> with content labelled via <code>aria-labelledby</code>
+      </h2>
+      <div class="test-case">
+        <p id="ns4-label">No‑JS banner label</p>
+        <p>
+          <noscript>
+            <div id="ns4" role="region" aria-labelledby="ns4-label">JavaScript is disabled: labelled region</div>
+          </noscript>
+        </p>
+      </div>
+    </div>
+
+    <div class="test">
+      <h2 class="test-title" id="noscript-005">
+        Test noscript-005: Content outside <code>&lt;noscript&gt;</code> (control)
+      </h2>
+      <div class="test-case">
+        <p id="control1">This control text is always rendered (helps compare with fallback rendering).</p>
+      </div>
+    </div>
+
+    <script src="../scripts/test-scripts.js"></script>
+    <script>
+      // Basic support checks:
+      // 1) Element node exists
+      // 2) Its fallback children should not be rendered when JS is enabled
+      (function () {
+        var test = [];
+        var ns = document.querySelector('noscript');
+        var exists = !!ns;
+
+        // If JS is enabled, nodes inside <noscript> should not be part of the layout tree.
+        // We'll check by querying for a known id that would only exist if <noscript> rendered.
+        var renderedFallback = document.getElementById('ns1') || document.getElementById('ns2') || document.getElementById('ns3') || document.getElementById('ns4');
+        var hiddenWhenJS = !renderedFallback;
+
+        test.push({ id: "basic-criteria", pass: exists && hiddenWhenJS });
+        displaySupportResults(test);
+      }());
+    </script>
+  </body>
+</html>

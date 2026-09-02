@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>test file: a element with no href</title>
+		<link rel="stylesheet" href="../style/styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	</head>
+	<body>
+		<h1>
+			<code>a</code> element with no <code>href</code>
+		</h1>
+		<div class="meta">
+			<div class="criteria">
+				<h2>Pass Criteria</h2>
+				<ul id="criteria-list">
+					<li id="basic-criteria">#1: Element is supported</li>
+					<li>#2: Correct HTML and Core Accessibility API mappings</li>
+					<li>#3: Correct Accessible Name &amp; Description Calculation</li>
+				</ul>
+			</div>
+
+			<div class="reference">
+				<h2>Reference</h2>
+				<ul>
+					<li>
+						<a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">HTML <code>a</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#el-a-no-href">HTML Accessibility API Mappings for <code>a</code> element without <code>href</code> attribute</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="a-001">
+				Test a-001: Anchor with no <code>href</code>
+			</h2>
+
+			<div class="test-case">
+<p>
+	<a name="test" id="a1">HTML (anchor)</a>
+</p>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="a-002">
+				Test a-002: Anchor with no <code>href</code>,
+				and with <code>aria-label</code> attribute.
+			</h2>
+
+			<div class="test-case">
+<p>
+	<a name="test" id="a2" aria-label="ARIA label test">HTML (anchor)</a>
+</p>
+			</div>
+		</div>
+        <div class="test">
+			<h2 class="test-title" id="a-003">
+				Test a-003: Anchor with no <code>href</code>,
+				and with no accessible name.
+			</h2>
+
+			<div class="test-case">
+<p>
+	<a id="a3"></a>
+</p>
+			</div>
+		</div>
+		
+		<div class="test">
+			<h2 class="test-title" id="a-004">
+				Test a-004: Anchor with no <code>href</code> and <code>tabindex="0"</code>
+			</h2>
+
+			<div class="test-case">
+<p>
+	<a name="test" id="a4" tabindex="0">HTML (anchor)</a>
+</p>
+			</div>
+		</div>
+
+		<script src="../scripts/test-scripts.js"></script>
+		<script>
+			var test = [];
+			var el = document.getElementById('a1');
+			var isSupported = (el instanceof HTMLElement && !(el instanceof HTMLUnknownElement));
+
+			test.push({id: "basic-criteria", pass: isSupported});
+			displaySupportResults(test);
+		</script>
+	</body>
+</html>

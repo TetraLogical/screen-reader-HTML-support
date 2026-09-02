@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>test file: canvas element</title>
+		<link rel="stylesheet" href="../style/styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	</head>
+	<body>
+		<h1><code>canvas</code> element test</h1>
+		<div class="meta">
+			<div class="criteria">
+				<h2>Pass Criteria</h2>
+				<ul id="criteria-list">
+					<li id="basic-criteria">#1: Element is supported</li>
+					<li id="drawFocusIfNeeded-criteria">#2: <code>drawFocusIfNeeded()</code> is supported</li>
+					<li>#3: Element has correct HTML and Core Accessibility API mappings</li>
+					<li>#4: Canvas sub-DOM is exposed</li>
+				</ul>
+			</div>
+
+			<div class="reference">
+				<h2>Reference</h2>
+				<ul>
+					<li>
+						<a href="https://html.spec.whatwg.org/multipage/canvas.html#the-canvas-element">HTML <code>canvas</code> element</a>
+					</li>
+					<li>
+						<a href="https://www.w3.org/TR/2dcontext/#dom-context-2d-drawfocusifneeded">drawFocusIfNeeded() method</a> [Test: CV-002]
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#el-canvas">HTML Accessibility API Mappings for <code>canvas</code> element</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="cv-001">Test cv-001: Canvas element</h2>
+
+			<div class="test-case">
+<canvas id="myCanvas" width="338" height="258">
+	<p tabindex="0">
+		The woman in the painting is wearing a flowing white dress.
+		A large piece of intricately patterned fabric is draped over
+		the side. In her right hand she holds the chain mooring the
+		boat. Her expression is mournful. She stares at a crucifix
+		lying in front of her. Beside it are three candles.
+		Two have blown out.
+	</p>
+</canvas>
+
+<script>
+	var can = document.getElementById('myCanvas');
+	var con = can.getContext('2d');
+	var imageO = new Image();
+
+	imageO.onload = function() {
+		con.drawImage(imageO, 0, 0);
+	};
+	imageO.src = '../images/shalott.jpg';
+</script>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="cv-002">
+				Test cv-002: drawFocusIfNeeded() method
+			</h2>
+			<p>
+				The circle below must have a focus ring.
+			</p>
+
+			<div class="test-case">
+<canvas id="drawFocusCanvas" width="200" height="200">
+	<button id="drawFocusButton">Focus me</button>
+</canvas>
+
+<script>
+	var canvas2 = document.getElementById('drawFocusCanvas');
+	var button = document.getElementById('drawFocusButton');
+	var context2 = canvas2.getContext('2d');
+
+	context2.beginPath();
+	context2.arc(100, 100, 75, 0, 2 * Math.PI);
+	context2.fillStyle = '#ddd';
+	context2.fill();
+
+	button.focus();
+	context2.drawFocusIfNeeded(button);
+</script>
+			</div>
+		</div>
+<div class="test">
+	<h2 class="test-title" id="cv-003">Test cv-003: Canvas element with <code>aria-label</code></h2>
+
+			<div class="test-case">
+<canvas id="myCanvas1" width="338" height="258" aria-label="Lady of Shalott">
+	
+</canvas>
+
+<script>
+	var canvas = document.getElementById('myCanvas1');
+	var context = canvas.getContext('2d');
+	var imageObj = new Image();
+
+	imageObj.onload = function() {
+		context.drawImage(imageObj, 0, 0);
+	};
+	imageObj.src = '../images/shalott.jpg';
+</script>
+			</div>
+		</div>
+		
+		<div class="test">
+	<h2 class="test-title" id="cv-004">Test cv-004: Canvas element with <code>role=img</code> + <code>aria-label</code></h2>
+
+			<div class="test-case">
+<canvas id="myCanvas2" width="338" height="258" role="img" aria-label="Lady of Shalott">
+	
+</canvas>
+
+<script>
+	var canv = document.getElementById('myCanvas2');
+	var cont = canv.getContext('2d');
+	var imageOb = new Image();
+
+	imageOb.onload = function() {
+		cont.drawImage(imageOb, 0, 0);
+	};
+	imageOb.src = '../images/shalott.jpg';
+</script>
+			</div>
+		</div>
+<div class="test">
+	<h2 class="test-title" id="cv-005">Test cv-005: Canvas element with <code>role=img</code> + <code>aria-label</code> with <code>tabindex="0"</code></h2>
+
+			<div class="test-case">
+<canvas id="myCanvas3" width="338" height="258" role="img" aria-label="Lady of Shalott" tabindex="0">
+	
+</canvas>
+
+<script>
+	var canv = document.getElementById('myCanvas3');
+	var cont = canv.getContext('2d');
+	var imageOb = new Image();
+
+	imageOb.onload = function() {
+		cont.drawImage(imageOb, 0, 0);
+	};
+	imageOb.src = '../images/shalott.jpg';
+</script>
+			</div>
+		</div>
+		<script src="../scripts/test-scripts.js"></script>
+		<script>
+			var test = [];
+			var canvas = document.getElementById('myCanvas');
+			var isSupported = !!(canvas.getContext && canvas.getContext('2d'));
+
+			test.push({id: "basic-criteria", pass: isSupported});
+			isSupported = isSupported && !!(canvas.getContext('2d').drawFocusIfNeeded);
+			test.push({id: "drawFocusIfNeeded-criteria", pass: isSupported});
+
+			displaySupportResults(test);
+		</script>
+	</body>
+</html>

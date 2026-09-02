@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>test file: option role</title>
+    <link rel="stylesheet" href="../style/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        [tabindex="0"]:focus {
+            outline: 2px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <code>option</code> role
+    </h1>
+
+    <div class="meta">
+        <div class="criteria">
+            <h2>
+                Pass Criteria
+            </h2>
+            <ul id="criteria-list">
+                <li id="basic-criteria">#1: Element is supported</li>
+                <li>#2: Correct HTML and Core Accessibility API mappings</li>
+                <li>#3: Correct Accessible Name &amp; Description Calculation</li>
+            </ul>
+        </div>
+
+        <div class="reference">
+            <h2>
+                Reference
+            </h2>
+            <ul>
+                <li>
+                    <a href="https://www.w3.org/TR/wai-aria-1.1/#option">WAI-ARIA <code>option</code> role</a>
+                </li>
+                <li>
+                    <a href="https://w3c.github.io/aria-practices/#option">ARIA Authoring Practices for <code>option</code> role</a>
+                </li>
+                <li>
+                    <a href="https://www.w3.org/TR/core-aam-1.1/#role-map-option">Core Accessibility API Mappings for <code>option</code> role</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    
+<div class="test">
+    <h2 class="test-title" id="option-001">
+        Test option-001: <code>option</code> role, with allowed attribute aria-checked
+    </h2>
+    <div class="test-case">
+        <div role="option" id="option-01" aria-checked="true" tabindex="0">option-01: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="option-002">
+        Test option-002: <code>option</code> role, with allowed attribute aria-disabled
+    </h2>
+    <div class="test-case">
+        <div role="option" id="option-02" aria-disabled="true" tabindex="0">option-02: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="option-003">
+        Test option-003: <code>option</code> role, with allowed attribute aria-posinset
+    </h2>
+    <div class="test-case">
+        <div role="option" id="option-03" aria-posinset="true" tabindex="0">option-03: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="option-004">
+        Test option-004: <code>option</code> role, with allowed attribute aria-selected
+    </h2>
+    <div class="test-case">
+        <div role="option" id="option-04" aria-selected="true" tabindex="0">option-04: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="option-005">
+        Test option-005: <code>option</code> role, with allowed attribute aria-setsize
+    </h2>
+    <div class="test-case">
+        <div role="option" id="option-05" aria-setsize="true" tabindex="0">option-05: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="option-006">
+        Test option-006: <code>option</code> role, basic test for option
+    </h2>
+    <div class="test-case">
+        <div role="option" id="option-06" tabindex="0">option-06: </div>
+    </div>
+</div>
+
+
+    <script src="../scripts/test-scripts.js"></script>
+    <script>
+        var test = [];
+        var el = document.getElementById('option-01');
+        var isSupported = (el instanceof HTMLElement && !(el instanceof HTMLUnknownElement));
+
+        test.push({id: "basic-criteria", pass: isSupported});
+        displaySupportResults(test);
+        
+        // Script to cycle through multiple values for states and properties
+        var elements = document.querySelectorAll('[id^=option]');
+        elements.forEach(function(el) {
+            el.addEventListener('click', function() {
+                
+var currentVal = el.getAttribute('aria-selected');
+var values = ['true', 'false'];
+var nextVal = values[(values.indexOf(currentVal) + 1) % values.length];
+el.setAttribute('aria-selected', nextVal);
+el.textContent = el.id + ': ' + nextVal;
+
+            });
+            el.addEventListener('keypress', function(event) {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    
+var currentVal = el.getAttribute('aria-selected');
+var values = ['true', 'false'];
+var nextVal = values[(values.indexOf(currentVal) + 1) % values.length];
+el.setAttribute('aria-selected', nextVal);
+el.textContent = el.id + ': ' + nextVal;
+
+                }
+            });
+        });
+    </script>
+</body>
+</html>

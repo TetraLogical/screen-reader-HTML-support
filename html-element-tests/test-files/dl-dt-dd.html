@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>test file: dl, dt and dd elements</title>
+		<link rel="stylesheet" href="../style/styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	</head>
+	<body>
+		<h1>
+			<code>dl</code>, <code>dt</code> and <code>dd</code> elements
+		</h1>
+
+		<div class="meta">
+			<div class="criteria">
+				<h2>
+					Pass Criteria
+				</h2>
+				<ul id="criteria-list">
+					<li id="basic-criteria">#1: Element is supported</li>
+					<li>#2: Correct HTML and Core Accessibility API mappings</li>
+					<li>#3: Correct Accessible Name &amp; Description Calculation</li>
+				</ul>
+			</div>
+
+			<div class="reference">
+				<h2>
+					Reference
+				</h2>
+				<ul>
+					<li>
+						<a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dl-element">HTML <code>dl</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#el-dl">HTML Accessibility API Mappings for <code>dl</code> element</a>
+					</li>
+					<li>
+						<a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dt-element">HTML <code>dt</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#el-dt">HTML Accessibility API Mappings for <code>dt</code> element</a>
+					</li>
+					<li>
+						<a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dd-element">HTML <code>dd</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#el-dd">HTML Accessibility API Mappings for <code>dd</code> element</a>
+					</li>
+					<li>
+						<a href="https://www.w3.org/TR/core-aam-1.1/#role-map-definition">Core Accessibility API Mappings for <code>definition</code> role</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="dl-001">
+				Test dl-001: <code>dl</code>, <code>dd</code>, and <code>dt</code> elements
+			</h2>
+
+			<div class="test-case">
+<dl id="dl-01">
+	<dt id="dt-01">HTML</dt>
+	<dd id="dd-01">HTML is the markup language used to give content structure.</dd>
+	<dt>CSS</dt>
+	<dd>CSS is the language used to add a creative layer on top of HTML.</dd>
+</dl>
+			</div>
+		</div>
+
+<div class="test">
+			<h2 class="test-title" id="dl-002">
+				Test dl-002: <code>dl</code>, <code>dt</code>, and multiple <code>dd</code> elements
+			</h2>
+
+			<div class="test-case">
+<dl id="dl-02">
+	<dt id="dt-02">HTML</dt>
+	<dd id="dd-02">HTML is the markup language used to give content structure.</dd>
+	<dd id="dd-03">Tim Berners-Lee published a document called <a href="https://www.w3.org/History/19921103-hypertext/hypertext/WWW/MarkUp/Tags.html">HTML Tags</a> in 1991</dd>
+</dl>
+  </div>
+	</div>
+	
+	<div class="test">
+			<h2 class="test-title" id="dl-003">
+				Test dl-003: <code>dl</code>, <code>dt</code>, and multiple <code>dd</code> elements with <code>aria-label</code>
+			</h2>
+
+			<div class="test-case">
+<dl aria-label="label on list">
+	<dt aria-label="label on term item">HTML</dt>
+	<dd aria-label="label on definition item">HTML is the markup language used to give content structure.</dd>
+	<dd>Tim Berners-Lee published a document called <a href="https://www.w3.org/History/19921103-hypertext/hypertext/WWW/MarkUp/Tags.html">HTML Tags</a> in 1991</dd>
+</dl>
+  </div>
+	</div>
+	
+	<div class="test">
+			<h2 class="test-title" id="dl-004">
+				Test dl-004: <code>dl</code> element with <code>tabindex=0</code>, <code>dd</code>, and <code>dt</code> elements 
+			</h2>
+
+			<div class="test-case">
+<dl id="dl-04" tabindex="0">
+	<dt id="dt-04">HTML</dt>
+	<dd id="dd-04">HTML is the markup language used to give content structure.</dd>
+	<dt>CSS</dt>
+	<dd>CSS is the language used to add a creative layer on top of HTML.</dd>
+</dl>
+			</div>
+		</div>
+		
+		<div class="test">
+			<h2 class="test-title" id="dl-005">
+				Test dl-005: <code>dl</code> element, <code>dd</code>, and <code>dt</code> elements  with <code>tabindex="0"</code>
+			</h2>
+
+			<div class="test-case">
+<dl id="dl-05">
+	<dt id="dt-05" tabindex="0">HTML</dt>
+	<dd id="dd-05" tabindex="0">HTML is the markup language used to give content structure.</dd>
+	<dt tabindex="0">CSS</dt>
+	<dd tabindex="0">CSS is the language used to add a creative layer on top of HTML.</dd>
+</dl>
+			</div>
+		</div>
+
+
+	<script src="../scripts/test-scripts.js"></script>
+		<script>
+			var test = [];
+			var el = document.getElementById('dl-01');
+			var isSupported = (el instanceof HTMLElement && !(el instanceof HTMLUnknownElement));
+
+			test.push({id: "basic-criteria", pass: isSupported});
+			displaySupportResults(test);
+		</script>
+	</body>
+</html>

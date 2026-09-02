@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>test file: treeitem role</title>
+    <link rel="stylesheet" href="../style/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        [tabindex="0"]:focus {
+            outline: 2px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <code>treeitem</code> role
+    </h1>
+
+    <div class="meta">
+        <div class="criteria">
+            <h2>
+                Pass Criteria
+            </h2>
+            <ul id="criteria-list">
+                <li id="basic-criteria">#1: Element is supported</li>
+                <li>#2: Correct HTML and Core Accessibility API mappings</li>
+                <li>#3: Correct Accessible Name &amp; Description Calculation</li>
+            </ul>
+        </div>
+
+        <div class="reference">
+            <h2>
+                Reference
+            </h2>
+            <ul>
+                <li>
+                    <a href="https://www.w3.org/TR/wai-aria-1.1/#treeitem">WAI-ARIA <code>treeitem</code> role</a>
+                </li>
+                <li>
+                    <a href="https://w3c.github.io/aria-practices/#treeitem">ARIA Authoring Practices for <code>treeitem</code> role</a>
+                </li>
+                <li>
+                    <a href="https://www.w3.org/TR/core-aam-1.1/#role-map-treeitem">Core Accessibility API Mappings for <code>treeitem</code> role</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    
+<div class="test">
+    <h2 class="test-title" id="treeitem-001">
+        Test treeitem-001: <code>treeitem</code> role, with allowed attribute aria-checked
+    </h2>
+    <div class="test-case">
+        <div role="treeitem" id="treeitem-01" aria-checked="true" tabindex="0">treeitem-01: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="treeitem-002">
+        Test treeitem-002: <code>treeitem</code> role, with allowed attribute aria-disabled
+    </h2>
+    <div class="test-case">
+        <div role="treeitem" id="treeitem-02" aria-disabled="true" tabindex="0">treeitem-02: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="treeitem-003">
+        Test treeitem-003: <code>treeitem</code> role, with allowed attribute aria-expanded
+    </h2>
+    <div class="test-case">
+        <div role="treeitem" id="treeitem-03" aria-expanded="true" tabindex="0">treeitem-03: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="treeitem-004">
+        Test treeitem-004: <code>treeitem</code> role, with allowed attribute aria-haspopup
+    </h2>
+    <div class="test-case">
+        <div role="treeitem" id="treeitem-04" aria-haspopup="true" tabindex="0">treeitem-04: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="treeitem-005">
+        Test treeitem-005: <code>treeitem</code> role, with allowed attribute aria-level
+    </h2>
+    <div class="test-case">
+        <div role="treeitem" id="treeitem-05" aria-level="true" tabindex="0">treeitem-05: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="treeitem-006">
+        Test treeitem-006: <code>treeitem</code> role, with allowed attribute aria-posinset
+    </h2>
+    <div class="test-case">
+        <div role="treeitem" id="treeitem-06" aria-posinset="true" tabindex="0">treeitem-06: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="treeitem-007">
+        Test treeitem-007: <code>treeitem</code> role, with allowed attribute aria-selected
+    </h2>
+    <div class="test-case">
+        <div role="treeitem" id="treeitem-07" aria-selected="true" tabindex="0">treeitem-07: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="treeitem-008">
+        Test treeitem-008: <code>treeitem</code> role, with allowed attribute aria-setsize
+    </h2>
+    <div class="test-case">
+        <div role="treeitem" id="treeitem-08" aria-setsize="true" tabindex="0">treeitem-08: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="treeitem-009">
+        Test treeitem-009: <code>treeitem</code> role, basic test for treeitem
+    </h2>
+    <div class="test-case">
+        <div role="treeitem" id="treeitem-09" tabindex="0">treeitem-09: </div>
+    </div>
+</div>
+
+
+    <script src="../scripts/test-scripts.js"></script>
+    <script>
+        var test = [];
+        var el = document.getElementById('treeitem-01');
+        var isSupported = (el instanceof HTMLElement && !(el instanceof HTMLUnknownElement));
+
+        test.push({id: "basic-criteria", pass: isSupported});
+        displaySupportResults(test);
+        
+        // Script to cycle through multiple values for states and properties
+        var elements = document.querySelectorAll('[id^=treeitem]');
+        elements.forEach(function(el) {
+            el.addEventListener('click', function() {
+                
+var currentVal = el.getAttribute('aria-checked');
+var values = ['true', 'false', 'mixed'];
+var nextVal = values[(values.indexOf(currentVal) + 1) % values.length];
+el.setAttribute('aria-checked', nextVal);
+el.textContent = el.id + ': ' + nextVal;
+
+
+var currentVal = el.getAttribute('aria-expanded');
+var values = ['true', 'false'];
+var nextVal = values[(values.indexOf(currentVal) + 1) % values.length];
+el.setAttribute('aria-expanded', nextVal);
+el.textContent = el.id + ': ' + nextVal;
+
+            });
+            el.addEventListener('keypress', function(event) {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    
+var currentVal = el.getAttribute('aria-checked');
+var values = ['true', 'false', 'mixed'];
+var nextVal = values[(values.indexOf(currentVal) + 1) % values.length];
+el.setAttribute('aria-checked', nextVal);
+el.textContent = el.id + ': ' + nextVal;
+
+
+var currentVal = el.getAttribute('aria-expanded');
+var values = ['true', 'false'];
+var nextVal = values[(values.indexOf(currentVal) + 1) % values.length];
+el.setAttribute('aria-expanded', nextVal);
+el.textContent = el.id + ': ' + nextVal;
+
+                }
+            });
+        });
+    </script>
+</body>
+</html>

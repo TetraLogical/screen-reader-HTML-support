@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>test file: hr element</title>
+		<link rel="stylesheet" href="../style/styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	</head>
+	<body>
+		<h1>
+			<code>hr</code> element
+		</h1>
+
+		<div class="meta">
+			<div class="criteria">
+				<h2>
+					Pass Criteria
+				</h2>
+				<ul id="criteria-list">
+					<li id="basic-criteria">#1: Element is supported</li>
+					<li>#2: Correct HTML and Core Accessibility API mappings</li>
+					<li>#3: Correct Accessible Name &amp; Description Calculation</li>
+				</ul>
+			</div>
+
+			<div class="reference">
+				<h2>
+					Reference
+				</h2>
+				<ul>
+					<li>
+						<a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-hr-element">HTML <code>hr</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#el-hr">HTML Accessibility API Mappings for <code>hr</code> element</a>
+					</li>
+					<li>
+						<a href="https://www.w3.org/TR/core-aam-1.1/#role-map-separator">Core Accessibility API Mappings for <code>separator</code> role</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+<div class="test">
+			<h2 class="test-title" id="hr-001">
+				Test hr-001: <code>hr</code> element
+			</h2>
+
+			<div class="test-case">
+<hr id="hr-01">
+<p>some text goes here</p>
+<hr>
+			</div>
+		</div>
+		<div class="test">
+			<h2 class="test-title" id="hr-002">
+				Test hr-002: <code>hr</code> element with <code>aria-label</code>
+			</h2>
+
+			<div class="test-case">
+<hr id="hr-02" aria-label="accessible name">
+<p>some text goes here</p>
+
+			</div>
+		</div>
+<div class="test">
+			<h2 class="test-title" id="hr-003">
+				Test hr-003: <code>hr</code> element with <code>tabindex="0"</code> and <code>aria-label</code>
+			</h2>
+
+			<div class="test-case">
+<hr id="hr-03" aria-label="accessible name" tabindex="0">
+<p>some text goes here</p>
+
+			</div>
+		</div>
+
+		<script src="../scripts/test-scripts.js"></script>
+		<script>
+			var test = [];
+			var el = document.getElementById('hr-01');
+			var isSupported = (el instanceof HTMLElement && !(el instanceof HTMLUnknownElement));
+
+			test.push({id: "basic-criteria", pass: isSupported});
+			displaySupportResults(test);
+		</script>
+	</body>
+</html>

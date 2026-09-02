@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>test file: grid role</title>
+    <link rel="stylesheet" href="../style/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        [tabindex="0"]:focus {
+            outline: 2px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <code>grid</code> role
+    </h1>
+
+    <div class="meta">
+        <div class="criteria">
+            <h2>
+                Pass Criteria
+            </h2>
+            <ul id="criteria-list">
+                <li id="basic-criteria">#1: Element is supported</li>
+                <li>#2: Correct HTML and Core Accessibility API mappings</li>
+                <li>#3: Correct Accessible Name &amp; Description Calculation</li>
+            </ul>
+        </div>
+
+        <div class="reference">
+            <h2>
+                Reference
+            </h2>
+            <ul>
+                <li>
+                    <a href="https://www.w3.org/TR/wai-aria-1.1/#grid">WAI-ARIA <code>grid</code> role</a>
+                </li>
+                <li>
+                    <a href="https://w3c.github.io/aria-practices/#grid">ARIA Authoring Practices for <code>grid</code> role</a>
+                </li>
+                <li>
+                    <a href="https://www.w3.org/TR/core-aam-1.1/#role-map-grid">Core Accessibility API Mappings for <code>grid</code> role</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    
+<div class="test">
+    <h2 class="test-title" id="grid-001">
+        Test grid-001: <code>grid</code> role, with allowed attribute aria-level
+    </h2>
+    <div class="test-case">
+        <div role="grid" id="grid-01" aria-level="true" tabindex="0">grid-01: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="grid-002">
+        Test grid-002: <code>grid</code> role, with allowed attribute aria-multiselectable
+    </h2>
+    <div class="test-case">
+        <div role="grid" id="grid-02" aria-multiselectable="true" tabindex="0">grid-02: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="grid-003">
+        Test grid-003: <code>grid</code> role, with allowed attribute aria-readonly
+    </h2>
+    <div class="test-case">
+        <div role="grid" id="grid-03" aria-readonly="true" tabindex="0">grid-03: true</div>
+    </div>
+</div>
+
+<div class="test">
+    <h2 class="test-title" id="grid-004">
+        Test grid-004: <code>grid</code> role, basic test for grid
+    </h2>
+    <div class="test-case">
+        <div role="grid" id="grid-04" tabindex="0">grid-04: </div>
+    </div>
+</div>
+
+
+    <script src="../scripts/test-scripts.js"></script>
+    <script>
+        var test = [];
+        var el = document.getElementById('grid-01');
+        var isSupported = (el instanceof HTMLElement && !(el instanceof HTMLUnknownElement));
+
+        test.push({id: "basic-criteria", pass: isSupported});
+        displaySupportResults(test);
+        
+        // Script to cycle through multiple values for states and properties
+        var elements = document.querySelectorAll('[id^=grid]');
+        elements.forEach(function(el) {
+            el.addEventListener('click', function() {
+                
+var currentVal = el.getAttribute('aria-multiselectable');
+var values = ['true', 'false'];
+var nextVal = values[(values.indexOf(currentVal) + 1) % values.length];
+el.setAttribute('aria-multiselectable', nextVal);
+el.textContent = el.id + ': ' + nextVal;
+
+
+var currentVal = el.getAttribute('aria-readonly');
+var values = ['true', 'false'];
+var nextVal = values[(values.indexOf(currentVal) + 1) % values.length];
+el.setAttribute('aria-readonly', nextVal);
+el.textContent = el.id + ': ' + nextVal;
+
+            });
+            el.addEventListener('keypress', function(event) {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    
+var currentVal = el.getAttribute('aria-multiselectable');
+var values = ['true', 'false'];
+var nextVal = values[(values.indexOf(currentVal) + 1) % values.length];
+el.setAttribute('aria-multiselectable', nextVal);
+el.textContent = el.id + ': ' + nextVal;
+
+
+var currentVal = el.getAttribute('aria-readonly');
+var values = ['true', 'false'];
+var nextVal = values[(values.indexOf(currentVal) + 1) % values.length];
+el.setAttribute('aria-readonly', nextVal);
+el.textContent = el.id + ': ' + nextVal;
+
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>test file: p element</title>
+		<link rel="stylesheet" href="../style/styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	</head>
+	<body>
+		<h1>
+			<code>p</code> element
+		</h1>
+
+		<div class="meta">
+			<div class="criteria">
+				<h2>
+					Pass Criteria
+				</h2>
+				<ul id="criteria-list">
+					<li id="basic-criteria">#1: Element is supported</li>
+					<li>#2: Correct HTML and Core Accessibility API mappings</li>
+					<li>#3: Correct Accessible Name &amp; Description Calculation</li>
+				</ul>
+			</div>
+
+			<div class="reference">
+				<h2>
+					Reference
+				</h2>
+				<ul>
+					<li>
+						<a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-p-element">HTML <code>p</code> element</a>
+					</li>
+					<li>
+						<a href="https://w3c.github.io/html-aam/#el-p">HTML Accessibility API Mappings for <code>p</code> element</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="p-001">Test p-001: <code>p</code> element</h2>
+
+			<div class="test-case">
+<p id="p-01">Some text in a paragraph.</p>
+<p>More text in another paragraph.</p>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="p-002">
+				Test p-002: <code>p</code> element
+				with <code>contenteditable</code>.
+			</h2>
+
+			<div class="test-case">
+<p contenteditable="true">
+	A paragraph that can be edited.
+</p>
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="p-003">
+				Test p-003: <code>p</code> element
+				with <code>contenteditable</code> and <code>aria-label</code>.
+			</h2>
+
+			<div class="test-case">
+<p contenteditable="true" aria-label="Edit Paragraph:">
+	A paragraph that can be edited.
+</p>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="p-004">
+				Test p-004: <code>p</code> element
+				with <code>dir="rtl"</code>.
+			</h2>
+
+			<div class="test-case">
+<p contenteditable="true">
+	A right to left paragraph.
+</p>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="p-005">
+				Test p-005: <code>p</code> element
+				with <code>draggable</code> and <code>title</code>.
+			</h2>
+
+			<div class="test-case">
+<p draggable="true" title="Draggable paragraph example">
+	A paragraph with the <code>draggable</code> and <code>title</code> attributes.
+</p>
+			</div>
+		</div>
+
+		<div class="test">
+			<h2 class="test-title" id="p-006">
+				Test p-006: <code>p</code> element
+				with <code>hidden</code>.
+			</h2>
+
+			<div class="test-case">
+<div style="min-height: 1em;">
+	<p hidden>
+		A paragraph with <code>hidden</code>.
+	</p>
+</div>
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="p-007">
+				Test p-007: <code>p</code> element
+				with <code>hidden</code>.
+			</h2>
+
+			<div class="test-case">
+<div style="min-height: 1em;">
+	<p hidden>
+		This paragraph should be hidden to everyone.
+	</p>
+</div>
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="p-008">
+				Test p-008: <code>p</code> element
+				with <code>hidden</code> and <code>style="display:*"</code>.
+			</h2>
+
+			<div class="test-case">
+<div>
+	<p hidden style="display: block;">
+		A paragraph with <code>hidden</code>
+		and <code>style="display: block;"</code>.
+	</p>
+</div>
+
+<div>
+	<p hidden style="display: inline-block;">
+		A paragraph with <code>hidden</code>
+		and <code>style="display: inline-block;"</code>.
+	</p>
+</div>
+
+<div>
+	<p hidden style="display: inline;">
+		A paragraph with <code>hidden</code>
+		and <code>style="display: inline;"</code>.
+	</p>
+</div>
+
+<div>
+	<p hidden style="display: flex;">
+		A paragraph with <code>hidden</code>
+		and <code>style="display: flex;"</code>.
+	</p>
+</div>
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="p-009">
+				Test p-009: <code>p</code> element
+				with <code>lang="es"</code>.
+			</h2>
+
+			<div class="test-case">
+<p lang="es">
+	Hola. Me gusta el <abbr>HTML</abbr>.
+</p>
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="p-010">
+				Test p-010: <code>p</code> element
+				with <code>tabindex</code>es.
+			</h2>
+
+			<div class="test-case">
+<p tabindex="0">
+	A paragraph with <code>tabindex="0"</code>
+</p>
+
+<p tabindex="-1">
+	A paragraph with <code>tabindex="-1"</code>
+</p>
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="p-011">
+				Test p-011: <code>p</code> element
+				with <code>onclick</code>.
+			</h2>
+
+			<div class="test-case">
+<p onclick="alert('why click me?');">
+	A "clickable" paragraph.
+</p>
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="p-012">
+				Test p-012: <code>p</code> element
+				with <code>tabindex</code> and <code>onclick</code>.
+			</h2>
+
+			<div class="test-case">
+<p onclick="alert('why click me?');" tabindex="0">
+	A focusable and "clickable" paragraph.
+</p>
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="p-013">
+				Test p-013: <code>p</code> element
+				with <code>title</code>.
+			</h2>
+
+			<div class="test-case">
+<p title="testing the title attribute">
+	A paragraph with <code>title</code>
+</p>
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="p-014">
+				Test p-014: <code>p</code> element
+				with <code>aria-label</code>.
+			</h2>
+
+			<div class="test-case">
+<p aria-label="testing the aria-label attribute">
+	A paragraph with <code>aria-label</code>
+</p>
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="p-015">
+				Test p-015: <code>p</code> element
+				with <code>aria-label</code> and <code>title</code>.
+			</h2>
+
+			<div class="test-case">
+<p aria-label="testing the aria-label attribute" title="testing the title attribute">
+	A paragraph with more than meets the eye.
+</p>
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="p-016">
+				Test p-016: <code>p</code> element
+				with <code>spellcheck="true"</code> attribute.
+			</h2>
+
+			<div class="test-case">
+<p spellcheck="true">
+	A paragraph with spellchecktrue.
+</p>
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="p-017">
+				Test p-017: <code>p</code> element
+				with <code>spellcheck="false"</code> attribute.
+			</h2>
+
+			<div class="test-case">
+<p spellcheck="false">
+	A paragraph with spellcheckfalse.
+</p>
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="p-018">
+				Test p-018: <code>p</code> element
+				with <code>spellcheck="true"</code> and <code>contenteditable</code> attributes.
+			</h2>
+
+			<div class="test-case">
+<p spellcheck="true" contenteditable="true">
+	A paragraph with spellchecktrue.
+</p>
+			</div>
+		</div>
+
+
+		<div class="test">
+			<h2 class="test-title" id="p-019">
+				Test p-019: <code>p</code> element
+				with <code>spellcheck="false"</code> and <code>contenteditable</code> attributes.
+			</h2>
+
+			<div class="test-case">
+<p spellcheck="false" contenteditable="true">
+	A paragraph with spellcheckfalse.
+</p>
+			</div>
+		</div>
+
+
+		<script src="../scripts/test-scripts.js"></script>
+		<script>
+			var test = [];
+			var el = document.getElementById('p-01');
+			var isSupported = (el instanceof HTMLElement && !(el instanceof HTMLUnknownElement));
+
+			test.push({id: "basic-criteria", pass: isSupported});
+			displaySupportResults(test);
+		</script>
+	</body>
+</html>
