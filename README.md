@@ -2,7 +2,7 @@
 
 All resources are a constant work in progress, but safe to use.
 
-* [Screen Reader/HTML support Lookup app](https://tetralogical.github.io/screen-reader-HTML-support/lookup/lookup.html) (**Note:** JavaScript support required)
+* [Screen Reader/HTML support Lookup app](https://tetralogical.github.io/screen-reader-HTML-support/lookup/lookup.html) (**requires JavaScript**)
 * [JAWS HTML support](https://tetralogical.github.io/screen-reader-HTML-support/JAWS.html)
 * [NVDA HTML support](https://tetralogical.github.io/screen-reader-HTML-support/NVDA.html)
 * [VoiceOver on Mac](https://tetralogical.github.io/screen-reader-HTML-support/VO-mac.html)
