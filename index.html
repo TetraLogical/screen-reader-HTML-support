@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" data-user-color-scheme="light">
+<head>
+  <meta name="viewport" content="width=device-width">
+  <meta charset="utf-8">
+  <title>Windows Narrator HTML Support / TetraLogical</title>
+  <link href="https://tetralogical.com/css/global.css" rel="stylesheet">
+</head>
+<body>
+  <header class="site-head">
+    <div class="wrapper">
+      <div class="brand"> <a href="https://tetralogical.com">
+          <svg aria-label="TetraLogical" focusable="false" role="img" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" viewbox="0 0 390 151" xmlns="http://www.w3.org/2000/svg">
+            <style>
+              #tll-inclusive {
+                fill: #A900C0;
+              }
+
+              #tll-sustainable {
+                fill: #FF1958;
+              }
+
+              #tll-ethical {
+                fill: #E100A0;
+              }
+
+              #tll-original {
+                fill: #F56F00;
+              }
+
+              #tll-scaffold {
+                fill: #2D0045;
+              }
+
+              #tll-scaffold #tll-inclusive-ethical {
+                fill-opacity: 0.28;
+              }
+
+              #tll-scaffold #tll-sustainable-original {
+                fill-opacity: 0.84;
+              }
+
+              #tll-scaffold #tll-perimeter {
+                fill-opacity: 0.62;
+              }
+
+              #tll-tetralogical {
+                fill: #420065;
+              }
+
+              @media (forced-colors) {
+
+                #tll-inclusive,
+                #tll-sustainable,
+                #tll-ethical,
+                #tll-original,
+                #tll-scaffold,
+                #tll-tetralogical {
+                  fill: CanvasText;
+                }
+              }
+            </style>
+            <g>
+              <g id="tll-TetraLogical-logotype">
+                <path d="M187.032,45.132L187.032,35.355L146.432,35.355L146.432,45.132L161.165,45.132L161.165,80.844L172.299,80.844L172.299,45.132L187.032,45.132ZM220.3,63.802C220.096,52.668 212.356,45.743 202.716,45.743C192.803,45.743 184.656,53.075 184.656,63.802C184.656,74.597 192.803,81.862 202.648,81.862C210.455,81.862 216.634,78.399 219.553,71.203L209.912,69.234C208.079,72.561 205.16,73.172 202.648,73.172C198.981,73.172 196.198,70.66 195.315,66.586L220.3,66.586L220.3,63.802ZM202.716,54.569C205.839,54.569 208.554,56.266 209.573,59.932L195.519,59.932C196.537,56.47 199.66,54.569 202.716,54.569ZM248.679,70.795C247.253,71.61 245.217,72.153 243.723,72.153C240.872,72.153 239.174,70.728 239.174,67.197L239.174,55.384L249.222,55.384L249.222,46.761L239.174,46.761L239.174,36.713L228.311,36.713L228.311,46.761L222.133,46.761L222.133,55.384L228.311,55.384L228.311,68.283C228.311,77.245 233.403,81.862 241.89,81.862C245.76,81.862 248.543,80.776 251.191,79.35L248.679,70.795ZM277.941,46.286C272.374,46.286 268.64,49.205 266.196,53.279L266.196,46.761L255.333,46.761L255.333,80.844L266.196,80.844L266.196,70.184C266.196,61.358 270.337,57.42 277.941,57.42L279.91,57.42L280.385,46.558C279.571,46.354 278.892,46.286 277.941,46.286ZM320.646,46.761L309.783,46.761L309.783,49.477C307.135,47.101 303.605,45.743 299.192,45.743C290.162,45.743 282.558,53.075 282.558,63.802C282.558,74.597 290.162,81.862 299.192,81.862C303.605,81.862 307.135,80.504 309.783,78.128L309.783,80.844L320.646,80.844L320.646,46.761ZM301.432,72.629C296.68,72.629 293.217,69.098 293.217,63.802C293.217,58.575 296.68,54.976 301.432,54.976C305.845,54.976 309.783,58.575 309.783,63.802C309.783,69.098 305.845,72.629 301.432,72.629ZM187.677,121.945L172.125,121.945L172.125,86.233L160.923,86.233L160.923,131.721L187.677,131.721L187.677,121.945ZM209.049,96.757C198.729,96.757 190.174,103.953 190.174,114.68C190.174,125.475 198.729,132.672 209.049,132.672C219.165,132.672 227.719,125.475 227.719,114.68C227.719,103.953 219.165,96.757 209.049,96.757ZM209.049,123.506C204.636,123.506 200.63,120.044 200.63,114.68C200.63,109.385 204.636,105.854 209.049,105.854C213.258,105.854 217.264,109.385 217.264,114.68C217.264,120.044 213.258,123.506 209.049,123.506ZM268.455,97.639L257.796,97.639L257.796,99.88C255.352,97.775 251.957,96.621 247.544,96.621C238.65,96.621 231.114,103.614 231.114,113.051C231.114,122.692 238.65,129.753 247.544,129.753C251.957,129.753 255.352,128.598 257.796,126.494L257.796,127.444C257.796,132.808 254.266,135.727 249.309,135.727C245.779,135.727 243.878,134.573 241.298,131.518L232.268,136.406C235.595,141.905 241.57,144.621 249.377,144.621C260.444,144.621 268.455,138.85 268.455,128.327L268.455,97.639ZM249.852,120.859C245.1,120.859 241.705,117.6 241.705,113.051C241.705,108.502 245.1,105.311 249.852,105.311C254.198,105.311 257.796,108.502 257.796,113.051C257.796,117.6 254.198,120.859 249.852,120.859ZM282.373,81.413C278.707,81.413 276.127,84.264 276.127,87.591C276.127,91.053 278.707,93.633 282.373,93.633C286.039,93.633 288.687,91.053 288.687,87.591C288.687,84.264 286.039,81.413 282.373,81.413ZM287.805,131.721L287.805,97.639L276.942,97.639L276.942,131.721L287.805,131.721ZM312.586,123.235C307.697,123.235 304.439,119.704 304.439,114.68C304.439,109.724 307.697,106.126 312.586,106.126C316.048,106.126 318.832,108.027 319.782,112.168L329.966,109.724C328.065,101.713 320.869,96.621 312.586,96.621C302.402,96.621 293.983,103.953 293.983,114.68C293.983,125.475 302.402,132.74 312.586,132.74C321.072,132.74 328.269,127.512 329.966,119.433L319.986,117.26C318.832,121.402 316.048,123.235 312.586,123.235ZM371.449,97.639L360.586,97.639L360.586,100.355C357.938,97.979 354.408,96.621 349.995,96.621C340.965,96.621 333.361,103.953 333.361,114.68C333.361,125.475 340.965,132.74 349.995,132.74C354.408,132.74 357.938,131.382 360.586,129.006L360.586,131.721L371.449,131.721L371.449,97.639ZM352.235,123.506C347.483,123.506 344.02,119.976 344.02,114.68C344.02,109.453 347.483,105.854 352.235,105.854C356.648,105.854 360.586,109.453 360.586,114.68C360.586,119.976 356.648,123.506 352.235,123.506ZM390.188,82.838L379.325,82.838L379.325,131.721L390.188,131.721L390.188,82.838Z"
+                      id="tll-tetralogical"></path>
+                <g id="tll-scaffold">
+                  <path d="M49.498,110.673L99.916,36.513L104.859,39.873L54.441,114.034L49.498,110.673Z"
+                        id="tll-sustainable-original"></path>
+                  <path d="M100.673,122.13L28.27,71.419L31.7,66.523L104.102,117.234L100.673,122.13Z"
+                        id="tll-inclusive-ethical"></path>
+                  <path d="M30.23,51.323L92.957,26.3L96.28,34.628L33.55,59.652L30.228,51.324L30.23,51.323ZM117.092,42.736L117.092,112.354L108.126,112.354L108.126,42.736L117.092,42.736ZM31.609,111.352L19.32,76.47L27.777,73.49L40.067,108.372L31.61,111.352L31.609,111.352ZM98.294,131.229L60.627,131.317L60.607,122.35L98.273,122.263L98.294,131.229Z"
+                        id="tll-perimeter"></path>
+                </g>
+                <path d="M112.658,116.801C107.407,116.801 103.086,121.122 103.086,126.373C103.086,131.624 107.407,135.945 112.658,135.945C117.909,135.945 122.23,131.624 122.23,126.373C122.23,121.122 117.909,116.801 112.658,116.801ZM94.12,126.373C94.12,116.135 102.419,107.835 112.658,107.835C122.896,107.835 131.196,116.135 131.196,126.373C131.196,136.611 122.896,144.911 112.658,144.911C102.419,144.911 94.12,136.611 94.12,126.373Z"
+                      id="tll-inclusive"></path>
+                <path d="M42.092,112.392C34.183,112.392 27.772,118.803 27.772,126.713C27.772,134.622 34.183,141.034 42.092,141.034C50.002,141.034 56.414,134.622 56.414,126.713C56.414,118.803 50.002,112.392 42.092,112.392ZM18.805,126.713C18.805,113.852 29.231,103.425 42.092,103.425C54.954,103.425 65.38,113.852 65.38,126.713C65.38,139.574 54.954,150 42.092,150C29.232,150 18.805,139.574 18.805,126.713Z"
+                      id="tll-sustainable"></path>
+                <path d="M18.768,51.277C13.355,51.277 8.966,55.665 8.966,61.079C8.966,66.492 13.355,70.881 18.768,70.881C24.182,70.881 28.57,66.492 28.57,61.079C28.57,55.665 24.182,51.277 18.768,51.277ZM0,61.079C0,50.714 8.403,42.31 18.768,42.31C29.134,42.31 37.537,50.713 37.537,61.078C37.537,71.443 29.134,79.846 18.768,79.846C8.403,79.847 0,71.444 0,61.08L0,61.079Z"
+                      id="tll-ethical"></path>
+                <path d="M112.609,8.966C104.7,8.966 98.288,15.378 98.288,23.287C98.288,31.197 104.7,37.608 112.609,37.608C120.518,37.608 126.93,31.197 126.93,23.288C126.93,15.378 120.518,8.966 112.609,8.966ZM89.322,23.287C89.322,10.427 99.748,0 112.609,0C125.47,0 135.896,10.426 135.896,23.287C135.896,36.148 125.47,46.575 112.609,46.575C99.748,46.575 89.322,36.148 89.322,23.287Z"
+                      id="tll-original"></path>
+              </g>
+            </g>
+          </svg>
+        </a>
+        <p class="brand__supporting-text">Accessibility specialists</p>
+      </div>
+    </div>
+  </header>
+  <main class="region wrapper prose flow">
+<!-- topped and tailed rendered README.md / manually updated when README.md changes -->
+<h1 id="screen-reader-html-support-tables">Screen reader HTML support tables</h1>
+
+<p>All resources are a constant work in progress, but safe to use.</p>
+
+<ul>
+  <li><a href="https://tetralogical.github.io/screen-reader-HTML-support/lookup/lookup.html">Screen Reader/HTML support Lookup app</a> (<strong>Note:</strong> JavaScript support required)</li>
+  <li><a href="https://tetralogical.github.io/screen-reader-HTML-support/JAWS.html">JAWS HTML support</a></li>
+  <li><a href="https://tetralogical.github.io/screen-reader-HTML-support/NVDA.html">NVDA HTML support</a></li>
+  <li><a href="https://tetralogical.github.io/screen-reader-HTML-support/VO-mac.html">VoiceOver on Mac</a></li>
+  <li><a href="https://tetralogical.github.io/screen-reader-HTML-support/VO-ios.html">VoiceOver on iOS</a></li>
+  <li><a href="https://tetralogical.github.io/screen-reader-HTML-support/TalkBack-android.html">TalkBack on Android</a></li>
+  <li><a href="https://tetralogical.github.io/screen-reader-HTML-support/Narrator.html">Narrator on Windows</a></li>
+  <li><a href="https://tetralogical.github.io/screen-reader-HTML-support/html-element-tests/">HTML Element test file index</a> – test files used for screen reader testing, amongst other things</li>
+</ul>
+
+<p>As they should be, these resources are open source: Forks, <a href="https://github.com/TetraLogical/screen-reader-HTML-support/issues">Issues</a> and <a href="https://github.com/TetraLogical/screen-reader-HTML-support/pulls">Pull Requests</a> welcome.</p>
+
+  </main>
+  <footer class="site-foot">
+    <div class="wrapper">
+      <div class="repel items-baseline">
+        <div class="flow text-mid-shade">
+          <span></span>
+          <p class="site-foot__company-info">TetraLogical Services Ltd. Company number 12951928. Content released
+            under a <a href="https://github.com/TetraLogical/screen-reader-HTML-support/blob/main/LICENSE">GNU General
+              Public License v3.0</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  </main>
+</body>
+</html>
