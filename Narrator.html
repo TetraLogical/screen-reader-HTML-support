@@ -1,12 +1,10 @@
-<html lang="en"
-      data-user-color-scheme="light">
+<!DOCTYPE html>
+<html lang="en" data-user-color-scheme="light">
 <head>
-  <meta content="text/html; charset=utf-8"
-        http-equiv="content-type" />
-  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width">
+  <meta charset="utf-8">
   <title>Windows Narrator HTML Support / TetraLogical</title>
-  <link href="https://tetralogical.com/css/global.css"
-        rel="stylesheet" />
+  <link href="https://tetralogical.com/css/global.css" rel="stylesheet">
   <style>
     svg {
       display: inline-block;
@@ -123,13 +121,7 @@
   <header class="site-head">
     <div class="wrapper">
       <div class="brand"> <a href="https://tetralogical.com">
-          <svg aria-label="TetraLogical"
-               focusable="false"
-               role="img"
-               style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
-               viewbox="0 0 390 151"
-               xml:space="preserve"
-               xmlns="http://www.w3.org/2000/svg">
+          <svg aria-label="TetraLogical" focusable="false" role="img" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" viewbox="0 0 390 151" xmlns="http://www.w3.org/2000/svg">
             <style>
               #tll-inclusive {
                 fill: #A900C0;
@@ -524,7 +516,7 @@
                 <use href="#yes"></use>
               </svg> If <code>title</code> present (not Firefox)
             </p>
-            <br />
+            <br>
             <p>
               <svg aria-label="no"
                    class="no"
@@ -543,7 +535,7 @@
               <li>
                 Treated as a "group" and expansion announced when <code>title</code> or <code>aria-label</code> are
                 present.
-                <br />
+                <br>
                 Note, <code>aria-label</code> will "win" in Chrome or Firefox if both attributes are present. Both
                 will be announced if they differ in Edge.
               </li>
@@ -554,7 +546,7 @@
                 Descriptions via <code>aria-describedby</code> are <strong>ignored</strong>.
               </li>
             </ul>
-            <br />
+            <br>
             <p>Note, expansions are not announced by default and that expansions provided using the <code>title</code>
               attribute are not available to keyboard only users. Refer to <a href="https://www.paciellogroup.com/blog/2013/01/using-the-html-title-attribute-updated/">Using the
                 HTML title attribute</a>.</p>
@@ -675,7 +667,7 @@
           </td>
           <td>Heading levels greater than 6 </td>
           <td>
-            "Heading level&nbsp;[#]", <em>element content</em><br /><br />
+            "Heading level&nbsp;[#]", <em>element content</em><br><br>
           </td>
           <td>
             <p>No special commands for <code>aria-level</code>. General heading commands:</p>
@@ -693,7 +685,7 @@
                  width="20">
               <use href="#yes"></use>
             </svg> For levels 1-9 (Chrome and Edge)
-            <br /><br />
+            <br><br>
             <svg aria-label="no"
                  class="no"
                  role="img"
@@ -701,7 +693,7 @@
                  width="20">
               <use href="#no"></use>
             </svg> For levels 10 or above (Chrome and Edge)
-            <br /><br />
+            <br><br>
             <svg aria-label="no"
                  class="no"
                  role="img"
@@ -711,7 +703,7 @@
             </svg> In Firefox
           </td>
           <td>
-            <p>Additional announcement of "at level [#]" is appended when Narrator verbosity settings are set to level 3 ("All control details") or higher.</p><br />
+            <p>Additional announcement of "at level [#]" is appended when Narrator verbosity settings are set to level 3 ("All control details") or higher.</p><br>
             <p>In Chrome and Edge:</p>
             <ul>
               <li>
@@ -726,7 +718,7 @@
                 is used. For example: <code>&lt;div role="heading" aria-level="10"&gt;</code> is announced as "heading
                 level 2".
               </li>
-            </ul><br />
+            </ul><br>
             <p>In Firefox:</p>
             <ul>
               <li>
@@ -774,7 +766,7 @@
                  width="20">
               <use href="#yes"></use>
             </svg> With accessible name
-            <br />
+            <br>
           </td>
           <td>
             You cannot focus on articles themselves, only content within them, as expected. Article semantics are
@@ -974,9 +966,9 @@
           </td>
           <td>A section quoted from another source</td>
           <td>
-            <strong>With accessible name</strong>:<br />
-            <em>Accessible name</em>, <em>element content</em><br /><br />
-            <strong>Without accessible name</strong>:<br />
+            <strong>With accessible name</strong>:<br>
+            <em>Accessible name</em>, <em>element content</em><br><br>
+            <strong>Without accessible name</strong>:<br>
             <em>Element content</em>
           </td>
           <td>
@@ -992,7 +984,7 @@
             </svg>
           </td>
           <td>
-            The <code>blockquote</code> role is not announced.<br /><br />
+            The <code>blockquote</code> role is not announced.<br><br>
             The <code>cite</code> attribute content is not announced (as expected)
           </td>
         </tr>
@@ -1052,13 +1044,13 @@
           <td>Button control</td>
           <td>
             <em>Accessible name</em>, "button"
-            <br /><br />
+            <br><br>
             <strong>With state:</strong>
-            <em>Accessible name</em>, "button", <em>state</em> <br />(If <code>aria-disabled</code> or
+            <em>Accessible name</em>, "button", <em>state</em> <br>(If <code>aria-disabled</code> or
             <code>aria-expanded</code> present)
-            <br /><br />
+            <br><br>
             <strong>Toggle button:</strong>
-            <em>Accessible name</em>, "toggle button", <em>On/Off</em> <br />(If <code>aria-pressed</code> present)
+            <em>Accessible name</em>, "toggle button", <em>On/Off</em> <br>(If <code>aria-pressed</code> present)
           </td>
           <td>
             <ul id="button-commands"
@@ -1075,7 +1067,7 @@
                  width="20">
               <use href="#yes"></use>
             </svg> For buttons, disclosure buttons and toggle buttons
-            <br /><br />
+            <br><br>
             <svg aria-label="no"
                  class="no"
                  role="img"
@@ -1125,7 +1117,7 @@
             </svg>
           </td>
           <td>
-            <p>The canvas is 'transparent' for screen reader users. HTML content included in the <a href="https://www.tpgi.com/html5-canvas-sub-dom/">HTML5 canvas sub DOM</a> is announced and navigable by screen reader users and is navigable by keyboard users.</p><br />
+            <p>The canvas is 'transparent' for screen reader users. HTML content included in the <a href="https://www.tpgi.com/html5-canvas-sub-dom/">HTML5 canvas sub DOM</a> is announced and navigable by screen reader users and is navigable by keyboard users.</p><br>
             <p><strong>Note:</strong> advised to add <code>role=presentation</code> to <code>&lt;canvas&gt;</code> to avoid unecssary repetition of graphic role information.</p>
           </td>
         </tr>
@@ -1295,7 +1287,7 @@
             </svg>
           </td>
           <td>
-            <p>No <code>datalist</code> role announced (as expected), only options within it are announced on focus using <kbd>arrow</kbd> keys.</p><br />
+            <p>No <code>datalist</code> role announced (as expected), only options within it are announced on focus using <kbd>arrow</kbd> keys.</p><br>
             <p><strong>Firefox</strong> announces "collapsed" whether or not suggestions are visible.</p>
           </td>
         </tr>
@@ -1321,8 +1313,8 @@
             </svg>
           </td>
           <td>
-            <p>Included as part of <code>&lt;dt&gt;</code> list item. User must use <kbd>ArrowDown</kbd> to announce definition content.</p><br />
-            <p>If user navigates via list item navigation (For example, pressing <kbd>I</kbd> to go to the next item in a list) then <code>&lt;dd&gt;</code> content will be skipped.</p><br />
+            <p>Included as part of <code>&lt;dt&gt;</code> list item. User must use <kbd>ArrowDown</kbd> to announce definition content.</p><br>
+            <p>If user navigates via list item navigation (For example, pressing <kbd>I</kbd> to go to the next item in a list) then <code>&lt;dd&gt;</code> content will be skipped.</p><br>
             <p>The "definition" role is not exposed unless the element has an accessible name (e.g. <code>aria-label</code>).</p>
           </td>
         </tr>
@@ -1348,7 +1340,7 @@
             </svg>
           </td>
           <td>
-            <p>There is no indication that text has been deleted.</p><br />
+            <p>There is no indication that text has been deleted.</p><br>
             <p>Refer to: <a href="https://www.tpgi.com/screen-readers-support-for-text-level-html-semantics/">Screen Readers support for text level HTML semantics</a></p>
           </td>
         </tr>
@@ -1381,7 +1373,7 @@
             </svg>
           </td>
           <td>
-            <p>No announcement expected, unless accessible name is present.</p><br />
+            <p>No announcement expected, unless accessible name is present.</p><br>
             <p>Refer to <a href="#el-summary"><code>summary</code></a> element</p>
           </td>
         </tr>
@@ -1405,7 +1397,7 @@
             </svg>
           </td>
           <td>
-            <p>No semantics conveyed</p><br />
+            <p>No semantics conveyed</p><br>
             <p>Note intentional non-support across screen readers in conclusion to <a href="https://github.com/FreedomScientific/standards-support/issues/821">JAWS tracker Issue 821</a> due to perceived unnecessary additional verbosity.</p>
           </td>
         </tr>
@@ -1419,7 +1411,7 @@
           <td>Modal/Non-modal dialog: Represents a transitory part of an application, in the form of a small window ("dialog box")</td>
           <td><em>Accessible name</em> (if present), "dialog", <em>first focusable element content and role</em></td>
           <td>
-            <p><strong>Modal dialogs</strong>: <kbd>Esc</kbd> closes the dialog by default and returns focus to the triggering control</p><br />
+            <p><strong>Modal dialogs</strong>: <kbd>Esc</kbd> closes the dialog by default and returns focus to the triggering control</p><br>
             <p><strong>Non-modal dialogs</strong>: No special commands by default.</p>
           </td>
           <td>
@@ -1492,8 +1484,8 @@
                  viewbox="0 0 448 512"
                  width="20">
               <use href="#yes"></use>
-            </svg> In Chrome and Edge<br />
-            <br />
+            </svg> In Chrome and Edge<br>
+            <br>
             <svg aria-label="no"
                  class="no"
                  role="img"
@@ -1505,7 +1497,7 @@
           <td>
             <p>
               In Chrome and Edge, the <code>&lt;dl&gt;</code> is identified as a list and the number of <code>&lt;dt&gt;</code> items is announced.
-            </p><br />
+            </p><br>
             <p>
               <strong>In Firefox</strong>, the <code>&lt;dl&gt;</code> is identified as a list with <strong>zero</strong> items. If a <code>&lt;dd&gt;</code> contains a link that is announced before its definition and other definitions are skipped. In continuous reading mode, all definitions are skipped.
             </p>
@@ -1535,7 +1527,7 @@
                  viewbox="0 0 448 512"
                  width="20">
               <use href="#yes"></use>
-            </svg> In Chrome and Edge<br /><br />
+            </svg> In Chrome and Edge<br><br>
             <svg aria-label="no"
                  class="no"
                  role="img"
@@ -1547,7 +1539,7 @@
           <td>
             <p>
               In Chrome and Edge, the <code>&lt;dt&gt;</code> identified as a list item. The "definition" role is not exposed unless the element has an accessible name (e.g. <code>aria-label</code>).
-            </p><br />
+            </p><br>
             <p>
               <strong>In Firefox</strong>, definitions are not announced. If a <code>&lt;dd&gt;</code> contains a link that is announced before its definition and other definitions are skipped. In continuous reading mode, all definitions are skipped.
             </p>
@@ -1611,7 +1603,7 @@
           </td>
           <td>Group of form controls</td>
           <td>
-            <p><strong>Focusing on control inside</strong>: <em>Control label and role</em>, <em>legend content</em>, "Group"</p><br />
+            <p><strong>Focusing on control inside</strong>: <em>Control label and role</em>, <em>legend content</em>, "Group"</p><br>
           </td>
           <td>No special commands</td>
           <td>
@@ -1626,7 +1618,7 @@
           <td>
             <p>
               Requires an accessible name via <code>&lt;legend&gt;</code>, <code>aria-label</code> or <code>aria-labelledby</code>. If no accessible name is provided, no group semantics are conveyed.
-            </p><br />
+            </p><br>
             <p>
               Accessible name and "group" role is announced on initial focus inside the group (e.g. on focus of the first control child). The <code>&lt;fieldset&gt;</code> itself is not focusable.
             </p>
@@ -1654,7 +1646,7 @@
             </svg>
           </td>
           <td>
-            <p>"Caption" role is not announced.</p><br />
+            <p>"Caption" role is not announced.</p><br>
             <p>Article <a href="https://www.scottohara.me/blog/2019/01/21/how-do-you-figure.html">How do you figure?</a> includes Windows Narrator support notes.</p>
           </td>
         </tr>
@@ -1926,7 +1918,7 @@
             </svg>
           </td>
           <td>
-            <p>An accessible name is usually provided via the <code>title</code> attribute. When no <code>title</code> is present, Narrator will announce the iFrame document's <code>&lt;title&gt;</code> content.</p><br />
+            <p>An accessible name is usually provided via the <code>title</code> attribute. When no <code>title</code> is present, Narrator will announce the iFrame document's <code>&lt;title&gt;</code> content.</p><br>
             <p>When no title is provided via either method, only the role "document" is announced.</p>
           </td>
         </tr>
@@ -1958,7 +1950,7 @@
           <td>
             <p>
               "Verbosity Level 3 - All control details" (or higher) is required in Windows Narrator settings to hear the image role, "Graphic", announced. For verbosity level 2 ("some control details") and lower, only the <code>alt</code> text is announced.
-            </p><br />
+            </p><br>
             <p>
               If an <code>&lt;img&gt;</code> element is missing an alt attribute, Narrator will announce "To get missing image descriptions, open the context menu" in Chrome and Edge only.
             </p>
@@ -1992,7 +1984,7 @@
             </svg>
           </td>
           <td>
-            <p>The <code>title</code> attribute content is only announced when "Verbosity Level 3 - All control details" (or higher) is selected in Windows Narrator settings.</p><br />
+            <p>The <code>title</code> attribute content is only announced when "Verbosity Level 3 - All control details" (or higher) is selected in Windows Narrator settings.</p><br>
             <p><strong>Note,</strong> form element keyboard shortcuts do not work in <strong>Firefox</strong></p>
           </td>
         </tr>
@@ -2020,7 +2012,7 @@
                  viewbox="0 0 448 512"
                  width="20">
               <use href="#yes"></use>
-            </svg> In Chrome and Edge<br /><br />
+            </svg> In Chrome and Edge<br><br>
             <svg aria-label="no"
                  class="no"
                  role="img"
@@ -2030,7 +2022,7 @@
             </svg> In Firefox
           </td>
           <td>
-            <p><strong>Firefox</strong> does not announce when a checkbox is <code>required</code>. See related <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1766299">Mozilla Firefox Bug 1766299</a>.</p><br />
+            <p><strong>Firefox</strong> does not announce when a checkbox is <code>required</code>. See related <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1766299">Mozilla Firefox Bug 1766299</a>.</p><br>
             <p><strong>Note,</strong> form element keyboard shortcuts do not work in <strong>Firefox</strong></p>
           </td>
         </tr>
@@ -2061,10 +2053,10 @@
           <td>
             <p>
               On activation, the control opens the browser's default colour picker dialog.
-            </p><br />
+            </p><br>
             <p>
               <strong>Chrome and Edge</strong> identify <code>&lt;input type="color"&gt;</code> as a colour picker control. <strong>Firefox</strong> identifies <code>&lt;input type="color"&gt;</code> as a button element. Both are acceptable as their is no corresponding role for <a href="https://w3c.github.io/html-aam/#el-input-color">Color inputs in the HTML Accessibility API Mapping</a>.
-            </p><br />
+            </p><br>
             <p><strong>Note,</strong> form element keyboard shortcuts do not work in <strong>Firefox</strong></p>
           </td>
         </tr>
@@ -2105,7 +2097,7 @@
             </svg>
           </td>
           <td>
-            <p>The date input is a a composite of multiple spinners. It includes a button to open the browser's default datepicker dialog</p><br />
+            <p>The date input is a a composite of multiple spinners. It includes a button to open the browser's default datepicker dialog</p><br>
             <p><strong>Note,</strong> form element keyboard shortcuts do not work in <strong>Firefox</strong></p>
           </td>
         </tr>
@@ -2151,7 +2143,7 @@
           </td>
           <td>
             <p>Announced as <em>"Edit"</em>. Does not announce <em>type</em> of input.
-            </p><br />
+            </p><br>
             <p><strong>Note,</strong> form element keyboard shortcuts do not work in <strong>Firefox</strong></p>
           </td>
         </tr>
@@ -2196,7 +2188,7 @@
             </p>
             <p>
               As this is a composite control, it can be navigated to using either button or edit commands.
-            </p><br />
+            </p><br>
             <p><strong>Note,</strong> form element keyboard shortcuts do not work in <strong>Firefox</strong></p>
           </td>
         </tr>
@@ -2248,7 +2240,7 @@
             </svg>
           </td>
           <td>
-            <p>Image inputs are "submit" buttons by default. Image inputs should be given an accessible name (e.g. via <code>alt</code> attribute). When present, this is announced instead of "Submit".</p><br />
+            <p>Image inputs are "submit" buttons by default. Image inputs should be given an accessible name (e.g. via <code>alt</code> attribute). When present, this is announced instead of "Submit".</p><br>
             <p><strong>Note,</strong> form element keyboard shortcuts do not work in <strong>Firefox</strong></p>
           </td>
         </tr>
@@ -2294,8 +2286,8 @@
             </svg>
           </td>
           <td>
-            <p>The value is announced when changed via typing or using arrow keys to increase / decrease.</p><br />
-            <p>If using form control navigation (scan mode), additional instructions of "Press space to edit" are announced on focus.</p><br />
+            <p>The value is announced when changed via typing or using arrow keys to increase / decrease.</p><br>
+            <p>If using form control navigation (scan mode), additional instructions of "Press space to edit" are announced on focus.</p><br>
             <p><strong>Note,</strong> form element keyboard shortcuts do not work in <strong>Firefox</strong></p>
           </td>
         </tr>
@@ -2326,10 +2318,10 @@
             </svg>
           </td>
           <td>
-            <p><strong>Note:</strong> Keyboard character input is announced as "hidden".</p><br />
+            <p><strong>Note:</strong> Keyboard character input is announced as "hidden".</p><br>
             <p>
               Placeholder text is only announced in Chrome and Edge when Narrator verbosity settings are set to level 3 ("All control details") or higher.
-            </p><br />
+            </p><br>
             <p>
               If using form or edit control navigation (scan mode), additional instructions of "Press space to edit" are announced on focus.
             </p><br>
@@ -2346,8 +2338,8 @@
           <td>slider control</td>
           <td>
             <p>
-              <em>Accessible name/label</em>, "slider at [#]"<br />
-              &ndash;pause&ndash;<br />
+              <em>Accessible name/label</em>, "slider at [#]"<br>
+              &ndash;pause&ndash;<br>
               "Current value: <em>value</em>", "Minimum value: <em>min value</em>", "Maximum value: <em>max value</em>"
             </p>
           </td>
@@ -2355,7 +2347,7 @@
             <ul>
               <li>Next form element <kbd>F</kbd></li>
               <li>Prior form element <kbd>SHIFT&nbsp;+&nbsp;F</kbd></li>
-            </ul><br />
+            </ul><br>
             <p>When in edit mode (not scan mode):</p>
             <ul>
               <li>Increase slider value <kbd>RIGHT ARROW</kbd> or <kbd>UP ARROW</kbd>.</li>
@@ -2396,7 +2388,7 @@
               <li>Prior radio <kbd>SHIFT&nbsp;+&nbsp;R</kbd></li>
               <li>Next form element <kbd>F</kbd></li>
               <li>Prior form element <kbd>SHIFT&nbsp;+&nbsp;F</kbd></li>
-            </ul><br />
+            </ul><br>
             <p>When in edit mode (not scan mode):</p>
             <ul>
               <li>Focus and select next radio input <kbd>RIGHT ARROW</kbd> or <kbd>UP ARROW</kbd>.</li>
@@ -2478,8 +2470,8 @@
           </td>
           <td>
             <p>Announced as <em>"Edit"</em>. Does not announce <em>type</em> of input or "searchbox" role.
-            </p><br />
-            <p>If using form control navigation (scan mode), additional instructions of "Press space to edit" are announced on focus.</p><br />
+            </p><br>
+            <p>If using form control navigation (scan mode), additional instructions of "Press space to edit" are announced on focus.</p><br>
             <p><strong>Note,</strong> keyboard shortcuts do not work in <strong>Firefox</strong></p>
           </td>
         </tr>
@@ -2511,7 +2503,7 @@
             </svg>
           </td>
           <td>
-            <p><strong>Firefox</strong> uses "Submit query" as the default button text if no <code>value</code> attribute is provided.</p><br />
+            <p><strong>Firefox</strong> uses "Submit query" as the default button text if no <code>value</code> attribute is provided.</p><br>
             <p><strong>Note,</strong> form element keyboard shortcuts do not work in <strong>Firefox</strong></p>
           </td>
         </tr>
@@ -2545,8 +2537,8 @@
           </td>
           <td>
             <p>Announced as <em>"Edit"</em>. Does not announce <em>type</em> of input.
-            </p><br />
-            <p>If using form control navigation (scan mode), additional instructions of "Press space to edit" are announced on focus.</p><br />
+            </p><br>
+            <p>If using form control navigation (scan mode), additional instructions of "Press space to edit" are announced on focus.</p><br>
             <p><strong>Note,</strong> keyboard shortcuts do not work in <strong>Firefox</strong></p>
           </td>
         </tr>
@@ -2580,8 +2572,8 @@
           </td>
           <td>
             <p>Announced as <em>"Edit"</em>. Does not announce <em>type</em> of input.
-            </p><br />
-            <p>If using form control navigation (scan mode), additional instructions of "Press space to edit" are announced on focus.</p><br />
+            </p><br>
+            <p>If using form control navigation (scan mode), additional instructions of "Press space to edit" are announced on focus.</p><br>
             <p><strong>Note,</strong> keyboard shortcuts do not work in <strong>Firefox</strong></p>
           </td>
         </tr>
@@ -2646,8 +2638,8 @@
           </td>
           <td>
             <p>Announced as <em>"Edit"</em>. Does not announce <em>type</em> of input or "searchbox" role.
-            </p><br />
-            <p>If using form control navigation (scan mode), additional instructions of "Press space to edit" are announced on focus.</p><br />
+            </p><br>
+            <p>If using form control navigation (scan mode), additional instructions of "Press space to edit" are announced on focus.</p><br>
             <p><strong>Note,</strong> keyboard shortcuts do not work in <strong>Firefox</strong></p>
           </td>
         </tr>
@@ -2673,7 +2665,7 @@
             </svg>
           </td>
           <td>
-            <p>There is <strong>no</strong> indication that text has been inserted.</p><br />
+            <p>There is <strong>no</strong> indication that text has been inserted.</p><br>
             <p>Refer to: <a href="https://www.tpgi.com/screen-readers-support-for-text-level-html-semantics/">Screen Readers support for text level HTML semantics</a></p>
           </td>
         </tr>
@@ -2754,7 +2746,7 @@ No test
             </svg>
           </td>
           <td>
-            <p>Refer to <a href="#toc-f">fieldset</a> element</p><br />
+            <p>Refer to <a href="#toc-f">fieldset</a> element</p><br>
             <p>Legend content is not announced if the <code>fieldset</code> element (or group) is labelled by other means.</p>
           </td>
         </tr>
@@ -2763,8 +2755,8 @@ No test
             <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element"><code>li</code></a>
           </th>
           <td>
-            <a href="/screen-reader-HTML-support/html-element-tests/test-files/ul-li.html"><code>ul &gt; li</code> test</a> <br />
-            and<br />
+            <a href="/screen-reader-HTML-support/html-element-tests/test-files/ul-li.html"><code>ul &gt; li</code> test</a> <br>
+            and<br>
             <a href="/screen-reader-HTML-support/html-element-tests/test-files/ol-li.html"><code>ol &gt; li</code> test</a>
           </td>
           <td>List item</td>
@@ -2976,13 +2968,13 @@ No test
           <td>
             <ul>
               <li>
-                <strong>With accessible name</strong>: <em>Accessible name content</em><br />
-                &ndash;pause&ndash;<br />
+                <strong>With accessible name</strong>: <em>Accessible name content</em><br>
+                &ndash;pause&ndash;<br>
                 <em>Description</em> (if present), "Current value: <em>value</em>", "Minimum value: <em>min value</em>", "Maximum value: <em>max value</em>"
               </li>
               <li>
-                <strong>Without accessible name</strong>: "Meter"<br />
-                &ndash;pause&ndash;<br />
+                <strong>Without accessible name</strong>: "Meter"<br>
+                &ndash;pause&ndash;<br>
                 <em>Description</em> (if present), "Current value: <em>value</em>", "Minimum value: <em>min value</em>", "Maximum value: <em>max value</em>"
               </li>
             </ul>
@@ -3029,7 +3021,7 @@ No test
             </svg>
           </td>
           <td>
-            <p>Accessible description is announced after a brief pause.</p><br />
+            <p>Accessible description is announced after a brief pause.</p><br>
             <p><strong>In Firefox</strong>, the <code>title</code> attribute is not announced if an accessible name is present.</p>
           </td>
         </tr>
@@ -3128,7 +3120,7 @@ No test
             </svg>
           </td>
           <td>
-            <p>If a list element has an accessible name provided (e.g. via <code>aria-label</code>), then that name is announced either on focus of the list element, or after the first <em>list item content</em> when that receives screen reader focus. </p><br />
+            <p>If a list element has an accessible name provided (e.g. via <code>aria-label</code>), then that name is announced either on focus of the list element, or after the first <em>list item content</em> when that receives screen reader focus. </p><br>
             <p>Narrator <strong>does not announce</strong> accessible descriptions on lists in Firefox</p>
           </td>
         </tr>
@@ -3154,7 +3146,7 @@ No test
             </svg>
           </td>
           <td>
-            <p>The <code>optgroup</code> "label" is only announced once on first screen reader focus within the group. It is not repeated for each subsequent <code>option</code>.</p><br />
+            <p>The <code>optgroup</code> "label" is only announced once on first screen reader focus within the group. It is not repeated for each subsequent <code>option</code>.</p><br>
             <p>The "group" role is not announced.</p>
           </td>
         </tr>
@@ -3329,7 +3321,7 @@ No test
                  viewbox="0 0 448 512"
                  width="20">
               <use href="#yes"></use>
-            </svg> In Chrome and Edge<br /><br />
+            </svg> In Chrome and Edge<br><br>
             <svg aria-label="no"
                  class="no"
                  role="img"
@@ -3339,7 +3331,7 @@ No test
             </svg> In Firefox
           </td>
           <td>
-            <p>The <code>&lt;progress&gt;</code> element is not focusable by default, but can be announced as part of the content in reading mode.</p><br />
+            <p>The <code>&lt;progress&gt;</code> element is not focusable by default, but can be announced as part of the content in reading mode.</p><br>
             <p><strong>Firefox</strong> does not announce progress role or values <strong>unless</strong> it is made focusable with <code>tabindex="0"</code>.</p>
           </td>
         </tr>
@@ -3528,7 +3520,7 @@ No test
             </svg>
           </td>
           <td>
-            <p>Browsers usually give <code>&lt;s&gt;</code> a strikethrough style because this element is mapped to the "deletion" role.</p><br />
+            <p>Browsers usually give <code>&lt;s&gt;</code> a strikethrough style because this element is mapped to the "deletion" role.</p><br>
             <p>Refer to: <a href="https://www.tpgi.com/screen-readers-support-for-text-level-html-semantics/">Screen Readers support for text level HTML semantics</a></p>
           </td>
         </tr>
@@ -3620,7 +3612,7 @@ No test
             </svg>
           </td>
           <td>
-            <p>The expanded/collapsed state is always announced, followed by other states like "required" or "disabled".</p><br />
+            <p>The expanded/collapsed state is always announced, followed by other states like "required" or "disabled".</p><br>
             <p><strong>Note,</strong> keyboard shortcuts do not work in <strong>Firefox</strong></p>
           </td>
         </tr>
@@ -3874,7 +3866,7 @@ No test
                  viewbox="0 0 448 512"
                  width="20">
               <use href="#yes"></use>
-            </svg> In Chrome and Edge<br /><br />
+            </svg> In Chrome and Edge<br><br>
             <svg aria-label="no"
                  class="no"
                  role="img"
@@ -3950,8 +3942,8 @@ No test
             </svg>
           </td>
           <td>
-            <p>Increased verbosity in Narrator settings is required to hear row and column information, including column headers and merged cell details when browsing table contents.</p><br />
-            <p>Narrator <strong>does not announce</strong> row header information while focused on data cells unless using the keyboard shortcuts.</p><br />
+            <p>Increased verbosity in Narrator settings is required to hear row and column information, including column headers and merged cell details when browsing table contents.</p><br>
+            <p>Narrator <strong>does not announce</strong> row header information while focused on data cells unless using the keyboard shortcuts.</p><br>
             <p>Using Firefox, Narrator <strong>does not announce</strong> column header information while focused on data cells unless using the keyboard shortcuts. It <strong>does</strong> announce row number information (e.g. "row 2 of 5") alongside column number information by default.</p>
           </td>
         </tr>
@@ -4003,8 +3995,8 @@ No test
             </svg>
           </td>
           <td>
-            <p>The <code>aria-describedby</code> attribute content is only announced when "Verbosity Level 3 - All control details" (or higher) is selected in Windows Narrator settings.</p><br />
-            <p>If using form control navigation (scan mode), additional instructions of "Press space to edit" are announced on focus.</p><br />
+            <p>The <code>aria-describedby</code> attribute content is only announced when "Verbosity Level 3 - All control details" (or higher) is selected in Windows Narrator settings.</p><br>
+            <p>If using form control navigation (scan mode), additional instructions of "Press space to edit" are announced on focus.</p><br>
             <p><strong>Note,</strong> keyboard shortcuts do not work in <strong>Firefox</strong></p>
           </td>
         </tr>
@@ -4067,8 +4059,8 @@ No test
             </svg>
           </td>
           <td>
-            <p>Increased verbosity in Narrator settings is required to hear row and column information, including column headers and merged cell details, when browsing table contents.</p><br />
-            <p>Using Chrome or Edge, Narrator <strong>does not announce</strong> row headers unless using the keyboard shortcut.</p><br />
+            <p>Increased verbosity in Narrator settings is required to hear row and column information, including column headers and merged cell details, when browsing table contents.</p><br>
+            <p>Using Chrome or Edge, Narrator <strong>does not announce</strong> row headers unless using the keyboard shortcut.</p><br>
             <p>Using Firefox, Narrator announces "Header" for both column and row header cells in all reading modes.</p>
           </td>
         </tr>
@@ -4118,7 +4110,7 @@ No test
             </svg>
           </td>
           <td>
-            <p>Narrator announces "Time" before the element content in Chrome and Edge. The role is <strong>not conveyed</strong> when using Firefox.</p><br />
+            <p>Narrator announces "Time" before the element content in Chrome and Edge. The role is <strong>not conveyed</strong> when using Firefox.</p><br>
             <p><strong>Note,</strong> if the <code>&lt;time&gt;</code> element is given an accessible name, the "time" role is no longer conveyed.</p>
           </td>
         </tr>
@@ -4257,7 +4249,7 @@ No test
             </svg>
           </td>
           <td>
-            <p>If a list element has an accessible name provided (e.g. via <code>aria-label</code>), then that name is announced either on focus of the list element, or after the first <em>list item content</em> when that receives screen reader focus. </p><br />
+            <p>If a list element has an accessible name provided (e.g. via <code>aria-label</code>), then that name is announced either on focus of the list element, or after the first <em>list item content</em> when that receives screen reader focus. </p><br>
             <p>Narrator <strong>does not announce</strong> accessible descriptions on lists in Firefox</p>
           </td>
         </tr>
@@ -4293,7 +4285,7 @@ No test
           </td>
           <td>Video Player</td>
           <td>
-            <p>"Play", "button", <em>accessible name</em> (if present)<br />
+            <p>"Play", "button", <em>accessible name</em> (if present)<br>
               Announces controls as navigated.</p>
           </td>
           <td></td>
@@ -4307,8 +4299,8 @@ No test
             </svg>
           </td>
           <td>
-            <p>The <code>&lt;video&gt;</code> element itself is not announced in Chrome and Edge unless it is made focusable via <code>tabindex="0"</code>. In Firefox, the <code>&lt;video&gt;</code> element is focusable by default.</p><br />
-            <p>Narrator announces the accessible name on focus of the <code>&lt;video&gt;</code> element, and at the end on focus of the first control.</p><br />
+            <p>The <code>&lt;video&gt;</code> element itself is not announced in Chrome and Edge unless it is made focusable via <code>tabindex="0"</code>. In Firefox, the <code>&lt;video&gt;</code> element is focusable by default.</p><br>
+            <p>Narrator announces the accessible name on focus of the <code>&lt;video&gt;</code> element, and at the end on focus of the first control.</p><br>
           </td>
         </tr>
         <tr id="toc-w">
