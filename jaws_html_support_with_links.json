@@ -306,7 +306,7 @@
     "Interaction": "No special commands",
     "Supported": "[yes]",
     "Notes": "Refer to summary element",
-    "Notes link 1": "#el-summary"
+    "Notes link 1": "#summary"
   },
   {
     "Element": "dfn",

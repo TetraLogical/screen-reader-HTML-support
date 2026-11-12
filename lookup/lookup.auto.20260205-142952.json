@@ -937,7 +937,7 @@
           "AURAL UI": "When the details element has an accessible name it is\n              announced along with group start/end.",
           "Interaction": "No special commands",
           "Supported": "<svg viewbox=\"0 0 448 512\" width=\"20\" role=\"img\" aria-label=\"yes\" class=\"yes\">\n                <use href=\"#yes\"></use>\n              </svg>",
-          "Notes": "Refer to <a href=\"#el-summary\"><code>summary</code></a> element"
+          "Notes": "Refer to <a href=\"#summary\"><code>summary</code></a> element"
         },
         "_links": {
           "Element": [
@@ -955,7 +955,7 @@
           "Notes": [
             {
               "text": "<code>summary</code>",
-              "href": "#el-summary"
+              "href": "#summary"
             }
           ]
         }
@@ -4980,7 +4980,7 @@
           "AURAL UI": "<em>Content name</em> \"button\", followed by the state (\"Expanded\" or \"Collapsed\").",
           "Interaction": "No special commands",
           "Supported": "\n              <svg viewbox=\"0 0 448 512\" width=\"20\" role=\"img\" aria-label=\"yes\" class=\"yes\">\n                <use href=\"#yes\"></use>\n              </svg>\n            ",
-          "Notes": "The updated state is announced when the user activates the button. Refer to <a href=\"#el-summary\"><code>summary</code></a> element"
+          "Notes": "The updated state is announced when the user activates the button. Refer to <a href=\"#summary\"><code>summary</code></a> element"
         },
         "_links": {
           "Element": [
@@ -4998,7 +4998,7 @@
           "Notes": [
             {
               "text": "<code>summary</code>",
-              "href": "#el-summary"
+              "href": "#summary"
             }
           ]
         }
@@ -9057,7 +9057,7 @@
           "AURAL UI": "\n            <ul>\n              <li>\n                <strong>With accessible name</strong>: <em>Accessible name</em>, \"details\" (followed by summary content)\n              </li>\n              <li>\n                <strong>Without accessible name</strong>: <em>Summary content</em> (details element is not announced)\n              </li>\n            </ul>\n          ",
           "Interaction": "No special commands",
           "Supported": "\n            <svg aria-label=\"yes\" class=\"yes\" role=\"img\" viewbox=\"0 0 448 512\" width=\"20\">\n              <use href=\"#yes\"></use>\n            </svg>\n          ",
-          "Notes": "\n            <p>No announcement expected, unless accessible name is present.</p><br>\n            <p>Refer to <a href=\"#el-summary\"><code>summary</code></a> element</p>\n          "
+          "Notes": "\n            <p>No announcement expected, unless accessible name is present.</p><br>\n            <p>Refer to <a href=\"#summary\"><code>summary</code></a> element</p>\n          "
         },
         "_links": {
           "Element": [
@@ -9075,7 +9075,7 @@
           "Notes": [
             {
               "text": "<code>summary</code>",
-              "href": "#el-summary"
+              "href": "#summary"
             }
           ]
         }
@@ -13197,7 +13197,7 @@
           "AURAL UI": "Announces state (\"Expanded\" or \"Collapsed\") <em>Content name</em> \"disclosure triangle\"",
           "Interaction": "No special interaction",
           "Supported": "\n              <svg viewbox=\"0 0 448 512\" width=\"20\" aria-label=\"yes\" class=\"yes\">\n                <use href=\"#yes\"></use>\n              </svg>\n            ",
-          "Notes": "The updated state is announced when the user activates the button. Refer to <a href=\"#el-summary\"><code>summary</code></a> element"
+          "Notes": "The updated state is announced when the user activates the button. Refer to <a href=\"#summary\"><code>summary</code></a> element"
         },
         "_links": {
           "Element": [
@@ -13215,7 +13215,7 @@
           "Notes": [
             {
               "text": "<code>summary</code>",
-              "href": "#el-summary"
+              "href": "#summary"
             }
           ]
         }
